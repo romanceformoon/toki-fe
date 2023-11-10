@@ -46,7 +46,12 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
     <AppBar position="fixed">
       <Toolbar disableGutters sx={{ ml: "7%", mr: "7%" }}>
         {/* 데스크탑 로고 */}
-        <Button sx={{ color: "white", display: { xs: "none", md: "flex" } }}>
+        <Button
+          sx={{
+            color: "white",
+            display: { xs: "none", md: "flex" },
+          }}
+        >
           <Avatar
             onClick={() => {
               router.push("/");
