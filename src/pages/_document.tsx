@@ -22,6 +22,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
           />
+          <link rel="icon" href="/favicon.ico" sizes="any" />
         </Head>
         <body>
           <Main />

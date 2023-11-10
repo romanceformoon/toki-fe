@@ -58,7 +58,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
               },
             }}
             alt="logo"
-            src="/assets/images/1.webp"
+            src="/assets/images/logo.png"
           />
 
           <Typography
@@ -142,7 +142,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
             display: { md: "none" },
           }}
           alt="logo"
-          src="/assets/images/1.webp"
+          src="/assets/images/logo.png"
         />
 
         <Typography

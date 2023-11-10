@@ -1,6 +1,7 @@
 import { Box, CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { AppProps } from "next/app";
+import Head from "next/head";
 import { NextPage } from "next/types";
 import { useMemo, useState } from "react";
 import Header from "~/layout/header";
@@ -30,6 +31,9 @@ function MyApp({
 
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>Asuma Toki KR</title>
+      </Head>
       <CssBaseline />
       <Header
         mode={mode}
