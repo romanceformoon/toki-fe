@@ -1,7 +1,5 @@
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
 import MenuIcon from "@mui/icons-material/Menu";
-import { PaletteMode, ToggleButton } from "@mui/material";
+import { PaletteMode } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -13,6 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { ThemeToggleButton } from "~/components/ThemeToggleButton";
 
 interface IHeaderProps {
   mode: PaletteMode;
@@ -187,21 +186,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
 
         {/* 계정 설정 */}
         <Box sx={{ flexGrow: 0 }}>
-          <ToggleButton
-            onClick={setMode}
-            value="mode"
-            sx={{ border: 0, borderRadius: 10 }}
-          >
-            {mode === "light" ? (
-              <>
-                <DarkModeIcon aria-label="darkMoon" />
-              </>
-            ) : (
-              <>
-                <LightModeIcon aria-label="lightSun" />
-              </>
-            )}
-          </ToggleButton>
+          <ThemeToggleButton mode={mode} setMode={setMode} />
 
           {/* <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

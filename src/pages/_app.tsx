@@ -2,7 +2,7 @@ import { Box, CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { AppProps } from "next/app";
 import { NextPage } from "next/types";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Header from "~/layout/header";
 
 function MyApp({
@@ -15,19 +15,26 @@ function MyApp({
 }) {
   const [mode, setMode] = useState<PaletteMode>("light");
 
-  const mainTheme = createTheme({
-    typography: {
-      fontFamily: "Pretendard",
-    },
-    palette: {
-      mode,
-    },
-  });
+  const theme = useMemo(
+    () =>
+      createTheme({
+        typography: {
+          fontFamily: "Pretendard",
+        },
+        palette: {
+          mode,
+        },
+      }),
+    [mode]
+  );
 
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header mode={mode} setMode={() => setMode(mode === "light" ? "dark" : "light")} />
+      <Header
+        mode={mode}
+        setMode={() => setMode(mode === "light" ? "dark" : "light")}
+      />
       <Box sx={{ mt: "6.3rem", ml: "7%", mr: "7%" }}>
         <Component {...pageProps} />
       </Box>
