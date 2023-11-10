@@ -18,7 +18,7 @@ interface IHeaderProps {
   setMode: () => void;
 }
 
-const pages = ["Table"];
+const pages = ["table", "graph"];
 const settings = ["Profile", "Logout"];
 
 const Header = ({ mode, setMode }: IHeaderProps) => {
@@ -120,10 +120,12 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
                 key={page}
                 onClick={() => {
                   handleCloseNavMenu();
-                  router.push("/table");
+                  router.push(`/${page}`);
                 }}
               >
-                <Typography textAlign="center">{page}</Typography>
+                <Typography textAlign="center" fontWeight={500}>
+                  {page}
+                </Typography>
               </MenuItem>
             ))}
           </Menu>
@@ -175,11 +177,13 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
               key={page}
               onClick={() => {
                 handleCloseNavMenu();
-                router.push("/table");
+                router.push(`/${page}`);
               }}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              {page}
+              <Typography textAlign="center" fontWeight={500}>
+                {page}
+              </Typography>
             </Button>
           ))}
         </Box>
