@@ -128,9 +128,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
                   router.push(`/${page}`);
                 }}
               >
-                <Typography textAlign="center" fontWeight={500}>
-                  {page}
-                </Typography>
+                {page}
               </MenuItem>
             ))}
           </Menu>
@@ -186,9 +184,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
               }}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Typography textAlign="center" fontWeight={500}>
-                {page}
-              </Typography>
+              {page}
             </Button>
           ))}
         </Box>
