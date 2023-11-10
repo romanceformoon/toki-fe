@@ -11,6 +11,7 @@ interface ISelectLevelProps {
   handleChange: (event: SelectChangeEvent) => void;
   tableData: ILevelList;
 }
+
 export const SelectLevel = ({
   selectedLevel,
   handleChange,

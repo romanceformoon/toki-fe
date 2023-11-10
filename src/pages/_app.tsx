@@ -1,7 +1,8 @@
-import { Box, Container } from "@mui/material";
+import { Box, CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { AppProps } from "next/app";
 import { NextPage } from "next/types";
+import { useState } from "react";
 import Header from "~/layout/header";
 
 function MyApp({
@@ -12,20 +13,24 @@ function MyApp({
     getLayout?: (page: React.ReactElement) => React.ReactNode;
   };
 }) {
-  const THEME = createTheme({
+  const [mode, setMode] = useState<PaletteMode>("light");
+
+  const mainTheme = createTheme({
     typography: {
       fontFamily: "Pretendard",
+    },
+    palette: {
+      mode,
     },
   });
 
   return (
-    <ThemeProvider theme={THEME}>
-      <Header />
-      <Container maxWidth="xl">
-        <Box sx={{ mt: "6.3rem" }}>
-          <Component {...pageProps} />
-        </Box>
-      </Container>
+    <ThemeProvider theme={mainTheme}>
+      <CssBaseline />
+      <Header mode={mode} setMode={() => setMode(mode === "light" ? "dark" : "light")} />
+      <Box sx={{ mt: "6.3rem", ml: "7%", mr: "7%" }}>
+        <Component {...pageProps} />
+      </Box>
     </ThemeProvider>
   );
 }

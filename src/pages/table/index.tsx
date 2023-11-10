@@ -46,44 +46,34 @@ const DifficultyTable = () => {
         <Table sx={{ minWidth: "100%" }}>
           <TableHead>
             <TableRow>
-              <TableCell align="center" sx={{ width: "10%" }}>
+              <TableCell sx={{ width: "20%" }}>
                 <Typography
                   fontSize="24px"
                   fontWeight="900"
-                  fontStyle={{ color: "#2570b6" }}
+                  fontStyle={{ color: "primary.main" }}
                   textAlign="center"
                 >
                   Level
                 </Typography>
               </TableCell>
-              <TableCell align="center" sx={{ width: "35%" }}>
+              <TableCell sx={{ width: "40%" }}>
                 <Typography
                   fontSize="24px"
                   fontWeight="900"
-                  fontStyle={{ color: "#2570b6" }}
+                  fontStyle={{ color: "primary.main" }}
                   textAlign="center"
                 >
                   Title
                 </Typography>
               </TableCell>
-              <TableCell align="center" sx={{ width: "25%" }}>
+              <TableCell sx={{ width: "40%" }}>
                 <Typography
                   fontSize="24px"
                   fontWeight="900"
-                  fontStyle={{ color: "#2570b6" }}
+                  fontStyle={{ color: "primary.main" }}
                   textAlign="center"
                 >
                   Artist
-                </Typography>
-              </TableCell>
-              <TableCell align="center" sx={{ width: "25%" }}>
-                <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "#2570b6" }}
-                  textAlign="center"
-                >
-                  MD5
                 </Typography>
               </TableCell>
             </TableRow>
@@ -123,15 +113,6 @@ const DifficultyTable = () => {
                               {song.artist}
                             </Typography>
                           </TableCell>
-                          <TableCell key={song.md5} align="center">
-                            <Typography
-                              fontSize="16px"
-                              fontWeight="500"
-                              textAlign="center"
-                            >
-                              {song.md5}
-                            </Typography>
-                          </TableCell>
                         </TableRow>
                       </>
                     );
@@ -165,15 +146,6 @@ const DifficultyTable = () => {
                             textAlign="center"
                           >
                             {song.artist}
-                          </Typography>
-                        </TableCell>
-                        <TableCell key={song.md5} align="center">
-                          <Typography
-                            fontSize="16px"
-                            fontWeight="500"
-                            textAlign="center"
-                          >
-                            {song.md5}
                           </Typography>
                         </TableCell>
                       </TableRow>
