@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import {
   Paper,
   SelectChangeEvent,
@@ -9,7 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
-import $ from "jquery";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
@@ -23,12 +23,6 @@ const DifficultyTable = () => {
   };
 
   useEffect(() => {
-    $.getJSON("/data/aery/header.json", function (header) {
-      $.getJSON(header.data_url, function (data) {});
-    });
-  }, []);
-
-  useEffect(() => {
     const load = async () => {
       const _ = await loadTableData();
       setTableData(_);
@@ -40,6 +34,12 @@ const DifficultyTable = () => {
 
   return (
     <>
+      <script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-2.1.3.min.js"
+      ></script>
+      <script type="text/javascript" src="/static/bmstable.js"></script>
+
       <SelectLevel
         selectedLevel={selectedLevel}
         handleChange={handleChange}
