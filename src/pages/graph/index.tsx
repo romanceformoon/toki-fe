@@ -2,11 +2,14 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { yLabels } from "~/const/graphLabels";
 
 const LampGraph = () => {
+  const router = useRouter();
+
   const [uploadFile, setUploadFile] = useState<File>();
   const [graphData, setGraphData] = useState<IGraphResult>();
 
@@ -16,6 +19,14 @@ const LampGraph = () => {
     if (e.target.files) {
       const dbFile = e.target.files[0];
       if (dbFile === uploadFile) return;
+
+      const maxSize = 1024 ** 2 * 5; // 1MB * 5
+
+      if (maxSize < dbFile.size) {
+        alert("해당 파일은 제한된 용량을 초과하였습니다.");
+        router.reload();
+        return;
+      }
 
       const formData = new FormData();
       formData.append("db", dbFile);

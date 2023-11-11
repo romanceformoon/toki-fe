@@ -1,4 +1,6 @@
+import LinkIcon from "@mui/icons-material/Link";
 import {
+  IconButton,
   Paper,
   SelectChangeEvent,
   TableBody,
@@ -9,11 +11,14 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
 
 const DifficultyTable = () => {
+  const router = useRouter();
+
   const [tableData, setTableData] = useState<ILevelList>({});
   const [selectedLevel, setSelectedLevel] = useState<string>("모두 보기");
 
@@ -49,7 +54,7 @@ const DifficultyTable = () => {
         <Table sx={{ minWidth: "100%" }}>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: "20%" }}>
+              <TableCell sx={{ width: "10%" }}>
                 <Typography
                   fontSize="24px"
                   fontWeight="900"
@@ -77,6 +82,16 @@ const DifficultyTable = () => {
                   textAlign="center"
                 >
                   Artist
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: "10%" }}>
+                <Typography
+                  fontSize="24px"
+                  fontWeight="900"
+                  fontStyle={{ color: "primary.main" }}
+                  textAlign="center"
+                >
+                  LR2IR
                 </Typography>
               </TableCell>
             </TableRow>
@@ -116,6 +131,17 @@ const DifficultyTable = () => {
                               {song.artist}
                             </Typography>
                           </TableCell>
+                          <TableCell key={song.md5} align="center">
+                            <IconButton
+                              onClick={() =>
+                                router.push(
+                                  `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`
+                                )
+                              }
+                            >
+                              <LinkIcon />
+                            </IconButton>
+                          </TableCell>
                         </TableRow>
                       </>
                     );
@@ -150,6 +176,17 @@ const DifficultyTable = () => {
                           >
                             {song.artist}
                           </Typography>
+                        </TableCell>
+                        <TableCell key={song.md5} align="center">
+                          <IconButton
+                            onClick={() =>
+                              router.push(
+                                `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`
+                              )
+                            }
+                          >
+                            <LinkIcon />
+                          </IconButton>
                         </TableCell>
                       </TableRow>
                     </>
