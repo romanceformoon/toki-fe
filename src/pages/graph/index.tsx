@@ -3,31 +3,10 @@ import { Box, Button, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import axios from "axios";
 import { useState } from "react";
+import { BarChartSkeleton } from "~/components/BarChartSkeleton";
+import { yLabels } from "~/const/graphLabels";
 
 const LampGraph = () => {
-  const yLabels = [
-    "⑤ 1",
-    "⑤ 2",
-    "⑤ 3",
-    "⑤ 4",
-    "⑤ 5",
-    "⑤ 6",
-    "⑤ 7",
-    "⑤ 8",
-    "⑤ 9",
-    "⑤ 10",
-    "⑤ 11",
-    "⑤ 12",
-    "⑤ 13",
-    "⑤ 14",
-    "⑤ 15",
-    "⑤ 16",
-    "⑤ 17",
-    "⑤ 18",
-    "⑤ 19",
-    "⑤ 20",
-  ];
-
   const [uploadFile, setUploadFile] = useState<File>();
   const [graphData, setGraphData] = useState<IGraphResult>();
 
@@ -76,84 +55,7 @@ const LampGraph = () => {
             업로드
           </Button>
         </Box>
-
-        <BarChart
-          sx={{
-            minWidth: "100%",
-          }}
-          margin={{ top: 100 }}
-          layout="horizontal"
-          height={700}
-          series={[
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "Full Combo",
-              id: "fc",
-              stack: "total",
-              color: "#fde1f5",
-              stackOffset: "expand",
-            },
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "Hard Clear",
-              id: "hard",
-              stack: "total",
-              color: "#dd3959",
-              stackOffset: "expand",
-            },
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "Groove Clear",
-              id: "groove",
-              stack: "total",
-              color: "#5e99ff",
-              stackOffset: "expand",
-            },
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "Easy Clear",
-              id: "easy",
-              stack: "total",
-              color: "#79e158",
-              stackOffset: "expand",
-            },
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "Failed",
-              id: "failed",
-              stack: "total",
-              color: "#525252",
-              stackOffset: "expand",
-            },
-            {
-              data: [
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              ],
-              label: "No Play",
-              id: "noplay",
-              stack: "total",
-              color: "#00000000",
-              stackOffset: "expand",
-            },
-          ]}
-          yAxis={[
-            {
-              data: yLabels,
-              scaleType: "band",
-            },
-          ]}
-          bottomAxis={null}
-        ></BarChart>
+        <BarChartSkeleton />
       </>
     );
 
@@ -183,7 +85,7 @@ const LampGraph = () => {
         sx={{
           mt: 1,
           minWidth: "100%",
-          border: 2,
+          border: 1,
           borderRadius: 5,
         }}
         margin={{ top: 100 }}
@@ -205,7 +107,6 @@ const LampGraph = () => {
             stack: "total",
             color: "#dd3959",
             stackOffset: "expand",
-            
           },
           {
             data: Object.values(graphData["GROOVE_COUNT"]),
