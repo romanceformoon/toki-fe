@@ -16,7 +16,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="bmstable" content="/data/aery/header.json" />
           <link
             rel="preload"
             as="style"

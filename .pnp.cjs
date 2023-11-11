@@ -33,7 +33,6 @@ const RAW_RUNTIME_STATE =
           ["@mui/system", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/utils", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/x-charts", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.18.1"],\
-          ["@types/jquery", "npm:3.5.27"],\
           ["@types/node", "npm:20.9.0"],\
           ["@types/prop-types", "npm:15.7.10"],\
           ["@types/react", "npm:18.2.37"],\
@@ -41,7 +40,6 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.6.1"],\
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
-          ["jquery", "npm:3.7.1"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:18.2.0"],\
@@ -1063,16 +1061,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@types/jquery", [\
-      ["npm:3.5.27", {\
-        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-jquery-npm-3.5.27-4fe84a7782-10c0.zip/node_modules/@types/jquery/",\
-        "packageDependencies": [\
-          ["@types/jquery", "npm:3.5.27"],\
-          ["@types/sizzle", "npm:2.3.6"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@types/json5", [\
       ["npm:0.0.29", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-json5-npm-0.0.29-f63a7916bd-10c0.zip/node_modules/@types/json5/",\
@@ -1147,15 +1135,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-scheduler-npm-0.16.6-73b5b0836b-10c0.zip/node_modules/@types/scheduler/",\
         "packageDependencies": [\
           ["@types/scheduler", "npm:0.16.6"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@types/sizzle", [\
-      ["npm:2.3.6", {\
-        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-sizzle-npm-2.3.6-50ee423780-10c0.zip/node_modules/@types/sizzle/",\
-        "packageDependencies": [\
-          ["@types/sizzle", "npm:2.3.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3321,15 +3300,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["jquery", [\
-      ["npm:3.7.1", {\
-        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/jquery-npm-3.7.1-eeeac0f21e-10c0.zip/node_modules/jquery/",\
-        "packageDependencies": [\
-          ["jquery", "npm:3.7.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["js-tokens", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/js-tokens-npm-4.0.0-0ac852e9e2-10c0.zip/node_modules/js-tokens/",\
@@ -4456,7 +4426,6 @@ const RAW_RUNTIME_STATE =
           ["@mui/system", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/utils", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/x-charts", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.18.1"],\
-          ["@types/jquery", "npm:3.5.27"],\
           ["@types/node", "npm:20.9.0"],\
           ["@types/prop-types", "npm:15.7.10"],\
           ["@types/react", "npm:18.2.37"],\
@@ -4464,7 +4433,6 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.6.1"],\
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
-          ["jquery", "npm:3.7.1"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:18.2.0"],\
