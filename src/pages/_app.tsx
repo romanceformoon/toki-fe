@@ -17,7 +17,8 @@ function MyApp({
   const [mode, setMode] = useState<PaletteMode>("light");
 
   useEffect(() => {
-    setMode(localStorage.getItem("theme") as PaletteMode);
+    if (localStorage.getItem("theme") as PaletteMode)
+      setMode(localStorage.getItem("theme") as PaletteMode);
   }, []);
 
   const theme = useMemo(

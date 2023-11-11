@@ -4,12 +4,6 @@ import { BarChart } from "@mui/x-charts";
 import axios from "axios";
 import { useState } from "react";
 
-interface IGraphResult {
-  [count: string]: {
-    [level: string]: number;
-  };
-}
-
 const LampGraph = () => {
   const yLabels = [
     "⑤ 1",

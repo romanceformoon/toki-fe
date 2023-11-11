@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
+import $ from "jquery";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
@@ -20,6 +21,12 @@ const DifficultyTable = () => {
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedLevel(event.target.value as string);
   };
+
+  useEffect(() => {
+    $.getJSON("/data/aery/header.json", function (header) {
+      $.getJSON(header.data_url, function (data) {});
+    });
+  }, []);
 
   useEffect(() => {
     const load = async () => {
