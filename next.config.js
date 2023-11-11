@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: "/toki-api/:path*",
-        destination: `http://localhost:9876/toki-api/:path*`,
+        destination: `http://132.226.226.167:9999/toki-api/:path*`,
       },
     ];
   },
