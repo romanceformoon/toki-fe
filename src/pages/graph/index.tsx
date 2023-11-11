@@ -92,7 +92,7 @@ const LampGraph = () => {
               label: "Full Combo",
               id: "fc",
               stack: "total",
-              color: "#6dff50",
+              color: "#fde1f5",
               stackOffset: "expand",
             },
             {
@@ -102,7 +102,7 @@ const LampGraph = () => {
               label: "Hard Clear",
               id: "hard",
               stack: "total",
-              color: "#ff5b7b",
+              color: "#dd3959",
               stackOffset: "expand",
             },
             {
@@ -122,7 +122,7 @@ const LampGraph = () => {
               label: "Easy Clear",
               id: "easy",
               stack: "total",
-              color: "#4df5a4",
+              color: "#79e158",
               stackOffset: "expand",
             },
             {
@@ -132,7 +132,7 @@ const LampGraph = () => {
               label: "Failed",
               id: "failed",
               stack: "total",
-              color: "#ff0000",
+              color: "#525252",
               stackOffset: "expand",
             },
             {
@@ -142,7 +142,7 @@ const LampGraph = () => {
               label: "No Play",
               id: "noplay",
               stack: "total",
-              color: "#8db6ac",
+              color: "#00000000",
               stackOffset: "expand",
             },
           ]}
@@ -181,7 +181,10 @@ const LampGraph = () => {
 
       <BarChart
         sx={{
+          mt: 1,
           minWidth: "100%",
+          border: 2,
+          borderRadius: 5,
         }}
         margin={{ top: 100 }}
         layout="horizontal"
@@ -192,7 +195,7 @@ const LampGraph = () => {
             label: "Full Combo",
             id: "fc",
             stack: "total",
-            color: "#6dff50",
+            color: "#fde1f5",
             stackOffset: "expand",
           },
           {
@@ -200,8 +203,9 @@ const LampGraph = () => {
             label: "Hard Clear",
             id: "hard",
             stack: "total",
-            color: "#ff5b7b",
+            color: "#dd3959",
             stackOffset: "expand",
+            
           },
           {
             data: Object.values(graphData["GROOVE_COUNT"]),
@@ -216,7 +220,7 @@ const LampGraph = () => {
             label: "Easy Clear",
             id: "easy",
             stack: "total",
-            color: "#4df5a4",
+            color: "#79e158",
             stackOffset: "expand",
           },
           {
@@ -224,7 +228,7 @@ const LampGraph = () => {
             label: "Failed",
             id: "failed",
             stack: "total",
-            color: "#ff0000",
+            color: "#333333",
             stackOffset: "expand",
           },
           {
@@ -232,7 +236,7 @@ const LampGraph = () => {
             label: "No Play",
             id: "noplay",
             stack: "total",
-            color: "#8db6ac",
+            color: "#00000000",
             stackOffset: "expand",
           },
         ]}
