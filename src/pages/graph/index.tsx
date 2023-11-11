@@ -1,6 +1,7 @@
 import { BarChart } from "@mui/x-charts";
 
 const LampGraph = () => {
+  const fc = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
   const hard = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
   const groove = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
   const easy = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
@@ -34,9 +35,18 @@ const LampGraph = () => {
       sx={{
         minWidth: "100%",
       }}
+      margin={{ top: 100 }}
       layout="horizontal"
       height={800}
       series={[
+        {
+          data: fc,
+          label: "Full Combo",
+          id: "fc",
+          stack: "total",
+          color: "#6dff50",
+          stackOffset: "expand",
+        },
         {
           data: hard,
           label: "Hard Clear",

@@ -36,7 +36,7 @@ function MyApp({
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>Asuma Toki KR</title>
+        <title>Asuma Toki</title>
       </Head>
       <CssBaseline />
       <Header
