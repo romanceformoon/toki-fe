@@ -1,14 +1,20 @@
 import AddIcon from "@mui/icons-material/Add";
+import PersonIcon from "@mui/icons-material/Person";
 import { Box, Button, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
+import { CommonButton } from "~/components/CommonButton";
 import { yLabels } from "~/const/graphLabels";
+import axiosInstance from "~/utils/axiosInstance";
 
 const LampGraph = () => {
   const router = useRouter();
+
+  const { isLogined } = useLoginUser();
 
   const [uploadFile, setUploadFile] = useState<File>();
   const [graphData, setGraphData] = useState<IGraphResult>();
@@ -30,15 +36,27 @@ const LampGraph = () => {
 
       const formData = new FormData();
       formData.append("db", dbFile);
-      const response = await axios.post("/toki-api/graph", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axiosInstance.post(
+        "/toki-api/analyze/graph",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       setGraphData(response.data);
       setUploadFile(uploadFile);
     }
   };
+
+  useEffect(() => {
+    const getGraph = async () => {
+      const response = await axiosInstance.get("/toki-api/analyze/graph");
+      setGraphData(response.data);
+    };
+    if (isLogined) getGraph();
+  }, [isLogined]);
 
   if (!graphData)
     return (
@@ -56,15 +74,25 @@ const LampGraph = () => {
               일반적으로 용량이 제일 큰 파일이 현재 사용 중인 파일입니다.
             </Typography>
           </Box>
-          <Button
-            variant="contained"
-            component="label"
-            sx={{ borderRadius: 10 }}
-          >
-            <input type="file" accept=".db" onChange={onChangeFile} hidden />
-            <AddIcon sx={{ mr: 1 }} />
-            업로드
-          </Button>
+          {isLogined ? (
+            <CommonButton>
+              <input type="file" accept=".db" onChange={onChangeFile} hidden />
+              <AddIcon sx={{ mr: 1 }} />
+              업로드
+            </CommonButton>
+          ) : (
+            <CommonButton
+              onClick={async () => {
+                const response = await axios.get(
+                  "/toki-api/auth/discord/oauth-url"
+                );
+                router.push(response.data.oauth_url);
+              }}
+            >
+              <PersonIcon sx={{ mr: 1 }} />
+              로그인이 필요합니다.
+            </CommonButton>
+          )}
         </Box>
         <BarChartSkeleton />
       </>
@@ -163,5 +191,11 @@ const LampGraph = () => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
 
 export default LampGraph;

@@ -1,7 +1,13 @@
-import { Box } from "@mui/material";
+import DifficultyTable from "~/pages/table";
 
 const Main = () => {
-  return <Box></Box>;
+  return <DifficultyTable></DifficultyTable>;
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
 
 export default Main;

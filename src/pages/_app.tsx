@@ -1,9 +1,13 @@
 import { Box, CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { AppProps } from "next/app";
+import axios from "axios";
+import type { AppContext, AppProps } from "next/app";
+import App from "next/app";
 import Head from "next/head";
 import { NextPage } from "next/types";
 import { useEffect, useMemo, useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import AppWrapper from "~/layout/AppWrapper";
 import Header from "~/layout/header";
 
 function MyApp({
@@ -14,6 +18,19 @@ function MyApp({
     getLayout?: (page: React.ReactElement) => React.ReactNode;
   };
 }) {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+            refetchOnMount: true,
+            refetchOnReconnect: true,
+          },
+        },
+      })
+  );
+
   const [mode, setMode] = useState<PaletteMode>("light");
 
   useEffect(() => {
@@ -35,23 +52,88 @@ function MyApp({
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <Head>
-        <title>Asuma Toki</title>
-      </Head>
-      <CssBaseline />
-      <Header
-        mode={mode}
-        setMode={() => {
-          setMode(mode === "light" ? "dark" : "light");
-          localStorage.setItem("theme", mode === "light" ? "dark" : "light");
-        }}
-      />
-      <Box sx={{ mt: "6.3rem", ml: "7%", mr: "7%" }}>
-        <Component {...pageProps} />
-      </Box>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <Head>
+          <title>Asuma Toki</title>
+        </Head>
+        <CssBaseline />
+        <AppWrapper user={pageProps.user}>
+          <Header
+            mode={mode}
+            setMode={() => {
+              setMode(mode === "light" ? "dark" : "light");
+              localStorage.setItem(
+                "theme",
+                mode === "light" ? "dark" : "light"
+              );
+            }}
+          />
+          <Box sx={{ mt: "6.3rem", ml: "7%", mr: "7%" }}>
+            <Component {...pageProps} />
+          </Box>
+        </AppWrapper>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
+
+MyApp.getInitialProps = async (context: AppContext) => {
+  const isDevelopmentEnv = process.env.NODE_ENV === "development";
+
+  let pageProps = {};
+  pageProps = await App.getInitialProps(context);
+
+  if (context.ctx.req) {
+    try {
+      const requestURI = isDevelopmentEnv
+        ? "http://localhost:9999"
+        : "http://132.226.226.167:9999";
+      const result = await axios.get(
+        `${requestURI}/toki-api/auth/user/refresh`,
+        {
+          headers: context.ctx.req.headers.cookie
+            ? { cookie: context.ctx.req.headers.cookie }
+            : undefined,
+          withCredentials: true,
+        }
+      );
+
+      const accessToken = result.data?.accessToken;
+
+      if (accessToken) {
+        try {
+          const result = await axios.get(
+            `${requestURI}/toki-api/auth/user/check-user`,
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          );
+
+          return {
+            pageProps: {
+              ...pageProps,
+              user: {
+                ...result.data.user,
+              },
+            },
+          };
+        } catch (error) {
+          console.error("Error on checkUser");
+        }
+      }
+    } catch (err) {
+      console.error("No Access Token");
+    }
+  }
+
+  return {
+    pageProps: {
+      ...pageProps,
+    },
+  };
+};
 
 export default MyApp;

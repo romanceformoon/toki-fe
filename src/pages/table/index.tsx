@@ -199,4 +199,10 @@ const DifficultyTable = () => {
   );
 };
 
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
+
 export default DifficultyTable;
