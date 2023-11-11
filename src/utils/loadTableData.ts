@@ -1,6 +1,9 @@
-import TableData from "~/utils/TableData/data.json";
+import axios from "axios";
 
-export const loadTableData = () => {
+export const loadTableData = async () => {
+  const data = await axios.get("/data/aery/data.json");
+  const tableData = data.data;
+
   const levelList: ILevelList = {
     "LEVEL 1": [],
     "LEVEL 2": [],
@@ -25,19 +28,19 @@ export const loadTableData = () => {
     "LEVEL DUMMY": [],
   };
 
-  for (let i = 0; i < TableData.length; i++) {
-    const level = TableData[i].level;
-    const title = TableData[i].title;
-    const artist = TableData[i].artist;
-    const md5 = TableData[i].md5;
-    const org_level = TableData[i].org_level;
-    const folder = TableData[i].folder;
-    const url = TableData[i].url;
-    const url_diff = TableData[i].url_diff;
-    const org_md5s = TableData[i].org_md5s;
-    const org_md5 = TableData[i].org_md5;
-    const comment = TableData[i].comment;
-    const adddate = TableData[i].adddate;
+  for (let i = 0; i < tableData.length; i++) {
+    const level = tableData[i].level;
+    const title = tableData[i].title;
+    const artist = tableData[i].artist;
+    const md5 = tableData[i].md5;
+    const org_level = tableData[i].org_level;
+    const folder = tableData[i].folder;
+    const url = tableData[i].url;
+    const url_diff = tableData[i].url_diff;
+    const org_md5s = tableData[i].org_md5s;
+    const org_md5 = tableData[i].org_md5;
+    const comment = tableData[i].comment;
+    const adddate = tableData[i].adddate;
 
     levelList[level].push({
       level,
