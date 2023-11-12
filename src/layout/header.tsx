@@ -27,7 +27,6 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
       <Toolbar disableGutters sx={{ ml: "7%", mr: "7%" }}>
         <Logo />
         <MobileMenu pages={pages} />
-        {/* <MobileLogo /> */}
         <DesktopRoute pages={pages} />
 
         <IconButton

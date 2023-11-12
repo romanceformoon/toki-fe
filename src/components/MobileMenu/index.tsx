@@ -1,5 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, IconButton, Menu, MenuItem } from "@mui/material";
+import { Avatar, Box, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -64,6 +64,27 @@ export const MobileMenu = ({ pages }: IMenuProps) => {
           </MenuItem>
         ))}
       </Menu>
+      <Button
+        sx={{
+          color: "white",
+          display: { xs: "flex" },
+        }}
+        onClick={() => {
+          router.push("/");
+        }}
+      >
+        <Avatar
+          sx={{
+            mr: "0.6rem",
+            justifyContent: "center",
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+          alt="logo"
+          src="/assets/images/logo.png"
+        />
+      </Button>
     </Box>
   );
 };
