@@ -52,7 +52,9 @@ const LampGraph = () => {
 
   useEffect(() => {
     const getGraph = async () => {
-      const response = await axiosInstance.get("/toki-api/analyze/graph");
+      const response = await axiosInstance.get(
+        `/toki-api/analyze/graph/${uid}`
+      );
       setGraphData(response.data);
     };
     if (isLogined) getGraph();
