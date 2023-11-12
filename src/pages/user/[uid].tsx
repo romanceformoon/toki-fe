@@ -197,7 +197,7 @@ const UserPage = () => {
             <Tooltip
               title={`${userExp ? userExp : 0} / ${(
                 (userExp ? userExp : 0) +
-                (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 * 3
+                (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 * 4
               ).toFixed(0)}`}
             >
               <LinearProgress
@@ -211,7 +211,7 @@ const UserPage = () => {
                   ((userExp ? userExp : 0) /
                     ((userExp ? userExp : 0) +
                       (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 *
-                        3)) *
+                        4)) *
                   100
                 }
               />
