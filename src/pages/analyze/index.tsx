@@ -3,12 +3,12 @@ import PersonIcon from "@mui/icons-material/Person";
 import { Box, Button, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import axios from "axios";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { CommonButton } from "~/components/CommonButton";
+import { HeadMeta } from "~/components/HeadMeta";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
 
@@ -103,9 +103,12 @@ const LampGraph = () => {
 
   return (
     <>
-      <Head>
-        <title>Analyze | Asuma Toki</title>
-      </Head>
+      <HeadMeta
+        title="Analyze | Asuma Toki"
+        description="BMS Score Analyze"
+        url="https://asumatoki.kr/analyze"
+        image="/assets/images/logo.png"
+      />
 
       <Box sx={{ textAlign: "center" }}>
         <Box sx={{ mb: 1 }}>

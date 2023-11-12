@@ -66,9 +66,6 @@ function MyApp({
             content="Asuma Toki - BMS Table, Score Analyze"
           />
           <meta name="robots" content="index, follow" />
-          <meta property="og:title" content="Asuma Toki" />
-          <meta property="og:url" content="https://asumatoki.kr" />
-          <meta property="og:image" content="/assets/images/logo.png" />
         </Head>
         <CssBaseline />
         <AppWrapper user={pageProps.user}>

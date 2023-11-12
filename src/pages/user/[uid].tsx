@@ -3,11 +3,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
 import { Avatar, Box, IconButton, TextField, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
+import { HeadMeta } from "~/components/HeadMeta";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
 const UserPage = () => {
@@ -64,15 +64,16 @@ const UserPage = () => {
 
   return (
     <>
-      <Head>
-        <title>{userNickname} | Asuma Toki</title>
-        <meta property="og:title" content={`${userNickname} | Asuma Toki`} />
-        <meta property="og:url" content={`https://asumatoki.kr/user/${uid}`} />
-        <meta
-          property="og:image"
-          content={`https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`}
-        />
-      </Head>
+      <HeadMeta
+        title={`${userNickname} | Asuma Toki`}
+        description={`${userNickname} Profile`}
+        url={`https://asumatoki.kr/user/${uid}`}
+        image={
+          userAvatar
+            ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+            : "/assets/images/logo.png"
+        }
+      />
 
       <Box sx={{ textAlign: "center" }}>
         <Box sx={{ mb: 1 }}>
@@ -80,7 +81,11 @@ const UserPage = () => {
             <Avatar
               alt="Profile Image"
               sx={{ height: "70px", width: "70px" }}
-              src={`https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`}
+              src={
+                userAvatar
+                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                  : undefined
+              }
             />
           </Box>
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>

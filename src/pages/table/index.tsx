@@ -11,9 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { HeadMeta } from "~/components/HeadMeta";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
 
@@ -39,10 +39,13 @@ const DifficultyTable = () => {
 
   return (
     <>
-      <Head>
-        <title>Table | Asuma Toki</title>
-      </Head>
-      
+      <HeadMeta
+        title="Table | Asuma Toki"
+        description="BMS Table"
+        url="https://asumatoki.kr/table"
+        image="/assets/images/logo.png"
+      />
+
       <SelectLevel
         selectedLevel={selectedLevel}
         handleChange={handleChange}
@@ -207,7 +210,7 @@ const DifficultyTable = () => {
 export async function getServerSideProps() {
   return {
     props: {
-      title: "Table"
+      title: "Table",
     },
   };
 }
