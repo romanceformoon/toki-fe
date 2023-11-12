@@ -37,7 +37,7 @@ const LampGraph = () => {
       const formData = new FormData();
       formData.append("db", dbFile);
       const response = await axiosInstance.post(
-        `/toki-api/analyze/graph/${uid}`,
+        `/toki-api/analyze/graph`,
         formData,
         {
           headers: {
