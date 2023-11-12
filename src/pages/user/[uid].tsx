@@ -8,8 +8,10 @@ import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { HeadMeta } from "~/components/HeadMeta";
+import { UserNickname } from "~/components/UserNickname";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
+
 const UserPage = () => {
   const router = useRouter();
 
@@ -20,17 +22,17 @@ const UserPage = () => {
   const [graphData, setGraphData] = useState<IGraphResult>();
   const [userNickname, setUserNickname] = useState<string>("");
   const [userAvatar, setUserAvatar] = useState<string>("");
+  const [userDan, setUserDan] = useState<IDan>("None");
 
   useEffect(() => {
-    const getGraph = async () => {
-      const response = await axiosInstance.get(
-        `/toki-api/analyze/graph/${uid}`
-      );
+    const getUserData = async () => {
+      const response = await axiosInstance.get(`/toki-api/analyze/user/${uid}`);
       setGraphData(response.data.graph);
       setUserNickname(response.data.nickname);
       setUserAvatar(response.data.avatar);
+      setUserDan(response.data.clearDan);
     };
-    getGraph();
+    getUserData();
   }, [uid]);
 
   const [changeNickname, setChangeNickname] = useState<boolean>(false);
@@ -91,9 +93,14 @@ const UserPage = () => {
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             {!changeNickname ? (
               <>
-                <Typography fontSize="24px" fontWeight={700}>
-                  {userNickname}
-                </Typography>
+                {userDan === "None" ? (
+                  <Typography fontSize="24px" fontWeight={700}>
+                    {userNickname}
+                  </Typography>
+                ) : (
+                  <UserNickname clearDan={userDan}>{userNickname}</UserNickname>
+                )}
+
                 {isLogined && loginUid === uid ? (
                   <IconButton
                     onClick={() => {
