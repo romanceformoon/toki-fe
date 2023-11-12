@@ -14,7 +14,7 @@ import axiosInstance from "~/utils/axiosInstance";
 const LampGraph = () => {
   const router = useRouter();
 
-  const { isLogined } = useLoginUser();
+  const { isLogined, uid } = useLoginUser();
 
   const [uploadFile, setUploadFile] = useState<File>();
   const [graphData, setGraphData] = useState<IGraphResult>();
@@ -37,7 +37,7 @@ const LampGraph = () => {
       const formData = new FormData();
       formData.append("db", dbFile);
       const response = await axiosInstance.post(
-        "/toki-api/analyze/graph",
+        `/toki-api/analyze/graph/${uid}`,
         formData,
         {
           headers: {
