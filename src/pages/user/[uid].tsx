@@ -7,6 +7,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
+import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
 const UserPage = () => {
@@ -39,12 +40,38 @@ const UserPage = () => {
     setInputNickname(e.target.value);
   };
 
-  if (!graphData) return <>Not Found</>;
+  if (!graphData)
+    return (
+      <>
+        <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ mb: 1 }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+              <Avatar
+                alt={userNickname}
+                sx={{ height: "70px", width: "70px" }}
+              />
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+              <Typography fontSize="24px" fontWeight={700}>
+                {userNickname}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+        <BarChartSkeleton />
+      </>
+    );
 
   return (
     <>
       <Head>
         <title>{userNickname} | Asuma Toki</title>
+        <meta property="og:title" content={`${userNickname} | Asuma Toki`} />
+        <meta property="og:url" content={`https://asumatoki.kr/user/${uid}`} />
+        <meta
+          property="og:image"
+          content={`https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`}
+        />
       </Head>
 
       <Box sx={{ textAlign: "center" }}>
