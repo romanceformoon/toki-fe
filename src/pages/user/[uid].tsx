@@ -2,7 +2,6 @@ import { Avatar, Box, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
@@ -10,7 +9,6 @@ import axiosInstance from "~/utils/axiosInstance";
 const UserPage = () => {
   const router = useRouter();
 
-  const { isLogined } = useLoginUser();
   const uid = router.query.uid;
 
   const [graphData, setGraphData] = useState<IGraphResult>();
@@ -26,8 +24,8 @@ const UserPage = () => {
       setUserNickname(response.data.nickname);
       setUserAvatar(response.data.avatar);
     };
-    if (isLogined) getGraph();
-  }, [isLogined, uid]);
+    getGraph();
+  }, [uid]);
 
   if (!graphData)
     return (
