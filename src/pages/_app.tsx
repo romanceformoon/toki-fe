@@ -56,6 +56,10 @@ function MyApp({
       <ThemeProvider theme={theme}>
         <Head>
           <title>Asuma Toki</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
         </Head>
         <CssBaseline />
         <AppWrapper user={pageProps.user}>

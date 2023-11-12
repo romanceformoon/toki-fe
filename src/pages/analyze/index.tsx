@@ -3,6 +3,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import { Box, Button, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
@@ -102,6 +103,10 @@ const LampGraph = () => {
 
   return (
     <>
+      <Head>
+        <title>Analyze | Asuma Toki</title>
+      </Head>
+
       <Box sx={{ textAlign: "center" }}>
         <Box sx={{ mb: 1 }}>
           <Typography fontWeight={500}>
