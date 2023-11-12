@@ -55,10 +55,10 @@ const LampGraph = () => {
       const response = await axiosInstance.get(
         `/toki-api/analyze/graph/${uid}`
       );
-      setGraphData(response.data);
+      setGraphData(response.data.graph);
     };
     if (isLogined) getGraph();
-  }, [isLogined]);
+  }, [isLogined, uid]);
 
   if (!graphData)
     return (

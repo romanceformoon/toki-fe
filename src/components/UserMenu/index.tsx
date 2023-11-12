@@ -54,7 +54,14 @@ export const UserMenu = () => {
         onClose={handleCloseUserMenu}
       >
         <MenuItem key={"profile"} onClick={handleCloseUserMenu}>
-          <Typography textAlign="center">프로필</Typography>
+          <Typography
+            textAlign="center"
+            onClick={async () => {
+              router.push(`/user/${uid}`);
+            }}
+          >
+            프로필
+          </Typography>
         </MenuItem>
         <MenuItem key={"logout"} onClick={handleCloseUserMenu}>
           <Typography
