@@ -1,7 +1,15 @@
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
-import { Avatar, Box, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  IconButton,
+  LinearProgress,
+  TextField,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -23,7 +31,10 @@ const UserPage = () => {
   const [userNickname, setUserNickname] = useState<string>("");
   const [userAvatar, setUserAvatar] = useState<string>("");
   const [userDan, setUserDan] = useState<IDan>("None");
+  const [userExp, setUserExp] = useState<number>(0);
+  const [userLevel, setUserLevel] = useState<number>(1);
 
+  // https://sanctacrux.tistory.com/1107
   useEffect(() => {
     const getUserData = async () => {
       const response = await axiosInstance.get(`/toki-api/analyze/user/${uid}`);
@@ -31,6 +42,12 @@ const UserPage = () => {
       setUserNickname(response.data.nickname);
       setUserAvatar(response.data.avatar);
       setUserDan(response.data.clearDan);
+      setUserExp(response.data.exp);
+      setUserLevel(
+        (((response.data.exp ? response.data.exp : 0) / 10 / 4) ** 0.4 * 49) /
+          50 +
+          1
+      );
     };
     getUserData();
   }, [uid]);
@@ -45,12 +62,27 @@ const UserPage = () => {
   if (!graphData)
     return (
       <>
+        <HeadMeta
+          title={`${userNickname} | Asuma Toki`}
+          description={`${userNickname} Profile`}
+          url={`https://asumatoki.kr/user/${uid}`}
+          image={
+            userAvatar
+              ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+              : "/assets/images/logo.png"
+          }
+        />
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: 1 }}>
             <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
               <Avatar
-                alt={userNickname}
+                alt="Profile Image"
                 sx={{ height: "70px", width: "70px" }}
+                src={
+                  userAvatar
+                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                    : undefined
+                }
               />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
@@ -90,6 +122,7 @@ const UserPage = () => {
               }
             />
           </Box>
+
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             {!changeNickname ? (
               <>
@@ -147,6 +180,42 @@ const UserPage = () => {
                 </IconButton>
               </>
             )}
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+            <Typography fontSize="18px" fontWeight={700}>
+              Level: {userLevel.toFixed(0)}
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Tooltip
+              title={`${userExp ? userExp : 0} / ${(
+                (userExp ? userExp : 0) +
+                (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 * 3
+              ).toFixed(0)}`}
+            >
+              <LinearProgress
+                variant="determinate"
+                sx={{
+                  height: 20,
+                  width: "50%",
+                  borderRadius: 5,
+                }}
+                value={
+                  ((userExp ? userExp : 0) /
+                    ((userExp ? userExp : 0) +
+                      (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 *
+                        3)) *
+                  100
+                }
+              />
+            </Tooltip>
           </Box>
         </Box>
       </Box>
