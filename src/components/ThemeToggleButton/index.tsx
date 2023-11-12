@@ -1,6 +1,6 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { PaletteMode, ToggleButton } from "@mui/material";
+import { PaletteMode, ToggleButton, Tooltip } from "@mui/material";
 
 interface IToggleProps {
   mode: PaletteMode;
@@ -16,11 +16,15 @@ export const ThemeToggleButton = ({ mode, setMode }: IToggleProps) => {
     >
       {mode === "light" ? (
         <>
-          <DarkModeIcon aria-label="darkMoon" />
+          <Tooltip title="다크 모드 설정">
+            <DarkModeIcon aria-label="darkMoon" />
+          </Tooltip>
         </>
       ) : (
         <>
-          <LightModeIcon aria-label="lightSun" />
+          <Tooltip title="라이트 모드 설정">
+            <LightModeIcon aria-label="lightSun" />
+          </Tooltip>
         </>
       )}
     </ToggleButton>

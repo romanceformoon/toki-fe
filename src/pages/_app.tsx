@@ -112,6 +112,8 @@ MyApp.getInitialProps = async (context: AppContext) => {
             }
           );
 
+          console.log(result.data.user);
+
           return {
             pageProps: {
               ...pageProps,

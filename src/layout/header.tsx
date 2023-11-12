@@ -1,14 +1,20 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-import { AppBar, IconButton, PaletteMode, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  IconButton,
+  PaletteMode,
+  Toolbar,
+  Tooltip,
+} from "@mui/material";
 import { useRouter } from "next/router";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { DesktopRoute } from "~/components/DesktopRoute";
 import { LoginButton } from "~/components/LoginButton";
 import { Logo } from "~/components/Logo";
-import { LogoutButton } from "~/components/LogoutButton";
 import { MobileMenu } from "~/components/MobileMenu";
 import { ThemeToggleButton } from "~/components/ThemeToggleButton";
+import { UserMenu } from "~/components/UserMenu";
 
 interface IHeaderProps {
   mode: PaletteMode;
@@ -32,10 +38,13 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
         <IconButton
           onClick={() => router.push("https://github.com/romanceformoon")}
         >
-          <GitHubIcon />
+          <Tooltip title="Github">
+            <GitHubIcon />
+          </Tooltip>
         </IconButton>
+
         <ThemeToggleButton mode={mode} setMode={setMode} />
-        {!isLogined ? <LoginButton /> : <LogoutButton />}
+        {!isLogined ? <LoginButton /> : <UserMenu />}
       </Toolbar>
     </AppBar>
   );
