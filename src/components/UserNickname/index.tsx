@@ -1,12 +1,17 @@
-import { Tooltip, Typography } from "@mui/material";
+import { Paper, Tooltip, Typography } from "@mui/material";
 import { ReactNode, useEffect, useState } from "react";
 
 interface IUserNicknameProps {
   clearDan: IDan;
   children: ReactNode;
+  onClick?: () => void;
 }
 
-export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
+export const UserNickname = ({
+  clearDan,
+  children,
+  onClick,
+}: IUserNicknameProps) => {
   const [color, setColor] = useState({
     start: "#000000",
     end: "#000000 ",
@@ -75,20 +80,47 @@ export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
       });
   }, [clearDan]);
 
+  if (clearDan === "None")
+    return (
+      <Paper
+        component="label"
+        onClick={onClick}
+        sx={{
+          "&:hover": {
+            cursor: "pointer",
+          },
+        }}
+      >
+        <Typography fontSize="24px" fontWeight={700}>
+          {children}
+        </Typography>
+      </Paper>
+    );
+
   return (
     <Tooltip title={clearDan}>
-      <Typography
+      <Paper
+        component="label"
+        onClick={onClick}
         sx={{
-          textShadow: `${color.start} 1px 0 4px`,
-          background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 100%)`,
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
+          "&:hover": {
+            cursor: "pointer",
+          },
         }}
-        fontSize="24px"
-        fontWeight={700}
       >
-        {children}
-      </Typography>
+        <Typography
+          sx={{
+            textShadow: `${color.start} 1px 0 4px`,
+            background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 100%)`,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          fontSize="24px"
+          fontWeight={700}
+        >
+          {children}
+        </Typography>
+      </Paper>
     </Tooltip>
   );
 };

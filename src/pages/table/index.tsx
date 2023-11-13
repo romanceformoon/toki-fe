@@ -221,9 +221,7 @@ const DifficultyTable = () => {
 
 export async function getServerSideProps() {
   return {
-    props: {
-      title: "Table",
-    },
+    props: {},
   };
 }
 

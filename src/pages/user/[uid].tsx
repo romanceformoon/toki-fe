@@ -16,7 +16,6 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
-import { HeadMeta } from "~/components/HeadMeta";
 import { UserNickname } from "~/components/UserNickname";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
@@ -107,15 +106,25 @@ const UserPage = () => {
 
   return (
     <>
-      <HeadMeta
+      <NextSeo
         title={`${userNickname} | Asuma Toki`}
         description={`${userNickname} Profile`}
-        url={`https://asumatoki.kr/user/${uid}`}
-        image={
-          userAvatar
-            ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
-            : "/assets/images/logo.png"
-        }
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: `https://asumatoki.kr/user/${uid}`,
+          title: `${userNickname} | Asuma Toki`,
+          description: `${userNickname} Profile`,
+          images: [
+            {
+              url: userAvatar
+                ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                : "/assets/images/logo.png",
+              width: 400,
+              height: 400,
+            },
+          ],
+        }}
       />
 
       <Box sx={{ textAlign: "center" }}>

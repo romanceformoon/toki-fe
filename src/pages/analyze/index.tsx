@@ -33,15 +33,11 @@ const LampGraph = () => {
 
       const formData = new FormData();
       formData.append("db", dbFile);
-      const response = await axiosInstance.post(
-        `/toki-api/analyze/graph`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axiosInstance.post(`/toki-api/analyze`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setUploadFile(uploadFile);
       router.push(`/user/${uid}`);
     }
@@ -68,7 +64,9 @@ const LampGraph = () => {
         }}
       />
 
-      <Box sx={{ textAlign: "center" }}>
+      <Box
+        sx={{ bgcolor: "background.paper", pt: 8, pb: 6, textAlign: "center" }}
+      >
         <Box sx={{ mb: 1 }}>
           <Typography fontWeight={500}>
             LR2files/Database/Score 경로에 있는
