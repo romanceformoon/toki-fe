@@ -55,15 +55,9 @@ function MyApp({
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Head>
-          <title>Asuma Toki</title>
-          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
-          />
-          <meta
-            name="description"
-            content="Asuma Toki - BMS Table, Score Analyze"
           />
           <meta name="robots" content="index, follow" />
         </Head>

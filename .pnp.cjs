@@ -41,6 +41,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
+          ["next-seo", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:18.2.0"],\
@@ -3683,6 +3684,36 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["next-seo", [\
+      ["npm:6.4.0", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/next-seo-npm-6.4.0-53000c899b-10c0.zip/node_modules/next-seo/",\
+        "packageDependencies": [\
+          ["next-seo", "npm:6.4.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0", {\
+        "packageLocation": "./.yarn/__virtual__/next-seo-virtual-b2d37c645c/5/C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/next-seo-npm-6.4.0-53000c899b-10c0.zip/node_modules/next-seo/",\
+        "packageDependencies": [\
+          ["next-seo", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0"],\
+          ["@types/next", null],\
+          ["@types/react", "npm:18.2.37"],\
+          ["@types/react-dom", "npm:18.2.15"],\
+          ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/next",\
+          "@types/react-dom",\
+          "@types/react",\
+          "next",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["object-assign", [\
       ["npm:4.1.1", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/object-assign-npm-4.1.1-1004ad6dec-10c0.zip/node_modules/object-assign/",\
@@ -4560,6 +4591,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
+          ["next-seo", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:18.2.0"],\

@@ -30,8 +30,8 @@ export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
       });
     else if (clearDan === "4 DAN")
       setColor({
-        start: "#800080",
-        end: "#ffc0cb ",
+        start: "#ff9966",
+        end: "#ff5e62 ",
       });
     else if (clearDan === "5 DAN")
       setColor({
@@ -45,8 +45,8 @@ export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
       });
     else if (clearDan === "7 DAN")
       setColor({
-        start: "#6D6027",
-        end: "#D3CBB8 ",
+        start: "#642B73",
+        end: "#C6426E ",
       });
     else if (clearDan === "8 DAN")
       setColor({
@@ -55,13 +55,13 @@ export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
       });
     else if (clearDan === "9 DAN")
       setColor({
-        start: "#22c1c3",
-        end: "#fdbb2d ",
+        start: "#1c92d2",
+        end: "#f2fcfe ",
       });
     else if (clearDan === "10 DAN")
       setColor({
-        start: "#ff9966",
-        end: "#ff5e62 ",
+        start: "#000000",
+        end: "#0f9b0f ",
       });
     else if (clearDan === "KAIDEN DAN")
       setColor({
@@ -80,7 +80,7 @@ export const UserNickname = ({ clearDan, children }: IUserNicknameProps) => {
       <Typography
         sx={{
           textShadow: `${color.start} 1px 0 4px`,
-          background: `-webkit-linear-gradient(45deg, ${color.start} 100%, ${color.end} 100%)`,
+          background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 100%)`,
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}

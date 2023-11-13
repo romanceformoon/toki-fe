@@ -1,14 +1,26 @@
 import { Box } from "@mui/material";
-import { HeadMeta } from "~/components/HeadMeta";
+import { NextSeo } from "next-seo";
 
 const Main = () => {
   return (
     <>
-      <HeadMeta
+      <NextSeo
         title="Asuma Toki"
         description="Asuma Toki - BMS Table, Score Analyze"
-        url="https://asumatoki.kr"
-        image="/assets/images/logo.png"
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: "https://asumatoki.kr",
+          title: "Asuma Toki",
+          description: "Asuma Toki - BMS Table, Score Analyze",
+          images: [
+            {
+              url: "/assets/images/logo.png",
+              width: 400,
+              height: 400,
+            },
+          ],
+        }}
       />
 
       <Box>메인 화면 공사 중</Box>

@@ -2,11 +2,11 @@ import AddIcon from "@mui/icons-material/Add";
 import PersonIcon from "@mui/icons-material/Person";
 import { Box, Typography } from "@mui/material";
 import axios from "axios";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { CommonButton } from "~/components/CommonButton";
-import { HeadMeta } from "~/components/HeadMeta";
 import axiosInstance from "~/utils/axiosInstance";
 
 const LampGraph = () => {
@@ -49,12 +49,25 @@ const LampGraph = () => {
 
   return (
     <>
-      <HeadMeta
+      <NextSeo
         title="Analyze | Asuma Toki"
         description="BMS Score Analyze"
-        url="https://asumatoki.kr/analyze"
-        image="/assets/images/logo.png"
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: "https://asumatoki.kr/analyze",
+          title: "Analyze | Asuma Toki",
+          description: "BMS Score Analyze",
+          images: [
+            {
+              url: "/assets/images/logo.png",
+              width: 400,
+              height: 400,
+            },
+          ],
+        }}
       />
+
       <Box sx={{ textAlign: "center" }}>
         <Box sx={{ mb: 1 }}>
           <Typography fontWeight={500}>

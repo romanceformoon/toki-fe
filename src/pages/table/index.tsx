@@ -11,9 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { HeadMeta } from "~/components/HeadMeta";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
 
@@ -39,11 +39,23 @@ const DifficultyTable = () => {
 
   return (
     <>
-      <HeadMeta
+      <NextSeo
         title="Table | Asuma Toki"
         description="BMS Table"
-        url="https://asumatoki.kr/table"
-        image="/assets/images/logo.png"
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: "https://asumatoki.kr/table",
+          title: "Table | Asuma Toki",
+          description: "BMS Table",
+          images: [
+            {
+              url: "/assets/images/logo.png",
+              width: 400,
+              height: 400,
+            },
+          ],
+        }}
       />
 
       <SelectLevel

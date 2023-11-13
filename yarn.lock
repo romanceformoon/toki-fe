@@ -2827,6 +2827,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-seo@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "next-seo@npm:6.4.0"
+  peerDependencies:
+    next: ^8.1.1-canary.54 || >=9.0.0
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: 8836b84b872bee58d34cad895b0142be193bd95881cfca3f75b3b3aad67bf4542ac0a27e2285791ef6640fe808f95f01820bab167fbd26408466844c435fbdfb
+  languageName: node
+  linkType: hard
+
 "next@npm:^14.0.2":
   version: 14.0.2
   resolution: "next@npm:14.0.2"
@@ -3638,6 +3649,7 @@ __metadata:
     eslint: "npm:^8"
     eslint-config-next: "npm:14.0.1"
     next: "npm:^14.0.2"
+    next-seo: "npm:^6.4.0"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"

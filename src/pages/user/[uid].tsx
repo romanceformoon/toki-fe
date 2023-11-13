@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
@@ -19,6 +20,7 @@ import { HeadMeta } from "~/components/HeadMeta";
 import { UserNickname } from "~/components/UserNickname";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
+import { getExpBar, getLevel, getNextExp } from "~/utils/exp";
 
 const UserPage = () => {
   const router = useRouter();
@@ -43,11 +45,7 @@ const UserPage = () => {
       setUserAvatar(response.data.avatar);
       setUserDan(response.data.clearDan);
       setUserExp(response.data.exp);
-      setUserLevel(
-        (((response.data.exp ? response.data.exp : 0) / 10 / 4) ** 0.4 * 49) /
-          50 +
-          1
-      );
+      setUserLevel(getLevel(response.data.exp));
     };
     getUserData();
   }, [uid]);
@@ -62,16 +60,27 @@ const UserPage = () => {
   if (!graphData)
     return (
       <>
-        <HeadMeta
+        <NextSeo
           title={`${userNickname} | Asuma Toki`}
           description={`${userNickname} Profile`}
-          url={`https://asumatoki.kr/user/${uid}`}
-          image={
-            userAvatar
-              ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
-              : "/assets/images/logo.png"
-          }
+          openGraph={{
+            type: "website",
+            locale: "ko_KR",
+            url: `https://asumatoki.kr/user/${uid}`,
+            title: `${userNickname} | Asuma Toki`,
+            description: `${userNickname} Profile`,
+            images: [
+              {
+                url: userAvatar
+                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                  : "/assets/images/logo.png",
+                width: 400,
+                height: 400,
+              },
+            ],
+          }}
         />
+
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: 1 }}>
             <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
@@ -194,12 +203,7 @@ const UserPage = () => {
               justifyContent: "center",
             }}
           >
-            <Tooltip
-              title={`${userExp ? userExp : 0} / ${(
-                (userExp ? userExp : 0) +
-                (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 * 4
-              ).toFixed(0)}`}
-            >
+            <Tooltip title={`${userExp} / ${getNextExp(userExp)}`}>
               <LinearProgress
                 variant="determinate"
                 sx={{
@@ -207,13 +211,7 @@ const UserPage = () => {
                   width: "50%",
                   borderRadius: 5,
                 }}
-                value={
-                  ((userExp ? userExp : 0) /
-                    ((userExp ? userExp : 0) +
-                      (parseInt(userLevel.toFixed(0)) - (1 * 50) / 49) ** 2.5 *
-                        4)) *
-                  100
-                }
+                value={getExpBar(userExp)}
               />
             </Tooltip>
           </Box>

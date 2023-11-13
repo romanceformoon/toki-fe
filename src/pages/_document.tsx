@@ -23,6 +23,7 @@ class MyDocument extends Document {
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
           />
           <link rel="icon" href="/favicon.ico" sizes="any" />
+          <meta charSet="utf-8" />
         </Head>
         <body>
           <Main />
