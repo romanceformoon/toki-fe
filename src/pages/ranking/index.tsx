@@ -74,6 +74,7 @@ const Ranking = () => {
                   fontSize="24px"
                   fontWeight="900"
                   fontStyle={{ color: "primary.main" }}
+                  textAlign="center"
                 >
                   순위
                 </Typography>
@@ -113,7 +114,11 @@ const Ranking = () => {
                 <>
                   <TableRow>
                     <TableCell key={data.uid}>
-                      <Typography fontSize="24px" fontWeight="500">
+                      <Typography
+                        fontSize="24px"
+                        fontWeight="500"
+                        align="center"
+                      >
                         {idx + 1}
                       </Typography>
                     </TableCell>
