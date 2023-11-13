@@ -74,7 +74,6 @@ const Ranking = () => {
                   fontSize="24px"
                   fontWeight="900"
                   fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
                 >
                   순위
                 </Typography>
@@ -84,7 +83,6 @@ const Ranking = () => {
                   fontSize="24px"
                   fontWeight="900"
                   fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
                 >
                   닉네임
                 </Typography>
@@ -94,7 +92,6 @@ const Ranking = () => {
                   fontSize="24px"
                   fontWeight="900"
                   fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
                 >
                   레벨
                 </Typography>
@@ -104,7 +101,6 @@ const Ranking = () => {
                   fontSize="24px"
                   fontWeight="900"
                   fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
                 >
                   경험치
                 </Typography>
@@ -116,31 +112,29 @@ const Ranking = () => {
               return (
                 <>
                   <TableRow>
-                    <TableCell key={data.uid} align="center">
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="500"
-                        textAlign="center"
-                      >
+                    <TableCell key={data.uid}>
+                      <Typography fontSize="24px" fontWeight="500">
                         {idx + 1}
                       </Typography>
                     </TableCell>
-                    <TableCell key={data.uid} align="center">
+                    <TableCell key={data.uid}>
                       <Box
                         sx={{
+                          width: "10%",
                           display: "flex",
-                          justifyContent: "center",
                         }}
                       >
-                        <Avatar
-                          alt="Profile Image"
-                          sx={{ height: "50px", width: "50px", mr: 2 }}
-                          src={
-                            data.avatar
-                              ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}.png`
-                              : undefined
-                          }
-                        />
+                        <Box>
+                          <Avatar
+                            alt="Profile Image"
+                            sx={{ height: "50px", width: "50px", mr: 2 }}
+                            src={
+                              data.avatar
+                                ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}.png`
+                                : undefined
+                            }
+                          />
+                        </Box>
                         <Box
                           sx={{
                             padding: "4px 0",
@@ -155,21 +149,13 @@ const Ranking = () => {
                         </Box>
                       </Box>
                     </TableCell>
-                    <TableCell key={data.uid} align="center">
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="500"
-                        textAlign="center"
-                      >
+                    <TableCell key={data.uid}>
+                      <Typography fontSize="24px" fontWeight="500">
                         {getLevel(data.exp).toFixed(0)}
                       </Typography>
                     </TableCell>
-                    <TableCell key={data.uid} align="center">
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="500"
-                        textAlign="center"
-                      >
+                    <TableCell key={data.uid}>
+                      <Typography fontSize="24px" fontWeight="500">
                         {data.exp}
                       </Typography>
                     </TableCell>

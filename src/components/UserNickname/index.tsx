@@ -83,6 +83,7 @@ export const UserNickname = ({
   if (clearDan === "None")
     return (
       <Paper
+        elevation={0}
         component="label"
         onClick={onClick}
         sx={{
@@ -100,6 +101,7 @@ export const UserNickname = ({
   return (
     <Tooltip title={clearDan}>
       <Paper
+        elevation={0}
         component="label"
         onClick={onClick}
         sx={{
