@@ -92,7 +92,17 @@ export const UserNickname = ({
           },
         }}
       >
-        <Typography fontSize="24px" fontWeight={700}>
+        <Typography
+          fontSize="24px"
+          fontWeight={700}
+          sx={{
+            display: "inline-block",
+            width: 400,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
           {children}
         </Typography>
       </Paper>
@@ -116,6 +126,11 @@ export const UserNickname = ({
             background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 100%)`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            display: "inline-block",
+            width: 400,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
           fontSize="24px"
           fontWeight={700}
