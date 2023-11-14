@@ -20,6 +20,8 @@ import axiosInstance from "~/utils/axiosInstance";
 import { getLevel, getNextExp } from "~/utils/exp";
 
 const UserPage = ({
+  _uid,
+  avatar,
   nickname,
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
@@ -65,13 +67,13 @@ const UserPage = ({
           openGraph={{
             type: "website",
             locale: "ko_KR",
-            url: `https://asumatoki.kr/user/${uid}`,
+            url: `https://asumatoki.kr/user/${_uid}`,
             title: `${nickname} | Asuma Toki`,
             description: `${nickname} Profile`,
             images: [
               {
-                url: userAvatar
-                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                url: avatar
+                  ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}.png`
                   : "/assets/images/logo.png",
                 width: 400,
                 height: 400,
@@ -304,6 +306,8 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 
   return {
     props: {
+      _uid: uid,
+      avatar: result.data.avatar,
       nickname: result.data.nickname,
     },
   };
