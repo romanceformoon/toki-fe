@@ -1,16 +1,14 @@
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
-import {
-  Avatar,
-  Box,
-  IconButton,
-  LinearProgress,
-  TextField,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, IconButton, TextField, Typography } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
+import axios from "axios";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+} from "next";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -19,9 +17,11 @@ import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { UserNickname } from "~/components/UserNickname";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
-import { getExpBar, getLevel, getNextExp } from "~/utils/exp";
+import { getLevel, getNextExp } from "~/utils/exp";
 
-const UserPage = () => {
+const UserPage = ({
+  nickname,
+}: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
 
   const uid = router.query.uid;
@@ -60,14 +60,14 @@ const UserPage = () => {
     return (
       <>
         <NextSeo
-          title={`${userNickname} | Asuma Toki`}
-          description={`${userNickname} Profile`}
+          title={`${nickname} | Asuma Toki`}
+          description={`${nickname} Profile`}
           openGraph={{
             type: "website",
             locale: "ko_KR",
             url: `https://asumatoki.kr/user/${uid}`,
-            title: `${userNickname} | Asuma Toki`,
-            description: `${userNickname} Profile`,
+            title: `${nickname} | Asuma Toki`,
+            description: `${nickname} Profile`,
             images: [
               {
                 url: userAvatar
@@ -212,17 +212,9 @@ const UserPage = () => {
               justifyContent: "center",
             }}
           >
-            <Tooltip title={`${userExp} / ${getNextExp(userExp)}`}>
-              <LinearProgress
-                variant="determinate"
-                sx={{
-                  height: 20,
-                  width: "50%",
-                  borderRadius: 5,
-                }}
-                value={getExpBar(userExp)}
-              />
-            </Tooltip>
+            <Typography fontSize="15px" fontWeight={500}>
+              Exp: {userExp} / {getNextExp(userExp)}
+            </Typography>
           </Box>
         </Box>
       </Box>
@@ -299,9 +291,21 @@ const UserPage = () => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ query }: GetServerSidePropsContext) {
+  const { uid } = query;
+
+  const isDevelopmentEnv = process.env.NODE_ENV === "development";
+
+  const requestURI = isDevelopmentEnv
+    ? process.env.NEXT_PUBLIC_DEV
+    : process.env.NEXT_PUBLIC_PROD;
+
+  const result = await axios.get(`${requestURI}/toki-api/analyze/user/${uid}`);
+
   return {
-    props: {},
+    props: {
+      nickname: result.data.nickname,
+    },
   };
 }
 

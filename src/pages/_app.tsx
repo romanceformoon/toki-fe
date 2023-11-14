@@ -73,7 +73,7 @@ function MyApp({
               );
             }}
           />
-          <Box sx={{ mt: "6.3rem", ml: "7%", mr: "7%" }}>
+          <Box sx={{ mt: "6.3rem", ml: "15%", mr: "15%" }}>
             <Component {...pageProps} />
           </Box>
         </AppWrapper>
@@ -91,8 +91,9 @@ MyApp.getInitialProps = async (context: AppContext) => {
   if (context.ctx.req) {
     try {
       const requestURI = isDevelopmentEnv
-        ? "http://localhost:9999"
-        : "http://132.226.226.167:9999";
+        ? process.env.NEXT_PUBLIC_DEV
+        : process.env.NEXT_PUBLIC_PROD;
+
       const result = await axios.get(
         `${requestURI}/toki-api/auth/user/refresh`,
         {

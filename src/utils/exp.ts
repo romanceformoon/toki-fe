@@ -1,4 +1,4 @@
-const coefficient = 4;
+const coefficient = 2;
 
 export const getLevel = (exp: number) => {
   const totalExp = exp / 10;

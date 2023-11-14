@@ -50,7 +50,7 @@ export const UserNickname = ({
       });
     else if (clearDan === "7 DAN")
       setColor({
-        start: "#642B73",
+        start: "#a048b6",
         end: "#C6426E ",
       });
     else if (clearDan === "8 DAN")
@@ -123,14 +123,10 @@ export const UserNickname = ({
         <Typography
           sx={{
             textShadow: `${color.start} 1px 0 4px`,
-            background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 100%)`,
+            background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 30%)`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            width: 400,
             whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
           }}
           fontSize="24px"
           fontWeight={700}

@@ -9,8 +9,8 @@ const nextConfig = {
       {
         source: "/toki-api/:path*",
         destination: isDevelopmentEnv
-          ? `http://localhost:9999/toki-api/:path*`
-          : `http://132.226.226.167:9999/toki-api/:path*`,
+          ? `${process.env.NEXT_PUBLIC_DEV}/toki-api/:path*`
+          : `${process.env.NEXT_PUBLIC_PROD}/toki-api/:path*`,
       },
     ];
   },
