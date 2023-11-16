@@ -36,7 +36,7 @@ export const UserNickname = ({
     clearDan === "3 DAN" ||
     clearDan === "4 DAN" ||
     clearDan === "5 DAN"
-  )
+  ) {
     return (
       <Paper
         elevation={0}
@@ -60,14 +60,13 @@ export const UserNickname = ({
         </Typography>
       </Paper>
     );
-
-  if (
+  } else if (
     clearDan === "6 DAN" ||
     clearDan === "7 DAN" ||
     clearDan === "8 DAN" ||
     clearDan === "9 DAN" ||
     clearDan === "10 DAN"
-  )
+  ) {
     return (
       <Tooltip title={clearDan}>
         <Paper
@@ -94,42 +93,43 @@ export const UserNickname = ({
         </Paper>
       </Tooltip>
     );
-
-  return (
-    <Tooltip title={clearDan}>
-      <Paper
-        elevation={0}
-        component="label"
-        onClick={onClick}
-        sx={{
-          "&:hover": {
-            cursor: "pointer",
-          },
-        }}
-      >
-        <Typography
+  } else if (clearDan === "KAIDEN DAN" || clearDan === "OVERJOY DAN") {
+    return (
+      <Tooltip title={clearDan}>
+        <Paper
+          elevation={0}
+          component="label"
+          onClick={onClick}
           sx={{
-            "@keyframes glow": {
-              from: {
-                textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px ${color}, 0 0 8px ${color}, 0 0 9px ${color}, 0 0 10px ${color}, 0 0 20px ${color}`,
-              },
-              to: {
-                textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
-              },
+            "&:hover": {
+              cursor: "pointer",
             },
-            animation: "glow 1s ease-in-out infinite alternate",
-            webkitAnimation: "glow 1s ease-in-out infinite alternate",
-            MozAnimation: "glow 1s ease-in-out infinite alternate",
-
-            color: "#fff",
-            whiteSpace: "nowrap",
           }}
-          fontSize="24px"
-          fontWeight={700}
         >
-          {children}
-        </Typography>
-      </Paper>
-    </Tooltip>
-  );
+          <Typography
+            sx={{
+              "@keyframes glow": {
+                from: {
+                  textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px ${color}, 0 0 8px ${color}, 0 0 9px ${color}, 0 0 10px ${color}, 0 0 20px ${color}`,
+                },
+                to: {
+                  textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
+                },
+              },
+              animation: "glow 1s ease-in-out infinite alternate",
+              webkitAnimation: "glow 1s ease-in-out infinite alternate",
+              MozAnimation: "glow 1s ease-in-out infinite alternate",
+
+              color: "#fff",
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Paper>
+      </Tooltip>
+    );
+  }
 };
