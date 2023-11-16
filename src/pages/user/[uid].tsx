@@ -17,7 +17,7 @@ import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { UserNickname } from "~/components/UserNickname";
 import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
-import { getLevel, getNextExp } from "~/utils/exp";
+import { getExpTable, getLevel } from "~/utils/exp";
 
 const UserPage = ({
   _uid,
@@ -36,8 +36,8 @@ const UserPage = ({
   const [userDan, setUserDan] = useState<IDan>("None");
   const [userExp, setUserExp] = useState<number>(0);
   const [userLevel, setUserLevel] = useState<number>(1);
+  const [expTable, setExpTable] = useState<number[]>([]);
 
-  // https://sanctacrux.tistory.com/1107
   useEffect(() => {
     const getUserData = async () => {
       const response = await axiosInstance.get(`/toki-api/analyze/user/${uid}`);
@@ -49,6 +49,7 @@ const UserPage = ({
       setUserLevel(getLevel(response.data.exp));
     };
     getUserData();
+    setExpTable(getExpTable());
   }, [uid]);
 
   const [changeNickname, setChangeNickname] = useState<boolean>(false);
@@ -204,7 +205,7 @@ const UserPage = ({
 
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             <Typography fontSize="18px" fontWeight={700}>
-              Level: {userLevel.toFixed(0)}
+              Level: {userLevel}
             </Typography>
           </Box>
 
@@ -215,7 +216,8 @@ const UserPage = ({
             }}
           >
             <Typography fontSize="15px" fontWeight={500}>
-              Exp: {userExp} / {getNextExp(userExp)}
+              Exp: {userExp} /{" "}
+              {userLevel < 99 ? expTable[userLevel].toFixed(0) : "-"}
             </Typography>
           </Box>
         </Box>

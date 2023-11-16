@@ -1,19 +1,34 @@
-const coefficient = 2;
+const coefficient = 20;
+
+// https://sanctacrux.tistory.com/1107
+
+export const getExpTable = () => {
+  const result = [];
+  for (let i = 1; i < 100; i++) {
+    result.push((((i - 1) * 50) / 49) ** 2.5 * coefficient);
+  }
+  console.log(result);
+  return result;
+};
 
 export const getLevel = (exp: number) => {
-  const totalExp = exp / 10;
+  const target = exp;
+  if (target >= 2000000) return 99;
 
-  return ((totalExp / coefficient) ** 0.4 * 49) / 50 + 1;
-};
+  const numbers = getExpTable();
 
-export const getExpBar = (exp: number) => {
-  return (
-    (exp / (exp + (getLevel(exp) - (1 * 50) / 49) ** 2.5 * coefficient)) * 100
-  );
-};
+  let min = Number.MAX_SAFE_INTEGER;
+  let nearIndex = 0;
 
-export const getNextExp = (exp: number) => {
-  return (exp + (((getLevel(exp) - 1) * 50) / 49) ** 2.5 * coefficient).toFixed(
-    0
-  );
+  for (let i = 0; i < numbers.length; i++) {
+    let abs = Math.abs(numbers[i] - target);
+    if (abs < min) {
+      min = abs;
+      nearIndex = i;
+    }
+  }
+
+  const diff = numbers[nearIndex] - target;
+  if (diff < 0) return nearIndex + 1;
+  else return nearIndex;
 };
