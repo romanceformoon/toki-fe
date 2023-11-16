@@ -12,75 +12,31 @@ export const UserNickname = ({
   children,
   onClick,
 }: IUserNicknameProps) => {
-  const [color, setColor] = useState({
-    start: "#000000",
-    end: "#000000 ",
-  });
+  const [color, setColor] = useState("#000000");
 
   useEffect(() => {
-    if (clearDan === "1 DAN")
-      setColor({
-        start: "#D3CCE3",
-        end: "#E9E4F0 ",
-      });
-    else if (clearDan === "2 DAN")
-      setColor({
-        start: "#3C3B3F",
-        end: "#605C3C ",
-      });
-    else if (clearDan === "3 DAN")
-      setColor({
-        start: "#CAC531",
-        end: "#F3F9A7 ",
-      });
-    else if (clearDan === "4 DAN")
-      setColor({
-        start: "#ff9966",
-        end: "#ff5e62 ",
-      });
-    else if (clearDan === "5 DAN")
-      setColor({
-        start: "#00F260",
-        end: "#0575E6 ",
-      });
-    else if (clearDan === "6 DAN")
-      setColor({
-        start: "#fc4a1a",
-        end: "#f7b733 ",
-      });
-    else if (clearDan === "7 DAN")
-      setColor({
-        start: "#a048b6",
-        end: "#C6426E ",
-      });
-    else if (clearDan === "8 DAN")
-      setColor({
-        start: "#00b09b",
-        end: "#96c93d ",
-      });
-    else if (clearDan === "9 DAN")
-      setColor({
-        start: "#1c92d2",
-        end: "#f2fcfe ",
-      });
-    else if (clearDan === "10 DAN")
-      setColor({
-        start: "#000000",
-        end: "#0f9b0f ",
-      });
-    else if (clearDan === "KAIDEN DAN")
-      setColor({
-        start: "#642B73",
-        end: "#C6426E ",
-      });
-    else if (clearDan === "OVERJOY DAN")
-      setColor({
-        start: "#23074d",
-        end: "#cc5333 ",
-      });
+    if (clearDan === "1 DAN") setColor("#D3CCE3");
+    else if (clearDan === "2 DAN") setColor("#E32636");
+    else if (clearDan === "3 DAN") setColor("#A9A9A9");
+    else if (clearDan === "4 DAN") setColor("#3D9140");
+    else if (clearDan === "5 DAN") setColor("#FFE135");
+    else if (clearDan === "6 DAN") setColor("#FF8C00");
+    else if (clearDan === "7 DAN") setColor("#FF0800");
+    else if (clearDan === "8 DAN") setColor("#967BB6");
+    else if (clearDan === "9 DAN") setColor("#5DADEC");
+    else if (clearDan === "10 DAN") setColor("#A020F0");
+    else if (clearDan === "KAIDEN DAN") setColor("#FFD700");
+    else if (clearDan === "OVERJOY DAN") setColor("#833278");
   }, [clearDan]);
 
-  if (clearDan === "None")
+  if (
+    clearDan === "None" ||
+    clearDan === "1 DAN" ||
+    clearDan === "2 DAN" ||
+    clearDan === "3 DAN" ||
+    clearDan === "4 DAN" ||
+    clearDan === "5 DAN"
+  )
     return (
       <Paper
         elevation={0}
@@ -96,16 +52,47 @@ export const UserNickname = ({
           fontSize="24px"
           fontWeight={700}
           sx={{
-            display: "inline-block",
-            width: 400,
+            color: color,
             whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
           }}
         >
           {children}
         </Typography>
       </Paper>
+    );
+
+  if (
+    clearDan === "6 DAN" ||
+    clearDan === "7 DAN" ||
+    clearDan === "8 DAN" ||
+    clearDan === "9 DAN" ||
+    clearDan === "10 DAN"
+  )
+    return (
+      <Tooltip title={clearDan}>
+        <Paper
+          elevation={0}
+          component="label"
+          onClick={onClick}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              color: "#fff",
+              textShadow: `${color} 0px 0px 5px, ${color} 0px 0px 10px, ${color} 0px 0px 15px, ${color} 0px 0px 20px, ${color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Paper>
+      </Tooltip>
     );
 
   return (
@@ -122,10 +109,19 @@ export const UserNickname = ({
       >
         <Typography
           sx={{
-            textShadow: `${color.start} 1px 0 4px`,
-            background: `-webkit-linear-gradient(${color.start} 100%, ${color.end} 30%)`,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            "@keyframes glow": {
+              from: {
+                textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px ${color}, 0 0 8px ${color}, 0 0 9px ${color}, 0 0 10px ${color}, 0 0 20px ${color}`,
+              },
+              to: {
+                textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
+              },
+            },
+            animation: "glow 1s ease-in-out infinite alternate",
+            webkitAnimation: "glow 1s ease-in-out infinite alternate",
+            MozAnimation: "glow 1s ease-in-out infinite alternate",
+
+            color: "#fff",
             whiteSpace: "nowrap",
           }}
           fontSize="24px"
