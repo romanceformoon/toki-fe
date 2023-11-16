@@ -30,7 +30,6 @@ export const UserNickname = ({
   }, [clearDan]);
 
   if (
-    clearDan === "None" ||
     clearDan === "1 DAN" ||
     clearDan === "2 DAN" ||
     clearDan === "3 DAN" ||
@@ -170,4 +169,26 @@ export const UserNickname = ({
       </Tooltip>
     );
   }
+  return (
+    <Paper
+      elevation={0}
+      component="label"
+      onClick={onClick}
+      sx={{
+        "&:hover": {
+          cursor: "pointer",
+        },
+      }}
+    >
+      <Typography
+        fontSize="24px"
+        fontWeight={700}
+        sx={{
+          whiteSpace: "nowrap",
+        }}
+      >
+        {children}
+      </Typography>
+    </Paper>
+  );
 };
