@@ -93,7 +93,7 @@ export const UserNickname = ({
         </Paper>
       </Tooltip>
     );
-  } else if (clearDan === "KAIDEN DAN" || clearDan === "OVERJOY DAN") {
+  } else if (clearDan === "KAIDEN DAN") {
     return (
       <Tooltip title={clearDan}>
         <Paper
@@ -108,7 +108,7 @@ export const UserNickname = ({
         >
           <Typography
             sx={{
-              "@keyframes glow": {
+              "@keyframes kaiden": {
                 from: {
                   textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px ${color}, 0 0 8px ${color}, 0 0 9px ${color}, 0 0 10px ${color}, 0 0 20px ${color}`,
                 },
@@ -116,9 +116,47 @@ export const UserNickname = ({
                   textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
                 },
               },
-              animation: "glow 1s ease-in-out infinite alternate",
-              webkitAnimation: "glow 1s ease-in-out infinite alternate",
-              MozAnimation: "glow 1s ease-in-out infinite alternate",
+              animation: "kaiden 1s ease-in-out infinite alternate",
+              webkitAnimation: "kaiden 1s ease-in-out infinite alternate",
+              MozAnimation: "kaiden 1s ease-in-out infinite alternate",
+
+              color: "#fff",
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Paper>
+      </Tooltip>
+    );
+  } else if (clearDan === "OVERJOY DAN") {
+    return (
+      <Tooltip title={clearDan}>
+        <Paper
+          elevation={0}
+          component="label"
+          onClick={onClick}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              "@keyframes overjoy": {
+                from: {
+                  textShadow: `0 0 5px #fff, 0 0 8px #fff, 0 0 11px ${color}, 0 0 14px ${color}, 0 0 17px ${color}, 0 0 20px ${color}, 0 0 23px ${color}`,
+                },
+                to: {
+                  textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
+                },
+              },
+              animation: "overjoy 1s ease-in-out infinite alternate",
+              webkitAnimation: "overjoy 1s ease-in-out infinite alternate",
+              MozAnimation: "overjoy 1s ease-in-out infinite alternate",
 
               color: "#fff",
               whiteSpace: "nowrap",
