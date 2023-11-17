@@ -20,7 +20,7 @@ import { useRouter } from "next/router";
 const colorPick = (clear: string) => {
   switch (clear) {
     case "FULL COMBO":
-      return "#fde1f5";
+      return "#fde1f5d8";
     case "HARD CLEAR":
       return "#dd395ada";
     case "GROOVE CLEAR":
