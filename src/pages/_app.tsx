@@ -73,7 +73,7 @@ function MyApp({
               );
             }}
           />
-          <Box sx={{ mt: "6.3rem", ml: "15%", mr: "15%" }}>
+          <Box sx={{ mt: "6.3rem", ml: "15%", mr: "15%", mb: "3%" }}>
             <Component {...pageProps} />
           </Box>
         </AppWrapper>

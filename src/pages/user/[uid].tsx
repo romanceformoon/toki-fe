@@ -1,8 +1,18 @@
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
-import { Avatar, Box, IconButton, TextField, Typography } from "@mui/material";
-import { BarChart } from "@mui/x-charts";
+import { TabList } from "@mui/lab";
+import TabContext from "@mui/lab/TabContext";
+import TabPanel from "@mui/lab/TabPanel";
+import {
+  Avatar,
+  Box,
+  IconButton,
+  SelectChangeEvent,
+  Tab,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import {
   GetServerSideProps,
@@ -14,8 +24,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
+import { Graph } from "~/components/Graph";
+import { History } from "~/components/History";
 import { UserNickname } from "~/components/UserNickname";
-import { yLabels } from "~/const/graphLabels";
 import axiosInstance from "~/utils/axiosInstance";
 import { getExpTable, getLevel } from "~/utils/exp";
 
@@ -30,7 +41,11 @@ const UserPage = ({
 
   const { isLogined, uid: loginUid } = useLoginUser();
 
-  const [graphData, setGraphData] = useState<IGraphResult>();
+  const [tab, setTab] = useState<string>("Graph");
+  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
+    setTab(newValue);
+  };
+
   const [userNickname, setUserNickname] = useState<string>("");
   const [userAvatar, setUserAvatar] = useState<string>("");
   const [userDan, setUserDan] = useState<IDan>("None");
@@ -38,15 +53,24 @@ const UserPage = ({
   const [userLevel, setUserLevel] = useState<number>(1);
   const [expTable, setExpTable] = useState<number[]>([]);
 
+  const [graphData, setGraphData] = useState<IGraph>();
+  const [history, setHistory] = useState<IHistory>({});
+  const [selectedLevel, setSelectedLevel] = useState<string>("LEVEL 1");
+  const handleLevelChange = (event: SelectChangeEvent) => {
+    setSelectedLevel(event.target.value as string);
+  };
+
   useEffect(() => {
     const getUserData = async () => {
       const response = await axiosInstance.get(`/toki-api/analyze/user/${uid}`);
-      setGraphData(response.data.graph);
       setUserNickname(response.data.nickname);
       setUserAvatar(response.data.avatar);
       setUserDan(response.data.clearDan);
       setUserExp(response.data.exp);
       setUserLevel(getLevel(response.data.exp));
+
+      setGraphData(response.data.graph);
+      setHistory(response.data.history);
     };
     getUserData();
     setExpTable(getExpTable());
@@ -216,81 +240,29 @@ const UserPage = ({
             }}
           >
             <Typography fontSize="15px" fontWeight={500}>
-              Exp: {userExp} /{" "}
+              Exp: {userExp.toFixed(0)} /{" "}
               {userLevel < 99 ? expTable[userLevel].toFixed(0) : "-"}
             </Typography>
           </Box>
         </Box>
       </Box>
 
-      <BarChart
-        sx={{
-          mt: 1,
-          minWidth: "100%",
-          border: 1,
-          borderRadius: 5,
-        }}
-        margin={{ top: 100 }}
-        layout="horizontal"
-        height={700}
-        series={[
-          {
-            data: Object.values(graphData["FC_COUNT"]),
-            label: "Full Combo",
-            id: "fc",
-            stack: "total",
-            color: "#fde1f5",
-            stackOffset: "expand",
-          },
-          {
-            data: Object.values(graphData["HARD_COUNT"]),
-            label: "Hard Clear",
-            id: "hard",
-            stack: "total",
-            color: "#dd3959",
-            stackOffset: "expand",
-          },
-          {
-            data: Object.values(graphData["GROOVE_COUNT"]),
-            label: "Groove Clear",
-            id: "groove",
-            stack: "total",
-            color: "#5e99ff",
-            stackOffset: "expand",
-          },
-          {
-            data: Object.values(graphData["EASY_COUNT"]),
-            label: "Easy Clear",
-            id: "easy",
-            stack: "total",
-            color: "#79e158",
-            stackOffset: "expand",
-          },
-          {
-            data: Object.values(graphData["FAILED_COUNT"]),
-            label: "Failed",
-            id: "failed",
-            stack: "total",
-            color: "#333333",
-            stackOffset: "expand",
-          },
-          {
-            data: Object.values(graphData["NOPLAY_COUNT"]),
-            label: "No Play",
-            id: "noplay",
-            stack: "total",
-            color: "#00000000",
-            stackOffset: "expand",
-          },
-        ]}
-        yAxis={[
-          {
-            data: yLabels,
-            scaleType: "band",
-          },
-        ]}
-        bottomAxis={null}
-      />
+      <TabContext value={tab}>
+        <TabList onChange={handleTabChange} variant="fullWidth" centered>
+          <Tab sx={{ fontWeight: 700 }} label="Graph" value="Graph" />
+          <Tab sx={{ fontWeight: 700 }} label="History" value="History" />
+        </TabList>
+        <TabPanel value="Graph">
+          <Graph graphData={graphData} />
+        </TabPanel>
+        <TabPanel value="History">
+          <History
+            selectedLevel={selectedLevel}
+            handleLevelChange={handleLevelChange}
+            history={history}
+          />
+        </TabPanel>
+      </TabContext>
     </>
   );
 };
