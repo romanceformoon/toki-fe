@@ -34,6 +34,8 @@ const UserPage = ({
   _uid,
   avatar,
   nickname,
+  clearDan,
+  exp,
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
 
@@ -54,27 +56,37 @@ const UserPage = ({
   const [expTable, setExpTable] = useState<number[]>([]);
 
   const [graphData, setGraphData] = useState<IGraph>();
-  const [history, setHistory] = useState<IHistory>({});
+  const [historyData, setHistoryData] = useState<IHistory>();
   const [selectedLevel, setSelectedLevel] = useState<string>("LEVEL 1");
   const handleLevelChange = (event: SelectChangeEvent) => {
     setSelectedLevel(event.target.value as string);
   };
 
   useEffect(() => {
-    const getUserData = async () => {
-      const response = await axiosInstance.get(`/toki-api/analyze/user/${uid}`);
-      setUserNickname(response.data.nickname);
-      setUserAvatar(response.data.avatar);
-      setUserDan(response.data.clearDan);
-      setUserExp(response.data.exp);
-      setUserLevel(getLevel(response.data.exp));
-
-      setGraphData(response.data.graph);
-      setHistory(response.data.history);
-    };
-    getUserData();
+    setUserNickname(nickname);
+    setUserAvatar(avatar);
+    setUserDan(clearDan);
+    setUserExp(exp);
+    setUserLevel(getLevel(exp));
     setExpTable(getExpTable());
-  }, [uid]);
+  }, [nickname, avatar, clearDan, exp]);
+
+  useEffect(() => {
+    const getData = async () => {
+      if (tab === "Graph" && !graphData) {
+        const response = await axiosInstance.get(
+          `/toki-api/analyze/user/graph/${uid}`
+        );
+        setGraphData(response.data.graph);
+      } else if (tab === "History" && !historyData) {
+        const response = await axiosInstance.get(
+          `/toki-api/analyze/user/history/${uid}`
+        );
+        setHistoryData(response.data.history);
+      }
+    };
+    getData();
+  }, [uid, tab, graphData, historyData]);
 
   const [changeNickname, setChangeNickname] = useState<boolean>(false);
   const [inputNickname, setInputNickname] = useState<string>("");
@@ -259,7 +271,7 @@ const UserPage = ({
           <History
             selectedLevel={selectedLevel}
             handleLevelChange={handleLevelChange}
-            history={history}
+            historyData={historyData ?? {}}
           />
         </TabPanel>
       </TabContext>
@@ -276,13 +288,17 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     ? process.env.NEXT_PUBLIC_DEV
     : process.env.NEXT_PUBLIC_PROD;
 
-  const result = await axios.get(`${requestURI}/toki-api/analyze/user/${uid}`);
+  const result = await axios.get(
+    `${requestURI}/toki-api/analyze/user/score/${uid}`
+  );
 
   return {
     props: {
       _uid: uid,
       avatar: result.data.avatar,
       nickname: result.data.nickname,
+      clearDan: result.data.clearDan,
+      exp: result.data.exp,
     },
   };
 }

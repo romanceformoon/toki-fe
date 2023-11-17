@@ -37,15 +37,17 @@ const colorPick = (clear: string) => {
 interface IHistoryProps {
   selectedLevel: string;
   handleLevelChange: (event: SelectChangeEvent) => void;
-  history: IHistory;
+  historyData: IHistory;
 }
 
 export const History = ({
   selectedLevel,
   handleLevelChange,
-  history,
+  historyData,
 }: IHistoryProps) => {
   const router = useRouter();
+
+  if (!historyData) return <></>;
 
   return (
     <>
@@ -58,7 +60,7 @@ export const History = ({
             value={selectedLevel}
             onChange={handleLevelChange}
           >
-            {Object.keys(history).map((level, index) => {
+            {Object.keys(historyData).map((level, index) => {
               return (
                 <MenuItem key={index} value={level}>
                   {level}
@@ -147,8 +149,8 @@ export const History = ({
             </TableRow>
           </TableHead>
           <TableBody>
-            {history[selectedLevel]
-              .sort((a, b) => {
+            {historyData[selectedLevel]
+              ?.sort((a, b) => {
                 return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
               })
               .map((data, idx) => {
