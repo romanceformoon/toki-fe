@@ -2,7 +2,15 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import PersonIcon from "@mui/icons-material/Person";
 import TableChartIcon from "@mui/icons-material/TableChart";
-import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Snackbar,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
@@ -15,6 +23,17 @@ const Main = () => {
   const { uid, isLogined } = useLoginUser();
 
   const [logo, setLogo] = useState("logo.png");
+
+  const [open, setOpen] = useState(false);
+
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setOpen(true);
+    } catch (e) {
+      alert("복사에 실패하였습니다");
+    }
+  };
 
   return (
     <>
@@ -164,6 +183,116 @@ const Main = () => {
             </Button>
           </Box>
         </Stack>
+
+        <Box>
+          <Box
+            sx={{
+              mt: 4,
+              mb: 2,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Typography fontWeight={700}>[5KEYS AERY] 난이도표 URL</Typography>
+          </Box>
+
+          <Box sx={{ mb: 2, display: "flex", justifyContent: "center" }}>
+            <TextField
+              value="https://asumatoki.kr/api/aery"
+              label="BeMusicSeeker"
+              id="aery-table"
+              variant="outlined"
+              size="small"
+              sx={{
+                input: {
+                  textAlign: "center",
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                },
+                width: "18rem",
+              }}
+              onClick={() => {
+                handleCopyClipBoard("https://asumatoki.kr/api/aery");
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              value="https://asumatoki.kr/table/aery/header.json"
+              label="Beatoraja"
+              id="aery-table-beatoraja"
+              variant="outlined"
+              size="small"
+              focused={false}
+              sx={{
+                input: {
+                  textAlign: "center",
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                },
+                width: "23.5rem",
+              }}
+              onClick={() => {
+                handleCopyClipBoard(
+                  "https://asumatoki.kr/table/aery/header.json"
+                );
+              }}
+            />
+          </Box>
+          <Snackbar
+            open={open}
+            autoHideDuration={3000}
+            onClose={() => setOpen(false)}
+            message="복사 완료"
+            sx={{
+              width: "1rem",
+            }}
+          />
+        </Box>
+        <Box
+          sx={{
+            mt: 2,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            variant="outlined"
+            sx={{
+              width: "9rem",
+              mr: 2,
+              color: "#a881af",
+              borderColor: "#a881af",
+              ":hover": { borderColor: "#a881af" },
+              borderRadius: 10,
+            }}
+            onClick={async () => {
+              router.push(`https://discord.gg/VhQahFaXHd`);
+            }}
+          >
+            <Avatar
+              sx={{
+                "&:hover": {
+                  cursor: "pointer",
+                },
+                width: "1.5rem",
+                height: "auto",
+                mr: 1,
+              }}
+              variant="square"
+              alt="discord"
+              src={"/assets/images/discord-mark-blue.png"}
+            />
+            <Typography fontWeight={500}>디스코드</Typography>
+          </Button>
+        </Box>
       </Box>
     </>
   );

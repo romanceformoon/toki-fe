@@ -66,6 +66,7 @@ const DifficultyTable = () => {
         selectedLevel={selectedLevel}
         handleChange={handleChange}
         tableData={tableData}
+        showAll
       />
       <TableContainer
         sx={{

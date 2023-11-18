@@ -9,13 +9,15 @@ import {
 interface ISelectLevelProps {
   selectedLevel: string;
   handleChange: (event: SelectChangeEvent) => void;
-  tableData: ILevelList;
+  tableData: ILevelList | IHistory;
+  showAll?: boolean;
 }
 
 export const SelectLevel = ({
   selectedLevel,
   handleChange,
   tableData,
+  showAll,
 }: ISelectLevelProps) => {
   return (
     <Box sx={{ maxWidth: "100%", mb: "1.5rem" }}>
@@ -27,9 +29,14 @@ export const SelectLevel = ({
           value={selectedLevel}
           onChange={handleChange}
         >
-          <MenuItem key={"All"} value={"모두 보기"}>
-            모두 보기
-          </MenuItem>
+          {showAll ? (
+            <MenuItem key={"All"} value={"모두 보기"}>
+              모두 보기
+            </MenuItem>
+          ) : (
+            <></>
+          )}
+
           {Object.keys(tableData).map((level, index) => {
             return (
               <MenuItem key={index} value={level}>

@@ -1,5 +1,6 @@
 import { Paper, Tooltip, Typography } from "@mui/material";
 import { ReactNode, useEffect, useState } from "react";
+import { ClickableText } from "../ClickableText";
 
 interface IUserNicknameProps {
   clearDan: IDan;
@@ -68,16 +69,7 @@ export const UserNickname = ({
   ) {
     return (
       <Tooltip title={clearDan}>
-        <Paper
-          elevation={0}
-          component="label"
-          onClick={onClick}
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        >
+        <ClickableText>
           <Typography
             sx={{
               color: "#fff",
@@ -89,22 +81,13 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </Paper>
+        </ClickableText>
       </Tooltip>
     );
   } else if (clearDan === "KAIDEN DAN") {
     return (
       <Tooltip title={clearDan}>
-        <Paper
-          elevation={0}
-          component="label"
-          onClick={onClick}
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        >
+        <ClickableText>
           <Typography
             sx={{
               "@keyframes kaiden": {
@@ -127,22 +110,13 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </Paper>
+        </ClickableText>
       </Tooltip>
     );
   } else if (clearDan === "OVERJOY DAN") {
     return (
       <Tooltip title={clearDan}>
-        <Paper
-          elevation={0}
-          component="label"
-          onClick={onClick}
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        >
+        <ClickableText>
           <Typography
             sx={{
               "@keyframes overjoy": {
@@ -165,21 +139,12 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </Paper>
+        </ClickableText>
       </Tooltip>
     );
   }
   return (
-    <Paper
-      elevation={0}
-      component="label"
-      onClick={onClick}
-      sx={{
-        "&:hover": {
-          cursor: "pointer",
-        },
-      }}
-    >
+    <ClickableText>
       <Typography
         fontSize="24px"
         fontWeight={700}
@@ -189,6 +154,6 @@ export const UserNickname = ({
       >
         {children}
       </Typography>
-    </Paper>
+    </ClickableText>
   );
 };

@@ -15,6 +15,24 @@ interface IHistory {
   }[];
 }
 
+interface IHistorySelectedLevel {
+  title: string;
+  clear: string;
+  exp: number;
+  bp: number;
+  rate: number;
+  md5: string;
+}
+
+interface IHistorySortedDesc {
+  title: boolean;
+  clear: boolean;
+  exp: boolean;
+  bp: boolean;
+  rate: boolean;
+  md5: boolean;
+}
+
 type IDan =
   | "None"
   | "1 DAN"

@@ -1,7 +1,6 @@
 import { ReactNode, useMemo } from "react";
 import useSilentRefresh from "~/auth/query/useSilentRefresh";
 import { CurrentUserContext } from "~/context";
-import { IUser } from "~/types/user";
 
 interface IAppWrapperProps {
   children: ReactNode;

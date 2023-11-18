@@ -1,12 +1,11 @@
 import AddIcon from "@mui/icons-material/Add";
 import PersonIcon from "@mui/icons-material/Person";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
-import { CommonButton } from "~/components/CommonButton";
 import axiosInstance from "~/utils/axiosInstance";
 
 const LampGraph = () => {
@@ -80,13 +79,20 @@ const LampGraph = () => {
           </Typography>
         </Box>
         {isLogined ? (
-          <CommonButton>
+          <Button
+            variant="contained"
+            component="label"
+            sx={{ borderRadius: 10 }}
+          >
             <input type="file" accept=".db" onChange={onChangeFile} hidden />
             <AddIcon sx={{ mr: 1 }} />
             업로드
-          </CommonButton>
+          </Button>
         ) : (
-          <CommonButton
+          <Button
+            variant="contained"
+            component="label"
+            sx={{ borderRadius: 10 }}
             onClick={async () => {
               const response = await axios.get(
                 "/toki-api/auth/discord/oauth-url"
@@ -96,7 +102,7 @@ const LampGraph = () => {
           >
             <PersonIcon sx={{ mr: 1 }} />
             로그인이 필요합니다.
-          </CommonButton>
+          </Button>
         )}
       </Box>
     </>

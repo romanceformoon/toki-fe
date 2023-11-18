@@ -1,9 +1,6 @@
-import axios from "axios";
+import tableData from "public/table/aery/data.json";
 
 export const loadTableData = async () => {
-  const data = await axios.get("https://hibyethere.github.io/table/data.json");
-  const tableData = data.data;
-
   const levelList: ILevelList = {
     "LEVEL 1": [],
     "LEVEL 2": [],
