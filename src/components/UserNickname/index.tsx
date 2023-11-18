@@ -22,7 +22,7 @@ export const UserNickname = ({
     else if (clearDan === "5 DAN") setColor("#FFE135");
     else if (clearDan === "6 DAN") setColor("#FF8C00");
     else if (clearDan === "7 DAN") setColor("#FF0800");
-    else if (clearDan === "8 DAN") setColor("#967BB6");
+    else if (clearDan === "8 DAN") setColor("#7e748a6e");
     else if (clearDan === "9 DAN") setColor("#5DADEC");
     else if (clearDan === "10 DAN") setColor("#A020F0");
     else if (clearDan === "KAIDEN DAN") setColor("#FFD700");
