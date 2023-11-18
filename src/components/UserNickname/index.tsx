@@ -135,7 +135,7 @@ export const UserNickname = ({
     );
   }
   return (
-    <ClickableText>
+    <ClickableText onClick={onClick}>
       <Typography
         fontSize="24px"
         fontWeight={700}
