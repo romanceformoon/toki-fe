@@ -8,6 +8,7 @@ import {
   Avatar,
   Box,
   IconButton,
+  Link,
   SelectChangeEvent,
   Tab,
   TextField,
@@ -36,6 +37,7 @@ const UserPage = ({
   nickname,
   clearDan,
   exp,
+  lr2Id,
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
 
@@ -54,6 +56,7 @@ const UserPage = ({
   const [userExp, setUserExp] = useState<number>(0);
   const [userLevel, setUserLevel] = useState<number>(1);
   const [expTable, setExpTable] = useState<number[]>([]);
+  const [userLR2ID, setUserLR2ID] = useState<number>(0);
 
   const [graphData, setGraphData] = useState<IGraph>();
   const [historyData, setHistoryData] = useState<IHistory>();
@@ -69,7 +72,8 @@ const UserPage = ({
     setUserExp(exp);
     setUserLevel(getLevel(exp));
     setExpTable(getExpTable());
-  }, [nickname, avatar, clearDan, exp]);
+    setUserLR2ID(lr2Id);
+  }, [nickname, avatar, clearDan, exp, lr2Id]);
 
   useEffect(() => {
     const getData = async () => {
@@ -183,13 +187,12 @@ const UserPage = ({
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             {!changeNickname ? (
               <>
-                {userDan === "None" ? (
-                  <Typography fontSize="24px" fontWeight={700}>
-                    {userNickname}
-                  </Typography>
-                ) : (
+                <Link
+                  href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userLR2ID}`}
+                  underline="none"
+                >
                   <UserNickname clearDan={userDan}>{userNickname}</UserNickname>
-                )}
+                </Link>
 
                 {isLogined && loginUid === uid ? (
                   <IconButton
@@ -299,6 +302,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       nickname: result.data.nickname,
       clearDan: result.data.clearDan,
       exp: result.data.exp,
+      lr2Id: result.data.lr2Id,
     },
   };
 }
