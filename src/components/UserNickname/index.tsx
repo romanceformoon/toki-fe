@@ -1,4 +1,4 @@
-import { Paper, Tooltip, Typography } from "@mui/material";
+import { Tooltip, Typography } from "@mui/material";
 import { ReactNode, useEffect, useState } from "react";
 import { ClickableText } from "../ClickableText";
 
@@ -38,16 +38,7 @@ export const UserNickname = ({
     clearDan === "5 DAN"
   ) {
     return (
-      <Paper
-        elevation={0}
-        component="label"
-        onClick={onClick}
-        sx={{
-          "&:hover": {
-            cursor: "pointer",
-          },
-        }}
-      >
+      <ClickableText onClick={onClick}>
         <Typography
           fontSize="24px"
           fontWeight={700}
@@ -58,7 +49,7 @@ export const UserNickname = ({
         >
           {children}
         </Typography>
-      </Paper>
+      </ClickableText>
     );
   } else if (
     clearDan === "6 DAN" ||
@@ -69,7 +60,7 @@ export const UserNickname = ({
   ) {
     return (
       <Tooltip title={clearDan}>
-        <ClickableText>
+        <ClickableText onClick={onClick}>
           <Typography
             sx={{
               color: "#fff",
@@ -87,7 +78,7 @@ export const UserNickname = ({
   } else if (clearDan === "KAIDEN DAN") {
     return (
       <Tooltip title={clearDan}>
-        <ClickableText>
+        <ClickableText onClick={onClick}>
           <Typography
             sx={{
               "@keyframes kaiden": {
@@ -116,7 +107,7 @@ export const UserNickname = ({
   } else if (clearDan === "OVERJOY DAN") {
     return (
       <Tooltip title={clearDan}>
-        <ClickableText>
+        <ClickableText onClick={onClick}>
           <Typography
             sx={{
               "@keyframes overjoy": {

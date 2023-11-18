@@ -7,7 +7,6 @@ export const getExpTable = () => {
   for (let i = 1; i < 100; i++) {
     result.push((((i - 1) * 50) / 49) ** 2.5 * coefficient);
   }
-  console.log(result);
   return result;
 };
 
