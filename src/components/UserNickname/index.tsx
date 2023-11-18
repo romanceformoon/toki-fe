@@ -39,16 +39,18 @@ export const UserNickname = ({
   ) {
     return (
       <ClickableText onClick={onClick}>
-        <Typography
-          fontSize="24px"
-          fontWeight={700}
-          sx={{
-            color: color,
-            whiteSpace: "nowrap",
-          }}
-        >
-          {children}
-        </Typography>
+        <Tooltip title={clearDan}>
+          <Typography
+            fontSize="24px"
+            fontWeight={700}
+            sx={{
+              color: color,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
       </ClickableText>
     );
   } else if (
@@ -59,8 +61,8 @@ export const UserNickname = ({
     clearDan === "10 DAN"
   ) {
     return (
-      <Tooltip title={clearDan}>
-        <ClickableText onClick={onClick}>
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
           <Typography
             sx={{
               color: "#fff",
@@ -72,13 +74,13 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </ClickableText>
-      </Tooltip>
+        </Tooltip>
+      </ClickableText>
     );
   } else if (clearDan === "KAIDEN DAN") {
     return (
-      <Tooltip title={clearDan}>
-        <ClickableText onClick={onClick}>
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
           <Typography
             sx={{
               "@keyframes kaiden": {
@@ -101,13 +103,13 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </ClickableText>
-      </Tooltip>
+        </Tooltip>
+      </ClickableText>
     );
   } else if (clearDan === "OVERJOY DAN") {
     return (
-      <Tooltip title={clearDan}>
-        <ClickableText onClick={onClick}>
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
           <Typography
             sx={{
               "@keyframes overjoy": {
@@ -130,21 +132,23 @@ export const UserNickname = ({
           >
             {children}
           </Typography>
-        </ClickableText>
-      </Tooltip>
+        </Tooltip>
+      </ClickableText>
     );
   }
   return (
     <ClickableText onClick={onClick}>
-      <Typography
-        fontSize="24px"
-        fontWeight={700}
-        sx={{
-          whiteSpace: "nowrap",
-        }}
-      >
-        {children}
-      </Typography>
+      <Tooltip title={clearDan}>
+        <Typography
+          fontSize="24px"
+          fontWeight={700}
+          sx={{
+            whiteSpace: "nowrap",
+          }}
+        >
+          {children}
+        </Typography>
+      </Tooltip>
     </ClickableText>
   );
 };
