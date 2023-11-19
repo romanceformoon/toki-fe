@@ -196,27 +196,6 @@ const Main = () => {
             <Typography fontWeight={700}>[5KEYS AERY] 난이도표 URL</Typography>
           </Box>
 
-          <Box sx={{ mb: 2, display: "flex", justifyContent: "center" }}>
-            <TextField
-              value="https://asumatoki.kr/api/aery"
-              label="BeMusicSeeker"
-              id="aery-table"
-              variant="outlined"
-              size="small"
-              sx={{
-                input: {
-                  textAlign: "center",
-                  "&:hover": {
-                    cursor: "pointer",
-                  },
-                },
-                width: "18rem",
-              }}
-              onClick={() => {
-                handleCopyClipBoard("https://asumatoki.kr/api/aery");
-              }}
-            />
-          </Box>
           <Box
             sx={{
               display: "flex",
@@ -225,7 +204,7 @@ const Main = () => {
           >
             <TextField
               value="https://asumatoki.kr/table/aery/header.json"
-              label="Beatoraja"
+              label=""
               id="aery-table-beatoraja"
               variant="outlined"
               size="small"
