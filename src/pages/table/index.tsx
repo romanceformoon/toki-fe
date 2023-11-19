@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import Table from "@mui/material/Table";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
@@ -58,9 +57,6 @@ const DifficultyTable = () => {
           ],
         }}
       />
-      <Head>
-        <meta name="bmstable" content="/table/aery/header.json" />
-      </Head>
 
       <SelectLevel
         selectedLevel={selectedLevel}

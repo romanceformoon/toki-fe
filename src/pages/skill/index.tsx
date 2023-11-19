@@ -1,4 +1,5 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ClickableText } from "~/components/ClickableText";
@@ -11,6 +12,25 @@ const Skill = () => {
 
   return (
     <>
+      <NextSeo
+        title="Skill Simulator | Asuma Toki"
+        description="BMS Skill Simulator"
+        openGraph={{
+          type: "website",
+          locale: "ko_KR",
+          url: "https://asumatoki.kr/skill",
+          title: "Skill Simulator | Asuma Toki",
+          description: "BMS Skill Simulator",
+          images: [
+            {
+              url: "/assets/images/logo.png",
+              width: 400,
+              height: 400,
+            },
+          ],
+        }}
+      />
+
       <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
         <Typography fontSize={24} fontWeight={700}>
           [5KEYS AERY] 段位認定
@@ -63,5 +83,11 @@ const Skill = () => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
 
 export default Skill;
