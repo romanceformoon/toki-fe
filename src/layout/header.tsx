@@ -21,7 +21,7 @@ interface IHeaderProps {
   setMode: () => void;
 }
 
-const pages = ["table", "analyze", "ranking"];
+const pages = ["table", "analyze", "ranking", "skill"];
 
 const Header = ({ mode, setMode }: IHeaderProps) => {
   const router = useRouter();
