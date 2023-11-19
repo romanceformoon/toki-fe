@@ -38,7 +38,7 @@ const Skill = () => {
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
         <Link href="http://naver.me/G2xp0TfL ">
-          <Typography fontWeight={700}>다운로드 링크</Typography>
+          <Typography fontWeight={700}>다운로드</Typography>
         </Link>
       </Box>
       <Box>
@@ -54,23 +54,26 @@ const Skill = () => {
                   [5KEYS AERY] 段位認定
                 </Typography>
                 <Typography variant="h5" component="div"></Typography>
-                <ClickableText
-                  onClick={() =>
-                    router.push(
-                      `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${danData[dan]["hash"]}`
-                    )
-                  }
-                >
-                  <Typography
-                    sx={{
-                      mb: 1.5,
-                      color: danData[dan]["color"],
-                      whiteSpace: "nowrap",
-                    }}
+                <Box sx={{ width: "1rem" }}>
+                  <ClickableText
+                    onClick={() =>
+                      router.push(
+                        `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${danData[dan]["hash"]}`
+                      )
+                    }
                   >
-                    {dan}
-                  </Typography>
-                </ClickableText>
+                    <Typography
+                      sx={{
+                        mb: 1.5,
+                        color: danData[dan]["color"],
+                        whiteSpace: "nowrap",
+                      }}
+                      fontSize={20}
+                    >
+                      {dan}
+                    </Typography>
+                  </ClickableText>
+                </Box>
                 <Typography>{danData[dan]["list"][0]}</Typography>
                 <Typography>{danData[dan]["list"][1]}</Typography>
                 <Typography>{danData[dan]["list"][2]}</Typography>
