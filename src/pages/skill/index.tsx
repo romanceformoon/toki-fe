@@ -44,7 +44,13 @@ const Skill = () => {
       <Box>
         {Object.keys(danData).map((dan, idx) => (
           <>
-            <Card sx={{ minWidth: 275, mb: 3 }}>
+            <Card
+              sx={{
+                maxWidth: "500px",
+                margin: "0 auto",
+                mb: 3,
+              }}
+            >
               <CardContent>
                 <Typography
                   sx={{ fontSize: 14 }}
