@@ -6,7 +6,6 @@ interface IGraphProps {
 }
 
 export const Graph = ({ graphData }: IGraphProps) => {
-  
   return (
     <BarChart
       sx={{
