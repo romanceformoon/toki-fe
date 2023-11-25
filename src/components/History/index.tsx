@@ -48,10 +48,6 @@ export const History = ({
 }: IHistoryProps) => {
   const router = useRouter();
 
-  useEffect(() => {
-    setSongList(historyData[selectedLevel]);
-  }, [historyData, selectedLevel]);
-
   const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const [isDesc, setIsDesc] = useState<IHistorySortedDesc>({
@@ -216,6 +212,11 @@ export const History = ({
       return { ...prevState };
     });
   }, []);
+
+  useEffect(() => {
+    setSongList(historyData[selectedLevel]);
+    ascTitle();
+  }, [ascTitle, historyData, selectedLevel]);
 
   if (!historyData) return <></>;
   if (!songList) return <></>;
