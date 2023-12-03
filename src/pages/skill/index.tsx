@@ -61,24 +61,24 @@ const Skill = () => {
                 </Typography>
                 <Typography variant="h5" component="div"></Typography>
                 <Box sx={{ width: "1rem" }}>
-                  <ClickableText
-                    onClick={() =>
-                      router.push(
-                        `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${danData[dan]["hash"]}`
-                      )
-                    }
+                  <Link
+                    href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${danData[dan]["hash"]}`}
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
                   >
-                    <Typography
-                      sx={{
-                        mb: 1.5,
-                        color: danData[dan]["color"],
-                        whiteSpace: "nowrap",
-                      }}
-                      fontSize={20}
-                    >
-                      {dan}
-                    </Typography>
-                  </ClickableText>
+                    <ClickableText>
+                      <Typography
+                        sx={{
+                          mb: 1.5,
+                          color: danData[dan]["color"],
+                          whiteSpace: "nowrap",
+                        }}
+                        fontSize={20}
+                      >
+                        {dan}
+                      </Typography>
+                    </ClickableText>
+                  </Link>
                 </Box>
                 <Typography>{danData[dan]["list"][0]}</Typography>
                 <Typography>{danData[dan]["list"][1]}</Typography>

@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import Table from "@mui/material/Table";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
@@ -139,15 +140,14 @@ const DifficultyTable = () => {
                             </Typography>
                           </TableCell>
                           <TableCell key={song.md5} align="center">
-                            <IconButton
-                              onClick={() =>
-                                router.push(
-                                  `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`
-                                )
-                              }
+                            <Link
+                              href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`}
+                              target="_blank"
                             >
-                              <LinkIcon />
-                            </IconButton>
+                              <IconButton>
+                                <LinkIcon />
+                              </IconButton>
+                            </Link>
                           </TableCell>
                         </TableRow>
                       </>
@@ -173,15 +173,14 @@ const DifficultyTable = () => {
                           </Typography>
                         </TableCell>
                         <TableCell key={song.md5} align="center">
-                          <IconButton
-                            onClick={() =>
-                              router.push(
-                                `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`
-                              )
-                            }
+                          <Link
+                            href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`}
+                            target="_blank"
                           >
-                            <LinkIcon />
-                          </IconButton>
+                            <IconButton>
+                              <LinkIcon />
+                            </IconButton>
+                          </Link>
                         </TableCell>
                       </TableRow>
                     </>

@@ -12,6 +12,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { convertClearToNumber } from "~/utils/convertClearToNumber";
@@ -386,15 +387,14 @@ export const History = ({
                       </Typography>
                     </TableCell>
                     <TableCell key={data.md5} align="center">
-                      <IconButton
-                        onClick={() =>
-                          router.push(
-                            `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${data.md5}`
-                          )
-                        }
+                      <Link
+                        href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${data.md5}`}
+                        target="_blank"
                       >
-                        <LinkIcon />
-                      </IconButton>
+                        <IconButton>
+                          <LinkIcon />
+                        </IconButton>
+                      </Link>
                     </TableCell>
                   </TableRow>
                 </>
