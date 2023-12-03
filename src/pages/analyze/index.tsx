@@ -1,6 +1,12 @@
 import AddIcon from "@mui/icons-material/Add";
 import PersonIcon from "@mui/icons-material/Person";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Backdrop,
+  Box,
+  Button,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
@@ -14,6 +20,8 @@ const LampGraph = () => {
   const { isLogined, uid } = useLoginUser();
 
   const [uploadFile, setUploadFile] = useState<File>();
+
+  const [isUploading, setIsUploading] = useState<boolean>(false);
 
   const onChangeFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -32,12 +40,15 @@ const LampGraph = () => {
 
       const formData = new FormData();
       formData.append("db", dbFile);
+
+      setIsUploading(true);
       const response = await axiosInstance.post(`/toki-api/analyze`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
       setUploadFile(uploadFile);
+      setIsUploading(false);
       router.push(`/user/${uid}`);
     }
   };
@@ -62,6 +73,13 @@ const LampGraph = () => {
           ],
         }}
       />
+
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isUploading}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
 
       <Box
         sx={{ bgcolor: "background.paper", pt: 8, pb: 6, textAlign: "center" }}

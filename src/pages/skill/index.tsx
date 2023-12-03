@@ -37,7 +37,7 @@ const Skill = () => {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-        <Link href="http://naver.me/G2xp0TfL ">
+        <Link href="http://naver.me/G2xp0TfL" target="_blank">
           <Typography fontWeight={700}>다운로드</Typography>
         </Link>
       </Box>

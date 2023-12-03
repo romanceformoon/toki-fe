@@ -39,13 +39,13 @@ const Main = () => {
     <>
       <NextSeo
         title="Asuma Toki"
-        description="Asuma Toki - BMS Table, Score Analyze"
+        description="Asuma Toki - BMS Table, Score Analyze, 에리팩"
         openGraph={{
           type: "website",
           locale: "ko_KR",
           url: "https://asumatoki.kr",
           title: "Asuma Toki",
-          description: "Asuma Toki - BMS Table, Score Analyze",
+          description: "Asuma Toki - BMS Table, Score Analyze, 에리팩",
           images: [
             {
               url: "/assets/images/logo.png",
