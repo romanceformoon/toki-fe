@@ -93,7 +93,7 @@ export const aerySkillSimulators = {
     list: [
       "[Lv.19] Doppelganger [5Key Aery Hard]",
       "[Lv.19] Cynical [ 5 K E Y A E R Y ]",
-      "[Lv.20] 炎花 - flameflower - [Life is Piano]",
+      "[Lv.19] 炎花 - flameflower - [Life is Piano]",
       "[Lv.20] Armageddon [5KEY AERY EX]",
     ],
     color: "#A020F0",

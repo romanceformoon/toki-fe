@@ -46,7 +46,7 @@ const Skill = () => {
           <>
             <Card
               sx={{
-                maxWidth: "700px",
+                maxWidth: "900px",
                 margin: "0 auto",
                 mb: 3,
               }}
