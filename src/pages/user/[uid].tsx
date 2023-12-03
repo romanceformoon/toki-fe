@@ -8,7 +8,6 @@ import {
   Avatar,
   Box,
   IconButton,
-  Link,
   SelectChangeEvent,
   Tab,
   TextField,
@@ -21,6 +20,7 @@ import {
   InferGetServerSidePropsType,
 } from "next";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
@@ -196,7 +196,8 @@ const UserPage = ({
                 <>
                   <Link
                     href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userLR2ID}`}
-                    underline="none"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
                   >
                     <UserNickname clearDan={userDan}>
                       {userNickname}
