@@ -27,6 +27,7 @@ import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { Graph } from "~/components/Graph";
 import { History } from "~/components/History";
+import { Top } from "~/components/TOP";
 import { UserNickname } from "~/components/UserNickname";
 import useGraphQuery from "~/query/useGraphQuery";
 import useHistoryQuery from "~/query/useHistoryQuery";
@@ -274,11 +275,27 @@ const UserPage = ({
 
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant="fullWidth" centered>
-            <Tab sx={{ fontWeight: 700 }} label="Graph" value="Graph" />
-            <Tab sx={{ fontWeight: 700 }} label="History" value="History" />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="Graph"
+              value="Graph"
+            />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="TOP 50"
+              value="TOP 50"
+            />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="History"
+              value="History"
+            />
           </TabList>
           <TabPanel value="Graph">
             <Graph graphData={graphData} />
+          </TabPanel>
+          <TabPanel value="TOP 50">
+            <Top historyData={historyData} />
           </TabPanel>
           <TabPanel value="History">
             <History
