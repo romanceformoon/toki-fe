@@ -177,7 +177,7 @@ export const Top = ({ historyData }: IHistoryProps) => {
                         fontWeight="500"
                         align="center"
                       >
-                        {idx + 1}
+                        #{idx + 1}
                       </Typography>
                     </TableCell>
                     <TableCell>
