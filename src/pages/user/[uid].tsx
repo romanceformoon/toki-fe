@@ -120,7 +120,7 @@ const UserPage = ({
             images: [
               {
                 url: avatar
-                  ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}.png`
+                  ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}`
                   : "/assets/images/logo.png",
                 width: 400,
                 height: 400,
@@ -137,7 +137,7 @@ const UserPage = ({
                 sx={{ height: "70px", width: "70px" }}
                 src={
                   userAvatar
-                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
                     : undefined
                 }
               />
@@ -168,7 +168,7 @@ const UserPage = ({
             images: [
               {
                 url: userAvatar
-                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
                   : "/assets/images/logo.png",
                 width: 400,
                 height: 400,
@@ -185,7 +185,7 @@ const UserPage = ({
                 sx={{ height: "70px", width: "70px" }}
                 src={
                   userAvatar
-                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}.png`
+                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
                     : undefined
                 }
               />
