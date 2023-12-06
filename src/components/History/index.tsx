@@ -13,7 +13,6 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { convertClearToNumber } from "~/utils/convertClearToNumber";
 import { ClickableText } from "../ClickableText";
@@ -47,8 +46,6 @@ export const History = ({
   handleLevelChange,
   historyData,
 }: IHistoryProps) => {
-  const router = useRouter();
-
   const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const [isDesc, setIsDesc] = useState<IHistorySortedDesc>({

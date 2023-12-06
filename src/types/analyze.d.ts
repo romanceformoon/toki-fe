@@ -12,6 +12,7 @@ interface IHistory {
     bp: number;
     rate: number;
     md5: string;
+    level: string;
   }[];
 }
 
@@ -22,6 +23,7 @@ interface IHistorySelectedLevel {
   bp: number;
   rate: number;
   md5: string;
+  level: string;
 }
 
 interface IHistorySortedDesc {
