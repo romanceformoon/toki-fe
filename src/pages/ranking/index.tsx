@@ -135,7 +135,7 @@ const Ranking = () => {
                             sx={{ height: "50px", width: "50px", mr: 2 }}
                             src={
                               data.avatar
-                                ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}.png`
+                                ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
                                 : undefined
                             }
                           />

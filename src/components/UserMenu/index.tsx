@@ -32,7 +32,11 @@ export const UserMenu = () => {
         <Tooltip title="프로필">
           <Avatar
             alt="Profile Image"
-            src={`https://cdn.discordapp.com/avatars/${uid}/${avatar}.png`}
+            src={
+              avatar
+                ? `https://cdn.discordapp.com/avatars/${uid}/${avatar}`
+                : undefined
+            }
           />
         </Tooltip>
       </IconButton>
