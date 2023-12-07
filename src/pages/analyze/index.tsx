@@ -41,15 +41,24 @@ const LampGraph = () => {
       const formData = new FormData();
       formData.append("db", dbFile);
 
-      setIsUploading(true);
-      const response = await axiosInstance.post(`/toki-api/analyze`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      setUploadFile(uploadFile);
-      // setIsUploading(false);
-      router.push(`/user/${uid}`);
+      try {
+        setIsUploading(true);
+        const response = await axiosInstance.post(
+          `/toki-api/analyze`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        setUploadFile(uploadFile);
+
+        router.push(`/user/${uid}`);
+      } catch (err) {
+        alert("서버 에러 발생");
+        setIsUploading(false);
+      }
     }
   };
 
