@@ -48,7 +48,7 @@ const LampGraph = () => {
         },
       });
       setUploadFile(uploadFile);
-      setIsUploading(false);
+      // setIsUploading(false);
       router.push(`/user/${uid}`);
     }
   };
