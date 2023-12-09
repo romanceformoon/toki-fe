@@ -62,7 +62,65 @@ const Ranking = () => {
   )
     return (
       <>
-        <CircularProgress color="inherit" />
+        <NextSeo
+          title="Ranking | Asuma Toki"
+          description="Ranking"
+          openGraph={{
+            type: "website",
+            locale: "ko_KR",
+            url: "https://asumatoki.kr/ranking",
+            title: "Ranking | Asuma Toki",
+            description: "Ranking",
+            images: [
+              {
+                url: "/assets/images/logo.png",
+                width: 400,
+                height: 400,
+              },
+            ],
+          }}
+        />
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+          <Tabs
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            value={category}
+            onChange={handleCategoryChange}
+          >
+            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
+            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Satellite"
+              value="satellite"
+              disabled
+            />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Stella"
+              value="stella"
+              disabled
+            />
+          </Tabs>
+        </Box>
+        <TabContext value={tab}>
+          <TabList onChange={handleTabChange} variant="fullWidth" centered>
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="경험치 랭킹"
+              value="EXP"
+            />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="레이팅 랭킹"
+              value="Rating"
+            />
+          </TabList>
+        </TabContext>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+          <CircularProgress color="inherit" />
+        </Box>
       </>
     );
 
@@ -182,8 +240,8 @@ const Ranking = () => {
                     {ranking?.map((data, idx) => {
                       return (
                         <>
-                          <TableRow>
-                            <TableCell key={data.uid}>
+                          <TableRow key={data.uid}>
+                            <TableCell>
                               <Typography
                                 fontSize="24px"
                                 fontWeight="500"
@@ -192,7 +250,7 @@ const Ranking = () => {
                                 {idx + 1}
                               </Typography>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Box
                                 sx={{
                                   width: "10%",
@@ -230,12 +288,12 @@ const Ranking = () => {
                                 </Box>
                               </Box>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Typography fontSize="24px" fontWeight="500">
                                 {getLevel(data.exp).toFixed(0)}
                               </Typography>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Typography fontSize="24px" fontWeight="500">
                                 {data.exp}
                               </Typography>
@@ -303,8 +361,8 @@ const Ranking = () => {
                     {ratingRanking?.map((data, idx) => {
                       return (
                         <>
-                          <TableRow>
-                            <TableCell key={data.uid}>
+                          <TableRow key={data.uid}>
+                            <TableCell>
                               <Typography
                                 fontSize="24px"
                                 fontWeight="500"
@@ -313,7 +371,7 @@ const Ranking = () => {
                                 {idx + 1}
                               </Typography>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Box
                                 sx={{
                                   width: "10%",
@@ -351,12 +409,12 @@ const Ranking = () => {
                                 </Box>
                               </Box>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Typography fontSize="24px" fontWeight="500">
                                 {getLevel(data.exp).toFixed(0)}
                               </Typography>
                             </TableCell>
-                            <TableCell key={data.uid}>
+                            <TableCell>
                               <Typography fontSize="24px" fontWeight="500">
                                 {data.rating}
                               </Typography>
