@@ -1,5 +1,5 @@
 import { Tooltip, Typography } from "@mui/material";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { ClickableText } from "../ClickableText";
 
 interface IUserNicknameProps {
@@ -13,30 +13,7 @@ export const UserNickname = ({
   children,
   onClick,
 }: IUserNicknameProps) => {
-  const [color, setColor] = useState("#000000");
-
-  useEffect(() => {
-    if (clearDan === "1 DAN") setColor("#D3CCE3");
-    else if (clearDan === "2 DAN") setColor("#E32636");
-    else if (clearDan === "3 DAN") setColor("#A9A9A9");
-    else if (clearDan === "4 DAN") setColor("#3D9140");
-    else if (clearDan === "5 DAN") setColor("#FFE135");
-    else if (clearDan === "6 DAN") setColor("#FF8C00");
-    else if (clearDan === "7 DAN") setColor("#FF0800");
-    else if (clearDan === "8 DAN") setColor("#7e748a6e");
-    else if (clearDan === "9 DAN") setColor("#5DADEC");
-    else if (clearDan === "10 DAN") setColor("#A020F0");
-    else if (clearDan === "KAIDEN DAN") setColor("#FFD700");
-    else if (clearDan === "OVERJOY DAN") setColor("#833278");
-  }, [clearDan]);
-
-  if (
-    clearDan === "1 DAN" ||
-    clearDan === "2 DAN" ||
-    clearDan === "3 DAN" ||
-    clearDan === "4 DAN" ||
-    clearDan === "5 DAN"
-  ) {
+  if (clearDan === "1 DAN")
     return (
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
@@ -44,7 +21,7 @@ export const UserNickname = ({
             fontSize="24px"
             fontWeight={700}
             sx={{
-              color: color,
+              color: "#D3CCE3",
               whiteSpace: "nowrap",
             }}
           >
@@ -53,20 +30,87 @@ export const UserNickname = ({
         </Tooltip>
       </ClickableText>
     );
-  } else if (
-    clearDan === "6 DAN" ||
-    clearDan === "7 DAN" ||
-    clearDan === "8 DAN" ||
-    clearDan === "9 DAN" ||
-    clearDan === "10 DAN"
-  ) {
+
+  if (clearDan === "2 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            fontSize="24px"
+            fontWeight={700}
+            sx={{
+              color: "#E32636",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "3 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            fontSize="24px"
+            fontWeight={700}
+            sx={{
+              color: "#A9A9A9",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "4 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            fontSize="24px"
+            fontWeight={700}
+            sx={{
+              color: "3D9140",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "5 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            fontSize="24px"
+            fontWeight={700}
+            sx={{
+              color: "FFE135",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "6 DAN")
     return (
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
             sx={{
               color: "#fff",
-              textShadow: `${color} 0px 0px 5px, ${color} 0px 0px 10px, ${color} 0px 0px 15px, ${color} 0px 0px 20px, ${color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              textShadow: `#FF8C00 0px 0px 5px, #FF8C00 0px 0px 10px, #FF8C00 0px 0px 15px, #FF8C00 0px 0px 20px, #FF8C00 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: "nowrap",
             }}
             fontSize="24px"
@@ -77,7 +121,84 @@ export const UserNickname = ({
         </Tooltip>
       </ClickableText>
     );
-  } else if (clearDan === "KAIDEN DAN") {
+
+  if (clearDan === "7 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            sx={{
+              color: "#fff",
+              textShadow: `#FF0800 0px 0px 5px, #FF0800 0px 0px 10px, #FF0800 0px 0px 15px, #FF0800 0px 0px 20px, #FF0800 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "8 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            sx={{
+              color: "#fff",
+              textShadow: `#7e748a6e 0px 0px 5px, #7e748a6e 0px 0px 10px, #7e748a6e 0px 0px 15px, #7e748a6e 0px 0px 20px, #7e748a6e 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "9 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            sx={{
+              color: "#fff",
+              textShadow: `#5DADEC 0px 0px 5px, #5DADEC 0px 0px 10px, #5DADEC 0px 0px 15px, #5DADEC 0px 0px 20px, #5DADEC 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "10 DAN")
+    return (
+      <ClickableText onClick={onClick}>
+        <Tooltip title={clearDan}>
+          <Typography
+            sx={{
+              color: "#fff",
+              textShadow: `#A020F0 0px 0px 5px, #A020F0 0px 0px 10px, #A020F0 0px 0px 15px, #A020F0 0px 0px 20px, #A020F0 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              whiteSpace: "nowrap",
+            }}
+            fontSize="24px"
+            fontWeight={700}
+          >
+            {children}
+          </Typography>
+        </Tooltip>
+      </ClickableText>
+    );
+
+  if (clearDan === "KAIDEN DAN") {
     return (
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
@@ -85,10 +206,10 @@ export const UserNickname = ({
             sx={{
               "@keyframes kaiden": {
                 from: {
-                  textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px ${color}, 0 0 8px ${color}, 0 0 9px ${color}, 0 0 10px ${color}, 0 0 20px ${color}`,
+                  textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px #FFD700, 0 0 8px #FFD700, 0 0 9px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700`,
                 },
                 to: {
-                  textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
+                  textShadow: `0 0 10px #fff, 0 0 15px #FFD700, 0 0 20px #FFD700, 0 0 25px #FFD700, 0 0 30px #FFD700, 0 0 35px #FFD700, 0 0 40px #FFD700`,
                 },
               },
               animation: "kaiden 1s ease-in-out infinite alternate",
@@ -106,7 +227,9 @@ export const UserNickname = ({
         </Tooltip>
       </ClickableText>
     );
-  } else if (clearDan === "OVERJOY DAN") {
+  }
+
+  if (clearDan === "OVERJOY DAN") {
     return (
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
@@ -114,10 +237,10 @@ export const UserNickname = ({
             sx={{
               "@keyframes overjoy": {
                 from: {
-                  textShadow: `0 0 5px #fff, 0 0 8px #fff, 0 0 11px ${color}, 0 0 14px ${color}, 0 0 17px ${color}, 0 0 20px ${color}, 0 0 23px ${color}`,
+                  textShadow: `0 0 5px #fff, 0 0 8px #fff, 0 0 11px #833278, 0 0 14px #833278, 0 0 17px #833278, 0 0 20px #833278, 0 0 23px #833278`,
                 },
                 to: {
-                  textShadow: `0 0 10px #fff, 0 0 15px ${color}, 0 0 20px ${color}, 0 0 25px ${color}, 0 0 30px ${color}, 0 0 35px ${color}, 0 0 40px ${color}`,
+                  textShadow: `0 0 10px #fff, 0 0 15px #833278, 0 0 20px #833278, 0 0 25px #833278, 0 0 30px #833278, 0 0 35px #833278, 0 0 40px #833278`,
                 },
               },
               animation: "overjoy 1s ease-in-out infinite alternate",
@@ -136,6 +259,7 @@ export const UserNickname = ({
       </ClickableText>
     );
   }
+
   return (
     <ClickableText onClick={onClick}>
       <Tooltip title={clearDan}>

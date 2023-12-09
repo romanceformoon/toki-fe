@@ -21,7 +21,6 @@ const useEXPRankingQuery = ({ category }: { category: string }) => {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
-      keepPreviousData: true,
     }
   );
 

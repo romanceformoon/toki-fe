@@ -7,6 +7,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import {
   Avatar,
   Box,
+  CircularProgress,
   IconButton,
   SelectChangeEvent,
   Tab,
@@ -157,6 +158,31 @@ const UserPage = ({
               <Typography fontSize="24px" fontWeight={700}>
                 {nickname}
               </Typography>
+            </Box>
+            <CircularProgress />
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+              <Tabs
+                variant="scrollable"
+                scrollButtons="auto"
+                allowScrollButtonsMobile
+                value={category}
+                onChange={handleCategoryChange}
+              >
+                <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
+                <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
+                <Tab
+                  sx={{ fontWeight: 700 }}
+                  label="Satellite"
+                  value="satellite"
+                  disabled
+                />
+                <Tab
+                  sx={{ fontWeight: 700 }}
+                  label="Stella"
+                  value="stella"
+                  disabled
+                />
+              </Tabs>
             </Box>
           </Box>
         </Box>
@@ -330,7 +356,7 @@ const UserPage = ({
             <Graph graphData={graphData} category={category} />
           </TabPanel>
           <TabPanel value="TOP 50">
-            <Top historyData={historyData} />
+            <Top historyData={historyData} category={category} />
           </TabPanel>
           <TabPanel value="History">
             <History

@@ -21,7 +21,6 @@ const useGraphQuery = ({
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
-      keepPreviousData: true,
     }
   );
 

@@ -21,7 +21,6 @@ const useHistoryQuery = ({
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
-      keepPreviousData: true,
     }
   );
 

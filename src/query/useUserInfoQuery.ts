@@ -21,7 +21,6 @@ const useUserInfoQuery = ({
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
-      keepPreviousData: true,
     }
   );
 

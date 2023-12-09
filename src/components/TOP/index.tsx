@@ -33,9 +33,10 @@ const colorPick = (clear: string) => {
 
 interface IHistoryProps {
   historyData: IHistory;
+  category: string;
 }
 
-export const Top = ({ historyData }: IHistoryProps) => {
+export const Top = ({ historyData, category }: IHistoryProps) => {
   const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const descExp = useCallback(() => {
@@ -50,30 +51,59 @@ export const Top = ({ historyData }: IHistoryProps) => {
   }, []);
 
   useEffect(() => {
-    setSongList([
-      ...historyData["LEVEL 1"],
-      ...historyData["LEVEL 2"],
-      ...historyData["LEVEL 3"],
-      ...historyData["LEVEL 4"],
-      ...historyData["LEVEL 5"],
-      ...historyData["LEVEL 6"],
-      ...historyData["LEVEL 7"],
-      ...historyData["LEVEL 8"],
-      ...historyData["LEVEL 9"],
-      ...historyData["LEVEL 10"],
-      ...historyData["LEVEL 11"],
-      ...historyData["LEVEL 12"],
-      ...historyData["LEVEL 13"],
-      ...historyData["LEVEL 14"],
-      ...historyData["LEVEL 15"],
-      ...historyData["LEVEL 16"],
-      ...historyData["LEVEL 17"],
-      ...historyData["LEVEL 18"],
-      ...historyData["LEVEL 19"],
-      ...historyData["LEVEL 20"],
-    ]);
+    if (category === "aery")
+      setSongList([
+        ...historyData["LEVEL 1"],
+        ...historyData["LEVEL 2"],
+        ...historyData["LEVEL 3"],
+        ...historyData["LEVEL 4"],
+        ...historyData["LEVEL 5"],
+        ...historyData["LEVEL 6"],
+        ...historyData["LEVEL 7"],
+        ...historyData["LEVEL 8"],
+        ...historyData["LEVEL 9"],
+        ...historyData["LEVEL 10"],
+        ...historyData["LEVEL 11"],
+        ...historyData["LEVEL 12"],
+        ...historyData["LEVEL 13"],
+        ...historyData["LEVEL 14"],
+        ...historyData["LEVEL 15"],
+        ...historyData["LEVEL 16"],
+        ...historyData["LEVEL 17"],
+        ...historyData["LEVEL 18"],
+        ...historyData["LEVEL 19"],
+        ...historyData["LEVEL 20"],
+      ]);
+    else if (category === "insane")
+      setSongList([
+        ...historyData["LEVEL 1"],
+        ...historyData["LEVEL 2"],
+        ...historyData["LEVEL 3"],
+        ...historyData["LEVEL 4"],
+        ...historyData["LEVEL 5"],
+        ...historyData["LEVEL 6"],
+        ...historyData["LEVEL 7"],
+        ...historyData["LEVEL 8"],
+        ...historyData["LEVEL 9"],
+        ...historyData["LEVEL 10"],
+        ...historyData["LEVEL 11"],
+        ...historyData["LEVEL 12"],
+        ...historyData["LEVEL 13"],
+        ...historyData["LEVEL 14"],
+        ...historyData["LEVEL 15"],
+        ...historyData["LEVEL 16"],
+        ...historyData["LEVEL 17"],
+        ...historyData["LEVEL 18"],
+        ...historyData["LEVEL 19"],
+        ...historyData["LEVEL 20"],
+        ...historyData["LEVEL 21"],
+        ...historyData["LEVEL 22"],
+        ...historyData["LEVEL 23"],
+        ...historyData["LEVEL 24"],
+        ...historyData["LEVEL 25"],
+      ]);
     descExp();
-  }, [descExp, historyData]);
+  }, [descExp, historyData, category]);
 
   if (!historyData) return <TableSkeleton></TableSkeleton>;
   if (!songList) return <TableSkeleton></TableSkeleton>;
