@@ -1,5 +1,4 @@
 import { BarChart } from "@mui/x-charts";
-import { yLabels } from "~/const/graphLabels";
 
 export const BarChartSkeleton = () => {
   return (
@@ -53,7 +52,28 @@ export const BarChartSkeleton = () => {
       ]}
       yAxis={[
         {
-          data: yLabels,
+          data: [
+            "⑤ 1",
+            "⑤ 2",
+            "⑤ 3",
+            "⑤ 4",
+            "⑤ 5",
+            "⑤ 6",
+            "⑤ 7",
+            "⑤ 8",
+            "⑤ 9",
+            "⑤ 10",
+            "⑤ 11",
+            "⑤ 12",
+            "⑤ 13",
+            "⑤ 14",
+            "⑤ 15",
+            "⑤ 16",
+            "⑤ 17",
+            "⑤ 18",
+            "⑤ 19",
+            "⑤ 20",
+          ],
           scaleType: "band",
         },
       ]}

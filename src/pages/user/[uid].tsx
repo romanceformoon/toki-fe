@@ -10,6 +10,7 @@ import {
   IconButton,
   SelectChangeEvent,
   Tab,
+  Tabs,
   TextField,
   Typography,
 } from "@mui/material";
@@ -22,7 +23,8 @@ import {
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useQueryClient } from "react-query";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { Graph } from "~/components/Graph";
@@ -31,6 +33,7 @@ import { Top } from "~/components/TOP";
 import { UserNickname } from "~/components/UserNickname";
 import useGraphQuery from "~/query/useGraphQuery";
 import useHistoryQuery from "~/query/useHistoryQuery";
+import useUserInfoQuery from "~/query/useUserInfoQuery";
 import axiosInstance from "~/utils/axiosInstance";
 import { getExpTable, getLevel } from "~/utils/exp";
 
@@ -43,22 +46,24 @@ const UserPage = ({
   lr2Id,
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
+  const queryClient = useQueryClient();
 
   const uid = router.query.uid;
 
   const { isLogined, uid: loginUid } = useLoginUser();
 
+  const [category, setCategory] = useState<string>("aery");
+  const handleCategoryChange = (
+    event: React.SyntheticEvent,
+    newValue: string
+  ) => {
+    setCategory(newValue);
+  };
+
   const [tab, setTab] = useState<string>("Graph");
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
   };
-
-  const [userNickname, setUserNickname] = useState<string>("");
-  const [userAvatar, setUserAvatar] = useState<string>("");
-  const [userDan, setUserDan] = useState<IDan>("None");
-  const [userExp, setUserExp] = useState<number>(0);
-  const [userLevel, setUserLevel] = useState<number>(1);
-  const [userLR2ID, setUserLR2ID] = useState<number>(0);
 
   const expTable = getExpTable();
 
@@ -67,14 +72,21 @@ const UserPage = ({
     setSelectedLevel(event.target.value as string);
   };
 
-  useEffect(() => {
-    setUserNickname(nickname);
-    setUserAvatar(avatar);
-    setUserDan(clearDan);
-    setUserExp(exp);
-    setUserLevel(getLevel(exp));
-    setUserLR2ID(lr2Id);
-  }, [nickname, avatar, clearDan, exp, lr2Id]);
+  const [changeNickname, setChangeNickname] = useState<boolean>(false);
+  const [inputNickname, setInputNickname] = useState<string>("");
+
+  const handleChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputNickname(e.target.value);
+  };
+
+  const {
+    data: userData,
+    isLoading: isUserLoading,
+    isError: isUserError,
+  } = useUserInfoQuery({
+    uid,
+    category,
+  });
 
   const {
     data: graphData,
@@ -82,6 +94,7 @@ const UserPage = ({
     isError: isGraphError,
   } = useGraphQuery({
     uid,
+    category,
   });
 
   const {
@@ -90,18 +103,15 @@ const UserPage = ({
     isError: isHistoryError,
   } = useHistoryQuery({
     uid,
+    category,
   });
 
-  const [changeNickname, setChangeNickname] = useState<boolean>(false);
-  const [inputNickname, setInputNickname] = useState<string>("");
-
-  const handleChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputNickname(e.target.value);
-  };
-
   if (
+    !userData ||
     !graphData ||
     !historyData ||
+    isUserLoading ||
+    isUserError ||
     isGraphLoading ||
     isGraphError ||
     isHistoryLoading ||
@@ -137,15 +147,15 @@ const UserPage = ({
                 alt="Profile Image"
                 sx={{ height: "70px", width: "70px" }}
                 src={
-                  userAvatar
-                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
+                  avatar
+                    ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}`
                     : undefined
                 }
               />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
               <Typography fontSize="24px" fontWeight={700}>
-                {userNickname}
+                {nickname}
               </Typography>
             </Box>
           </Box>
@@ -154,22 +164,22 @@ const UserPage = ({
       </>
     );
 
-  if (graphData || historyData)
+  if (userData && (graphData || historyData))
     return (
       <>
         <NextSeo
-          title={`${userNickname} | Asuma Toki`}
-          description={`${userNickname} Profile`}
+          title={`${userData.nickname} | Asuma Toki`}
+          description={`${userData.nickname} Profile`}
           openGraph={{
             type: "website",
             locale: "ko_KR",
-            url: `https://asumatoki.kr/user/${uid}`,
-            title: `${userNickname} | Asuma Toki`,
-            description: `${userNickname} Profile`,
+            url: `https://asumatoki.kr/user/${userData.uid}`,
+            title: `${userData.nickname} | Asuma Toki`,
+            description: `${userData.nickname} Profile`,
             images: [
               {
-                url: userAvatar
-                  ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
+                url: userData.avatar
+                  ? `https://cdn.discordapp.com/avatars/${userData.uid}/${userData.avatar}`
                   : "/assets/images/logo.png",
                 width: 400,
                 height: 400,
@@ -185,8 +195,8 @@ const UserPage = ({
                 alt="Profile Image"
                 sx={{ height: "70px", width: "70px" }}
                 src={
-                  userAvatar
-                    ? `https://cdn.discordapp.com/avatars/${uid}/${userAvatar}`
+                  userData.avatar
+                    ? `https://cdn.discordapp.com/avatars/${userData.uid}/${userData.avatar}`
                     : undefined
                 }
               />
@@ -196,19 +206,19 @@ const UserPage = ({
               {!changeNickname ? (
                 <>
                   <Link
-                    href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userLR2ID}`}
+                    href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userData.lr2Id}`}
                     style={{ textDecoration: "none" }}
                     target="_blank"
                   >
-                    <UserNickname clearDan={userDan}>
-                      {userNickname}
+                    <UserNickname clearDan={userData.clearDan}>
+                      {userData.nickname}
                     </UserNickname>
                   </Link>
 
-                  {isLogined && loginUid === uid ? (
+                  {isLogined && loginUid === userData.uid ? (
                     <IconButton
                       onClick={() => {
-                        setInputNickname(userNickname);
+                        setInputNickname(userData.nickname);
                         setChangeNickname(true);
                       }}
                     >
@@ -237,7 +247,9 @@ const UserPage = ({
                         const response = await axiosInstance.post(
                           `/toki-api/auth/user/change-nickname/${inputNickname}`
                         );
-                        setUserNickname(response.data.nickname);
+                        queryClient.invalidateQueries({
+                          queryKey: ["get-user-info"],
+                        });
                       } catch (err) {
                         alert("에러 발생");
                       }
@@ -253,24 +265,47 @@ const UserPage = ({
               )}
             </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
-              <Typography fontSize="18px" fontWeight={700}>
-                Level: {userLevel}
-              </Typography>
-            </Box>
-
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Typography fontSize="15px" fontWeight={500}>
-                Exp: {userExp.toFixed(0)} /{" "}
-                {userLevel < 99 ? expTable[userLevel].toFixed(0) : "-"}
-              </Typography>
+            <Box sx={{ mb: 1 }}>
+              <Box>
+                <Typography fontSize="18px" fontWeight={700}>
+                  Level: {getLevel(userData.exp)}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography fontSize="14px" fontWeight={500}>
+                  Exp: {userData.exp.toFixed(0)} /{" "}
+                  {getLevel(userData.exp) < 99
+                    ? expTable[getLevel(userData.exp)].toFixed(0)
+                    : "-"}
+                </Typography>
+              </Box>
             </Box>
           </Box>
+        </Box>
+
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+          <Tabs
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            value={category}
+            onChange={handleCategoryChange}
+          >
+            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
+            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Satellite"
+              value="satellite"
+              disabled
+            />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Stella"
+              value="stella"
+              disabled
+            />
+          </Tabs>
         </Box>
 
         <TabContext value={tab}>
@@ -292,7 +327,7 @@ const UserPage = ({
             />
           </TabList>
           <TabPanel value="Graph">
-            <Graph graphData={graphData} />
+            <Graph graphData={graphData} category={category} />
           </TabPanel>
           <TabPanel value="TOP 50">
             <Top historyData={historyData} />
@@ -318,9 +353,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     ? process.env.NEXT_PUBLIC_DEV
     : process.env.NEXT_PUBLIC_PROD;
 
-  const result = await axios.get(
-    `${requestURI}/toki-api/analyze/user/score/${uid}`
-  );
+  const result = await axios.get(`${requestURI}/toki-api/user/aery/${uid}`);
 
   return {
     props: {
