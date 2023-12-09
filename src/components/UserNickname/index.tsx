@@ -75,7 +75,7 @@ export const UserNickname = ({
             fontSize="24px"
             fontWeight={700}
             sx={{
-              color: "3D9140",
+              color: "#3D9140",
               whiteSpace: "nowrap",
             }}
           >
@@ -93,7 +93,7 @@ export const UserNickname = ({
             fontSize="24px"
             fontWeight={700}
             sx={{
-              color: "FFE135",
+              color: "#FFE135",
               whiteSpace: "nowrap",
             }}
           >
