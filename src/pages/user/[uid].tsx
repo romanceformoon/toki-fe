@@ -27,7 +27,6 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useQueryClient } from "react-query";
 import useLoginUser from "~/auth/hooks/useLoginUser";
-import { BarChartSkeleton } from "~/components/BarChartSkeleton";
 import { Graph } from "~/components/Graph";
 import { History } from "~/components/History";
 import { Top } from "~/components/TOP";
@@ -186,7 +185,36 @@ const UserPage = ({
             </Box>
           </Box>
         </Box>
-        <BarChartSkeleton />
+        <Box sx={{ mb: "5rem" }}>
+          <TabContext value={tab}>
+            <TabList onChange={handleTabChange} variant="fullWidth" centered>
+              <Tab
+                sx={{ fontWeight: 700, fontSize: 20 }}
+                label="Graph"
+                value="Graph"
+              />
+              <Tab
+                sx={{ fontWeight: 700, fontSize: 20 }}
+                label="TOP 50"
+                value="TOP 50"
+              />
+              <Tab
+                sx={{ fontWeight: 700, fontSize: 20 }}
+                label="History"
+                value="History"
+              />
+            </TabList>
+          </TabContext>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: 1,
+          }}
+        >
+          <CircularProgress />
+        </Box>
       </>
     );
 
