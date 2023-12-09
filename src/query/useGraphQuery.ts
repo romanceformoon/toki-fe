@@ -1,12 +1,18 @@
 import { useQuery } from "react-query";
 import axiosInstance from "~/utils/axiosInstance";
 
-const useGraphQuery = ({ uid }: { uid: string | string[] | undefined }) => {
+const useGraphQuery = ({
+  uid,
+  category,
+}: {
+  uid: string | string[] | undefined;
+  category: string;
+}) => {
   const query = useQuery(
-    ["get-graph-info", uid],
+    ["get-graph-info", uid, category],
     async () => {
       const response = await axiosInstance.get<IGraph>(
-        `/toki-api/analyze/user/graph/${uid}`
+        `/toki-api/user/graph/${category}/${uid}`
       );
 
       return response.data;
@@ -15,6 +21,7 @@ const useGraphQuery = ({ uid }: { uid: string | string[] | undefined }) => {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
+      keepPreviousData: true,
     }
   );
 

@@ -1,11 +1,66 @@
 import { BarChart } from "@mui/x-charts";
-import { yLabels } from "~/const/graphLabels";
 
 interface IGraphProps {
   graphData: IGraph;
+  category: string;
 }
 
-export const Graph = ({ graphData }: IGraphProps) => {
+export const Graph = ({ graphData, category }: IGraphProps) => {
+  let yLabels: string[] = [];
+
+  if (category === "aery") {
+    yLabels = [
+      "⑤ 1",
+      "⑤ 2",
+      "⑤ 3",
+      "⑤ 4",
+      "⑤ 5",
+      "⑤ 6",
+      "⑤ 7",
+      "⑤ 8",
+      "⑤ 9",
+      "⑤ 10",
+      "⑤ 11",
+      "⑤ 12",
+      "⑤ 13",
+      "⑤ 14",
+      "⑤ 15",
+      "⑤ 16",
+      "⑤ 17",
+      "⑤ 18",
+      "⑤ 19",
+      "⑤ 20",
+    ];
+  } else if (category === "insane") {
+    yLabels = [
+      "★1",
+      "★2",
+      "★3",
+      "★4",
+      "★5",
+      "★6",
+      "★7",
+      "★8",
+      "★9",
+      "★10",
+      "★11",
+      "★12",
+      "★13",
+      "★14",
+      "★15",
+      "★16",
+      "★17",
+      "★18",
+      "★19",
+      "★20",
+      "★21",
+      "★22",
+      "★23",
+      "★24",
+      "★25",
+    ];
+  }
+
   return (
     <BarChart
       sx={{

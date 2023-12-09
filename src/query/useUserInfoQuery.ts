@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import axiosInstance from "~/utils/axiosInstance";
 
-const useHistoryQuery = ({
+const useUserInfoQuery = ({
   uid,
   category,
 }: {
@@ -9,10 +9,10 @@ const useHistoryQuery = ({
   category: string;
 }) => {
   const query = useQuery(
-    ["get-history-info", uid, category],
+    ["get-user-info", uid, category],
     async () => {
-      const response = await axiosInstance.get<IHistory>(
-        `/toki-api/user/history/${category}/${uid}`
+      const response = await axiosInstance.get<IUserGameInfo>(
+        `/toki-api/user/${category}/${uid}`
       );
 
       return response.data;
@@ -28,4 +28,4 @@ const useHistoryQuery = ({
   return query;
 };
 
-export default useHistoryQuery;
+export default useUserInfoQuery;

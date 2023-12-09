@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { TableSkeleton } from "../TableSkeleton";
 
 const colorPick = (clear: string) => {
   switch (clear) {
@@ -74,8 +75,8 @@ export const Top = ({ historyData }: IHistoryProps) => {
     descExp();
   }, [descExp, historyData]);
 
-  if (!historyData) return <></>;
-  if (!songList) return <></>;
+  if (!historyData) return <TableSkeleton></TableSkeleton>;
+  if (!songList) return <TableSkeleton></TableSkeleton>;
 
   return (
     <>

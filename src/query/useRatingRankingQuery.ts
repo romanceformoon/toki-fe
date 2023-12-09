@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
 import axiosInstance from "~/utils/axiosInstance";
 
-const useRatingRankingQuery = () => {
+const useRatingRankingQuery = ({ category }: { category: string }) => {
   const query = useQuery(
-    ["get-rating-ranking"],
+    ["get-rating-ranking", category],
     async () => {
       const response = await axiosInstance.get<
         {
@@ -14,7 +14,7 @@ const useRatingRankingQuery = () => {
           nickname: string;
           clearDan: IDan;
         }[]
-      >("/toki-api/analyze/rating-ranking");
+      >(`/toki-api/ranking/rating/${category}`);
 
       return response.data;
     },

@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
 import axiosInstance from "~/utils/axiosInstance";
 
-const useEXPRankingQuery = () => {
+const useEXPRankingQuery = ({ category }: { category: string }) => {
   const query = useQuery(
-    ["get-exp-ranking"],
+    ["get-exp-ranking", category],
     async () => {
       const response = await axiosInstance.get<
         {
@@ -13,7 +13,7 @@ const useEXPRankingQuery = () => {
           nickname: string;
           clearDan: IDan;
         }[]
-      >("/toki-api/analyze/ranking");
+      >(`/toki-api/ranking/exp/${category}`);
 
       return response.data;
     },
@@ -21,6 +21,7 @@ const useEXPRankingQuery = () => {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,
+      keepPreviousData: true,
     }
   );
 

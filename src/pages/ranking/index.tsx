@@ -13,6 +13,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Tabs,
   Typography,
 } from "@mui/material";
 import { NextSeo } from "next-seo";
@@ -26,6 +27,14 @@ import { getLevel } from "~/utils/exp";
 const Ranking = () => {
   const router = useRouter();
 
+  const [category, setCategory] = useState<string>("aery");
+  const handleCategoryChange = (
+    event: React.SyntheticEvent,
+    newValue: string
+  ) => {
+    setCategory(newValue);
+  };
+
   const [tab, setTab] = useState<string>("EXP");
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
@@ -35,13 +44,13 @@ const Ranking = () => {
     data: ranking,
     isLoading: isExpRankingLoading,
     isError: isExpError,
-  } = useEXPRankingQuery();
+  } = useEXPRankingQuery({ category });
 
   const {
     data: ratingRanking,
     isLoading: isRatingRankingLoading,
     isError: isRatingError,
-  } = useRatingRankingQuery();
+  } = useRatingRankingQuery({ category });
 
   if (
     !ranking ||
@@ -78,6 +87,32 @@ const Ranking = () => {
             ],
           }}
         />
+
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+          <Tabs
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            value={category}
+            onChange={handleCategoryChange}
+          >
+            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
+            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Satellite"
+              value="satellite"
+              disabled
+            />
+            <Tab
+              sx={{ fontWeight: 700 }}
+              label="Stella"
+              value="stella"
+              disabled
+            />
+          </Tabs>
+        </Box>
+
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant="fullWidth" centered>
             <Tab
@@ -91,248 +126,250 @@ const Ranking = () => {
               value="Rating"
             />
           </TabList>
-          <TabPanel value="EXP">
-            <TableContainer
-              sx={{
-                border: 1,
-                borderRadius: "13px",
-                borderColor: "primary.main",
-              }}
-              component={Paper}
-            >
-              <Table sx={{ minWidth: "100%" }}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell sx={{ width: "15%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                        textAlign="center"
-                      >
-                        순위
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "35%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        닉네임
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "25%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        레벨
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "25%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        경험치
-                      </Typography>
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {ranking?.map((data, idx) => {
-                    return (
-                      <>
-                        <TableRow>
-                          <TableCell key={data.uid}>
-                            <Typography
-                              fontSize="24px"
-                              fontWeight="500"
-                              align="center"
-                            >
-                              {idx + 1}
-                            </Typography>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Box
-                              sx={{
-                                width: "10%",
-                                display: "flex",
-                              }}
-                            >
-                              <Box>
-                                <Avatar
-                                  alt="Profile Image"
-                                  sx={{
-                                    height: "50px",
-                                    width: "50px",
-                                    mr: 2,
-                                  }}
-                                  src={
-                                    data.avatar
-                                      ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
-                                      : undefined
-                                  }
-                                />
-                              </Box>
+          <Box sx={{ display: "flex" }}>
+            <TabPanel value="EXP" sx={{ width: "100%" }}>
+              <TableContainer
+                sx={{
+                  border: 1,
+                  borderRadius: "13px",
+                  borderColor: "primary.main",
+                }}
+                component={Paper}
+              >
+                <Table sx={{ minWidth: "100%" }}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell sx={{ width: "15%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                          textAlign="center"
+                        >
+                          순위
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "35%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          닉네임
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "25%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          레벨
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "25%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          경험치
+                        </Typography>
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {ranking?.map((data, idx) => {
+                      return (
+                        <>
+                          <TableRow>
+                            <TableCell key={data.uid}>
+                              <Typography
+                                fontSize="24px"
+                                fontWeight="500"
+                                align="center"
+                              >
+                                {idx + 1}
+                              </Typography>
+                            </TableCell>
+                            <TableCell key={data.uid}>
                               <Box
                                 sx={{
-                                  padding: "4px 0",
+                                  width: "10%",
+                                  display: "flex",
                                 }}
                               >
-                                <UserNickname
-                                  clearDan={data.clearDan}
-                                  onClick={() =>
-                                    router.push(`/user/${data.uid}`)
-                                  }
-                                >
-                                  {data.nickname}
-                                </UserNickname>
-                              </Box>
-                            </Box>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Typography fontSize="24px" fontWeight="500">
-                              {getLevel(data.exp).toFixed(0)}
-                            </Typography>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Typography fontSize="24px" fontWeight="500">
-                              {data.exp}
-                            </Typography>
-                          </TableCell>
-                        </TableRow>
-                      </>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </TabPanel>
-          <TabPanel value="Rating">
-            <TableContainer
-              sx={{
-                border: 1,
-                borderRadius: "13px",
-                borderColor: "primary.main",
-              }}
-              component={Paper}
-            >
-              <Table sx={{ minWidth: "100%" }}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell sx={{ width: "15%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                        textAlign="center"
-                      >
-                        순위
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "35%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        닉네임
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "25%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        레벨
-                      </Typography>
-                    </TableCell>
-                    <TableCell sx={{ width: "25%" }}>
-                      <Typography
-                        fontSize="24px"
-                        fontWeight="900"
-                        fontStyle={{ color: "primary.main" }}
-                      >
-                        레이팅
-                      </Typography>
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {ratingRanking?.map((data, idx) => {
-                    return (
-                      <>
-                        <TableRow>
-                          <TableCell key={data.uid}>
-                            <Typography
-                              fontSize="24px"
-                              fontWeight="500"
-                              align="center"
-                            >
-                              {idx + 1}
-                            </Typography>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Box
-                              sx={{
-                                width: "10%",
-                                display: "flex",
-                              }}
-                            >
-                              <Box>
-                                <Avatar
-                                  alt="Profile Image"
+                                <Box>
+                                  <Avatar
+                                    alt="Profile Image"
+                                    sx={{
+                                      height: "50px",
+                                      width: "50px",
+                                      mr: 2,
+                                    }}
+                                    src={
+                                      data.avatar
+                                        ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
+                                        : undefined
+                                    }
+                                  />
+                                </Box>
+                                <Box
                                   sx={{
-                                    height: "50px",
-                                    width: "50px",
-                                    mr: 2,
+                                    padding: "4px 0",
                                   }}
-                                  src={
-                                    data.avatar
-                                      ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
-                                      : undefined
-                                  }
-                                />
+                                >
+                                  <UserNickname
+                                    clearDan={data.clearDan}
+                                    onClick={() =>
+                                      router.push(`/user/${data.uid}`)
+                                    }
+                                  >
+                                    {data.nickname}
+                                  </UserNickname>
+                                </Box>
                               </Box>
+                            </TableCell>
+                            <TableCell key={data.uid}>
+                              <Typography fontSize="24px" fontWeight="500">
+                                {getLevel(data.exp).toFixed(0)}
+                              </Typography>
+                            </TableCell>
+                            <TableCell key={data.uid}>
+                              <Typography fontSize="24px" fontWeight="500">
+                                {data.exp}
+                              </Typography>
+                            </TableCell>
+                          </TableRow>
+                        </>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </TabPanel>
+            <TabPanel value="Rating" sx={{ width: "100%" }}>
+              <TableContainer
+                sx={{
+                  border: 1,
+                  borderRadius: "13px",
+                  borderColor: "primary.main",
+                }}
+                component={Paper}
+              >
+                <Table sx={{ minWidth: "100%" }}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell sx={{ width: "15%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                          textAlign="center"
+                        >
+                          순위
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "35%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          닉네임
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "25%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          레벨
+                        </Typography>
+                      </TableCell>
+                      <TableCell sx={{ width: "25%" }}>
+                        <Typography
+                          fontSize="24px"
+                          fontWeight="900"
+                          fontStyle={{ color: "primary.main" }}
+                        >
+                          레이팅
+                        </Typography>
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {ratingRanking?.map((data, idx) => {
+                      return (
+                        <>
+                          <TableRow>
+                            <TableCell key={data.uid}>
+                              <Typography
+                                fontSize="24px"
+                                fontWeight="500"
+                                align="center"
+                              >
+                                {idx + 1}
+                              </Typography>
+                            </TableCell>
+                            <TableCell key={data.uid}>
                               <Box
                                 sx={{
-                                  padding: "4px 0",
+                                  width: "10%",
+                                  display: "flex",
                                 }}
                               >
-                                <UserNickname
-                                  clearDan={data.clearDan}
-                                  onClick={() =>
-                                    router.push(`/user/${data.uid}`)
-                                  }
+                                <Box>
+                                  <Avatar
+                                    alt="Profile Image"
+                                    sx={{
+                                      height: "50px",
+                                      width: "50px",
+                                      mr: 2,
+                                    }}
+                                    src={
+                                      data.avatar
+                                        ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
+                                        : undefined
+                                    }
+                                  />
+                                </Box>
+                                <Box
+                                  sx={{
+                                    padding: "4px 0",
+                                  }}
                                 >
-                                  {data.nickname}
-                                </UserNickname>
+                                  <UserNickname
+                                    clearDan={data.clearDan}
+                                    onClick={() =>
+                                      router.push(`/user/${data.uid}`)
+                                    }
+                                  >
+                                    {data.nickname}
+                                  </UserNickname>
+                                </Box>
                               </Box>
-                            </Box>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Typography fontSize="24px" fontWeight="500">
-                              {getLevel(data.exp).toFixed(0)}
-                            </Typography>
-                          </TableCell>
-                          <TableCell key={data.uid}>
-                            <Typography fontSize="24px" fontWeight="500">
-                              {data.rating}
-                            </Typography>
-                          </TableCell>
-                        </TableRow>
-                      </>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </TabPanel>
+                            </TableCell>
+                            <TableCell key={data.uid}>
+                              <Typography fontSize="24px" fontWeight="500">
+                                {getLevel(data.exp).toFixed(0)}
+                              </Typography>
+                            </TableCell>
+                            <TableCell key={data.uid}>
+                              <Typography fontSize="24px" fontWeight="500">
+                                {data.rating}
+                              </Typography>
+                            </TableCell>
+                          </TableRow>
+                        </>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </TabPanel>
+          </Box>
         </TabContext>
       </>
     );

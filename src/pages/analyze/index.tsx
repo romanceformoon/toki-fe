@@ -44,7 +44,7 @@ const LampGraph = () => {
       try {
         setIsUploading(true);
         const response = await axiosInstance.post(
-          `/toki-api/analyze`,
+          `/toki-api/data/analyze`,
           formData,
           {
             headers: {

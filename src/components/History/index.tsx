@@ -17,6 +17,7 @@ import { useCallback, useEffect, useState } from "react";
 import { convertClearToNumber } from "~/utils/convertClearToNumber";
 import { ClickableText } from "../ClickableText";
 import { SelectLevel } from "../SelectLevel";
+import { TableSkeleton } from "../TableSkeleton";
 
 const colorPick = (clear: string) => {
   switch (clear) {
@@ -216,8 +217,8 @@ export const History = ({
     ascTitle();
   }, [ascTitle, historyData, selectedLevel]);
 
-  if (!historyData) return <></>;
-  if (!songList) return <></>;
+  if (!historyData) return <TableSkeleton></TableSkeleton>;
+  if (!songList) return <TableSkeleton></TableSkeleton>;
 
   return (
     <>
