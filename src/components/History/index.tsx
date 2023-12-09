@@ -360,7 +360,11 @@ export const History = ({
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize="16px" fontWeight="500">
+                      <Typography
+                        fontSize="16px"
+                        fontWeight="500"
+                        sx={{ maxWidth: 500, wordWrap: "break-word" }}
+                      >
                         {data.title}
                       </Typography>
                     </TableCell>
