@@ -102,6 +102,22 @@ export const Top = ({ historyData, category }: IHistoryProps) => {
         ...historyData["LEVEL 24"],
         ...historyData["LEVEL 25"],
       ]);
+    else if (category === "sl" || category === "st")
+      setSongList([
+        ...historyData["LEVEL 0"],
+        ...historyData["LEVEL 1"],
+        ...historyData["LEVEL 2"],
+        ...historyData["LEVEL 3"],
+        ...historyData["LEVEL 4"],
+        ...historyData["LEVEL 5"],
+        ...historyData["LEVEL 6"],
+        ...historyData["LEVEL 7"],
+        ...historyData["LEVEL 8"],
+        ...historyData["LEVEL 9"],
+        ...historyData["LEVEL 10"],
+        ...historyData["LEVEL 11"],
+        ...historyData["LEVEL 12"],
+      ]);
     descExp();
   }, [descExp, historyData, category]);
 

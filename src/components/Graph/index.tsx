@@ -59,6 +59,38 @@ export const Graph = ({ graphData, category }: IGraphProps) => {
       "★24",
       "★25",
     ];
+  } else if (category === "sl") {
+    yLabels = [
+      "sl0",
+      "sl1",
+      "sl2",
+      "sl3",
+      "sl4",
+      "sl5",
+      "sl6",
+      "sl7",
+      "sl8",
+      "sl9",
+      "sl10",
+      "sl11",
+      "sl12",
+    ];
+  } else if (category === "st") {
+    yLabels = [
+      "st0",
+      "st1",
+      "st2",
+      "st3",
+      "st4",
+      "st5",
+      "st6",
+      "st7",
+      "st8",
+      "st9",
+      "st10",
+      "st11",
+      "st12",
+    ];
   }
 
   return (

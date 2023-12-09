@@ -90,18 +90,8 @@ const Ranking = () => {
           >
             <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
             <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Satellite"
-              value="satellite"
-              disabled
-            />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Stella"
-              value="stella"
-              disabled
-            />
+            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
+            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
           </Tabs>
         </Box>
         <TabContext value={tab}>
@@ -118,7 +108,7 @@ const Ranking = () => {
             />
           </TabList>
         </TabContext>
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: "5rem" }}>
           <CircularProgress color="inherit" />
         </Box>
       </>
@@ -156,18 +146,8 @@ const Ranking = () => {
           >
             <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
             <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Satellite"
-              value="satellite"
-              disabled
-            />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Stella"
-              value="stella"
-              disabled
-            />
+            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
+            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
           </Tabs>
         </Box>
 

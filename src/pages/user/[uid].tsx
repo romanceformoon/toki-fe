@@ -58,6 +58,8 @@ const UserPage = ({
     newValue: string
   ) => {
     setCategory(newValue);
+    if (newValue === "sl" || newValue === "st") setSelectedLevel("LEVEL 0");
+    else setSelectedLevel("LEVEL 1");
   };
 
   const [tab, setTab] = useState<string>("Graph");
@@ -169,18 +171,8 @@ const UserPage = ({
               >
                 <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
                 <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-                <Tab
-                  sx={{ fontWeight: 700 }}
-                  label="Satellite"
-                  value="satellite"
-                  disabled
-                />
-                <Tab
-                  sx={{ fontWeight: 700 }}
-                  label="Stella"
-                  value="stella"
-                  disabled
-                />
+                <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
+                <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
               </Tabs>
             </Box>
           </Box>
@@ -347,18 +339,8 @@ const UserPage = ({
           >
             <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
             <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Satellite"
-              value="satellite"
-              disabled
-            />
-            <Tab
-              sx={{ fontWeight: 700 }}
-              label="Stella"
-              value="stella"
-              disabled
-            />
+            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
+            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
           </Tabs>
         </Box>
 
