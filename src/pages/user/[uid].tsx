@@ -155,7 +155,7 @@ const UserPage = ({
                 }
               />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
               <Typography fontSize="24px" fontWeight={700}>
                 {nickname}
               </Typography>
