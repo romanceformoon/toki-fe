@@ -1,4 +1,4 @@
-const coefficient = 30;
+const coefficient = 20;
 
 // https://sanctacrux.tistory.com/1107
 
@@ -12,7 +12,7 @@ export const getExpTable = () => {
 
 export const getLevel = (exp: number) => {
   const target = exp;
-  if (target >= 3000000) return 99;
+  if (target >= 2000000) return 99;
 
   const numbers = getExpTable();
 
