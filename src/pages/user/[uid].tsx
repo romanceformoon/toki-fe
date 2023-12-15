@@ -155,58 +155,66 @@ const UserPage = ({
                 }
               />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
               <Typography fontSize="24px" fontWeight={700}>
                 {nickname}
               </Typography>
             </Box>
-            <CircularProgress />
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
-              <Tabs
-                variant="scrollable"
-                scrollButtons="auto"
-                allowScrollButtonsMobile
-                value={category}
-                onChange={handleCategoryChange}
-              >
-                <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
-                <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-                <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
-                <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
-              </Tabs>
+            <Box sx={{ mb: 1 }}>
+              <CircularProgress />
             </Box>
           </Box>
         </Box>
-        <Box sx={{ mb: "5rem" }}>
-          <TabContext value={tab}>
-            <TabList onChange={handleTabChange} variant="fullWidth" centered>
-              <Tab
-                sx={{ fontWeight: 700, fontSize: 20 }}
-                label="Graph"
-                value="Graph"
-              />
-              <Tab
-                sx={{ fontWeight: 700, fontSize: 20 }}
-                label="TOP 50"
-                value="TOP 50"
-              />
-              <Tab
-                sx={{ fontWeight: 700, fontSize: 20 }}
-                label="History"
-                value="History"
-              />
-            </TabList>
-          </TabContext>
+
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+          <Tabs
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            value={category}
+            onChange={handleCategoryChange}
+          >
+            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
+            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
+            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
+            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
+          </Tabs>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            mb: 1,
-          }}
-        >
-          <CircularProgress />
-        </Box>
+
+        <TabContext value={tab}>
+          <TabList onChange={handleTabChange} variant="fullWidth" centered>
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="Graph"
+              value="Graph"
+            />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="TOP 50"
+              value="TOP 50"
+            />
+            <Tab
+              sx={{ fontWeight: 700, fontSize: 20 }}
+              label="History"
+              value="History"
+            />
+          </TabList>
+          <TabPanel value="Graph">
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+              <CircularProgress />
+            </Box>
+          </TabPanel>
+          <TabPanel value="TOP 50">
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+              <CircularProgress />
+            </Box>
+          </TabPanel>
+          <TabPanel value="History">
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+              <CircularProgress />
+            </Box>
+          </TabPanel>
+        </TabContext>
       </>
     );
 

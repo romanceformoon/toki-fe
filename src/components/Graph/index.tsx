@@ -96,7 +96,6 @@ export const Graph = ({ graphData, category }: IGraphProps) => {
   return (
     <BarChart
       sx={{
-        mt: 1,
         minWidth: "100%",
         border: 1,
         borderRadius: 5,
