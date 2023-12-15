@@ -111,6 +111,9 @@ const Ranking = () => {
             <TabPanel value="EXP" sx={{ width: "100%" }}>
               <RankingSkeleton />
             </TabPanel>
+            <TabPanel value="Rating" sx={{ width: "100%" }}>
+              <RankingSkeleton />
+            </TabPanel>
           </Box>
         </TabContext>
       </>
