@@ -4,7 +4,6 @@ import TabPanel from "@mui/lab/TabPanel";
 import {
   Avatar,
   Box,
-  CircularProgress,
   Paper,
   Tab,
   Table,
@@ -19,6 +18,7 @@ import {
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { RankingSkeleton } from "~/components/RankingSkeleton";
 import { UserNickname } from "~/components/UserNickname";
 import useEXPRankingQuery from "~/query/useEXPRankingQuery";
 import useRatingRankingQuery from "~/query/useRatingRankingQuery";
@@ -107,10 +107,12 @@ const Ranking = () => {
               value="Rating"
             />
           </TabList>
+          <Box sx={{ display: "flex" }}>
+            <TabPanel value="EXP" sx={{ width: "100%" }}>
+              <RankingSkeleton />
+            </TabPanel>
+          </Box>
         </TabContext>
-        <Box sx={{ display: "flex", justifyContent: "center", mt: "5rem" }}>
-          <CircularProgress color="inherit" />
-        </Box>
       </>
     );
 
