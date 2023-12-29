@@ -14,7 +14,6 @@ import "~/pages/tools/viewer/styles/bmsViewer.css";
 function MyApp({
   Component,
   pageProps,
-  ...appProps
 }: AppProps & {
   Component: NextPage & {
     getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -32,27 +31,6 @@ function MyApp({
         },
       })
   );
-
-  const [bodyLayout, setBodyLayout] = useState<any>({
-    mt: "10.9vh",
-    ml: { xs: "5vw", md: "15vw" },
-    mr: { xs: "5vw", md: "15vw" },
-    mb: "5.5vh",
-  });
-
-  useEffect(() => {
-    console.log(appProps.router.pathname);
-    if ([`/tools/viewer`].includes(appProps.router.pathname)) {
-      setBodyLayout({ mt: "10.9vh", mb: "5.5vh" });
-    } else {
-      setBodyLayout({
-        mt: "10.9vh",
-        ml: { xs: "5vw", md: "15vw" },
-        mr: { xs: "5vw", md: "15vw" },
-        mb: "5.5vh",
-      });
-    }
-  }, [appProps.router.pathname]);
 
   const [mode, setMode] = useState<PaletteMode>("light");
 
@@ -96,7 +74,7 @@ function MyApp({
               );
             }}
           />
-          <Box sx={bodyLayout}>
+          <Box sx={pageProps.layout}>
             <Component {...pageProps} />
           </Box>
         </AppWrapper>
@@ -111,7 +89,20 @@ MyApp.getInitialProps = async (context: AppContext) => {
   let pageProps = {};
   pageProps = await App.getInitialProps(context);
 
+  let layout = {};
+
   if (context.ctx.req) {
+    if (context.ctx.pathname.includes("tools/viewer")) {
+      layout = { mt: "10.9vh", mb: "5.5vh" };
+    } else {
+      layout = {
+        mt: "10.9vh",
+        ml: { xs: "5vw", md: "15vw" },
+        mr: { xs: "5vw", md: "15vw" },
+        mb: "5.5vh",
+      };
+    }
+
     try {
       const requestURI = isDevelopmentEnv
         ? process.env.NEXT_PUBLIC_DEV
@@ -145,6 +136,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
           return {
             pageProps: {
               ...pageProps,
+              layout,
               user: {
                 ...result.data.user,
               },
@@ -160,6 +152,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
   }
 
   return {
+    layout,
     pageProps: {
       ...pageProps,
     },
