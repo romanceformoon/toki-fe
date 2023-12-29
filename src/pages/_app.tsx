@@ -41,6 +41,7 @@ function MyApp({
   });
 
   useEffect(() => {
+    console.log(appProps.router.pathname);
     if ([`/tools/viewer`].includes(appProps.router.pathname)) {
       setBodyLayout({ mt: "10.9vh", mb: "5.5vh" });
     } else {
@@ -51,7 +52,7 @@ function MyApp({
         mb: "5.5vh",
       });
     }
-  }, [appProps]);
+  }, [appProps.router.pathname]);
 
   const [mode, setMode] = useState<PaletteMode>("light");
 
