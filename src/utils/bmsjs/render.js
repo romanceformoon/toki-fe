@@ -1,6 +1,6 @@
 import bmsjs from "~/utils/bmsjs";
 
-export function renderBms(chart, setLine) {
+export function renderBms(chart, setLine, is2P) {
   let timing = bmsjs.Timing.fromBMSChart(chart);
   let _notes = bmsjs.Notes.fromBMSChart(chart, {});
   let notes = _notes.all();
@@ -68,6 +68,7 @@ export function renderBms(chart, setLine) {
     5: [85, "w"],
     6: [100, "b"],
     7: [115, "w"],
+    SC2P: [130, "r"],
   };
 
   let notePattern =
@@ -211,7 +212,9 @@ export function renderBms(chart, setLine) {
     let lineNumber =
       note.column.column != "SC"
         ? (setLine.indexOf(note.column.column) + 1).toString()
-        : "SC";
+        : !is2P
+        ? "SC"
+        : "SC2P";
 
     let x = xtMap[lineNumber][0] + 35;
     let y = (thisBarLength - relativeBeat) * 48 - 4;

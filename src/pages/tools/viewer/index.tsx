@@ -17,6 +17,8 @@ const isValidLine = (input: string) => {
 
 const Viewer = () => {
   const [line, setLine] = useState<string>("1234567");
+  const [SC2P, setSC2P] = useState<boolean>(false);
+
   const [chartState, setChartState] = useState<BMSChart>();
 
   const onChangeFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,8 +46,8 @@ const Viewer = () => {
   useEffect(() => {
     if (!chartState || !line || !isValidLine(line)) return;
 
-    renderBms(chartState, line);
-  }, [line, chartState]);
+    renderBms(chartState, line, SC2P);
+  }, [line, chartState, SC2P]);
 
   return (
     <>
@@ -123,7 +125,6 @@ const Viewer = () => {
             BMS 파일 업로드
           </Button>
         </Box>
-
         <Box sx={{ textAlign: "center", mb: "1vh" }}>
           <Typography>노트 배치 조절</Typography>
           <Typography
@@ -164,7 +165,7 @@ const Viewer = () => {
             (5키의 경우는 뒤에 67을 붙여야함)
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "center", mb: "2.5vh" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: "1vh" }}>
           <input
             className="no-spinner"
             type="number"
@@ -179,6 +180,23 @@ const Viewer = () => {
             }}
           />
         </Box>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: "2.5vh" }}>
+          <Typography
+            fontSize="14px"
+            fontWeight={500}
+            sx={{
+              color: "grey",
+            }}
+          >
+            2P 스크래치
+          </Typography>
+          <input
+            type="checkbox"
+            checked={SC2P}
+            onChange={(e) => setSC2P(!SC2P)}
+          />
+        </Box>
+
         <Box className="viewer-body">
           <Box className="viewer-info"></Box>
           <Box className="viewer-output"></Box>
