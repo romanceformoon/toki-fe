@@ -9,10 +9,12 @@ import { useEffect, useMemo, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import AppWrapper from "~/layout/AppWrapper";
 import Header from "~/layout/header";
+import "~/pages/tools/viewer/styles/bmsViewer.css";
 
 function MyApp({
   Component,
   pageProps,
+  ...appProps
 }: AppProps & {
   Component: NextPage & {
     getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -30,6 +32,19 @@ function MyApp({
         },
       })
   );
+
+  const [bodyLayout, setBodyLayout] = useState<any>({
+    mt: "10.9vh",
+    ml: { xs: "5vw", md: "15vw" },
+    mr: { xs: "5vw", md: "15vw" },
+    mb: "5.5vh",
+  });
+
+  useEffect(() => {
+    if ([`/tools/viewer`].includes(appProps.router.pathname)) {
+      setBodyLayout({ mt: "10.9vh", mb: "5.5vh" });
+    }
+  }, [appProps]);
 
   const [mode, setMode] = useState<PaletteMode>("light");
 
@@ -73,14 +88,7 @@ function MyApp({
               );
             }}
           />
-          <Box
-            sx={{
-              mt: "6.3rem",
-              ml: { xs: "5%", md: "15%" },
-              mr: { xs: "5%", md: "15%" },
-              mb: "3%",
-            }}
-          >
+          <Box sx={bodyLayout}>
             <Component {...pageProps} />
           </Box>
         </AppWrapper>

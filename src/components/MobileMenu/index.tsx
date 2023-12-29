@@ -3,10 +3,6 @@ import { Avatar, Box, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-interface IMenuProps {
-  pages: string[];
-}
-
 export const MobileMenu = ({ pages }: IMenuProps) => {
   const router = useRouter();
 
@@ -54,13 +50,13 @@ export const MobileMenu = ({ pages }: IMenuProps) => {
       >
         {pages.map((page) => (
           <MenuItem
-            key={page}
+            key={page.name}
             onClick={() => {
               handleCloseNavMenu();
-              router.push(`/${page}`);
+              router.push(`/${page.link}`);
             }}
           >
-            {page.toUpperCase()}
+            {page.name.toUpperCase()}
           </MenuItem>
         ))}
       </Menu>

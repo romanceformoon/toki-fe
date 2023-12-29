@@ -1,0 +1,108 @@
+.viewer-body {
+  display: none;
+  background-color: #000;
+}
+
+.viewer-info {
+  padding: 15px 0 0 30px;
+  color: #fff;
+}
+
+.viewer-output {
+  padding: 20px;
+  padding-top: 20px;
+}
+
+/* Clearfix */
+.viewer-output:before,
+.viewer-output:after {
+  content: "";
+  display: table;
+}
+.viewer-output:after {
+  clear: both;
+}
+
+.column {
+  margin: 0 20px 0 10px;
+  float: left;
+}
+
+.bar {
+  width: 165px;
+  background-image: url("./grid.svg");
+  background-position: right bottom;
+  background-repeat: repeat-y;
+}
+.bar.empty {
+  background: none;
+}
+
+.bar-number {
+  float: left;
+  width: 35px;
+  height: 100%;
+  background: #777;
+  border: solid #fff;
+  border-width: 1px 1px 0 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bar-number span {
+  position: absolute;
+  width: 35px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.note {
+  position: absolute;
+  width: 15px;
+  height: 4px;
+}
+.note-r {
+  width: 25px;
+  background: #f00;
+}
+.note-w {
+  background: #fff;
+}
+.note-b {
+  background: #08f;
+}
+
+.note.long {
+  width: 11px;
+}
+.long.note-r {
+  width: 21px;
+  background: #f00;
+}
+.long.note-w {
+  background: #fff;
+}
+.long.note-b {
+  background: #08f;
+}
+
+.bpm {
+  position: absolute;
+  margin-left: 35px;
+  width: 130px;
+  border-bottom: 1px solid #0f0;
+}
+.bpm span {
+  display: block;
+  margin-left: 132px;
+  font-size: 8px;
+  color: #0f0;
+}
+
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
