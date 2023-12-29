@@ -43,6 +43,13 @@ function MyApp({
   useEffect(() => {
     if ([`/tools/viewer`].includes(appProps.router.pathname)) {
       setBodyLayout({ mt: "10.9vh", mb: "5.5vh" });
+    } else {
+      setBodyLayout({
+        mt: "10.9vh",
+        ml: { xs: "5vw", md: "15vw" },
+        mr: { xs: "5vw", md: "15vw" },
+        mb: "5.5vh",
+      });
     }
   }, [appProps]);
 

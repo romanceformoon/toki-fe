@@ -208,7 +208,10 @@ export function renderBms(chart, setLine) {
     let relativeBeat = note.beat - barLengthSum[currentBar - 1];
 
     // 노트 배치 변경
-    let lineNumber = (setLine.indexOf(note.column.column) + 1).toString();
+    let lineNumber =
+      note.column.column != "SC"
+        ? (setLine.indexOf(note.column.column) + 1).toString()
+        : "SC";
 
     let x = xtMap[lineNumber][0] + 35;
     let y = (thisBarLength - relativeBeat) * 48 - 4;
