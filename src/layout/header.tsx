@@ -1,5 +1,4 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
-
 import {
   AppBar,
   IconButton,
@@ -7,7 +6,7 @@ import {
   Toolbar,
   Tooltip,
 } from "@mui/material";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import useLoginUser from "~/auth/hooks/useLoginUser";
 import { DesktopRoute } from "~/components/DesktopRoute";
 import { LoginButton } from "~/components/LoginButton";
@@ -21,11 +20,15 @@ interface IHeaderProps {
   setMode: () => void;
 }
 
-const pages = ["analyze", "table", "ranking", "skill"];
+const pages = [
+  { name: "analyze", link: "analyze" },
+  { name: "table", link: "table" },
+  { name: "ranking", link: "ranking" },
+  { name: "skill", link: "skill" },
+  { name: "BMS viewer", link: "tools/viewer" },
+];
 
 const Header = ({ mode, setMode }: IHeaderProps) => {
-  const router = useRouter();
-
   const { isLogined } = useLoginUser();
 
   return (
@@ -35,13 +38,16 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
         <MobileMenu pages={pages} />
         <DesktopRoute pages={pages} />
 
-        <IconButton
-          onClick={() => router.push("https://github.com/romanceformoon")}
+        <Link
+          href={"https://github.com/romanceformoon/toki-fe"}
+          target="_blank"
         >
-          <Tooltip title="Github">
-            <GitHubIcon />
-          </Tooltip>
-        </IconButton>
+          <IconButton>
+            <Tooltip title="Github">
+              <GitHubIcon />
+            </Tooltip>
+          </IconButton>
+        </Link>
 
         <ThemeToggleButton mode={mode} setMode={setMode} />
         {!isLogined ? <LoginButton /> : <UserMenu />}

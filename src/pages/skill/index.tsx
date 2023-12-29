@@ -14,13 +14,14 @@ const Skill = () => {
     <>
       <NextSeo
         title="Skill Simulator | Asuma Toki"
-        description="BMS Skill Simulator"
+        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
         openGraph={{
           type: "website",
           locale: "ko_KR",
           url: "https://asumatoki.kr/skill",
           title: "Skill Simulator | Asuma Toki",
-          description: "BMS Skill Simulator",
+          description:
+            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
           images: [
             {
               url: "/assets/images/logo.png",

@@ -39,8 +39,11 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.37"],\
           ["@types/react-dom", "npm:18.2.15"],\
           ["axios", "npm:1.6.1"],\
+          ["chardet", "npm:2.0.0"],\
+          ["data-structure", "npm:1.2.0"],\
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
+          ["iconv-lite", "npm:0.6.3"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
           ["next-seo", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0"],\
           ["prop-types", "npm:15.8.1"],\
@@ -1867,6 +1870,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["chardet", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/chardet-npm-2.0.0-908b5db760-10c0.zip/node_modules/chardet/",\
+        "packageDependencies": [\
+          ["chardet", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["client-only", [\
       ["npm:0.0.1", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/client-only-npm-0.0.1-07d3e9505c-10c0.zip/node_modules/client-only/",\
@@ -2078,6 +2090,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/damerau-levenshtein-npm-1.0.8-bda7311c69-10c0.zip/node_modules/damerau-levenshtein/",\
         "packageDependencies": [\
           ["damerau-levenshtein", "npm:1.0.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["data-structure", [\
+      ["npm:1.2.0", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/data-structure-npm-1.2.0-22160b5ee3-10c0.zip/node_modules/data-structure/",\
+        "packageDependencies": [\
+          ["data-structure", "npm:1.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3210,6 +3231,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["hoist-non-react-statics", "npm:3.3.2"],\
           ["react-is", "npm:16.13.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["iconv-lite", [\
+      ["npm:0.6.3", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/iconv-lite-npm-0.6.3-24b8aae27e-10c0.zip/node_modules/iconv-lite/",\
+        "packageDependencies": [\
+          ["iconv-lite", "npm:0.6.3"],\
+          ["safer-buffer", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4501,6 +4532,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["safer-buffer", [\
+      ["npm:2.1.2", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/safer-buffer-npm-2.1.2-8d5c0b705e-10c0.zip/node_modules/safer-buffer/",\
+        "packageDependencies": [\
+          ["safer-buffer", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["scheduler", [\
       ["npm:0.23.0", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/scheduler-npm-0.23.0-a379a6bc3b-10c0.zip/node_modules/scheduler/",\
@@ -4824,8 +4864,11 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.37"],\
           ["@types/react-dom", "npm:18.2.15"],\
           ["axios", "npm:1.6.1"],\
+          ["chardet", "npm:2.0.0"],\
+          ["data-structure", "npm:1.2.0"],\
           ["eslint", "npm:8.53.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.1"],\
+          ["iconv-lite", "npm:0.6.3"],\
           ["next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:14.0.2"],\
           ["next-seo", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.4.0"],\
           ["prop-types", "npm:15.8.1"],\
