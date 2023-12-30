@@ -90,19 +90,18 @@ MyApp.getInitialProps = async (context: AppContext) => {
   pageProps = await App.getInitialProps(context);
 
   let layout = {};
+  if (context.ctx.pathname.includes("tools/viewer")) {
+    layout = { mt: "10.9vh", mb: "5.5vh" };
+  } else {
+    layout = {
+      mt: "10.9vh",
+      ml: { xs: "5vw", md: "15vw" },
+      mr: { xs: "5vw", md: "15vw" },
+      mb: "5.5vh",
+    };
+  }
 
   if (context.ctx.req) {
-    if (context.ctx.pathname.includes("tools/viewer")) {
-      layout = { mt: "10.9vh", mb: "5.5vh" };
-    } else {
-      layout = {
-        mt: "10.9vh",
-        ml: { xs: "5vw", md: "15vw" },
-        mr: { xs: "5vw", md: "15vw" },
-        mb: "5.5vh",
-      };
-    }
-
     try {
       const requestURI = isDevelopmentEnv
         ? process.env.NEXT_PUBLIC_DEV
@@ -135,8 +134,8 @@ MyApp.getInitialProps = async (context: AppContext) => {
 
           return {
             pageProps: {
-              ...pageProps,
               layout,
+              ...pageProps,
               user: {
                 ...result.data.user,
               },
@@ -152,8 +151,8 @@ MyApp.getInitialProps = async (context: AppContext) => {
   }
 
   return {
-    layout,
     pageProps: {
+      layout,
       ...pageProps,
     },
   };
