@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import axios from "axios";
 import type { AppContext, AppProps } from "next/app";
 import App from "next/app";
+import localFont from "next/font/local";
 import Head from "next/head";
 import { NextPage } from "next/types";
 import { useEffect, useMemo, useState } from "react";
@@ -10,6 +11,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import AppWrapper from "~/layout/AppWrapper";
 import Header from "~/layout/header";
 import "~/pages/tools/viewer/styles/bmsViewer.css";
+
+const mainFont = localFont({ src: "../layout/fonts/Title_Light.otf" });
 
 function MyApp({
   Component,
@@ -43,7 +46,7 @@ function MyApp({
     () =>
       createTheme({
         typography: {
-          fontFamily: "Pretendard",
+          fontFamily: mainFont.style.fontFamily,
         },
         palette: {
           mode,
