@@ -20,14 +20,6 @@ interface IHeaderProps {
   setMode: () => void;
 }
 
-const pages = [
-  { name: "analyze", link: "analyze" },
-  { name: "table", link: "table" },
-  { name: "ranking", link: "ranking" },
-  { name: "skill", link: "skill" },
-  { name: "BMS viewer", link: "tools/viewer" },
-];
-
 const Header = ({ mode, setMode }: IHeaderProps) => {
   const { isLogined } = useLoginUser();
 
@@ -35,8 +27,8 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
     <AppBar position="fixed">
       <Toolbar disableGutters sx={{ ml: "7%", mr: "7%" }}>
         <Logo />
-        <MobileMenu pages={pages} />
-        <DesktopRoute pages={pages} />
+        <MobileMenu />
+        <DesktopRoute />
 
         <Link
           href={"https://github.com/romanceformoon/toki-fe"}

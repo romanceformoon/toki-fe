@@ -35,7 +35,7 @@ interface IHistoryProps {
   category: string;
 }
 
-export const Top = ({ historyData, category }: IHistoryProps) => {
+export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
   const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const descExp = useCallback(() => {

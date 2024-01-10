@@ -41,7 +41,7 @@ interface IHistoryProps {
   historyData: IHistory;
 }
 
-export const History = ({
+export const TableHistory = ({
   selectedLevel,
   handleLevelChange,
   historyData,

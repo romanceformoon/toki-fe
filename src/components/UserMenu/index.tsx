@@ -26,6 +26,7 @@ export const UserMenu = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   return (
     <Box sx={{ flexGrow: 0, ml: 2.5 }}>
       <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
