@@ -13,14 +13,11 @@ import {
 import Table from "@mui/material/Table";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
 
 const DifficultyTable = () => {
-  const router = useRouter();
-
   const [tableData, setTableData] = useState<ILevelList>({});
   const [selectedLevel, setSelectedLevel] = useState<string>("모두 보기");
 

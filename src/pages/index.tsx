@@ -1,7 +1,7 @@
+import { Download, Pageview } from "@mui/icons-material";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import PersonIcon from "@mui/icons-material/Person";
-import TableChartIcon from "@mui/icons-material/TableChart";
 import {
   Avatar,
   Box,
@@ -14,8 +14,10 @@ import {
 import axios from "axios";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
+import Aery from "public/update/aery.json";
 import { useState } from "react";
 import useLoginUser from "~/auth/hooks/useLoginUser";
+import { openInNewTab } from "~/utils/openInNewTab";
 
 const Main = () => {
   const router = useRouter();
@@ -83,7 +85,7 @@ const Main = () => {
                 "&:hover": {
                   cursor: "pointer",
                 },
-                width: "9rem",
+                width: "12rem",
                 height: "auto",
               }}
               alt="logo"
@@ -107,8 +109,9 @@ const Main = () => {
             <Button
               variant="outlined"
               sx={{
-                width: "9rem",
-                mr: 2,
+                width: "14.5rem",
+                height: "3rem",
+                mr: "1rem",
                 color: "#5783db",
                 borderColor: "#5783db",
                 ":hover": { borderColor: "#5783db" },
@@ -124,14 +127,36 @@ const Main = () => {
               }}
             >
               <PersonIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
-                내 프로필
+              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+                {isLogined ? "내 프로필" : "로그인"}
               </Typography>
             </Button>
             <Button
               variant="outlined"
               sx={{
-                width: "9rem",
+                width: "14.5rem",
+                height: "3rem",
+                color: "#a881af",
+                borderColor: "#a881af",
+                ":hover": { borderColor: "#a881af" },
+              }}
+              onClick={async () => {
+                router.push(`/tools/viewer`);
+              }}
+            >
+              <Pageview />
+              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+                BMS 채보 뷰어
+              </Typography>
+            </Button>
+          </Box>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="outlined"
+              sx={{
+                width: "14.5rem",
+                height: "3rem",
+                mr: "1rem",
                 color: "#80669d",
                 borderColor: "#80669d",
                 ":hover": { borderColor: "#80669d" },
@@ -141,34 +166,16 @@ const Main = () => {
               }}
             >
               <BarChartIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
+              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
                 점수 분석
               </Typography>
             </Button>
-          </Box>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+
             <Button
               variant="outlined"
               sx={{
-                width: "9rem",
-                mr: 2,
-                color: "#a881af",
-                borderColor: "#a881af",
-                ":hover": { borderColor: "#a881af" },
-              }}
-              onClick={async () => {
-                router.push(`/table`);
-              }}
-            >
-              <TableChartIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
-                난이도표
-              </Typography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                width: "9rem",
+                width: "14.5rem",
+                height: "3rem",
                 color: "#dd7973",
                 borderColor: "#dd7973",
                 ":hover": { borderColor: "#dd7973" },
@@ -178,18 +185,81 @@ const Main = () => {
               }}
             >
               <EmojiEventsIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
+              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
                 랭킹
               </Typography>
             </Button>
           </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="outlined"
+              sx={{
+                width: "30rem",
+                height: "3rem",
+                color: "#6d1570",
+                borderColor: "#6d1570",
+                ":hover": { borderColor: "#6d1570" },
+              }}
+              onClick={() => {
+                openInNewTab(Aery[0].full_download_url);
+              }}
+            >
+              <Download />
+              <Typography sx={{ ml: 1 }} fontWeight={500}>
+                [5KEYS AERY] FULL PACKAGE 다운로드 ({Aery[0].update_date})
+              </Typography>
+            </Button>
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="outlined"
+              sx={{
+                width: "30rem",
+                height: "3rem",
+                color: "#6d1570",
+                borderColor: "#6d1570",
+                ":hover": { borderColor: "#6d1570" },
+              }}
+              onClick={() => {
+                openInNewTab(Aery[0].patch_download_url);
+              }}
+            >
+              <Download />
+              <Typography sx={{ ml: 1 }} fontWeight={500}>
+                [5KEYS AERY] 최신패치 다운로드 ({Aery[0].update_date})
+              </Typography>
+            </Button>
+          </Box>
+
+          {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="outlined"
+              sx={{
+                width: "30rem",
+                height: "3rem",
+                color: "#a881af",
+                borderColor: "#a881af",
+                ":hover": { borderColor: "#a881af" },
+              }}
+              onClick={async () => {
+                router.push(`/table`);
+              }}
+            >
+              <Info />
+              <Typography sx={{ ml: 1 }} fontWeight={500}>
+                에리팩 패치노트
+              </Typography>
+            </Button>
+          </Box> */}
         </Stack>
 
         <Box>
           <Box
             sx={{
-              mt: 4,
-              mb: 2,
+              mt: "1.3rem",
+              mb: "0.7rem",
               display: "flex",
               justifyContent: "center",
             }}
@@ -238,7 +308,7 @@ const Main = () => {
         </Box>
         <Box
           sx={{
-            mt: 2,
+            mt: "1rem",
             display: "flex",
             justifyContent: "center",
           }}
@@ -247,7 +317,6 @@ const Main = () => {
             variant="outlined"
             sx={{
               width: "9rem",
-              mr: 2,
               color: "#a881af",
               borderColor: "#a881af",
               ":hover": { borderColor: "#a881af" },

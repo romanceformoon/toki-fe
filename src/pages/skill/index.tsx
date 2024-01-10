@@ -1,13 +1,10 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { ClickableText } from "~/components/ClickableText";
 import { aerySkillSimulators } from "~/const/skillSimulator";
 
 const Skill = () => {
-  const router = useRouter();
-
   const danData: IAeryDan = aerySkillSimulators;
 
   return (

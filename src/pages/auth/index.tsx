@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect } from "react";
-import authToken from "~/auth";
 
 const Login = () => {
   useEffect(() => {
