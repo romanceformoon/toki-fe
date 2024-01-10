@@ -12,7 +12,7 @@ import AppWrapper from "~/layout/AppWrapper";
 import Header from "~/layout/header";
 import "~/pages/tools/viewer/styles/bmsViewer.css";
 
-const mainFont = localFont({ src: "../layout/fonts/Title_Light.otf" });
+const mainFont = localFont({ src: "../layout/fonts/Title_Light.woff" });
 
 function MyApp({
   Component,
