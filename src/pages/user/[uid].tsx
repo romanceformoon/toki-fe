@@ -27,9 +27,9 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useQueryClient } from "react-query";
 import useLoginUser from "~/auth/hooks/useLoginUser";
-import { Graph } from "~/components/Graph";
-import { History } from "~/components/History";
-import { Top } from "~/components/TOP";
+import { ClearGraph } from "~/components/ClearGraph";
+import { TableHistory } from "~/components/TableHistory";
+import { TableTop50 } from "~/components/TableTop50";
 import { UserNickname } from "~/components/UserNickname";
 import useGraphQuery from "~/query/useGraphQuery";
 import useHistoryQuery from "~/query/useHistoryQuery";
@@ -371,13 +371,13 @@ const UserPage = ({
             />
           </TabList>
           <TabPanel value="Graph">
-            <Graph graphData={graphData} category={category} />
+            <ClearGraph graphData={graphData} category={category} />
           </TabPanel>
           <TabPanel value="TOP 50">
-            <Top historyData={historyData} category={category} />
+            <TableTop50 historyData={historyData} category={category} />
           </TabPanel>
           <TabPanel value="History">
-            <History
+            <TableHistory
               selectedLevel={selectedLevel}
               handleLevelChange={handleLevelChange}
               historyData={historyData}

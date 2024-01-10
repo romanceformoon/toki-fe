@@ -5,7 +5,7 @@ interface IGraphProps {
   category: string;
 }
 
-export const Graph = ({ graphData, category }: IGraphProps) => {
+export const ClearGraph = ({ graphData, category }: IGraphProps) => {
   let yLabels: string[] = [];
 
   if (category === "aery") {

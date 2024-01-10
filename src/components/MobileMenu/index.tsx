@@ -1,9 +1,28 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { Avatar, Box, Button, IconButton, Menu, MenuItem } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export const MobileMenu = ({ pages }: IMenuProps) => {
+export const MobileMenu = () => {
+  const pages = [
+    { name: "Analyze", link: "analyze" },
+    { name: "Ranking", link: "ranking" },
+    { name: "5KEYS AERY" },
+    { name: "Table", link: "table" },
+    { name: "Skill", link: "skill" },
+    { name: "TOOLS" },
+    { name: "BMS viewer", link: "tools/viewer" },
+  ];
+
   const router = useRouter();
 
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -47,18 +66,42 @@ export const MobileMenu = ({ pages }: IMenuProps) => {
         sx={{
           display: { xs: "block", md: "none" },
         }}
+        MenuListProps={{
+          style: {
+            maxHeight: "15rem",
+            width: "20ch",
+          },
+        }}
       >
-        {pages.map((page) => (
-          <MenuItem
-            key={page.name}
-            onClick={() => {
-              handleCloseNavMenu();
-              router.push(`/${page.link}`);
-            }}
-          >
-            {page.name.toUpperCase()}
-          </MenuItem>
-        ))}
+        {pages.map((page) => {
+          if (page.link) {
+            return (
+              <MenuItem
+                key={page.name}
+                onClick={() => {
+                  handleCloseNavMenu();
+                  router.push(`/${page.link}`);
+                }}
+              >
+                {page.name}
+              </MenuItem>
+            );
+          } else {
+            return (
+              <Divider key={page.name} sx={{ my: 0.5 }}>
+                <Typography
+                  fontSize="12px"
+                  fontWeight={500}
+                  sx={{
+                    color: "grey",
+                  }}
+                >
+                  {page.name}
+                </Typography>
+              </Divider>
+            );
+          }
+        })}
       </Menu>
       <Button
         sx={{
