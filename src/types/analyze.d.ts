@@ -48,4 +48,5 @@ type IDan =
   | "9 DAN"
   | "10 DAN"
   | "KAIDEN DAN"
+  | "GORILLA DAN"
   | "OVERJOY DAN";

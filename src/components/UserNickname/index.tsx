@@ -229,6 +229,37 @@ export const UserNickname = ({
     );
   }
 
+   if (clearDan === "GORILLA DAN") {
+     return (
+       <ClickableText onClick={onClick}>
+         <Tooltip title={clearDan}>
+           <Typography
+             sx={{
+               "@keyframes gorilla": {
+                 from: {
+                   textShadow: `0 0 2px #fff, 0 0 4px #fff, 0 0 6px #9B2335, 0 0 8px #9B2335, 0 0 9px #9B2335, 0 0 10px #9B2335, 0 0 20px #9B2335`,
+                 },
+                 to: {
+                   textShadow: `0 0 10px #fff, 0 0 15px #9B2335, 0 0 20px #9B2335, 0 0 25px #9B2335, 0 0 30px #9B2335, 0 0 35px #9B2335, 0 0 40px #9B2335`,
+                 },
+               },
+               animation: "gorilla 1s ease-in-out infinite alternate",
+               webkitAnimation: "gorilla 1s ease-in-out infinite alternate",
+               MozAnimation: "gorilla 1s ease-in-out infinite alternate",
+
+               color: "#fff",
+               whiteSpace: "nowrap",
+             }}
+             fontSize="24px"
+             fontWeight={700}
+           >
+             {children}
+           </Typography>
+         </Tooltip>
+       </ClickableText>
+     );
+   }
+
   if (clearDan === "OVERJOY DAN") {
     return (
       <ClickableText onClick={onClick}>

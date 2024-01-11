@@ -10,13 +10,13 @@ const Skill = () => {
   return (
     <>
       <NextSeo
-        title="Skill Simulator | Asuma Toki"
+        title="段位認定 | Asuma Toki"
         description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
         openGraph={{
           type: "website",
           locale: "ko_KR",
           url: "https://asumatoki.kr/skill",
-          title: "Skill Simulator | Asuma Toki",
+          title: "段位認定 | Asuma Toki",
           description:
             "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
           images: [
@@ -31,7 +31,7 @@ const Skill = () => {
 
       <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
         <Typography fontSize={24} fontWeight={700}>
-          [5KEYS AERY] Skill Simulator
+          [5KEYS AERY] 段位認定
         </Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
@@ -55,7 +55,7 @@ const Skill = () => {
                   color="text.secondary"
                   gutterBottom
                 >
-                  [5KEYS AERY] Skill Simulator
+                  [5KEYS AERY] 段位認定
                 </Typography>
                 <Typography variant="h5" component="div"></Typography>
                 <Box sx={{ width: "1rem" }}>
