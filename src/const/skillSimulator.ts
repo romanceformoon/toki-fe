@@ -76,7 +76,7 @@ export const aerySkillSimulators = {
       "[Lv.18] c.s.q.n. [5KEYS AERY JACK]",
       '[Lv.18] It\'s "alice" dream [5KEYS AERY]',
     ],
-    color: "#8005FA",
+    color: "#A566FF",
     hash: "00000000002000000000000000008265ea4c20ea8770bf106f3e619339a7d29f011b5b10874d806991feb0c477942c9ca340ad6acd84023d22eb5576d5816384a08272dc4fffda4f3a7bcee3c02c0f8a",
   },
   "9 DAN": {
