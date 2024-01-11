@@ -213,9 +213,9 @@ const Main = () => {
               sx={{
                 width: "30rem",
                 height: "3rem",
-                color: "#6d1570",
-                borderColor: "#6d1570",
-                ":hover": { borderColor: "#6d1570" },
+                color: "#a13aa5",
+                borderColor: "#a13aa5",
+                ":hover": { borderColor: "#a13aa5" },
               }}
               onClick={() => {
                 openInNewTab(Aery[0].full_download_url);
@@ -238,9 +238,9 @@ const Main = () => {
               sx={{
                 width: "30rem",
                 height: "3rem",
-                color: "#6d1570",
-                borderColor: "#6d1570",
-                ":hover": { borderColor: "#6d1570" },
+                color: "#a13aa5",
+                borderColor: "#a13aa5",
+                ":hover": { borderColor: "#a13aa5" },
               }}
               onClick={() => {
                 openInNewTab(Aery[0].patch_download_url);
