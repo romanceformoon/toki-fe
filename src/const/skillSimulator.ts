@@ -126,7 +126,7 @@ export const aerySkillSimulators = {
       "[Lv.21] FORBIDDEN [5KEYS AERY OVERJOY]",
       "[Lv.21] Legend of Seeker [5KEYS AERY OVERJOY]",
     ],
-    color: "#E10100",
+    color: "#FF0000",
     hash: "00000000002000000000000000008265fc24589ee1d0b183e1505fc3118ad482753069bd564a0c9d671642bd6902c17a94f9b80ee6758dd3091557cd7e2d17464dc9f4fc359de07faf5e6f1b0e5c68f4",
   },
 };
