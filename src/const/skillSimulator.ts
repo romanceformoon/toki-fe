@@ -6,7 +6,7 @@ export const aerySkillSimulators = {
       "[Lv.12] GOODRUSH [5KEYS AERY NM]",
       "[Lv.12] Angelic layer [5K Aery Normal]",
     ],
-    color: "#BDF781",
+    color: "#BDF78C",
     hash: "0000000000200000000000000000d0fc092d4c4597d78fde5bde5e79583e2a21285b4d42a2feb17a8de615c5732f75cc586eecf05016b61b3a737087da4b53f74c35df45e9853650bb11139089db0241",
   },
   "2 DAN": {
@@ -16,7 +16,7 @@ export const aerySkillSimulators = {
       "[Lv.13] Alice in Misanthrope -?世アリス- [Aery Normal]",
       "[Lv.13] Prayer [5KEYS AERY NM]",
     ],
-    color: "#99FE2E",
+    color: "#AAFF46",
     hash: "00000000002000000000000000008265779c5cee43891cf6516ebd9a5e73b648b7c62a473c739085f2b85ad19c8f6fb07384c7487c47149f5ee9b6bcbd6f9491959614f4dd366638ab6f617e3b87fc6c",
   },
   "3 DAN": {
@@ -26,7 +26,7 @@ export const aerySkillSimulators = {
       "[Lv.14] SOLROS [5KEY AERY]",
       "[Lv.14] Angel's Salad [5KEYS AERY]",
     ],
-    color: "#3FFF00",
+    color: "#00DF37",
     hash: "000000000020000000000000000082658a7d1acf1f4baa2160cece323197550d1f6828e9c46f3646c7c8fe3a3885c045632ad8cdfedf4ddec8bcbfc387b7e690363945fb89b936aaa5f2e74df6cff924",
   },
   "4 DAN": {
@@ -36,7 +36,7 @@ export const aerySkillSimulators = {
       "[Lv.15] 花たちに希望を [5KEY AERY]",
       "[Lv.15] ヒュブリスの頂に聳えるのは [5KEY AERY]",
     ],
-    color: "#01FEBF",
+    color: "#01DFD6",
     hash: "000000000020000000000000000082652e374d1b6e04db7b77c02fc4c7f01da30ef415fe32c7b4643762425f7d9080b284f5aa52e5ca6753b8766bd38509cf889dd3f8494dbf2610a12c8fb06e675eba",
   },
   "5 DAN": {
@@ -46,7 +46,7 @@ export const aerySkillSimulators = {
       "[Lv.16] ☆をかけるアドベン?ャ? ? we are forever friends! ? [5KEY AERY]",
       "[Lv.16] Andro [5KYES AERY]",
     ],
-    color: "#04B4B1",
+    color: "#01A9DA",
     hash: "00000000002000000000000000008265199aa09741df8c57f75c1a68c5f7c6608e26da57d0bebdf8691cda660c8ce7717f6e2b3e8bb2d013566b59c4f6b1b11f008de2c8277e04c8a3274dfab0b3f86b",
   },
   "6 DAN": {
@@ -56,7 +56,7 @@ export const aerySkillSimulators = {
       "[Lv.17] ?舞姫ベアトリクス [5key Aery]",
       "[Lv.17] 多重極展開 [5KEY AERY]",
     ],
-    color: "#00C0FB",
+    color: "#59ACFB",
     hash: "00000000002000000000000000008265448ee2bf92651eaf45a79c98eb7630c8fc87e6e4b76e9883844e45328d6deca59c1d3541043e001547363d1539395aee5f49f59a42d6b5241293fef257ad0165",
   },
   "7 DAN": {
@@ -96,7 +96,7 @@ export const aerySkillSimulators = {
       "[Lv.19] Cynic [THE AERY ANOTHER]",
       "[Lv.20] Armageddon [5KEY AERY EX]",
     ],
-    color: "#FFFF00",
+    color: "#FDCE2D",
     hash: "00000000002000000000000000008265ded28f8d4dda2947ea4638f374bee9674180f8fab3ad583a31b24b8d6cad2cab41d5a80fb2d73df1dedeff4f20d63e415571fdd440253f1ab63ce9f0941f15b3",
   },
   "KAIDEN DAN": {
@@ -106,7 +106,7 @@ export const aerySkillSimulators = {
       "[Lv.20] PEACE BREAKER [AERY RULE-BREAKED]",
       "[Lv.20] MANIERA [5KEY AERY KOOKY]",
     ],
-    color: " #FFBF00",
+    color: " #FF6829",
     hash: "0000000000200000000000000000826595f14007516fc382c36d44aedfcbb1cb43eb214cfb65388b11933d3902043b774789bd0c9b22a03462d59df1baf111db71a29e4cc396881b11c389879874598c",
   },
   "GORILLA DAN": {
@@ -116,7 +116,7 @@ export const aerySkillSimulators = {
       "[Lv.20] Defeat awaken battle ship [5KEYS AERY GORILLA]",
       "[Lv.20] Unleashed World [5Key Aery EX]",
     ],
-    color: "#FF0000",
+    color: "#FF5AAA",
     hash: "00000000002000000000000000008265e66a509dcbb4ae2e0aa28e5b713291d47108a3a73795a5da5fb9df03d0c2b09d2868c70113edd0c8f0f6d138924bcd2720aad85c9812c6e3b7bc3633fc72b1c9",
   },
   "OVERJOY DAN": {
@@ -126,7 +126,7 @@ export const aerySkillSimulators = {
       "[Lv.21] FORBIDDEN [5KEYS AERY OVERJOY]",
       "[Lv.21] Legend of Seeker [5KEYS AERY OVERJOY]",
     ],
-    color: "#FF5AAA",
+    color: "#E10100",
     hash: "00000000002000000000000000008265fc24589ee1d0b183e1505fc3118ad482753069bd564a0c9d671642bd6902c17a94f9b80ee6758dd3091557cd7e2d17464dc9f4fc359de07faf5e6f1b0e5c68f4",
   },
 };
