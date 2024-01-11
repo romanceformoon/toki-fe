@@ -111,7 +111,7 @@ export const UserNickname = ({
           <Typography
             sx={{
               color: "#fff",
-              textShadow: `${aerySkillSimulators[clearDan].color}, 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
+              textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: "nowrap",
             }}
             fontSize="24px"

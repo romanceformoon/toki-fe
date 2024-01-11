@@ -66,7 +66,7 @@ export const aerySkillSimulators = {
       "[Lv.17] Poppy [5KEYS AERY]",
       "[Lv.17] Pure Ruby [5KEYS AERY HD]",
     ],
-    color: "#2D64FF",
+    color: "#4a73e4",
     hash: "0000000000200000000000000000826545a6c24e6e05496975b6bf8e247976bb0eb90124ce909c57643d2ab782e6ad2f312bbaf65a12cc6953d7b8835b40d2bf04138a82e311f4c0619a59e73b8274b6",
   },
   "8 DAN": {
