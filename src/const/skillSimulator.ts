@@ -121,7 +121,7 @@ export const aerySkillSimulators = {
   },
   "OVERJOY DAN": {
     list: [
-      "",
+      "[Lv.21] ４２２ [5KEYS AERY OVERJOY]",
       "[Lv.21] リジットXXパラダイス [5KEYS AERY ★★6]",
       "[Lv.21] FORBIDDEN [5KEYS AERY OVERJOY]",
       "[Lv.21] Legend of Seeker [5KEYS AERY OVERJOY]",
