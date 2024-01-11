@@ -61,7 +61,7 @@ const Main = () => {
       <Box
         sx={{
           bgcolor: "background.paper",
-          pt: 8,
+          pt: 4,
           pb: 6,
         }}
       >
@@ -85,7 +85,7 @@ const Main = () => {
                 "&:hover": {
                   cursor: "pointer",
                 },
-                width: "12rem",
+                width: "10rem",
                 height: "auto",
               }}
               alt="logo"
@@ -127,7 +127,11 @@ const Main = () => {
               }}
             >
               <PersonIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize="18px"
+              >
                 {isLogined ? "내 프로필" : "로그인"}
               </Typography>
             </Button>
@@ -145,7 +149,11 @@ const Main = () => {
               }}
             >
               <Pageview />
-              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize="18px"
+              >
                 BMS 채보 뷰어
               </Typography>
             </Button>
@@ -166,7 +174,11 @@ const Main = () => {
               }}
             >
               <BarChartIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize="18px"
+              >
                 점수 분석
               </Typography>
             </Button>
@@ -185,7 +197,11 @@ const Main = () => {
               }}
             >
               <EmojiEventsIcon />
-              <Typography sx={{ ml: 1 }} fontWeight={500} fontSize="18px">
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize="18px"
+              >
                 랭킹
               </Typography>
             </Button>
@@ -206,7 +222,11 @@ const Main = () => {
               }}
             >
               <Download />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize={{ xs: "12px", md: "16px" }}
+              >
                 [5KEYS AERY] FULL PACKAGE 다운로드 ({Aery[0].update_date})
               </Typography>
             </Button>
@@ -227,7 +247,11 @@ const Main = () => {
               }}
             >
               <Download />
-              <Typography sx={{ ml: 1 }} fontWeight={500}>
+              <Typography
+                sx={{ ml: 1, whiteSpace: "nowrap" }}
+                fontWeight={500}
+                fontSize={{ xs: "12px", md: "16px" }}
+              >
                 [5KEYS AERY] 최신패치 다운로드 ({Aery[0].update_date})
               </Typography>
             </Button>

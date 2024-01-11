@@ -94,12 +94,12 @@ MyApp.getInitialProps = async (context: AppContext) => {
 
   let layout = {};
   if (context.ctx.pathname.includes("tools/viewer")) {
-    layout = { mt: "10.9vh", mb: "5.5vh" };
+    layout = { mt: "12vh", mb: "5.5vh" };
   } else {
     layout = {
-      mt: "10.9vh",
-      ml: { xs: "5vw", md: "15vw" },
-      mr: { xs: "5vw", md: "15vw" },
+      mt: "12vh",
+      ml: { xs: "8vw", md: "15vw" },
+      mr: { xs: "8vw", md: "15vw" },
       mb: "5.5vh",
     };
   }
