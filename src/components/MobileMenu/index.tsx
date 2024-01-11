@@ -17,10 +17,10 @@ export const MobileMenu = () => {
     { name: "Analyze", link: "analyze" },
     { name: "Ranking", link: "ranking" },
     { name: "5KEYS AERY" },
-    { name: "Table", link: "table" },
-    { name: "Skill", link: "skill" },
+    { name: "난이도표", link: "table" },
+    { name: "단위인정", link: "skill" },
     { name: "TOOLS" },
-    { name: "BMS viewer", link: "tools/viewer" },
+    { name: "BMS 채보 뷰어", link: "tools/viewer" },
   ];
 
   const router = useRouter();

@@ -16,7 +16,7 @@ export const DesktopRoute = () => {
       { name: "난이도표", link: "table" },
       { name: "단위인정", link: "skill" },
     ],
-    tools: [{ name: "BMS Chart Viewer", link: "tools/viewer" }],
+    tools: [{ name: "BMS 채보 뷰어", link: "tools/viewer" }],
   };
 
   const router = useRouter();
@@ -97,7 +97,6 @@ export const DesktopRoute = () => {
         {subPages.aery.map((page) => (
           <MenuItem key={page.name} onClick={handleCloseAeryMenu}>
             <Typography
-              textAlign="center"
               onClick={async () => {
                 router.push(`/${page.link}`);
               }}
