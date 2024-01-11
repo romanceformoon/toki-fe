@@ -36,7 +36,7 @@ export const aerySkillSimulators = {
       "[Lv.15] 花たちに希望を [5KEY AERY]",
       "[Lv.15] ヒュブリスの頂に聳えるのは [5KEY AERY]",
     ],
-    color: "#01DFD6",
+    color: "#2F9D27",
     hash: "000000000020000000000000000082652e374d1b6e04db7b77c02fc4c7f01da30ef415fe32c7b4643762425f7d9080b284f5aa52e5ca6753b8766bd38509cf889dd3f8494dbf2610a12c8fb06e675eba",
   },
   "5 DAN": {
@@ -46,7 +46,7 @@ export const aerySkillSimulators = {
       "[Lv.16] ☆をかけるアドベン?ャ? ? we are forever friends! ? [5KEY AERY]",
       "[Lv.16] Andro [5KYES AERY]",
     ],
-    color: "#01A9DA",
+    color: "#01DFD6",
     hash: "00000000002000000000000000008265199aa09741df8c57f75c1a68c5f7c6608e26da57d0bebdf8691cda660c8ce7717f6e2b3e8bb2d013566b59c4f6b1b11f008de2c8277e04c8a3274dfab0b3f86b",
   },
   "6 DAN": {
