@@ -327,12 +327,15 @@ const UserPage = ({
               </Box>
               <Box>
                 <Typography fontSize="14px" fontWeight={500}>
-                  Exp: {userData.exp.toFixed(0)} /{" "}
+                  Exp: {userData.exp.toLocaleString()} /{" "}
                   {getLevel(userData.exp) < 99
-                    ? expTable[getLevel(userData.exp)].toFixed(0)
+                    ? expTable[getLevel(userData.exp)].toLocaleString()
                     : "-"}
                 </Typography>
               </Box>
+              <Typography fontSize="14px" fontWeight={500}>
+                Rating: {(userData.rating / 10000).toFixed(3)}
+              </Typography>
             </Box>
           </Box>
         </Box>
@@ -407,6 +410,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       clearDan: result.data.clearDan,
       exp: result.data.exp,
       lr2Id: result.data.lr2Id,
+      rating: result.data.rating,
     },
   };
 }

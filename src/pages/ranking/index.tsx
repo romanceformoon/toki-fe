@@ -19,6 +19,7 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RankingSkeleton } from "~/components/RankingSkeleton";
+import { RatingText } from "~/components/RatingText";
 import { UserNickname } from "~/components/UserNickname";
 import useEXPRankingQuery from "~/query/useEXPRankingQuery";
 import useRatingRankingQuery from "~/query/useRatingRankingQuery";
@@ -282,7 +283,7 @@ const Ranking = () => {
                             </TableCell>
                             <TableCell>
                               <Typography fontSize="24px" fontWeight="500">
-                                {data.exp}
+                                {data.exp.toLocaleString()}
                               </Typography>
                             </TableCell>
                           </TableRow>
@@ -402,9 +403,15 @@ const Ranking = () => {
                               </Typography>
                             </TableCell>
                             <TableCell>
-                              <Typography fontSize="24px" fontWeight="500">
-                                {data.rating}
-                              </Typography>
+                              <Box
+                                sx={{
+                                  display: "flex",
+                                  position: "relative",
+                                  letterSpacing: "1.2px",
+                                }}
+                              >
+                                <RatingText rating={data.rating} />
+                              </Box>
                             </TableCell>
                           </TableRow>
                         </>

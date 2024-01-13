@@ -11,4 +11,5 @@ interface IUserGameInfo {
   clearDan: IDan;
   exp: number;
   lr2Id: string;
+  rating: number;
 }

@@ -5,7 +5,9 @@ const coefficient = 20;
 export const getExpTable = () => {
   const result = [];
   for (let i = 1; i < 100; i++) {
-    result.push((((i - 1) * 50) / 49) ** 2.5 * coefficient);
+    result.push(
+      parseInt(((((i - 1) * 50) / 49) ** 2.5 * coefficient).toFixed(0))
+    );
   }
   return result;
 };
