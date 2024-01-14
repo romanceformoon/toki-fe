@@ -19,6 +19,7 @@ export const MobileMenu = () => {
     { name: "5KEYS AERY" },
     { name: "난이도표", link: "table" },
     { name: "단위인정", link: "skill" },
+    { name: "서열표", link: "grade" },
     { name: "TOOLS" },
     { name: "BMS 채보 뷰어", link: "tools/viewer" },
   ];

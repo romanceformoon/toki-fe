@@ -15,6 +15,7 @@ export const DesktopRoute = () => {
     aery: [
       { name: "난이도표", link: "table" },
       { name: "단위인정", link: "skill" },
+      { name: "서열표", link: "grade" },
     ],
     tools: [{ name: "BMS 채보 뷰어", link: "tools/viewer" }],
   };

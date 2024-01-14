@@ -9,7 +9,7 @@ import {
 interface ISelectLevelProps {
   selectedLevel: string;
   handleChange: (event: SelectChangeEvent) => void;
-  tableData: ILevelList | IHistory;
+  tableData: ILevelList | IHistory | IGrade;
   showAll?: boolean;
 }
 
