@@ -1,0 +1,5079 @@
+{
+  "LEVEL 16": {
+    "S+": [
+      {
+        "fc_ratio": "8.1%",
+        "hard_ratio": "50%",
+        "groove_ratio": "50%",
+        "easy_ratio": "51.35%",
+        "level": "LEVEL 16",
+        "title": "I [5KEYS AERY NM]"
+      }
+    ],
+    "S": [
+      {
+        "fc_ratio": "1.73%",
+        "hard_ratio": "52.17%",
+        "groove_ratio": "52.17%",
+        "easy_ratio": "53.91%",
+        "level": "LEVEL 16",
+        "title": "gravitronicⅢ [5key Aery]"
+      }
+    ],
+    "A+": [
+      {
+        "fc_ratio": "10.47%",
+        "hard_ratio": "56.19%",
+        "groove_ratio": "56.19%",
+        "easy_ratio": "57.14%",
+        "level": "LEVEL 16",
+        "title": "?・千年女王 [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.54%",
+        "hard_ratio": "56.07%",
+        "groove_ratio": "59.81%",
+        "easy_ratio": "63.55%",
+        "level": "LEVEL 16",
+        "title": "AVALON [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.58%",
+        "hard_ratio": "64.67%",
+        "groove_ratio": "65.86%",
+        "easy_ratio": "67.66%",
+        "level": "LEVEL 16",
+        "title": "BlythE:ExtenD [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "61.33%",
+        "groove_ratio": "61.33%",
+        "easy_ratio": "62.66%",
+        "level": "LEVEL 16",
+        "title": "Loki [5KEYS AERY HARD]"
+      },
+      {
+        "fc_ratio": "3.6%",
+        "hard_ratio": "64.86%",
+        "groove_ratio": "65.76%",
+        "easy_ratio": "69.36%",
+        "level": "LEVEL 16",
+        "title": "Moon-gate [White Hole]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "62.74%",
+        "groove_ratio": "64.05%",
+        "easy_ratio": "70.58%",
+        "level": "LEVEL 16",
+        "title": "PUPA [5K Aery Normal]"
+      },
+      {
+        "fc_ratio": "5.71%",
+        "hard_ratio": "64.76%",
+        "groove_ratio": "65.71%",
+        "easy_ratio": "70.47%",
+        "level": "LEVEL 16",
+        "title": "VALLISTA [5key Aery]"
+      }
+    ],
+    "A": [
+      {
+        "fc_ratio": "13.66%",
+        "hard_ratio": "70.8%",
+        "groove_ratio": "77.63%",
+        "easy_ratio": "83.22%",
+        "level": "LEVEL 16",
+        "title": "Air [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "1.32%",
+        "hard_ratio": "68.21%",
+        "groove_ratio": "68.21%",
+        "easy_ratio": "70.86%",
+        "level": "LEVEL 16",
+        "title": "Angel dust [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "12.72%",
+        "hard_ratio": "70%",
+        "groove_ratio": "70%",
+        "easy_ratio": "71.81%",
+        "level": "LEVEL 16",
+        "title": "Dragon Lord [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.32%",
+        "hard_ratio": "70.81%",
+        "groove_ratio": "74.59%",
+        "easy_ratio": "79.45%",
+        "level": "LEVEL 16",
+        "title": "Messier 333 (5K Aery NM)"
+      },
+      {
+        "fc_ratio": "6.01%",
+        "hard_ratio": "69.92%",
+        "groove_ratio": "69.92%",
+        "easy_ratio": "73.68%",
+        "level": "LEVEL 16",
+        "title": "The Last Page [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.41%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "68.37%",
+        "easy_ratio": "69.23%",
+        "level": "LEVEL 16",
+        "title": "volcanic [5K Aery Easy]"
+      },
+      {
+        "fc_ratio": "10.98%",
+        "hard_ratio": "70.32%",
+        "groove_ratio": "70.32%",
+        "easy_ratio": "75.82%",
+        "level": "LEVEL 16",
+        "title": "ねぇ？メイドさんはみんな忠実だと思う？ [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.38%",
+        "hard_ratio": "67.79%",
+        "groove_ratio": "67.79%",
+        "easy_ratio": "69.49%",
+        "level": "LEVEL 16",
+        "title": "モノリスの? [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.66%",
+        "hard_ratio": "68%",
+        "groove_ratio": "69.33%",
+        "easy_ratio": "73.33%",
+        "level": "LEVEL 16",
+        "title": "稲田姫様に叱られるから? [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "9.78%",
+        "hard_ratio": "67.39%",
+        "groove_ratio": "68.47%",
+        "easy_ratio": "69.56%",
+        "level": "LEVEL 16",
+        "title": "日溜りの街?あ！? [5key Aery]"
+      }
+    ],
+    "B": [
+      {
+        "fc_ratio": "11.03%",
+        "hard_ratio": "73.37%",
+        "groove_ratio": "75.32%",
+        "easy_ratio": "79.22%",
+        "level": "LEVEL 16",
+        "title": "- JUPITER - [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "9.19%",
+        "hard_ratio": "80.45%",
+        "groove_ratio": "80.45%",
+        "easy_ratio": "83.9%",
+        "level": "LEVEL 16",
+        "title": "??クサンバランド [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "1.92%",
+        "hard_ratio": "73.07%",
+        "groove_ratio": "75.96%",
+        "easy_ratio": "79.8%",
+        "level": "LEVEL 16",
+        "title": "10 ： ． [5key Aery]"
+      },
+      {
+        "fc_ratio": "8.82%",
+        "hard_ratio": "78.43%",
+        "groove_ratio": "79.41%",
+        "easy_ratio": "83.33%",
+        "level": "LEVEL 16",
+        "title": "5.1.1(ReMix) [5key Aery]"
+      },
+      {
+        "fc_ratio": "10.69%",
+        "hard_ratio": "72.19%",
+        "groove_ratio": "75.4%",
+        "easy_ratio": "85.02%",
+        "level": "LEVEL 16",
+        "title": "Air [5key Aery normal]"
+      },
+      {
+        "fc_ratio": "8.04%",
+        "hard_ratio": "80.45%",
+        "groove_ratio": "81.6%",
+        "easy_ratio": "85.05%",
+        "level": "LEVEL 16",
+        "title": "Alastor [5key Aery Short]"
+      },
+      {
+        "fc_ratio": "1.1%",
+        "hard_ratio": "77.34%",
+        "groove_ratio": "82.32%",
+        "easy_ratio": "87.29%",
+        "level": "LEVEL 16",
+        "title": "AXION [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "16.32%",
+        "hard_ratio": "79.59%",
+        "groove_ratio": "79.59%",
+        "easy_ratio": "83.67%",
+        "level": "LEVEL 16",
+        "title": "B.B.K.K.B.K.K. [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "7.51%",
+        "hard_ratio": "72.18%",
+        "groove_ratio": "75.18%",
+        "easy_ratio": "78.19%",
+        "level": "LEVEL 16",
+        "title": "Burn [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.55%",
+        "hard_ratio": "80.55%",
+        "groove_ratio": "80.55%",
+        "easy_ratio": "81.94%",
+        "level": "LEVEL 16",
+        "title": "Castorpollux [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "6.09%",
+        "hard_ratio": "80.48%",
+        "groove_ratio": "80.48%",
+        "easy_ratio": "81.7%",
+        "level": "LEVEL 16",
+        "title": "CODE-F [5K Aery Easy]"
+      },
+      {
+        "fc_ratio": "2.47%",
+        "hard_ratio": "76.03%",
+        "groove_ratio": "76.03%",
+        "easy_ratio": "76.03%",
+        "level": "LEVEL 16",
+        "title": "Cross Galaxy [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "2.17%",
+        "hard_ratio": "74.63%",
+        "groove_ratio": "76.81%",
+        "easy_ratio": "83.33%",
+        "level": "LEVEL 16",
+        "title": "Doppelganger [5Key Aery Normal]"
+      },
+      {
+        "fc_ratio": "7.31%",
+        "hard_ratio": "78.04%",
+        "groove_ratio": "79.26%",
+        "easy_ratio": "79.26%",
+        "level": "LEVEL 16",
+        "title": "Dstorv [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "73.95%",
+        "groove_ratio": "75%",
+        "easy_ratio": "75%",
+        "level": "LEVEL 16",
+        "title": "elegante [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.91%",
+        "hard_ratio": "72.13%",
+        "groove_ratio": "73.77%",
+        "easy_ratio": "77.04%",
+        "level": "LEVEL 16",
+        "title": "ELIMINATOR [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0.98%",
+        "hard_ratio": "78.43%",
+        "groove_ratio": "79.41%",
+        "easy_ratio": "81.37%",
+        "level": "LEVEL 16",
+        "title": "Endeavor [5key Aery]"
+      },
+      {
+        "fc_ratio": "8%",
+        "hard_ratio": "74%",
+        "groove_ratio": "76%",
+        "easy_ratio": "78.66%",
+        "level": "LEVEL 16",
+        "title": "ENERGY SYNERGY MATRIX [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "4.47%",
+        "hard_ratio": "80.59%",
+        "groove_ratio": "80.59%",
+        "easy_ratio": "85.07%",
+        "level": "LEVEL 16",
+        "title": "Envy [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.89%",
+        "hard_ratio": "78.07%",
+        "groove_ratio": "78.94%",
+        "easy_ratio": "84.21%",
+        "level": "LEVEL 16",
+        "title": "EOS [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "7.57%",
+        "hard_ratio": "71.96%",
+        "groove_ratio": "73.48%",
+        "easy_ratio": "78.78%",
+        "level": "LEVEL 16",
+        "title": "ETERNAL DRAIN [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.73%",
+        "hard_ratio": "71.02%",
+        "groove_ratio": "72.89%",
+        "easy_ratio": "76.63%",
+        "level": "LEVEL 16",
+        "title": "Extreme Z4 (Aggressive HC mix) [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "71.29%",
+        "groove_ratio": "74.07%",
+        "easy_ratio": "79.62%",
+        "level": "LEVEL 16",
+        "title": "Giselle [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "4.83%",
+        "hard_ratio": "75.8%",
+        "groove_ratio": "77.41%",
+        "easy_ratio": "83.06%",
+        "level": "LEVEL 16",
+        "title": "GOODTEK [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "11.7%",
+        "hard_ratio": "79.78%",
+        "groove_ratio": "79.78%",
+        "easy_ratio": "84.04%",
+        "level": "LEVEL 16",
+        "title": "kyrka [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.17%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "80.43%",
+        "level": "LEVEL 16",
+        "title": "Lapis [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "8.75%",
+        "hard_ratio": "78.75%",
+        "groove_ratio": "78.75%",
+        "easy_ratio": "81.25%",
+        "level": "LEVEL 16",
+        "title": "LEthAl wEApOn [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.05%",
+        "hard_ratio": "77.89%",
+        "groove_ratio": "80%",
+        "easy_ratio": "81.05%",
+        "level": "LEVEL 16",
+        "title": "Name of oath [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.14%",
+        "hard_ratio": "78.57%",
+        "groove_ratio": "80.61%",
+        "easy_ratio": "86.73%",
+        "level": "LEVEL 16",
+        "title": "Re:End of a Dream [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "1.92%",
+        "hard_ratio": "80.76%",
+        "groove_ratio": "82.69%",
+        "easy_ratio": "84.61%",
+        "level": "LEVEL 16",
+        "title": "Retroactive Rain [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.55%",
+        "hard_ratio": "77.77%",
+        "groove_ratio": "77.77%",
+        "easy_ratio": "79.62%",
+        "level": "LEVEL 16",
+        "title": "Retroactive Rain [5KEYS AERY NEW]"
+      },
+      {
+        "fc_ratio": "0.96%",
+        "hard_ratio": "77.88%",
+        "groove_ratio": "77.88%",
+        "easy_ratio": "80.76%",
+        "level": "LEVEL 16",
+        "title": "Schur's Theorem [5key Aery]"
+      },
+      {
+        "fc_ratio": "12.62%",
+        "hard_ratio": "75.72%",
+        "groove_ratio": "75.72%",
+        "easy_ratio": "77.66%",
+        "level": "LEVEL 16",
+        "title": "subconsciousness [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.17%",
+        "hard_ratio": "79.31%",
+        "groove_ratio": "79.31%",
+        "easy_ratio": "79.31%",
+        "level": "LEVEL 16",
+        "title": "The Destructive Genesis [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "2.17%",
+        "hard_ratio": "80.43%",
+        "groove_ratio": "82.6%",
+        "easy_ratio": "82.6%",
+        "level": "LEVEL 16",
+        "title": "The World of Cyber [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "11.11%",
+        "hard_ratio": "71.71%",
+        "groove_ratio": "71.71%",
+        "easy_ratio": "71.71%",
+        "level": "LEVEL 16",
+        "title": "Time files [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.25%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75.89%",
+        "easy_ratio": "79.46%",
+        "level": "LEVEL 16",
+        "title": "Unleashed World [5Key Aery NM]"
+      },
+      {
+        "fc_ratio": "2.94%",
+        "hard_ratio": "75%",
+        "groove_ratio": "76.47%",
+        "easy_ratio": "77.94%",
+        "level": "LEVEL 16",
+        "title": "うみいろ、そらいろ。 [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.25%",
+        "hard_ratio": "80.85%",
+        "groove_ratio": "80.85%",
+        "easy_ratio": "80.85%",
+        "level": "LEVEL 16",
+        "title": "ホ?リ?サンバランド [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "16.21%",
+        "hard_ratio": "72.97%",
+        "groove_ratio": "72.97%",
+        "easy_ratio": "74.77%",
+        "level": "LEVEL 16",
+        "title": "水晶世界 ?Fracture? [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "76.38%",
+        "groove_ratio": "77.77%",
+        "easy_ratio": "80.55%",
+        "level": "LEVEL 16",
+        "title": "絶対的共依存 [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.25%",
+        "hard_ratio": "76.25%",
+        "groove_ratio": "77.5%",
+        "easy_ratio": "77.5%",
+        "level": "LEVEL 16",
+        "title": "奏龍ピア?ラ [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.55%",
+        "hard_ratio": "78.68%",
+        "groove_ratio": "78.68%",
+        "easy_ratio": "80.32%",
+        "level": "LEVEL 16",
+        "title": "虹夜パレッド [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.76%",
+        "hard_ratio": "73.01%",
+        "groove_ratio": "73.01%",
+        "easy_ratio": "74.6%",
+        "level": "LEVEL 16",
+        "title": "1516 「5К≡y Å∃rノ』"
+      },
+      {
+        "fc_ratio": "4.34%",
+        "hard_ratio": "80.43%",
+        "groove_ratio": "80.43%",
+        "easy_ratio": "80.43%",
+        "level": "LEVEL 16",
+        "title": "Princess × Pegasus [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "5.4%",
+        "hard_ratio": "72.97%",
+        "groove_ratio": "72.97%",
+        "easy_ratio": "75.67%",
+        "level": "LEVEL 16",
+        "title": "far in the blue sky... [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "72.72%",
+        "groove_ratio": "75.75%",
+        "easy_ratio": "75.75%",
+        "level": "LEVEL 16",
+        "title": "Parousia [5KEYS AERY RE]"
+      }
+    ],
+    "C": [
+      {
+        "fc_ratio": "23.43%",
+        "hard_ratio": "90.62%",
+        "groove_ratio": "90.62%",
+        "easy_ratio": "90.62%",
+        "level": "LEVEL 16",
+        "title": "Echo [AERY GCSTHER]"
+      },
+      {
+        "fc_ratio": "9.64%",
+        "hard_ratio": "85.96%",
+        "groove_ratio": "87.71%",
+        "easy_ratio": "92.1%",
+        "level": "LEVEL 16",
+        "title": "\"P\" stands for [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "4.81%",
+        "hard_ratio": "89.15%",
+        "groove_ratio": "91.56%",
+        "easy_ratio": "92.77%",
+        "level": "LEVEL 16",
+        "title": "☆をかけるアドベン?ャ? ? we are forever friends! ? [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "13.27%",
+        "hard_ratio": "86.72%",
+        "groove_ratio": "87.61%",
+        "easy_ratio": "90.26%",
+        "level": "LEVEL 16",
+        "title": "★LittlE HearTs★ [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "11.21%",
+        "hard_ratio": "82.24%",
+        "groove_ratio": "83.17%",
+        "easy_ratio": "85.98%",
+        "level": "LEVEL 16",
+        "title": "A BEAUTIFUL WINGS [5key Aery]"
+      },
+      {
+        "fc_ratio": "16.21%",
+        "hard_ratio": "87.83%",
+        "groove_ratio": "90.54%",
+        "easy_ratio": "95.94%",
+        "level": "LEVEL 16",
+        "title": "After Burner [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "81.41%",
+        "groove_ratio": "83.33%",
+        "easy_ratio": "86.53%",
+        "level": "LEVEL 16",
+        "title": "aliceblue (Radio Edit) [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.83%",
+        "hard_ratio": "88.7%",
+        "groove_ratio": "88.7%",
+        "easy_ratio": "90.32%",
+        "level": "LEVEL 16",
+        "title": "Altros [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "10.93%",
+        "hard_ratio": "89.06%",
+        "groove_ratio": "90.62%",
+        "easy_ratio": "92.18%",
+        "level": "LEVEL 16",
+        "title": "Amethyst Moon [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.95%",
+        "hard_ratio": "88.09%",
+        "groove_ratio": "88.09%",
+        "easy_ratio": "90.47%",
+        "level": "LEVEL 16",
+        "title": "Andro [5KYES AERY]"
+      },
+      {
+        "fc_ratio": "6.55%",
+        "hard_ratio": "83.6%",
+        "groove_ratio": "85.24%",
+        "easy_ratio": "88.52%",
+        "level": "LEVEL 16",
+        "title": "Another Day [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "4.83%",
+        "hard_ratio": "85.48%",
+        "groove_ratio": "85.48%",
+        "easy_ratio": "85.48%",
+        "level": "LEVEL 16",
+        "title": "Anti Function [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.21%",
+        "hard_ratio": "90.41%",
+        "groove_ratio": "91.78%",
+        "easy_ratio": "93.15%",
+        "level": "LEVEL 16",
+        "title": "Apollo [5KEY AERY-]"
+      },
+      {
+        "fc_ratio": "19.51%",
+        "hard_ratio": "90.24%",
+        "groove_ratio": "90.24%",
+        "easy_ratio": "93.9%",
+        "level": "LEVEL 16",
+        "title": "Bad Cycle [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.68%",
+        "hard_ratio": "87.5%",
+        "groove_ratio": "92.04%",
+        "easy_ratio": "95.45%",
+        "level": "LEVEL 16",
+        "title": "Believe in Myself [5key Aery]"
+      },
+      {
+        "fc_ratio": "17.57%",
+        "hard_ratio": "84.84%",
+        "groove_ratio": "86.06%",
+        "easy_ratio": "90.3%",
+        "level": "LEVEL 16",
+        "title": "Calamity Fortune [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.88%",
+        "hard_ratio": "88.23%",
+        "groove_ratio": "88.23%",
+        "easy_ratio": "88.23%",
+        "level": "LEVEL 16",
+        "title": "Celestial Axes [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.09%",
+        "hard_ratio": "88.52%",
+        "groove_ratio": "89.34%",
+        "easy_ratio": "92.62%",
+        "level": "LEVEL 16",
+        "title": "CO5M1C R4ILR0AD [5KEY AERY 3XTR4]"
+      },
+      {
+        "fc_ratio": "19.76%",
+        "hard_ratio": "87.2%",
+        "groove_ratio": "88.37%",
+        "easy_ratio": "91.86%",
+        "level": "LEVEL 16",
+        "title": "Cynthia [5key Aery]"
+      },
+      {
+        "fc_ratio": "18.36%",
+        "hard_ratio": "87.75%",
+        "groove_ratio": "87.75%",
+        "easy_ratio": "90.81%",
+        "level": "LEVEL 16",
+        "title": "Daydreamer [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "20.76%",
+        "hard_ratio": "87.69%",
+        "groove_ratio": "89.23%",
+        "easy_ratio": "90%",
+        "level": "LEVEL 16",
+        "title": "endemize [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.52%",
+        "hard_ratio": "88.15%",
+        "groove_ratio": "88.15%",
+        "easy_ratio": "92.1%",
+        "level": "LEVEL 16",
+        "title": "Epic Bellum [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "14.49%",
+        "hard_ratio": "89.85%",
+        "groove_ratio": "89.85%",
+        "easy_ratio": "94.2%",
+        "level": "LEVEL 16",
+        "title": "ERIS [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "1.63%",
+        "hard_ratio": "90.16%",
+        "groove_ratio": "90.16%",
+        "easy_ratio": "91.8%",
+        "level": "LEVEL 16",
+        "title": "Fiore Tempesta [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "9.4%",
+        "hard_ratio": "82.05%",
+        "groove_ratio": "82.9%",
+        "easy_ratio": "88.03%",
+        "level": "LEVEL 16",
+        "title": "furioso melodia [5key Aery]"
+      },
+      {
+        "fc_ratio": "10.78%",
+        "hard_ratio": "88.23%",
+        "groove_ratio": "88.23%",
+        "easy_ratio": "89.21%",
+        "level": "LEVEL 16",
+        "title": "GIN TONIC FLAVOR [5K Aery Gamma]"
+      },
+      {
+        "fc_ratio": "11.62%",
+        "hard_ratio": "85.27%",
+        "groove_ratio": "86.82%",
+        "easy_ratio": "90.69%",
+        "level": "LEVEL 16",
+        "title": "IKAROS [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.41%",
+        "hard_ratio": "83.76%",
+        "groove_ratio": "83.76%",
+        "easy_ratio": "87.17%",
+        "level": "LEVEL 16",
+        "title": "Imperishable Night 2006 [5K Aery Normal]"
+      },
+      {
+        "fc_ratio": "15.18%",
+        "hard_ratio": "87.34%",
+        "groove_ratio": "87.34%",
+        "easy_ratio": "89.87%",
+        "level": "LEVEL 16",
+        "title": "J2U(crazy remix) [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.69%",
+        "hard_ratio": "81.31%",
+        "groove_ratio": "82.41%",
+        "easy_ratio": "86.81%",
+        "level": "LEVEL 16",
+        "title": "LivedaM [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.58%",
+        "hard_ratio": "88.88%",
+        "groove_ratio": "90.47%",
+        "easy_ratio": "92.06%",
+        "level": "LEVEL 16",
+        "title": "LUNASA the Stormcauser [5key Aery]"
+      },
+      {
+        "fc_ratio": "12.5%",
+        "hard_ratio": "89.06%",
+        "groove_ratio": "89.06%",
+        "easy_ratio": "90.62%",
+        "level": "LEVEL 16",
+        "title": "Magus Logos [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.93%",
+        "hard_ratio": "83.46%",
+        "groove_ratio": "84.25%",
+        "easy_ratio": "87.4%",
+        "level": "LEVEL 16",
+        "title": "Merry Christmas Mr.Aery"
+      },
+      {
+        "fc_ratio": "15.9%",
+        "hard_ratio": "81.81%",
+        "groove_ratio": "82.95%",
+        "easy_ratio": "84.09%",
+        "level": "LEVEL 16",
+        "title": "myste`re? [5key Aery]"
+      },
+      {
+        "fc_ratio": "17.02%",
+        "hard_ratio": "90.42%",
+        "groove_ratio": "92.55%",
+        "easy_ratio": "93.61%",
+        "level": "LEVEL 16",
+        "title": "Pentagram [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.52%",
+        "hard_ratio": "81.72%",
+        "groove_ratio": "81.72%",
+        "easy_ratio": "81.72%",
+        "level": "LEVEL 16",
+        "title": "Plastic Mind [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "12.19%",
+        "hard_ratio": "89.02%",
+        "groove_ratio": "91.46%",
+        "easy_ratio": "92.68%",
+        "level": "LEVEL 16",
+        "title": "platinum garden [5key Aery]"
+      },
+      {
+        "fc_ratio": "12.68%",
+        "hard_ratio": "85.82%",
+        "groove_ratio": "86.56%",
+        "easy_ratio": "91.79%",
+        "level": "LEVEL 16",
+        "title": "Poppin' Shower -sugarless-"
+      },
+      {
+        "fc_ratio": "11.11%",
+        "hard_ratio": "87.3%",
+        "groove_ratio": "87.3%",
+        "easy_ratio": "87.3%",
+        "level": "LEVEL 16",
+        "title": "Pure White † Crimson Coffin [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "16.32%",
+        "hard_ratio": "88.77%",
+        "groove_ratio": "90.81%",
+        "easy_ratio": "93.87%",
+        "level": "LEVEL 16",
+        "title": "Quark [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.08%",
+        "hard_ratio": "86.44%",
+        "groove_ratio": "86.44%",
+        "easy_ratio": "88.13%",
+        "level": "LEVEL 16",
+        "title": "Quickening 2 the RED [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.55%",
+        "hard_ratio": "84.44%",
+        "groove_ratio": "84.44%",
+        "easy_ratio": "88.88%",
+        "level": "LEVEL 16",
+        "title": "R.I.P. [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "6.79%",
+        "hard_ratio": "84.46%",
+        "groove_ratio": "86.4%",
+        "easy_ratio": "91.26%",
+        "level": "LEVEL 16",
+        "title": "Random [AERY RANDOM]"
+      },
+      {
+        "fc_ratio": "12.5%",
+        "hard_ratio": "85%",
+        "groove_ratio": "86.25%",
+        "easy_ratio": "90%",
+        "level": "LEVEL 16",
+        "title": "Rechronize [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "1.26%",
+        "hard_ratio": "82.27%",
+        "groove_ratio": "83.54%",
+        "easy_ratio": "84.81%",
+        "level": "LEVEL 16",
+        "title": "res extensa [5K Aery Easy]"
+      },
+      {
+        "fc_ratio": "8.82%",
+        "hard_ratio": "82.35%",
+        "groove_ratio": "82.35%",
+        "easy_ratio": "85.29%",
+        "level": "LEVEL 16",
+        "title": "Revelator [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.89%",
+        "hard_ratio": "86.84%",
+        "groove_ratio": "90.78%",
+        "easy_ratio": "93.42%",
+        "level": "LEVEL 16",
+        "title": "ReviXy [5K Aery Normal]"
+      },
+      {
+        "fc_ratio": "2.27%",
+        "hard_ratio": "85.22%",
+        "groove_ratio": "85.22%",
+        "easy_ratio": "88.63%",
+        "level": "LEVEL 16",
+        "title": "Say A Vengeance [5Key Another edit.]"
+      },
+      {
+        "fc_ratio": "12%",
+        "hard_ratio": "81.33%",
+        "groove_ratio": "81.33%",
+        "easy_ratio": "82.66%",
+        "level": "LEVEL 16",
+        "title": "Schlaflosigkeitnacht [5key Aery]"
+      },
+      {
+        "fc_ratio": "10.25%",
+        "hard_ratio": "84.61%",
+        "groove_ratio": "84.61%",
+        "easy_ratio": "85.89%",
+        "level": "LEVEL 16",
+        "title": "SIREN OF DAWN [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.71%",
+        "hard_ratio": "83.96%",
+        "groove_ratio": "83.96%",
+        "easy_ratio": "85.84%",
+        "level": "LEVEL 16",
+        "title": "Smiling [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "16.04%",
+        "hard_ratio": "85.18%",
+        "groove_ratio": "85.18%",
+        "easy_ratio": "86.41%",
+        "level": "LEVEL 16",
+        "title": "sola [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.25%",
+        "hard_ratio": "87.23%",
+        "groove_ratio": "87.23%",
+        "easy_ratio": "89.36%",
+        "level": "LEVEL 16",
+        "title": "suffruti [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "1.33%",
+        "hard_ratio": "89.33%",
+        "groove_ratio": "92%",
+        "easy_ratio": "93.33%",
+        "level": "LEVEL 16",
+        "title": "The Lady Is A Trump [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "3.48%",
+        "hard_ratio": "86.04%",
+        "groove_ratio": "86.04%",
+        "easy_ratio": "86.04%",
+        "level": "LEVEL 16",
+        "title": "The lost [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.25%",
+        "hard_ratio": "88.75%",
+        "groove_ratio": "91.25%",
+        "easy_ratio": "95%",
+        "level": "LEVEL 16",
+        "title": "The Ray of Sunlight [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "8%",
+        "hard_ratio": "90%",
+        "groove_ratio": "92%",
+        "easy_ratio": "92%",
+        "level": "LEVEL 16",
+        "title": "Trahison [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.91%",
+        "hard_ratio": "87.12%",
+        "groove_ratio": "88.11%",
+        "easy_ratio": "93.06%",
+        "level": "LEVEL 16",
+        "title": "Valedict [5K Aery Normal]"
+      },
+      {
+        "fc_ratio": "12.65%",
+        "hard_ratio": "84.81%",
+        "groove_ratio": "84.81%",
+        "easy_ratio": "87.34%",
+        "level": "LEVEL 16",
+        "title": "Valkyrie Revolutia [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.82%",
+        "hard_ratio": "89.7%",
+        "groove_ratio": "91.17%",
+        "easy_ratio": "95.58%",
+        "level": "LEVEL 16",
+        "title": "Vantablack [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "15.47%",
+        "hard_ratio": "83.33%",
+        "groove_ratio": "86.9%",
+        "easy_ratio": "90.47%",
+        "level": "LEVEL 16",
+        "title": "x-Aria [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "85%",
+        "groove_ratio": "86.66%",
+        "easy_ratio": "90%",
+        "level": "LEVEL 16",
+        "title": "βehexeη?δ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.85%",
+        "hard_ratio": "84.52%",
+        "groove_ratio": "86.9%",
+        "easy_ratio": "86.9%",
+        "level": "LEVEL 16",
+        "title": "あなた [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.33%",
+        "hard_ratio": "89.33%",
+        "groove_ratio": "89.33%",
+        "easy_ratio": "90.66%",
+        "level": "LEVEL 16",
+        "title": "おジャ魔女でBANBAN！(Pop-mix) [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.16%",
+        "hard_ratio": "89.58%",
+        "groove_ratio": "89.58%",
+        "easy_ratio": "91.66%",
+        "level": "LEVEL 16",
+        "title": "テウメッサ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.45%",
+        "hard_ratio": "83.09%",
+        "groove_ratio": "85.91%",
+        "easy_ratio": "85.91%",
+        "level": "LEVEL 16",
+        "title": "硬核機動 [5KEY AERY Assault X]"
+      },
+      {
+        "fc_ratio": "10.84%",
+        "hard_ratio": "87.95%",
+        "groove_ratio": "87.95%",
+        "easy_ratio": "91.56%",
+        "level": "LEVEL 16",
+        "title": "無機質世界に彩を [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.27%",
+        "hard_ratio": "90.9%",
+        "groove_ratio": "90.9%",
+        "easy_ratio": "92.72%",
+        "level": "LEVEL 16",
+        "title": "四?五年ノ雪桜 [5key Aery]"
+      },
+      {
+        "fc_ratio": "16.85%",
+        "hard_ratio": "88.76%",
+        "groove_ratio": "89.88%",
+        "easy_ratio": "91.01%",
+        "level": "LEVEL 16",
+        "title": "上海紅茶館 [5key Aery]"
+      },
+      {
+        "fc_ratio": "18.18%",
+        "hard_ratio": "84.84%",
+        "groove_ratio": "85.85%",
+        "easy_ratio": "85.85%",
+        "level": "LEVEL 16",
+        "title": "約束 -HappyHyperStarmiX- [5key Aery normal]"
+      },
+      {
+        "fc_ratio": "15.68%",
+        "hard_ratio": "85.29%",
+        "groove_ratio": "89.21%",
+        "easy_ratio": "92.15%",
+        "level": "LEVEL 16",
+        "title": "歪んだ? [5key Aery]"
+      },
+      {
+        "fc_ratio": "12.34%",
+        "hard_ratio": "85.18%",
+        "groove_ratio": "86.41%",
+        "easy_ratio": "88.88%",
+        "level": "LEVEL 16",
+        "title": "音楽（なんでも吸い込むピンク色のための）"
+      },
+      {
+        "fc_ratio": "13.2%",
+        "hard_ratio": "84.9%",
+        "groove_ratio": "84.9%",
+        "easy_ratio": "88.67%",
+        "level": "LEVEL 16",
+        "title": "翼の折れた天使たちのレクイエ? [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "88.33%",
+        "groove_ratio": "88.33%",
+        "easy_ratio": "88.33%",
+        "level": "LEVEL 16",
+        "title": "紅染?三番街道 [5key Aery]"
+      },
+      {
+        "fc_ratio": "8.23%",
+        "hard_ratio": "85.88%",
+        "groove_ratio": "85.88%",
+        "easy_ratio": "90.58%",
+        "level": "LEVEL 16",
+        "title": "PrayStation [5K Aery ･畩"
+      },
+      {
+        "fc_ratio": "12.76%",
+        "hard_ratio": "89.36%",
+        "groove_ratio": "89.36%",
+        "easy_ratio": "89.36%",
+        "level": "LEVEL 16",
+        "title": "DEATH SENTENCE [5KEYS AERY -ROCK BASS-]"
+      },
+      {
+        "fc_ratio": "8.47%",
+        "hard_ratio": "83.05%",
+        "groove_ratio": "83.05%",
+        "easy_ratio": "86.44%",
+        "level": "LEVEL 16",
+        "title": "METABOKNIGHT [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.77%",
+        "hard_ratio": "83.01%",
+        "groove_ratio": "83.01%",
+        "easy_ratio": "84.9%",
+        "level": "LEVEL 16",
+        "title": "SHI☆O☆KA☆RA [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.88%",
+        "hard_ratio": "90.19%",
+        "groove_ratio": "90.19%",
+        "easy_ratio": "90.19%",
+        "level": "LEVEL 16",
+        "title": "インドア系ならトラックメイカー 199024club mix [5KEYS AERY CLUB]"
+      },
+      {
+        "fc_ratio": "4.16%",
+        "hard_ratio": "85.41%",
+        "groove_ratio": "85.41%",
+        "easy_ratio": "85.41%",
+        "level": "LEVEL 16",
+        "title": "キユビック [5KEYS AERY +]"
+      },
+      {
+        "fc_ratio": "13.2%",
+        "hard_ratio": "90.56%",
+        "groove_ratio": "92.45%",
+        "easy_ratio": "94.33%",
+        "level": "LEVEL 16",
+        "title": "もぺもぺ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "88.88%",
+        "groove_ratio": "88.88%",
+        "easy_ratio": "90.74%",
+        "level": "LEVEL 16",
+        "title": "千年女王 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "2.97%",
+        "hard_ratio": "82.17%",
+        "groove_ratio": "84.15%",
+        "easy_ratio": "88.11%",
+        "level": "LEVEL 16",
+        "title": "STAGER [5K Aery Alpha]"
+      },
+      {
+        "fc_ratio": "8.51%",
+        "hard_ratio": "85.1%",
+        "groove_ratio": "85.1%",
+        "easy_ratio": "89.36%",
+        "level": "LEVEL 16",
+        "title": "mom [5KEYS Aery's Touch]"
+      },
+      {
+        "fc_ratio": "11.9%",
+        "hard_ratio": "90.47%",
+        "groove_ratio": "90.47%",
+        "easy_ratio": "92.85%",
+        "level": "LEVEL 16",
+        "title": "図書室のエルザ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "1.81%",
+        "hard_ratio": "90.9%",
+        "groove_ratio": "94.54%",
+        "easy_ratio": "94.54%",
+        "level": "LEVEL 16",
+        "title": "?ョウの標?  [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.71%",
+        "hard_ratio": "88.57%",
+        "groove_ratio": "91.42%",
+        "easy_ratio": "94.28%",
+        "level": "LEVEL 16",
+        "title": "《Ж》 [5KEYS AERY NM]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "90.9%",
+        "groove_ratio": "90.9%",
+        "easy_ratio": "90.9%",
+        "level": "LEVEL 16",
+        "title": "いせきのなかにいる [5KEYS AERY]"
+      }
+    ],
+    "F": [
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "91.66%",
+        "groove_ratio": "91.66%",
+        "easy_ratio": "91.66%",
+        "level": "LEVEL 16",
+        "title": "Antipode [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.91%",
+        "hard_ratio": "93.44%",
+        "groove_ratio": "93.44%",
+        "easy_ratio": "95.08%",
+        "level": "LEVEL 16",
+        "title": "Arioso Killer [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "27.55%",
+        "hard_ratio": "94.48%",
+        "groove_ratio": "96.06%",
+        "easy_ratio": "96.85%",
+        "level": "LEVEL 16",
+        "title": "Artificial Rose [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.93%",
+        "hard_ratio": "93.65%",
+        "groove_ratio": "93.65%",
+        "easy_ratio": "93.65%",
+        "level": "LEVEL 16",
+        "title": "Bicolor Spirit [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "17.1%",
+        "hard_ratio": "92.1%",
+        "groove_ratio": "93.42%",
+        "easy_ratio": "97.36%",
+        "level": "LEVEL 16",
+        "title": "Brave My Soul [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "14.54%",
+        "hard_ratio": "92.72%",
+        "groove_ratio": "92.72%",
+        "easy_ratio": "92.72%",
+        "level": "LEVEL 16",
+        "title": "CHMR [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "12%",
+        "hard_ratio": "96%",
+        "groove_ratio": "96%",
+        "easy_ratio": "96%",
+        "level": "LEVEL 16",
+        "title": "Cosmogazer [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "28.57%",
+        "hard_ratio": "97.95%",
+        "groove_ratio": "97.95%",
+        "easy_ratio": "97.95%",
+        "level": "LEVEL 16",
+        "title": "Damnation 565 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.49%",
+        "hard_ratio": "94.8%",
+        "groove_ratio": "94.8%",
+        "easy_ratio": "97.4%",
+        "level": "LEVEL 16",
+        "title": "Dandelion Sparkle!! [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Elina [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "9.52%",
+        "hard_ratio": "92.06%",
+        "groove_ratio": "92.06%",
+        "easy_ratio": "93.65%",
+        "level": "LEVEL 16",
+        "title": "Eternalism 3 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "18.75%",
+        "hard_ratio": "91.66%",
+        "groove_ratio": "91.66%",
+        "easy_ratio": "95.83%",
+        "level": "LEVEL 16",
+        "title": "Eyes of Faith [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "1.72%",
+        "hard_ratio": "91.37%",
+        "groove_ratio": "91.37%",
+        "easy_ratio": "91.37%",
+        "level": "LEVEL 16",
+        "title": "FF??最後の闘い [5key Aery DELAY]"
+      },
+      {
+        "fc_ratio": "17%",
+        "hard_ratio": "94%",
+        "groove_ratio": "94%",
+        "easy_ratio": "97%",
+        "level": "LEVEL 16",
+        "title": "Funny Funky Freaky [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "15.21%",
+        "hard_ratio": "95.65%",
+        "groove_ratio": "95.65%",
+        "easy_ratio": "97.82%",
+        "level": "LEVEL 16",
+        "title": "Glantz [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.38%",
+        "hard_ratio": "95.74%",
+        "groove_ratio": "95.74%",
+        "easy_ratio": "97.87%",
+        "level": "LEVEL 16",
+        "title": "GLITCH SWITCH [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "15.51%",
+        "hard_ratio": "96.55%",
+        "groove_ratio": "96.55%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "GOODDRILL [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.54%",
+        "hard_ratio": "94.33%",
+        "groove_ratio": "94.33%",
+        "easy_ratio": "94.33%",
+        "level": "LEVEL 16",
+        "title": "GOODFORTUNE [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "10.63%",
+        "hard_ratio": "95.74%",
+        "groove_ratio": "95.74%",
+        "easy_ratio": "95.74%",
+        "level": "LEVEL 16",
+        "title": "hotいも [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.14%",
+        "hard_ratio": "92.75%",
+        "groove_ratio": "92.75%",
+        "easy_ratio": "92.75%",
+        "level": "LEVEL 16",
+        "title": "Idealized Land [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "17.39%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Opaque Couche [5key Aery]"
+      },
+      {
+        "fc_ratio": "8.51%",
+        "hard_ratio": "91.48%",
+        "groove_ratio": "91.48%",
+        "easy_ratio": "95.74%",
+        "level": "LEVEL 16",
+        "title": "Pandora [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "91.91%",
+        "groove_ratio": "93.93%",
+        "easy_ratio": "95.95%",
+        "level": "LEVEL 16",
+        "title": "Papyrus [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "19.64%",
+        "hard_ratio": "98.21%",
+        "groove_ratio": "98.21%",
+        "easy_ratio": "98.21%",
+        "level": "LEVEL 16",
+        "title": "S [5KEY AERY REVENGE]"
+      },
+      {
+        "fc_ratio": "3.53%",
+        "hard_ratio": "92.92%",
+        "groove_ratio": "94.69%",
+        "easy_ratio": "95.57%",
+        "level": "LEVEL 16",
+        "title": "squartatrice [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "18.07%",
+        "hard_ratio": "91.56%",
+        "groove_ratio": "91.56%",
+        "easy_ratio": "93.97%",
+        "level": "LEVEL 16",
+        "title": "We are the xxxx [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "6.45%",
+        "hard_ratio": "93.54%",
+        "groove_ratio": "93.54%",
+        "easy_ratio": "95.16%",
+        "level": "LEVEL 16",
+        "title": "ZENITHALIZE [5KEY AERY-]"
+      },
+      {
+        "fc_ratio": "31%",
+        "hard_ratio": "92%",
+        "groove_ratio": "93%",
+        "easy_ratio": "93%",
+        "level": "LEVEL 16",
+        "title": "少女の檻 \"Last Night, Last Dancing.\" [5key Aery]"
+      },
+      {
+        "fc_ratio": "14.75%",
+        "hard_ratio": "95.08%",
+        "groove_ratio": "95.08%",
+        "easy_ratio": "95.08%",
+        "level": "LEVEL 16",
+        "title": "点、線、面、立体 [5KEYS AERY HaRu]"
+      },
+      {
+        "fc_ratio": "20.27%",
+        "hard_ratio": "91.89%",
+        "groove_ratio": "94.59%",
+        "easy_ratio": "94.59%",
+        "level": "LEVEL 16",
+        "title": "絵空事の世界と私? [5key Aery]"
+      },
+      {
+        "fc_ratio": "14.51%",
+        "hard_ratio": "93.54%",
+        "groove_ratio": "93.54%",
+        "easy_ratio": "95.16%",
+        "level": "LEVEL 16",
+        "title": "d2 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.63%",
+        "hard_ratio": "97.87%",
+        "groove_ratio": "97.87%",
+        "easy_ratio": "97.87%",
+        "level": "LEVEL 16",
+        "title": "[line-zeta] [5KEYS AERY ζ]"
+      },
+      {
+        "fc_ratio": "11.32%",
+        "hard_ratio": "96.22%",
+        "groove_ratio": "96.22%",
+        "easy_ratio": "96.22%",
+        "level": "LEVEL 16",
+        "title": "AEGIR's Caprice [5KEYS AERY 海]"
+      },
+      {
+        "fc_ratio": "9.67%",
+        "hard_ratio": "96.77%",
+        "groove_ratio": "96.77%",
+        "easy_ratio": "96.77%",
+        "level": "LEVEL 16",
+        "title": "Boxel Adventure [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "33.33%",
+        "hard_ratio": "93.33%",
+        "groove_ratio": "93.33%",
+        "easy_ratio": "93.33%",
+        "level": "LEVEL 16",
+        "title": "Full Color [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.39%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Nidhogg [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.65%",
+        "hard_ratio": "97.67%",
+        "groove_ratio": "97.67%",
+        "easy_ratio": "97.67%",
+        "level": "LEVEL 16",
+        "title": "Orbital Period [5KEYS AERY .]"
+      },
+      {
+        "fc_ratio": "8.88%",
+        "hard_ratio": "95.55%",
+        "groove_ratio": "95.55%",
+        "easy_ratio": "95.55%",
+        "level": "LEVEL 16",
+        "title": "SHAMSHIR [5KEYS AERY PIANO]"
+      },
+      {
+        "fc_ratio": "13.2%",
+        "hard_ratio": "92.45%",
+        "groove_ratio": "96.22%",
+        "easy_ratio": "98.11%",
+        "level": "LEVEL 16",
+        "title": "プナイプナイせんそう [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "19.44%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Amusing Reflection Rag. [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "11.11%",
+        "hard_ratio": "91.11%",
+        "groove_ratio": "91.11%",
+        "easy_ratio": "93.33%",
+        "level": "LEVEL 16",
+        "title": "Black Lair [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "16.21%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Hyper Fiber World Spectrum [5K AERY ORCHESTRA]"
+      },
+      {
+        "fc_ratio": "2.7%",
+        "hard_ratio": "97.29%",
+        "groove_ratio": "97.29%",
+        "easy_ratio": "97.29%",
+        "level": "LEVEL 16",
+        "title": "Lovely_Force_Reflection [5KEYS AERY 技]"
+      },
+      {
+        "fc_ratio": "8.1%",
+        "hard_ratio": "94.59%",
+        "groove_ratio": "94.59%",
+        "easy_ratio": "94.59%",
+        "level": "LEVEL 16",
+        "title": "Modern Times [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "10.71%",
+        "hard_ratio": "96.42%",
+        "groove_ratio": "96.42%",
+        "easy_ratio": "96.42%",
+        "level": "LEVEL 16",
+        "title": "QSHELL [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "16.21%",
+        "hard_ratio": "97.29%",
+        "groove_ratio": "97.29%",
+        "easy_ratio": "97.29%",
+        "level": "LEVEL 16",
+        "title": "Spiritoso Killer [5KEYS AERY Another]"
+      },
+      {
+        "fc_ratio": "8.33%",
+        "hard_ratio": "97.22%",
+        "groove_ratio": "97.22%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Terpsichore [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "8.1%",
+        "hard_ratio": "94.59%",
+        "groove_ratio": "94.59%",
+        "easy_ratio": "94.59%",
+        "level": "LEVEL 16",
+        "title": "T'Suramic [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "34.04%",
+        "hard_ratio": "95.74%",
+        "groove_ratio": "95.74%",
+        "easy_ratio": "97.87%",
+        "level": "LEVEL 16",
+        "title": "WHIRLWIND [5Key Aery Breezy]"
+      },
+      {
+        "fc_ratio": "10.81%",
+        "hard_ratio": "94.59%",
+        "groove_ratio": "94.59%",
+        "easy_ratio": "94.59%",
+        "level": "LEVEL 16",
+        "title": "さよならコスモノート [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "18.18%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "スーパーイザナギオブジェクト [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "8.69%",
+        "hard_ratio": "95.65%",
+        "groove_ratio": "95.65%",
+        "easy_ratio": "95.65%",
+        "level": "LEVEL 16",
+        "title": "ブラーブルー [5KEYS AERY BlurBlue]"
+      },
+      {
+        "fc_ratio": "17.77%",
+        "hard_ratio": "95.55%",
+        "groove_ratio": "95.55%",
+        "easy_ratio": "95.55%",
+        "level": "LEVEL 16",
+        "title": "わるいコ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.54%",
+        "hard_ratio": "95.45%",
+        "groove_ratio": "95.45%",
+        "easy_ratio": "97.72%",
+        "level": "LEVEL 16",
+        "title": "年中夢中な好奇心 [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "21.56%",
+        "hard_ratio": "96.07%",
+        "groove_ratio": "96.07%",
+        "easy_ratio": "96.07%",
+        "level": "LEVEL 16",
+        "title": "恋の2-4-11 [5KEY AERY LOVE]"
+      },
+      {
+        "fc_ratio": "2.85%",
+        "hard_ratio": "91.42%",
+        "groove_ratio": "91.42%",
+        "easy_ratio": "91.42%",
+        "level": "LEVEL 16",
+        "title": "Q [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.76%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "〇、 [5KEYS AERY 〇]"
+      },
+      {
+        "fc_ratio": "10.34%",
+        "hard_ratio": "93.1%",
+        "groove_ratio": "93.1%",
+        "easy_ratio": "93.1%",
+        "level": "LEVEL 16",
+        "title": "LWVIIX [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "3.44%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "MINECRAFT∵ADVENTURE∴MEDLEY [5KEYS AERY DIAMOND]"
+      },
+      {
+        "fc_ratio": "8%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "PPBQ [5KEYS AERY SUMMER]"
+      },
+      {
+        "fc_ratio": "17.24%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "Revival of Kalpa [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.69%",
+        "hard_ratio": "91.3%",
+        "groove_ratio": "91.3%",
+        "easy_ratio": "91.3%",
+        "level": "LEVEL 16",
+        "title": "Two Muffin. Please. [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "16%",
+        "hard_ratio": "96%",
+        "groove_ratio": "96%",
+        "easy_ratio": "96%",
+        "level": "LEVEL 16",
+        "title": "スナレ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "8.69%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "フエネック [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.85%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 16",
+        "title": "八大地獄邪魂転生狂葬散火歌 [5KEYS AERY 火]"
+      }
+    ]
+  },
+  "LEVEL 17": {
+    "S+": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "48.03%",
+        "groove_ratio": "48.03%",
+        "easy_ratio": "49.01%",
+        "level": "LEVEL 17",
+        "title": "After The Rain [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "49.1%",
+        "groove_ratio": "49.1%",
+        "easy_ratio": "55.35%",
+        "level": "LEVEL 17",
+        "title": "End Time [5KEYS AERY HARD]"
+      },
+      {
+        "fc_ratio": "1.92%",
+        "hard_ratio": "47.11%",
+        "groove_ratio": "48.07%",
+        "easy_ratio": "53.84%",
+        "level": "LEVEL 17",
+        "title": "Funny Funky Freaky [5K Aery Gamma]"
+      },
+      {
+        "fc_ratio": "3.38%",
+        "hard_ratio": "33.89%",
+        "groove_ratio": "35.59%",
+        "easy_ratio": "40.67%",
+        "level": "LEVEL 17",
+        "title": "ozma [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.61%",
+        "hard_ratio": "45.78%",
+        "groove_ratio": "46.98%",
+        "easy_ratio": "50.6%",
+        "level": "LEVEL 17",
+        "title": "臨終 [5key DELAYNOOB]"
+      },
+      {
+        "fc_ratio": "3.8%",
+        "hard_ratio": "44.76%",
+        "groove_ratio": "44.76%",
+        "easy_ratio": "44.76%",
+        "level": "LEVEL 17",
+        "title": "歪んだ樹 [5key Aery]"
+      }
+    ],
+    "S": [
+      {
+        "fc_ratio": "3.64%",
+        "hard_ratio": "52.55%",
+        "groove_ratio": "54.01%",
+        "easy_ratio": "55.47%",
+        "level": "LEVEL 17",
+        "title": "44river [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.05%",
+        "hard_ratio": "55.78%",
+        "groove_ratio": "57.89%",
+        "easy_ratio": "60%",
+        "level": "LEVEL 17",
+        "title": "APOLLON [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "2.98%",
+        "hard_ratio": "55.22%",
+        "groove_ratio": "55.97%",
+        "easy_ratio": "60.44%",
+        "level": "LEVEL 17",
+        "title": "Aragami [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0.77%",
+        "hard_ratio": "53.48%",
+        "groove_ratio": "55.03%",
+        "easy_ratio": "59.68%",
+        "level": "LEVEL 17",
+        "title": "Ascension to Heaven [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.06%",
+        "hard_ratio": "52.57%",
+        "groove_ratio": "52.57%",
+        "easy_ratio": "54.63%",
+        "level": "LEVEL 17",
+        "title": "BeYonD [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "53.24%",
+        "groove_ratio": "53.24%",
+        "easy_ratio": "54.54%",
+        "level": "LEVEL 17",
+        "title": "beyond the limit [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "1.62%",
+        "hard_ratio": "52.84%",
+        "groove_ratio": "52.84%",
+        "easy_ratio": "54.47%",
+        "level": "LEVEL 17",
+        "title": "Finixe [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "5%",
+        "hard_ratio": "51%",
+        "groove_ratio": "51%",
+        "easy_ratio": "53%",
+        "level": "LEVEL 17",
+        "title": "Her Majesty [5K Aery Gamma]"
+      },
+      {
+        "fc_ratio": "3.3%",
+        "hard_ratio": "51.23%",
+        "groove_ratio": "51.23%",
+        "easy_ratio": "55.37%",
+        "level": "LEVEL 17",
+        "title": "Jack the Ripper [5K Aery]"
+      },
+      {
+        "fc_ratio": "8.16%",
+        "hard_ratio": "55.1%",
+        "groove_ratio": "55.1%",
+        "easy_ratio": "57.82%",
+        "level": "LEVEL 17",
+        "title": "Joker [5key Aery]"
+      },
+      {
+        "fc_ratio": "6%",
+        "hard_ratio": "54%",
+        "groove_ratio": "54%",
+        "easy_ratio": "56%",
+        "level": "LEVEL 17",
+        "title": "サンバランド [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.02%",
+        "hard_ratio": "54.54%",
+        "groove_ratio": "54.54%",
+        "easy_ratio": "57.57%",
+        "level": "LEVEL 17",
+        "title": "スピカ [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "54.76%",
+        "groove_ratio": "54.76%",
+        "easy_ratio": "54.76%",
+        "level": "LEVEL 17",
+        "title": "ピアノ連弾的「You」?ひぐらしのなく頃に? [5key Aery]"
+      }
+    ],
+    "A+": [
+      {
+        "fc_ratio": "2.4%",
+        "hard_ratio": "60%",
+        "groove_ratio": "61.6%",
+        "easy_ratio": "64.8%",
+        "level": "LEVEL 17",
+        "title": "* Crow Solace * [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60.21%",
+        "groove_ratio": "60.21%",
+        "easy_ratio": "61.29%",
+        "level": "LEVEL 17",
+        "title": "A BEAUTIFUL WINGS [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "1.17%",
+        "hard_ratio": "56.47%",
+        "groove_ratio": "57.64%",
+        "easy_ratio": "57.64%",
+        "level": "LEVEL 17",
+        "title": "analog sky [5K Aery Beta]"
+      },
+      {
+        "fc_ratio": "4.89%",
+        "hard_ratio": "60.32%",
+        "groove_ratio": "60.86%",
+        "easy_ratio": "65.21%",
+        "level": "LEVEL 17",
+        "title": "Angelic layer [5Key Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "63.79%",
+        "groove_ratio": "64.65%",
+        "easy_ratio": "65.51%",
+        "level": "LEVEL 17",
+        "title": "Angelic Snow [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "4.08%",
+        "hard_ratio": "59.18%",
+        "groove_ratio": "61.9%",
+        "easy_ratio": "65.3%",
+        "level": "LEVEL 17",
+        "title": "Apollo [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.42%",
+        "hard_ratio": "65.71%",
+        "groove_ratio": "65.71%",
+        "easy_ratio": "68.57%",
+        "level": "LEVEL 17",
+        "title": "AutumnBreeze [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "64.55%",
+        "groove_ratio": "64.55%",
+        "easy_ratio": "65.82%",
+        "level": "LEVEL 17",
+        "title": "Brain Analysis [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "2.47%",
+        "hard_ratio": "58.67%",
+        "groove_ratio": "61.15%",
+        "easy_ratio": "65.28%",
+        "level": "LEVEL 17",
+        "title": "DataErr0r [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "2.29%",
+        "hard_ratio": "60.91%",
+        "groove_ratio": "60.91%",
+        "easy_ratio": "63.21%",
+        "level": "LEVEL 17",
+        "title": "ＤＱⅢ?Battle [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.6%",
+        "hard_ratio": "61.32%",
+        "groove_ratio": "61.32%",
+        "easy_ratio": "64.15%",
+        "level": "LEVEL 17",
+        "title": "ETERNAL DRAIN [5key Aery DELAY]"
+      },
+      {
+        "fc_ratio": "2.15%",
+        "hard_ratio": "63.44%",
+        "groove_ratio": "65.59%",
+        "easy_ratio": "67.74%",
+        "level": "LEVEL 17",
+        "title": "gradation [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0.71%",
+        "hard_ratio": "57.14%",
+        "groove_ratio": "60%",
+        "easy_ratio": "65%",
+        "level": "LEVEL 17",
+        "title": "Halcyon [5key Aery]"
+      },
+      {
+        "fc_ratio": "12.82%",
+        "hard_ratio": "65.38%",
+        "groove_ratio": "65.38%",
+        "easy_ratio": "67.94%",
+        "level": "LEVEL 17",
+        "title": "L9 [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "1.07%",
+        "hard_ratio": "59.13%",
+        "groove_ratio": "59.13%",
+        "easy_ratio": "59.13%",
+        "level": "LEVEL 17",
+        "title": "Midnight Flux [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "1.81%",
+        "hard_ratio": "56.36%",
+        "groove_ratio": "56.36%",
+        "easy_ratio": "60%",
+        "level": "LEVEL 17",
+        "title": "Moondread [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60.86%",
+        "groove_ratio": "60.86%",
+        "easy_ratio": "60.86%",
+        "level": "LEVEL 17",
+        "title": "Ms.Naive Princess [5K Aery Gamma]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60.78%",
+        "groove_ratio": "60.78%",
+        "easy_ratio": "62.74%",
+        "level": "LEVEL 17",
+        "title": "NO MERCY [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.12%",
+        "hard_ratio": "57.69%",
+        "groove_ratio": "57.69%",
+        "easy_ratio": "57.69%",
+        "level": "LEVEL 17",
+        "title": "NS18 [5KEY AERY x0.9]"
+      },
+      {
+        "fc_ratio": "4.28%",
+        "hard_ratio": "61.42%",
+        "groove_ratio": "61.42%",
+        "easy_ratio": "62.85%",
+        "level": "LEVEL 17",
+        "title": "oceanbird [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "2.02%",
+        "hard_ratio": "63.63%",
+        "groove_ratio": "63.63%",
+        "easy_ratio": "69.69%",
+        "level": "LEVEL 17",
+        "title": "ouroVoros [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.06%",
+        "hard_ratio": "63.29%",
+        "groove_ratio": "63.29%",
+        "easy_ratio": "64.55%",
+        "level": "LEVEL 17",
+        "title": "Paraclete [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.22%",
+        "hard_ratio": "63.44%",
+        "groove_ratio": "66.66%",
+        "easy_ratio": "69.89%",
+        "level": "LEVEL 17",
+        "title": "Sense [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "6.06%",
+        "hard_ratio": "56.36%",
+        "groove_ratio": "56.96%",
+        "easy_ratio": "61.81%",
+        "level": "LEVEL 17",
+        "title": "tinnitus [5K Aery Normal]"
+      },
+      {
+        "fc_ratio": "5.73%",
+        "hard_ratio": "56.55%",
+        "groove_ratio": "56.55%",
+        "easy_ratio": "57.37%",
+        "level": "LEVEL 17",
+        "title": "Tuk Tuk Boshi [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.47%",
+        "hard_ratio": "56.71%",
+        "groove_ratio": "56.71%",
+        "easy_ratio": "59.7%",
+        "level": "LEVEL 17",
+        "title": "unquenchable [5key Aery normal]"
+      },
+      {
+        "fc_ratio": "1.35%",
+        "hard_ratio": "59.45%",
+        "groove_ratio": "59.45%",
+        "easy_ratio": "60.81%",
+        "level": "LEVEL 17",
+        "title": "Wild Clown [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "59.81%",
+        "groove_ratio": "59.81%",
+        "easy_ratio": "67.28%",
+        "level": "LEVEL 17",
+        "title": "ZENITHALIZE [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.52%",
+        "hard_ratio": "60.21%",
+        "groove_ratio": "61.29%",
+        "easy_ratio": "63.44%",
+        "level": "LEVEL 17",
+        "title": "あなた [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "3.65%",
+        "hard_ratio": "59.75%",
+        "groove_ratio": "59.75%",
+        "easy_ratio": "60.97%",
+        "level": "LEVEL 17",
+        "title": "ロッカ? [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.35%",
+        "hard_ratio": "56.75%",
+        "groove_ratio": "56.75%",
+        "easy_ratio": "60.81%",
+        "level": "LEVEL 17",
+        "title": "俗物フェスティバル [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "3.03%",
+        "hard_ratio": "63.63%",
+        "groove_ratio": "65.15%",
+        "easy_ratio": "66.66%",
+        "level": "LEVEL 17",
+        "title": "失?Choco [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "2.94%",
+        "hard_ratio": "58.82%",
+        "groove_ratio": "58.82%",
+        "easy_ratio": "61.76%",
+        "level": "LEVEL 17",
+        "title": "自強號 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.5%",
+        "hard_ratio": "64.91%",
+        "groove_ratio": "64.91%",
+        "easy_ratio": "68.42%",
+        "level": "LEVEL 17",
+        "title": "彼女の言い分 -ﾋﾟｺﾋﾟｺedit- [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.1%",
+        "hard_ratio": "56.16%",
+        "groove_ratio": "56.16%",
+        "easy_ratio": "56.16%",
+        "level": "LEVEL 17",
+        "title": "絵空事の世界と私? [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "1.81%",
+        "hard_ratio": "56.36%",
+        "groove_ratio": "56.36%",
+        "easy_ratio": "58.18%",
+        "level": "LEVEL 17",
+        "title": "VALLISTA [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "5.17%",
+        "hard_ratio": "60.34%",
+        "groove_ratio": "65.51%",
+        "easy_ratio": "70.68%",
+        "level": "LEVEL 17",
+        "title": "VANGUARD-1 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "5.55%",
+        "hard_ratio": "61.11%",
+        "groove_ratio": "61.11%",
+        "easy_ratio": "63.88%",
+        "level": "LEVEL 17",
+        "title": "ハイパーミラクルシューティングスター [5KEYS AERY COMET]"
+      }
+    ],
+    "A": [
+      {
+        "fc_ratio": "3.03%",
+        "hard_ratio": "67.67%",
+        "groove_ratio": "67.67%",
+        "easy_ratio": "67.67%",
+        "level": "LEVEL 17",
+        "title": "A D D i c T i O N 4 5 0 0 0 0 0 [ 5 K  A e r y  H a r d ]"
+      },
+      {
+        "fc_ratio": "6.45%",
+        "hard_ratio": "69.35%",
+        "groove_ratio": "69.35%",
+        "easy_ratio": "69.35%",
+        "level": "LEVEL 17",
+        "title": "Alastor [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "70.27%",
+        "groove_ratio": "70.27%",
+        "easy_ratio": "72.97%",
+        "level": "LEVEL 17",
+        "title": "Arcanum Guardian [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.63%",
+        "hard_ratio": "67.27%",
+        "groove_ratio": "67.27%",
+        "easy_ratio": "67.27%",
+        "level": "LEVEL 17",
+        "title": "Auburn Halo [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "2.73%",
+        "hard_ratio": "67.12%",
+        "groove_ratio": "67.12%",
+        "easy_ratio": "68.49%",
+        "level": "LEVEL 17",
+        "title": "Broken Marionette [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "5.19%",
+        "hard_ratio": "66.23%",
+        "groove_ratio": "66.23%",
+        "easy_ratio": "68.83%",
+        "level": "LEVEL 17",
+        "title": "conflict [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "11.42%",
+        "hard_ratio": "70%",
+        "groove_ratio": "70%",
+        "easy_ratio": "75.71%",
+        "level": "LEVEL 17",
+        "title": "Dizzolve [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "18.93%",
+        "hard_ratio": "67.42%",
+        "groove_ratio": "71.96%",
+        "easy_ratio": "71.96%",
+        "level": "LEVEL 17",
+        "title": "EXILE [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.41%",
+        "hard_ratio": "70.51%",
+        "groove_ratio": "70.51%",
+        "easy_ratio": "73.07%",
+        "level": "LEVEL 17",
+        "title": "Finixe [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "4.16%",
+        "hard_ratio": "69.44%",
+        "groove_ratio": "70.83%",
+        "easy_ratio": "72.22%",
+        "level": "LEVEL 17",
+        "title": "Melotte 333 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "2.56%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "66.66%",
+        "easy_ratio": "67.94%",
+        "level": "LEVEL 17",
+        "title": "Moon-gate [5KEYS AERY DELAY]"
+      },
+      {
+        "fc_ratio": "1.56%",
+        "hard_ratio": "68.75%",
+        "groove_ratio": "68.75%",
+        "easy_ratio": "71.87%",
+        "level": "LEVEL 17",
+        "title": "Pure Ruby [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "3.29%",
+        "hard_ratio": "68.13%",
+        "groove_ratio": "69.23%",
+        "easy_ratio": "70.32%",
+        "level": "LEVEL 17",
+        "title": "Revenant [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "67.61%",
+        "easy_ratio": "70.47%",
+        "level": "LEVEL 17",
+        "title": "Satori ?3rd EyEs [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.47%",
+        "hard_ratio": "68.59%",
+        "groove_ratio": "70.24%",
+        "easy_ratio": "75.2%",
+        "level": "LEVEL 17",
+        "title": "The Formula [5K Aery Alpha]"
+      },
+      {
+        "fc_ratio": "3.38%",
+        "hard_ratio": "66.1%",
+        "groove_ratio": "67.79%",
+        "easy_ratio": "67.79%",
+        "level": "LEVEL 17",
+        "title": "Triumphal Return [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "68.18%",
+        "groove_ratio": "68.18%",
+        "easy_ratio": "71.21%",
+        "level": "LEVEL 17",
+        "title": "Ultimate radiation [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.84%",
+        "hard_ratio": "67.94%",
+        "groove_ratio": "67.94%",
+        "easy_ratio": "69.23%",
+        "level": "LEVEL 17",
+        "title": "おにコア [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.47%",
+        "hard_ratio": "70.58%",
+        "groove_ratio": "70.58%",
+        "easy_ratio": "73.52%",
+        "level": "LEVEL 17",
+        "title": "夢/あるいは在りし日の [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "2.38%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "66.66%",
+        "easy_ratio": "67.85%",
+        "level": "LEVEL 17",
+        "title": "約束 -HappyHyperStarmiX- [5key Aery Hard]"
+      },
+      {
+        "fc_ratio": "3.77%",
+        "hard_ratio": "67.92%",
+        "groove_ratio": "69.81%",
+        "easy_ratio": "71.69%",
+        "level": "LEVEL 17",
+        "title": "Gerard [5KEY AERY OFF-30]"
+      },
+      {
+        "fc_ratio": "1.58%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "66.66%",
+        "easy_ratio": "68.25%",
+        "level": "LEVEL 17",
+        "title": "Head BONK ache [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.7%",
+        "hard_ratio": "70.37%",
+        "groove_ratio": "75.92%",
+        "easy_ratio": "77.77%",
+        "level": "LEVEL 17",
+        "title": "DRAGONDELAY [5KEY AERY DELAY]"
+      },
+      {
+        "fc_ratio": "6.52%",
+        "hard_ratio": "69.56%",
+        "groove_ratio": "69.56%",
+        "easy_ratio": "73.91%",
+        "level": "LEVEL 17",
+        "title": "Ops:Limone [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "5%",
+        "hard_ratio": "67.5%",
+        "groove_ratio": "67.5%",
+        "easy_ratio": "70%",
+        "level": "LEVEL 17",
+        "title": "Akasagarbha [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "2.77%",
+        "hard_ratio": "69.44%",
+        "groove_ratio": "69.44%",
+        "easy_ratio": "72.22%",
+        "level": "LEVEL 17",
+        "title": "macaron [5KEY AERY RE]"
+      }
+    ],
+    "B": [
+      {
+        "fc_ratio": "1.11%",
+        "hard_ratio": "73.33%",
+        "groove_ratio": "74.44%",
+        "easy_ratio": "77.77%",
+        "level": "LEVEL 17",
+        "title": "?^o^? [5K Aery Beta]"
+      },
+      {
+        "fc_ratio": "4.34%",
+        "hard_ratio": "73.91%",
+        "groove_ratio": "73.91%",
+        "easy_ratio": "76.08%",
+        "level": "LEVEL 17",
+        "title": "☆ twinklesky ☆ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.44%",
+        "hard_ratio": "71.27%",
+        "groove_ratio": "72.34%",
+        "easy_ratio": "75.53%",
+        "level": "LEVEL 17",
+        "title": "4bidden Area [5key Aery]"
+      },
+      {
+        "fc_ratio": "20.23%",
+        "hard_ratio": "78.61%",
+        "groove_ratio": "80.34%",
+        "easy_ratio": "86.12%",
+        "level": "LEVEL 17",
+        "title": "A c i - L [5key Aery]"
+      },
+      {
+        "fc_ratio": "0.9%",
+        "hard_ratio": "75.67%",
+        "groove_ratio": "75.67%",
+        "easy_ratio": "80.18%",
+        "level": "LEVEL 17",
+        "title": "Central DELAY [5key Aery DELAY]"
+      },
+      {
+        "fc_ratio": "6.49%",
+        "hard_ratio": "74.02%",
+        "groove_ratio": "74.02%",
+        "easy_ratio": "76.62%",
+        "level": "LEVEL 17",
+        "title": "Dark Sky [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "4%",
+        "hard_ratio": "76%",
+        "groove_ratio": "76%",
+        "easy_ratio": "81.33%",
+        "level": "LEVEL 17",
+        "title": "Defeat awaken battle ship [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.27%",
+        "hard_ratio": "78.68%",
+        "groove_ratio": "78.68%",
+        "easy_ratio": "80.32%",
+        "level": "LEVEL 17",
+        "title": "Demystify Feast [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.34%",
+        "hard_ratio": "74.6%",
+        "groove_ratio": "74.6%",
+        "easy_ratio": "76.19%",
+        "level": "LEVEL 17",
+        "title": "DISCHARGE RUSH [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "77.58%",
+        "groove_ratio": "77.58%",
+        "easy_ratio": "81.03%",
+        "level": "LEVEL 17",
+        "title": "Epistrofi [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.87%",
+        "hard_ratio": "73.17%",
+        "groove_ratio": "73.17%",
+        "easy_ratio": "75.6%",
+        "level": "LEVEL 17",
+        "title": "GaRaKuTic Dream [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.05%",
+        "hard_ratio": "72.97%",
+        "groove_ratio": "72.97%",
+        "easy_ratio": "78.37%",
+        "level": "LEVEL 17",
+        "title": "HAELEQUIN [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.74%",
+        "hard_ratio": "72.41%",
+        "groove_ratio": "73.56%",
+        "easy_ratio": "74.71%",
+        "level": "LEVEL 17",
+        "title": "HAMMER the TANGRAM [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.54%",
+        "hard_ratio": "74.24%",
+        "groove_ratio": "74.24%",
+        "easy_ratio": "80.3%",
+        "level": "LEVEL 17",
+        "title": "High-Priestess [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "1.06%",
+        "hard_ratio": "79.78%",
+        "groove_ratio": "79.78%",
+        "easy_ratio": "82.97%",
+        "level": "LEVEL 17",
+        "title": "Hypertext Transfer Protocol [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.25%",
+        "hard_ratio": "80.85%",
+        "groove_ratio": "80.85%",
+        "easy_ratio": "81.91%",
+        "level": "LEVEL 17",
+        "title": "Jack o' Lantern [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "4.61%",
+        "hard_ratio": "78.46%",
+        "groove_ratio": "78.46%",
+        "easy_ratio": "80%",
+        "level": "LEVEL 17",
+        "title": "Kaleidoscope [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.14%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "78.57%",
+        "level": "LEVEL 17",
+        "title": "kyrka [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "9.72%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "79.16%",
+        "level": "LEVEL 17",
+        "title": "Lonely Cat [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "12.3%",
+        "hard_ratio": "75.38%",
+        "groove_ratio": "75.38%",
+        "easy_ratio": "76.92%",
+        "level": "LEVEL 17",
+        "title": "Lost Petal's Wander [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "12.12%",
+        "hard_ratio": "77.77%",
+        "groove_ratio": "77.77%",
+        "easy_ratio": "81.81%",
+        "level": "LEVEL 17",
+        "title": "LOVE☆BEAM (orange summer mix) [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "75.38%",
+        "groove_ratio": "78.46%",
+        "easy_ratio": "81.53%",
+        "level": "LEVEL 17",
+        "title": "Lucifuge Rofocale [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.83%",
+        "hard_ratio": "79.03%",
+        "groove_ratio": "79.03%",
+        "easy_ratio": "80.64%",
+        "level": "LEVEL 17",
+        "title": "melody_express [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.35%",
+        "hard_ratio": "72.97%",
+        "groove_ratio": "74.32%",
+        "easy_ratio": "75.67%",
+        "level": "LEVEL 17",
+        "title": "MEPHISTO [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.68%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "79.68%",
+        "level": "LEVEL 17",
+        "title": "New earth [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "2.14%",
+        "hard_ratio": "72.14%",
+        "groove_ratio": "72.85%",
+        "easy_ratio": "75%",
+        "level": "LEVEL 17",
+        "title": "Nhelv [5Key Aery]"
+      },
+      {
+        "fc_ratio": "1.88%",
+        "hard_ratio": "77.35%",
+        "groove_ratio": "77.35%",
+        "easy_ratio": "79.24%",
+        "level": "LEVEL 17",
+        "title": "Number Y [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "16.36%",
+        "hard_ratio": "78.18%",
+        "groove_ratio": "80%",
+        "easy_ratio": "83.63%",
+        "level": "LEVEL 17",
+        "title": "Once in my life [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "7.29%",
+        "hard_ratio": "80.2%",
+        "groove_ratio": "80.2%",
+        "easy_ratio": "84.37%",
+        "level": "LEVEL 17",
+        "title": "PLASTIC GIRLS (ft. Seorryang)"
+      },
+      {
+        "fc_ratio": "3.84%",
+        "hard_ratio": "71.79%",
+        "groove_ratio": "71.79%",
+        "easy_ratio": "73.07%",
+        "level": "LEVEL 17",
+        "title": "Poppy [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "2.4%",
+        "hard_ratio": "75.9%",
+        "groove_ratio": "75.9%",
+        "easy_ratio": "81.92%",
+        "level": "LEVEL 17",
+        "title": "Quad Queens [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "11.4%",
+        "hard_ratio": "80.7%",
+        "groove_ratio": "82.45%",
+        "easy_ratio": "85.08%",
+        "level": "LEVEL 17",
+        "title": "Say A Vengeance [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "73.01%",
+        "groove_ratio": "73.01%",
+        "easy_ratio": "74.6%",
+        "level": "LEVEL 17",
+        "title": "Seiren [5KEY AERY+]"
+      },
+      {
+        "fc_ratio": "8.25%",
+        "hard_ratio": "74.31%",
+        "groove_ratio": "76.14%",
+        "easy_ratio": "82.56%",
+        "level": "LEVEL 17",
+        "title": "SEPIA [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "6.66%",
+        "hard_ratio": "72%",
+        "groove_ratio": "72%",
+        "easy_ratio": "73.33%",
+        "level": "LEVEL 17",
+        "title": "TENTEN [5KEY AERY IOIO]"
+      },
+      {
+        "fc_ratio": "5%",
+        "hard_ratio": "75%",
+        "groove_ratio": "76.66%",
+        "easy_ratio": "78.33%",
+        "level": "LEVEL 17",
+        "title": "theme of Maia [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "7.69%",
+        "hard_ratio": "79.48%",
+        "groove_ratio": "79.48%",
+        "easy_ratio": "84.61%",
+        "level": "LEVEL 17",
+        "title": "Vantablack [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "14.81%",
+        "hard_ratio": "77.77%",
+        "groove_ratio": "77.77%",
+        "easy_ratio": "79.62%",
+        "level": "LEVEL 17",
+        "title": "アルスノヴァに喝采を [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "11.76%",
+        "hard_ratio": "72.54%",
+        "groove_ratio": "72.54%",
+        "easy_ratio": "76.47%",
+        "level": "LEVEL 17",
+        "title": "カラフル・サウンズ・カッター [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "2.5%",
+        "hard_ratio": "80%",
+        "groove_ratio": "80%",
+        "easy_ratio": "82.5%",
+        "level": "LEVEL 17",
+        "title": "ゴフェルの木棺 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.17%",
+        "hard_ratio": "75.3%",
+        "groove_ratio": "75.3%",
+        "easy_ratio": "80.24%",
+        "level": "LEVEL 17",
+        "title": "ニニ [5KEY AERY ETUDE]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "78.26%",
+        "groove_ratio": "78.26%",
+        "easy_ratio": "82.6%",
+        "level": "LEVEL 17",
+        "title": "ブレークガーデン [5k-y Λ?ry 0]"
+      },
+      {
+        "fc_ratio": "3.44%",
+        "hard_ratio": "77.58%",
+        "groove_ratio": "77.58%",
+        "easy_ratio": "81.03%",
+        "level": "LEVEL 17",
+        "title": "夢人形 [5KEYS AERY HARD]"
+      },
+      {
+        "fc_ratio": "4.83%",
+        "hard_ratio": "79.03%",
+        "groove_ratio": "80.64%",
+        "easy_ratio": "83.87%",
+        "level": "LEVEL 17",
+        "title": "夕凪の丘 [5KEYS AERY Training]"
+      },
+      {
+        "fc_ratio": "14.17%",
+        "hard_ratio": "71.65%",
+        "groove_ratio": "72.44%",
+        "easy_ratio": "75.59%",
+        "level": "LEVEL 17",
+        "title": "水晶世界 ?Fracture? [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "15.94%",
+        "hard_ratio": "72.46%",
+        "groove_ratio": "72.46%",
+        "easy_ratio": "73.91%",
+        "level": "LEVEL 17",
+        "title": "銀の風 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "5.55%",
+        "hard_ratio": "73.61%",
+        "groove_ratio": "73.61%",
+        "easy_ratio": "76.38%",
+        "level": "LEVEL 17",
+        "title": "竹 [5KEYS AERY 竹]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "76.92%",
+        "groove_ratio": "76.92%",
+        "easy_ratio": "82.05%",
+        "level": "LEVEL 17",
+        "title": "紅染?三番街道 [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "2.63%",
+        "hard_ratio": "78.94%",
+        "groove_ratio": "78.94%",
+        "easy_ratio": "82.89%",
+        "level": "LEVEL 17",
+        "title": "Bad Elixir [5KEYS AERY GOD]"
+      },
+      {
+        "fc_ratio": "10.16%",
+        "hard_ratio": "79.66%",
+        "groove_ratio": "81.35%",
+        "easy_ratio": "84.74%",
+        "level": "LEVEL 17",
+        "title": "Apocaliptix [5KEY AERY Apclyps]"
+      },
+      {
+        "fc_ratio": "9.37%",
+        "hard_ratio": "73.43%",
+        "groove_ratio": "76.56%",
+        "easy_ratio": "79.68%",
+        "level": "LEVEL 17",
+        "title": "Be-Music Primary [5KEYS AERY LEMON]"
+      },
+      {
+        "fc_ratio": "1.96%",
+        "hard_ratio": "78.43%",
+        "groove_ratio": "82.35%",
+        "easy_ratio": "84.31%",
+        "level": "LEVEL 17",
+        "title": "Evanescent [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.93%",
+        "hard_ratio": "76.19%",
+        "groove_ratio": "76.19%",
+        "easy_ratio": "76.19%",
+        "level": "LEVEL 17",
+        "title": "H.S : Hadron Strike [5KEY AERY GEAR 2]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "80.3%",
+        "groove_ratio": "80.3%",
+        "easy_ratio": "83.33%",
+        "level": "LEVEL 17",
+        "title": "Lacrimosa [5KEY AERY NM]"
+      },
+      {
+        "fc_ratio": "13.43%",
+        "hard_ratio": "77.61%",
+        "groove_ratio": "77.61%",
+        "easy_ratio": "82.08%",
+        "level": "LEVEL 17",
+        "title": "Second Run [5KEYS AERY HASTE]"
+      },
+      {
+        "fc_ratio": "10.9%",
+        "hard_ratio": "74.54%",
+        "groove_ratio": "76.36%",
+        "easy_ratio": "80%",
+        "level": "LEVEL 17",
+        "title": "Stargaze Station [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "6.12%",
+        "hard_ratio": "71.42%",
+        "groove_ratio": "73.46%",
+        "easy_ratio": "75.51%",
+        "level": "LEVEL 17",
+        "title": "Atohs [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.63%",
+        "hard_ratio": "78.18%",
+        "groove_ratio": "78.18%",
+        "easy_ratio": "80%",
+        "level": "LEVEL 17",
+        "title": "c . s . qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq . n . [5KEYS AERY 謬]"
+      },
+      {
+        "fc_ratio": "10.63%",
+        "hard_ratio": "76.59%",
+        "groove_ratio": "76.59%",
+        "easy_ratio": "76.59%",
+        "level": "LEVEL 17",
+        "title": "Lyrith [5KEY AERY 幻覺]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "77.27%",
+        "groove_ratio": "77.27%",
+        "easy_ratio": "77.27%",
+        "level": "LEVEL 17",
+        "title": "Signager [5KEY AERY LN]"
+      },
+      {
+        "fc_ratio": "12.5%",
+        "hard_ratio": "79.16%",
+        "groove_ratio": "79.16%",
+        "easy_ratio": "81.25%",
+        "level": "LEVEL 17",
+        "title": "GAMEBOY [5KEYS AERY LASTBOSS]"
+      },
+      {
+        "fc_ratio": "2.94%",
+        "hard_ratio": "79.41%",
+        "groove_ratio": "79.41%",
+        "easy_ratio": "79.41%",
+        "level": "LEVEL 17",
+        "title": "little witch in permafrost garden [5KEYS AERY_]"
+      },
+      {
+        "fc_ratio": "5.88%",
+        "hard_ratio": "76.47%",
+        "groove_ratio": "79.41%",
+        "easy_ratio": "88.23%",
+        "level": "LEVEL 17",
+        "title": "FREEDOM DiVE [5KEYS AERY NM]"
+      },
+      {
+        "fc_ratio": "9.75%",
+        "hard_ratio": "80.48%",
+        "groove_ratio": "80.48%",
+        "easy_ratio": "80.48%",
+        "level": "LEVEL 17",
+        "title": "IKAROS [5KEYS AERY SHD]"
+      },
+      {
+        "fc_ratio": "11.36%",
+        "hard_ratio": "72.72%",
+        "groove_ratio": "75%",
+        "easy_ratio": "79.54%",
+        "level": "LEVEL 17",
+        "title": "Love & Justice [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.12%",
+        "hard_ratio": "71.87%",
+        "groove_ratio": "71.87%",
+        "easy_ratio": "71.87%",
+        "level": "LEVEL 17",
+        "title": "MirroR [5KEYS -Miracle version-]"
+      },
+      {
+        "fc_ratio": "21.87%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "75%",
+        "level": "LEVEL 17",
+        "title": "モリオンの姫 [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "17.85%",
+        "hard_ratio": "78.57%",
+        "groove_ratio": "78.57%",
+        "easy_ratio": "78.57%",
+        "level": "LEVEL 17",
+        "title": "馴鹿之骸 [5KEYS AERY Farewell]"
+      }
+    ],
+    "C": [
+      {
+        "fc_ratio": "7.24%",
+        "hard_ratio": "85.5%",
+        "groove_ratio": "85.5%",
+        "easy_ratio": "86.95%",
+        "level": "LEVEL 17",
+        "title": ".357 Magnum [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "18.1%",
+        "hard_ratio": "89.65%",
+        "groove_ratio": "89.65%",
+        "easy_ratio": "92.24%",
+        "level": "LEVEL 17",
+        "title": "?舞姫ベアトリクス [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "89.79%",
+        "groove_ratio": "91.83%",
+        "easy_ratio": "95.91%",
+        "level": "LEVEL 17",
+        "title": "[line:theta] [5KEYS AERY Θ]"
+      },
+      {
+        "fc_ratio": "2.63%",
+        "hard_ratio": "88.15%",
+        "groove_ratio": "89.47%",
+        "easy_ratio": "90.78%",
+        "level": "LEVEL 17",
+        "title": "-+ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.34%",
+        "hard_ratio": "83.9%",
+        "groove_ratio": "83.9%",
+        "easy_ratio": "87.35%",
+        "level": "LEVEL 17",
+        "title": "Alice in Misanthrope [5KEY AERY MADNESS]"
+      },
+      {
+        "fc_ratio": "2.77%",
+        "hard_ratio": "86.11%",
+        "groove_ratio": "86.11%",
+        "easy_ratio": "90.27%",
+        "level": "LEVEL 17",
+        "title": "Arcanum Guardian [5key Aery easy]"
+      },
+      {
+        "fc_ratio": "7.69%",
+        "hard_ratio": "83.33%",
+        "groove_ratio": "85.89%",
+        "easy_ratio": "88.46%",
+        "level": "LEVEL 17",
+        "title": "Avantgarde [5KEY AERY VANGUARD]"
+      },
+      {
+        "fc_ratio": "6.75%",
+        "hard_ratio": "85.13%",
+        "groove_ratio": "85.13%",
+        "easy_ratio": "89.18%",
+        "level": "LEVEL 17",
+        "title": "Black Lotus [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.98%",
+        "hard_ratio": "82.41%",
+        "groove_ratio": "83.51%",
+        "easy_ratio": "86.81%",
+        "level": "LEVEL 17",
+        "title": "Cold Breath [5key Aery]"
+      },
+      {
+        "fc_ratio": "5.76%",
+        "hard_ratio": "84.61%",
+        "groove_ratio": "86.53%",
+        "easy_ratio": "90.38%",
+        "level": "LEVEL 17",
+        "title": "Dreadnought [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "5.66%",
+        "hard_ratio": "88.67%",
+        "groove_ratio": "88.67%",
+        "easy_ratio": "88.67%",
+        "level": "LEVEL 17",
+        "title": "Electric Emotion [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "1.66%",
+        "hard_ratio": "86.66%",
+        "groove_ratio": "90%",
+        "easy_ratio": "91.66%",
+        "level": "LEVEL 17",
+        "title": "Excelsia [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "83.33%",
+        "groove_ratio": "83.33%",
+        "easy_ratio": "86.36%",
+        "level": "LEVEL 17",
+        "title": "Grayed Out ~Antifront~ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.76%",
+        "hard_ratio": "84.12%",
+        "groove_ratio": "87.3%",
+        "easy_ratio": "87.3%",
+        "level": "LEVEL 17",
+        "title": "horizon [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "7.6%",
+        "hard_ratio": "81.52%",
+        "groove_ratio": "82.6%",
+        "easy_ratio": "85.86%",
+        "level": "LEVEL 17",
+        "title": "hypocrite [5key Aery]"
+      },
+      {
+        "fc_ratio": "6.34%",
+        "hard_ratio": "82.53%",
+        "groove_ratio": "82.53%",
+        "easy_ratio": "82.53%",
+        "level": "LEVEL 17",
+        "title": "Implexrough [5KEYS AERY DYSTONIA]"
+      },
+      {
+        "fc_ratio": "1.2%",
+        "hard_ratio": "81.92%",
+        "groove_ratio": "83.13%",
+        "easy_ratio": "86.74%",
+        "level": "LEVEL 17",
+        "title": "Lamir [5key Aery]"
+      },
+      {
+        "fc_ratio": "13.2%",
+        "hard_ratio": "90.56%",
+        "groove_ratio": "90.56%",
+        "easy_ratio": "92.45%",
+        "level": "LEVEL 17",
+        "title": "Love Blood [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "6.49%",
+        "hard_ratio": "84.41%",
+        "groove_ratio": "85.71%",
+        "easy_ratio": "89.61%",
+        "level": "LEVEL 17",
+        "title": "MooN [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.92%",
+        "hard_ratio": "82.69%",
+        "groove_ratio": "82.69%",
+        "easy_ratio": "82.69%",
+        "level": "LEVEL 17",
+        "title": "N [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "19.4%",
+        "hard_ratio": "81.34%",
+        "groove_ratio": "82.83%",
+        "easy_ratio": "86.56%",
+        "level": "LEVEL 17",
+        "title": "Ophelia [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.81%",
+        "hard_ratio": "81.81%",
+        "groove_ratio": "81.81%",
+        "easy_ratio": "89.09%",
+        "level": "LEVEL 17",
+        "title": "Pesante Killer [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "1.88%",
+        "hard_ratio": "84.9%",
+        "groove_ratio": "84.9%",
+        "easy_ratio": "90.56%",
+        "level": "LEVEL 17",
+        "title": "PLUS+INFINITY [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "11.84%",
+        "hard_ratio": "81.57%",
+        "groove_ratio": "82.89%",
+        "easy_ratio": "82.89%",
+        "level": "LEVEL 17",
+        "title": "Replica [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.52%",
+        "hard_ratio": "84.21%",
+        "groove_ratio": "84.21%",
+        "easy_ratio": "85.26%",
+        "level": "LEVEL 17",
+        "title": "Revival of Kalpa [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "2.73%",
+        "hard_ratio": "82.19%",
+        "groove_ratio": "86.3%",
+        "easy_ratio": "90.41%",
+        "level": "LEVEL 17",
+        "title": "Ruriko FINAL [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.44%",
+        "hard_ratio": "89.65%",
+        "groove_ratio": "93.1%",
+        "easy_ratio": "96.55%",
+        "level": "LEVEL 17",
+        "title": "Shiny☆Strike!!! [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.4%",
+        "hard_ratio": "82.95%",
+        "groove_ratio": "84.09%",
+        "easy_ratio": "87.5%",
+        "level": "LEVEL 17",
+        "title": "squartatrice [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "88.33%",
+        "groove_ratio": "88.33%",
+        "easy_ratio": "90%",
+        "level": "LEVEL 17",
+        "title": "sunlit power stone [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.65%",
+        "hard_ratio": "87.8%",
+        "groove_ratio": "89.02%",
+        "easy_ratio": "93.9%",
+        "level": "LEVEL 17",
+        "title": "Yakumo >>JOINT STRUGGLE [5key Aery]"
+      },
+      {
+        "fc_ratio": "9.89%",
+        "hard_ratio": "82.41%",
+        "groove_ratio": "82.41%",
+        "easy_ratio": "85.71%",
+        "level": "LEVEL 17",
+        "title": "お兄火 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "2.81%",
+        "hard_ratio": "81.69%",
+        "groove_ratio": "81.69%",
+        "easy_ratio": "85.91%",
+        "level": "LEVEL 17",
+        "title": "多重極展開 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "7.89%",
+        "hard_ratio": "84.21%",
+        "groove_ratio": "86.84%",
+        "easy_ratio": "89.47%",
+        "level": "LEVEL 17",
+        "title": "無感情ダイヤモンドハート [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "5.26%",
+        "hard_ratio": "85.96%",
+        "groove_ratio": "85.96%",
+        "easy_ratio": "85.96%",
+        "level": "LEVEL 17",
+        "title": "BASS KICK YAKUZA [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "3.84%",
+        "hard_ratio": "86.53%",
+        "groove_ratio": "88.46%",
+        "easy_ratio": "92.3%",
+        "level": "LEVEL 17",
+        "title": "ピアノ協奏曲第1番 月光条例 [5KEYS AERY 月]"
+      },
+      {
+        "fc_ratio": "6.32%",
+        "hard_ratio": "89.87%",
+        "groove_ratio": "91.13%",
+        "easy_ratio": "91.13%",
+        "level": "LEVEL 17",
+        "title": "8bit Adventurer [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "4.1%",
+        "hard_ratio": "87.67%",
+        "groove_ratio": "87.67%",
+        "easy_ratio": "91.78%",
+        "level": "LEVEL 17",
+        "title": "GET ON WiTH FUNKOT [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "4.08%",
+        "hard_ratio": "85.71%",
+        "groove_ratio": "85.71%",
+        "easy_ratio": "93.87%",
+        "level": "LEVEL 17",
+        "title": "Teravolt [5KEYS AERY 220V]"
+      },
+      {
+        "fc_ratio": "4.08%",
+        "hard_ratio": "81.63%",
+        "groove_ratio": "81.63%",
+        "easy_ratio": "87.75%",
+        "level": "LEVEL 17",
+        "title": "The Lamia 170 [5KEYS AERY NM]"
+      },
+      {
+        "fc_ratio": "6.06%",
+        "hard_ratio": "81.81%",
+        "groove_ratio": "81.81%",
+        "easy_ratio": "84.84%",
+        "level": "LEVEL 17",
+        "title": "VENDeTTA [5KEYS AERY NM]"
+      },
+      {
+        "fc_ratio": "6.52%",
+        "hard_ratio": "89.13%",
+        "groove_ratio": "89.13%",
+        "easy_ratio": "89.13%",
+        "level": "LEVEL 17",
+        "title": "イナリッチ [5KEYS AERY 舞]"
+      },
+      {
+        "fc_ratio": "7.5%",
+        "hard_ratio": "82.5%",
+        "groove_ratio": "82.5%",
+        "easy_ratio": "87.5%",
+        "level": "LEVEL 17",
+        "title": "Air [5KEYS AERY HARD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "81.08%",
+        "groove_ratio": "83.78%",
+        "easy_ratio": "83.78%",
+        "level": "LEVEL 17",
+        "title": "Angel's Salad [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "3.57%",
+        "hard_ratio": "89.28%",
+        "groove_ratio": "89.28%",
+        "easy_ratio": "92.85%",
+        "level": "LEVEL 17",
+        "title": "Hurnage [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "15.62%",
+        "hard_ratio": "90.62%",
+        "groove_ratio": "90.62%",
+        "easy_ratio": "93.75%",
+        "level": "LEVEL 17",
+        "title": "アトロポスと最果の探求者 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.12%",
+        "hard_ratio": "81.25%",
+        "groove_ratio": "87.5%",
+        "easy_ratio": "87.5%",
+        "level": "LEVEL 17",
+        "title": "ロスト：ユートピアと真理と純粋の極彩世界 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.14%",
+        "hard_ratio": "82.85%",
+        "groove_ratio": "85.71%",
+        "easy_ratio": "85.71%",
+        "level": "LEVEL 17",
+        "title": "玉響サーチライト [5KEYS AERY Luna]"
+      }
+    ],
+    "F": [
+      {
+        "fc_ratio": "8.62%",
+        "hard_ratio": "98.27%",
+        "groove_ratio": "98.27%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 17",
+        "title": "Bitpop Trip [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.22%",
+        "hard_ratio": "96.77%",
+        "groove_ratio": "96.77%",
+        "easy_ratio": "98.38%",
+        "level": "LEVEL 17",
+        "title": "GOODRUSH [5KEYS AERY RUSH]"
+      },
+      {
+        "fc_ratio": "8.43%",
+        "hard_ratio": "91.56%",
+        "groove_ratio": "91.56%",
+        "easy_ratio": "92.77%",
+        "level": "LEVEL 17",
+        "title": "HOOKER [5K Aery Alpha]"
+      },
+      {
+        "fc_ratio": "6.66%",
+        "hard_ratio": "91.66%",
+        "groove_ratio": "91.66%",
+        "easy_ratio": "93.33%",
+        "level": "LEVEL 17",
+        "title": "Inherited World [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "2.7%",
+        "hard_ratio": "93.24%",
+        "groove_ratio": "93.24%",
+        "easy_ratio": "95.94%",
+        "level": "LEVEL 17",
+        "title": "la noche [5key Aery]"
+      },
+      {
+        "fc_ratio": "8.69%",
+        "hard_ratio": "95.65%",
+        "groove_ratio": "95.65%",
+        "easy_ratio": "97.1%",
+        "level": "LEVEL 17",
+        "title": "Lemuria [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.92%",
+        "hard_ratio": "92.15%",
+        "groove_ratio": "92.15%",
+        "easy_ratio": "94.11%",
+        "level": "LEVEL 17",
+        "title": "reflective moment [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "6.25%",
+        "hard_ratio": "95.83%",
+        "groove_ratio": "95.83%",
+        "easy_ratio": "95.83%",
+        "level": "LEVEL 17",
+        "title": "satellite [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "14.86%",
+        "hard_ratio": "93.24%",
+        "groove_ratio": "93.24%",
+        "easy_ratio": "95.94%",
+        "level": "LEVEL 17",
+        "title": "アイ?シャの剣-Forcing breakthrough- [5key Aery]"
+      },
+      {
+        "fc_ratio": "7.4%",
+        "hard_ratio": "92.59%",
+        "groove_ratio": "92.59%",
+        "easy_ratio": "96.29%",
+        "level": "LEVEL 17",
+        "title": "東北新幹線 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "7.84%",
+        "hard_ratio": "92.15%",
+        "groove_ratio": "92.15%",
+        "easy_ratio": "96.07%",
+        "level": "LEVEL 17",
+        "title": "Avtalsbrott [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "10.71%",
+        "hard_ratio": "91.07%",
+        "groove_ratio": "91.07%",
+        "easy_ratio": "92.85%",
+        "level": "LEVEL 17",
+        "title": "ハードルネッサンバ [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "12.5%",
+        "hard_ratio": "92.5%",
+        "groove_ratio": "92.5%",
+        "easy_ratio": "95%",
+        "level": "LEVEL 17",
+        "title": "Find a Fake Sign [5KEYS AERY 轉]"
+      },
+      {
+        "fc_ratio": "16.66%",
+        "hard_ratio": "97.22%",
+        "groove_ratio": "97.22%",
+        "easy_ratio": "97.22%",
+        "level": "LEVEL 17",
+        "title": "Lilith ambivalence lovers [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "6.66%",
+        "hard_ratio": "97.77%",
+        "groove_ratio": "97.77%",
+        "easy_ratio": "97.77%",
+        "level": "LEVEL 17",
+        "title": "Panic! Pop'n! Picnic! [5Keys Aery (゜ロ゜)!]"
+      },
+      {
+        "fc_ratio": "15%",
+        "hard_ratio": "92.5%",
+        "groove_ratio": "92.5%",
+        "easy_ratio": "92.5%",
+        "level": "LEVEL 17",
+        "title": "天海原~あまみはら~ [5Keys Aery Another]"
+      },
+      {
+        "fc_ratio": "6.45%",
+        "hard_ratio": "96.77%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 17",
+        "title": "Amplifying Effect [5KEYS AERY MONO]"
+      },
+      {
+        "fc_ratio": "3.22%",
+        "hard_ratio": "96.77%",
+        "groove_ratio": "96.77%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 17",
+        "title": "another justice [5KEYS AERY RE]"
+      },
+      {
+        "fc_ratio": "6.06%",
+        "hard_ratio": "96.96%",
+        "groove_ratio": "96.96%",
+        "easy_ratio": "96.96%",
+        "level": "LEVEL 17",
+        "title": "FUTURE 5999 [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "17.64%",
+        "hard_ratio": "100%",
+        "groove_ratio": "100%",
+        "easy_ratio": "100%",
+        "level": "LEVEL 17",
+        "title": "人形楽団 ~ Puppet Ensemble ・∀・ ~ [5KEYS AERY RE]"
+      }
+    ]
+  },
+  "LEVEL 18": {
+    "S+": [],
+    "S": [
+      {
+        "fc_ratio": "3.44%",
+        "hard_ratio": "33.62%",
+        "groove_ratio": "33.62%",
+        "easy_ratio": "39.65%",
+        "level": "LEVEL 18",
+        "title": "volcanic? [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "40.9%",
+        "groove_ratio": "40.9%",
+        "easy_ratio": "40.9%",
+        "level": "LEVEL 18",
+        "title": "Widow's kiss [5KEY AERY EX]"
+      }
+    ],
+    "A+": [
+      {
+        "fc_ratio": "1.05%",
+        "hard_ratio": "46.31%",
+        "groove_ratio": "46.31%",
+        "easy_ratio": "49.47%",
+        "level": "LEVEL 18",
+        "title": "flowers [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "3.4%",
+        "hard_ratio": "46.59%",
+        "groove_ratio": "46.59%",
+        "easy_ratio": "50%",
+        "level": "LEVEL 18",
+        "title": "%E3%83%96%E3%83%B3%E3%82%BF%E3%83%B3 ?Falling in \"B\" mix? [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.7%",
+        "hard_ratio": "46.15%",
+        "groove_ratio": "46.15%",
+        "easy_ratio": "52.99%",
+        "level": "LEVEL 18",
+        "title": "Absurd Gaff [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "49.39%",
+        "groove_ratio": "50.6%",
+        "easy_ratio": "56.62%",
+        "level": "LEVEL 18",
+        "title": "Auston [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "44.96%",
+        "groove_ratio": "47.28%",
+        "easy_ratio": "53.48%",
+        "level": "LEVEL 18",
+        "title": "AXION [5key Aery normal]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "48.12%",
+        "groove_ratio": "48.87%",
+        "easy_ratio": "51.87%",
+        "level": "LEVEL 18",
+        "title": "banana man [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "48.38%",
+        "groove_ratio": "48.38%",
+        "easy_ratio": "48.38%",
+        "level": "LEVEL 18",
+        "title": "Brain Analysis [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "0.9%",
+        "hard_ratio": "41.44%",
+        "groove_ratio": "41.44%",
+        "easy_ratio": "42.34%",
+        "level": "LEVEL 18",
+        "title": "DRAGONLADY [5K Aery Beta]"
+      },
+      {
+        "fc_ratio": "2.59%",
+        "hard_ratio": "45.45%",
+        "groove_ratio": "45.45%",
+        "easy_ratio": "46.75%",
+        "level": "LEVEL 18",
+        "title": "LaT [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "46.87%",
+        "groove_ratio": "46.87%",
+        "easy_ratio": "46.87%",
+        "level": "LEVEL 18",
+        "title": "Wizdomiot [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50.43%",
+        "groove_ratio": "50.43%",
+        "easy_ratio": "52.17%",
+        "level": "LEVEL 18",
+        "title": "Xecus [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "1.19%",
+        "hard_ratio": "48.8%",
+        "groove_ratio": "48.8%",
+        "easy_ratio": "52.38%",
+        "level": "LEVEL 18",
+        "title": "炎花 [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "45.61%",
+        "groove_ratio": "45.61%",
+        "easy_ratio": "47.36%",
+        "level": "LEVEL 18",
+        "title": "永劫の沙漏 [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "16.48%",
+        "hard_ratio": "50.54%",
+        "groove_ratio": "51.64%",
+        "easy_ratio": "54.94%",
+        "level": "LEVEL 18",
+        "title": "日溜りの街?あ！? [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "45.28%",
+        "groove_ratio": "45.28%",
+        "easy_ratio": "47.16%",
+        "level": "LEVEL 18",
+        "title": "天空の城ヴェリエル [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "45.94%",
+        "groove_ratio": "45.94%",
+        "easy_ratio": "45.94%",
+        "level": "LEVEL 18",
+        "title": "BlythE:ExtenD [5KEYS AERY HD]"
+      }
+    ],
+    "A": [
+      {
+        "fc_ratio": "1.36%",
+        "hard_ratio": "53.42%",
+        "groove_ratio": "53.42%",
+        "easy_ratio": "56.16%",
+        "level": "LEVEL 18",
+        "title": "??クサンバランド [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "52.56%",
+        "groove_ratio": "52.56%",
+        "easy_ratio": "57.69%",
+        "level": "LEVEL 18",
+        "title": "??モッ? [5Key Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "59.61%",
+        "groove_ratio": "59.61%",
+        "easy_ratio": "65.38%",
+        "level": "LEVEL 18",
+        "title": "ATHAZA [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "6.77%",
+        "hard_ratio": "52.54%",
+        "groove_ratio": "52.54%",
+        "easy_ratio": "59.32%",
+        "level": "LEVEL 18",
+        "title": "Avantgarde [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.22%",
+        "groove_ratio": "53.22%",
+        "easy_ratio": "53.22%",
+        "level": "LEVEL 18",
+        "title": "B e l i - R [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "1.49%",
+        "hard_ratio": "59.7%",
+        "groove_ratio": "59.7%",
+        "easy_ratio": "61.19%",
+        "level": "LEVEL 18",
+        "title": "Calamity Fortune [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "52.63%",
+        "groove_ratio": "52.63%",
+        "easy_ratio": "53.94%",
+        "level": "LEVEL 18",
+        "title": "Candy & Baguette [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "59.57%",
+        "groove_ratio": "59.57%",
+        "easy_ratio": "68.08%",
+        "level": "LEVEL 18",
+        "title": "Central Gray [5key Aery DELAY hard]"
+      },
+      {
+        "fc_ratio": "3.57%",
+        "hard_ratio": "56.25%",
+        "groove_ratio": "57.14%",
+        "easy_ratio": "62.5%",
+        "level": "LEVEL 18",
+        "title": "Chronomia [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.57%",
+        "groove_ratio": "53.57%",
+        "easy_ratio": "53.57%",
+        "level": "LEVEL 18",
+        "title": "DENGEKI Tube [5KEY 220V]"
+      },
+      {
+        "fc_ratio": "8.06%",
+        "hard_ratio": "56.45%",
+        "groove_ratio": "58.06%",
+        "easy_ratio": "59.67%",
+        "level": "LEVEL 18",
+        "title": "Disco☆Girl [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "1.09%",
+        "hard_ratio": "58.24%",
+        "groove_ratio": "59.34%",
+        "easy_ratio": "63.73%",
+        "level": "LEVEL 18",
+        "title": "endemize [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "57.89%",
+        "groove_ratio": "57.89%",
+        "easy_ratio": "57.89%",
+        "level": "LEVEL 18",
+        "title": "F13 [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "4.51%",
+        "hard_ratio": "54.13%",
+        "groove_ratio": "54.13%",
+        "easy_ratio": "61.65%",
+        "level": "LEVEL 18",
+        "title": "FREEDOM DiVE [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.03%",
+        "hard_ratio": "51.51%",
+        "groove_ratio": "51.51%",
+        "easy_ratio": "57.57%",
+        "level": "LEVEL 18",
+        "title": "Happico Happico [Super Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "58.73%",
+        "groove_ratio": "60.31%",
+        "easy_ratio": "65.07%",
+        "level": "LEVEL 18",
+        "title": "It's \"alice\" dream [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "5.47%",
+        "hard_ratio": "58.9%",
+        "groove_ratio": "58.9%",
+        "easy_ratio": "67.12%",
+        "level": "LEVEL 18",
+        "title": "Karakuri Plum [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "4.61%",
+        "hard_ratio": "60%",
+        "groove_ratio": "60%",
+        "easy_ratio": "61.53%",
+        "level": "LEVEL 18",
+        "title": "Lacrimosa [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "1.03%",
+        "hard_ratio": "54.63%",
+        "groove_ratio": "54.63%",
+        "easy_ratio": "54.63%",
+        "level": "LEVEL 18",
+        "title": "Lambda Driver [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "57.37%",
+        "groove_ratio": "59.01%",
+        "easy_ratio": "60.65%",
+        "level": "LEVEL 18",
+        "title": "LEthAl wEApOn [5Key Aery HD]"
+      },
+      {
+        "fc_ratio": "7.79%",
+        "hard_ratio": "57.14%",
+        "groove_ratio": "58.44%",
+        "easy_ratio": "59.74%",
+        "level": "LEVEL 18",
+        "title": "Life is PIANO [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "52.17%",
+        "groove_ratio": "53.26%",
+        "easy_ratio": "60.86%",
+        "level": "LEVEL 18",
+        "title": "Little \"Sister\" Bitch [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "51.61%",
+        "groove_ratio": "53.22%",
+        "easy_ratio": "56.45%",
+        "level": "LEVEL 18",
+        "title": "Luminaria [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "2.04%",
+        "hard_ratio": "52.04%",
+        "groove_ratio": "54.08%",
+        "easy_ratio": "56.12%",
+        "level": "LEVEL 18",
+        "title": "MARENOL [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60.71%",
+        "groove_ratio": "60.71%",
+        "easy_ratio": "62.5%",
+        "level": "LEVEL 18",
+        "title": "melody_express [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "52.63%",
+        "groove_ratio": "52.63%",
+        "easy_ratio": "52.63%",
+        "level": "LEVEL 18",
+        "title": "P.S : Plasma Strike [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60%",
+        "groove_ratio": "60%",
+        "easy_ratio": "61.73%",
+        "level": "LEVEL 18",
+        "title": "PEACE BREAKER [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.12%",
+        "hard_ratio": "51.06%",
+        "groove_ratio": "51.06%",
+        "easy_ratio": "54.25%",
+        "level": "LEVEL 18",
+        "title": "res extensa [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.84%",
+        "groove_ratio": "53.84%",
+        "easy_ratio": "53.84%",
+        "level": "LEVEL 18",
+        "title": "Valkyrie Revolutia [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "57.69%",
+        "groove_ratio": "57.69%",
+        "easy_ratio": "57.69%",
+        "level": "LEVEL 18",
+        "title": "VENDeTTA [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "1.85%",
+        "hard_ratio": "55.55%",
+        "groove_ratio": "55.55%",
+        "easy_ratio": "57.4%",
+        "level": "LEVEL 18",
+        "title": "ハニエルのうた [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "59.4%",
+        "groove_ratio": "59.4%",
+        "easy_ratio": "61.38%",
+        "level": "LEVEL 18",
+        "title": "ホ?リ?サンバランド [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "3.29%",
+        "hard_ratio": "52.74%",
+        "groove_ratio": "52.74%",
+        "easy_ratio": "52.74%",
+        "level": "LEVEL 18",
+        "title": "運命論 [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "12.5%",
+        "hard_ratio": "60.71%",
+        "groove_ratio": "62.5%",
+        "easy_ratio": "65.17%",
+        "level": "LEVEL 18",
+        "title": "★LittlE HearTs★ [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "58%",
+        "groove_ratio": "58%",
+        "easy_ratio": "58%",
+        "level": "LEVEL 18",
+        "title": "1516 【5ΚモУ Aяy ℃oΓe》"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "55.55%",
+        "groove_ratio": "55.55%",
+        "easy_ratio": "55.55%",
+        "level": "LEVEL 18",
+        "title": "千年女王 [5KEYS AERY SHD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "57.5%",
+        "groove_ratio": "57.5%",
+        "easy_ratio": "57.5%",
+        "level": "LEVEL 18",
+        "title": "Verlesq [5KEYS AERY HD]"
+      }
+    ],
+    "B": [
+      {
+        "fc_ratio": "4.81%",
+        "hard_ratio": "61.44%",
+        "groove_ratio": "61.44%",
+        "easy_ratio": "67.46%",
+        "level": "LEVEL 18",
+        "title": "∀ [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "70.31%",
+        "groove_ratio": "70.31%",
+        "easy_ratio": "71.87%",
+        "level": "LEVEL 18",
+        "title": "Arcanum Guardian [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "61.36%",
+        "groove_ratio": "61.36%",
+        "easy_ratio": "62.5%",
+        "level": "LEVEL 18",
+        "title": "Artificial Rose [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "6.79%",
+        "hard_ratio": "65.04%",
+        "groove_ratio": "65.04%",
+        "easy_ratio": "66.99%",
+        "level": "LEVEL 18",
+        "title": "Blue-White Crazybits [5key Aery normal]"
+      },
+      {
+        "fc_ratio": "4.25%",
+        "hard_ratio": "65.95%",
+        "groove_ratio": "65.95%",
+        "easy_ratio": "70.21%",
+        "level": "LEVEL 18",
+        "title": "Castor [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "3.63%",
+        "hard_ratio": "65.45%",
+        "groove_ratio": "65.45%",
+        "easy_ratio": "67.27%",
+        "level": "LEVEL 18",
+        "title": "CHMR [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "62.16%",
+        "groove_ratio": "62.16%",
+        "easy_ratio": "62.16%",
+        "level": "LEVEL 18",
+        "title": "Conclusio Catastropha [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "65.38%",
+        "groove_ratio": "67.3%",
+        "easy_ratio": "69.23%",
+        "level": "LEVEL 18",
+        "title": "Emptiness [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "67.34%",
+        "groove_ratio": "67.34%",
+        "easy_ratio": "71.42%",
+        "level": "LEVEL 18",
+        "title": "Envy [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "63.82%",
+        "groove_ratio": "63.82%",
+        "easy_ratio": "65.95%",
+        "level": "LEVEL 18",
+        "title": "EVERLASTING HAPPiNESS↑ [5KEYS AERY GOD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "68.81%",
+        "groove_ratio": "68.81%",
+        "easy_ratio": "68.81%",
+        "level": "LEVEL 18",
+        "title": "lifework [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "64.51%",
+        "groove_ratio": "64.51%",
+        "easy_ratio": "72.04%",
+        "level": "LEVEL 18",
+        "title": "MANIERA [5KEY AERY PIANO]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "63.38%",
+        "groove_ratio": "63.38%",
+        "easy_ratio": "64.78%",
+        "level": "LEVEL 18",
+        "title": "Mokotans no sc (5key Aery)"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "62.9%",
+        "groove_ratio": "62.9%",
+        "easy_ratio": "62.9%",
+        "level": "LEVEL 18",
+        "title": "NEW ANACHRONISM -もう、主人公になれない- [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "67.56%",
+        "groove_ratio": "67.56%",
+        "easy_ratio": "69.36%",
+        "level": "LEVEL 18",
+        "title": "Plastic Mind [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.16%",
+        "hard_ratio": "68.6%",
+        "groove_ratio": "68.6%",
+        "easy_ratio": "72.09%",
+        "level": "LEVEL 18",
+        "title": "Re:End of a Dream [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "65.45%",
+        "groove_ratio": "65.45%",
+        "easy_ratio": "65.45%",
+        "level": "LEVEL 18",
+        "title": "Revenger [5key Aery]"
+      },
+      {
+        "fc_ratio": "2.04%",
+        "hard_ratio": "61.22%",
+        "groove_ratio": "63.26%",
+        "easy_ratio": "65.3%",
+        "level": "LEVEL 18",
+        "title": "SERIOUS ERROR [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "10.6%",
+        "hard_ratio": "62.12%",
+        "groove_ratio": "65.15%",
+        "easy_ratio": "71.21%",
+        "level": "LEVEL 18",
+        "title": "unquenchable [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "64.04%",
+        "groove_ratio": "64.04%",
+        "easy_ratio": "64.04%",
+        "level": "LEVEL 18",
+        "title": "シュレ?ディンガ?の猫 [5key Aery]"
+      },
+      {
+        "fc_ratio": "1.61%",
+        "hard_ratio": "61.29%",
+        "groove_ratio": "61.29%",
+        "easy_ratio": "64.51%",
+        "level": "LEVEL 18",
+        "title": "煉獄 [5KEY AERY HELL]"
+      },
+      {
+        "fc_ratio": "2.66%",
+        "hard_ratio": "65.33%",
+        "groove_ratio": "65.33%",
+        "easy_ratio": "65.33%",
+        "level": "LEVEL 18",
+        "title": "自強號 [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "63.63%",
+        "groove_ratio": "63.63%",
+        "easy_ratio": "65.45%",
+        "level": "LEVEL 18",
+        "title": "絶対的共依存 [5K Aery Delta]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "69.33%",
+        "groove_ratio": "69.33%",
+        "easy_ratio": "69.33%",
+        "level": "LEVEL 18",
+        "title": "c.s.q.n. [5KEYS AERY JACK]"
+      },
+      {
+        "fc_ratio": "8%",
+        "hard_ratio": "62.66%",
+        "groove_ratio": "64%",
+        "easy_ratio": "64%",
+        "level": "LEVEL 18",
+        "title": "8th:Planet [5KEYS AERY Ψ]"
+      },
+      {
+        "fc_ratio": "4.65%",
+        "hard_ratio": "62.79%",
+        "groove_ratio": "62.79%",
+        "easy_ratio": "62.79%",
+        "level": "LEVEL 18",
+        "title": "Dizzolve [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "6.38%",
+        "hard_ratio": "63.82%",
+        "groove_ratio": "63.82%",
+        "easy_ratio": "63.82%",
+        "level": "LEVEL 18",
+        "title": "H.S : Hadron Strike [5KEY AERY GEAR 3]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "69.69%",
+        "groove_ratio": "69.69%",
+        "easy_ratio": "69.69%",
+        "level": "LEVEL 18",
+        "title": "Q33B [5KEYS AERY 亂]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "63.63%",
+        "groove_ratio": "63.63%",
+        "easy_ratio": "63.63%",
+        "level": "LEVEL 18",
+        "title": "XIII Charlotte [5KEY AERY INSANE]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "61.11%",
+        "groove_ratio": "61.11%",
+        "easy_ratio": "61.11%",
+        "level": "LEVEL 18",
+        "title": "ヒメタイプ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.03%",
+        "hard_ratio": "69.69%",
+        "groove_ratio": "69.69%",
+        "easy_ratio": "72.72%",
+        "level": "LEVEL 18",
+        "title": "《Ж》 [5KEYS AERY EX]"
+      }
+    ],
+    "C": [
+      {
+        "fc_ratio": "4.34%",
+        "hard_ratio": "71.73%",
+        "groove_ratio": "73.91%",
+        "easy_ratio": "76.08%",
+        "level": "LEVEL 18",
+        "title": "Happy Century [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "78.37%",
+        "groove_ratio": "78.37%",
+        "easy_ratio": "81.08%",
+        "level": "LEVEL 18",
+        "title": "Nichirin -HighSpeed edition- [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "71.42%",
+        "groove_ratio": "71.42%",
+        "easy_ratio": "71.42%",
+        "level": "LEVEL 18",
+        "title": "これはドラ?ンベ?スですか？はい、?ウンバスです。 [5key Aery]"
+      },
+      {
+        "fc_ratio": "4.25%",
+        "hard_ratio": "76.59%",
+        "groove_ratio": "76.59%",
+        "easy_ratio": "76.59%",
+        "level": "LEVEL 18",
+        "title": "夕凪の丘 [5KEYS AERY Training+]"
+      },
+      {
+        "fc_ratio": "10.34%",
+        "hard_ratio": "72.41%",
+        "groove_ratio": "72.41%",
+        "easy_ratio": "72.41%",
+        "level": "LEVEL 18",
+        "title": "Boxel Adventure [5KEY AERY HARD]"
+      },
+      {
+        "fc_ratio": "4.08%",
+        "hard_ratio": "71.42%",
+        "groove_ratio": "71.42%",
+        "easy_ratio": "71.42%",
+        "level": "LEVEL 18",
+        "title": "Halcyon [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "74%",
+        "groove_ratio": "74%",
+        "easy_ratio": "74%",
+        "level": "LEVEL 18",
+        "title": "ピアノ協奏曲第１番\"蠍火\"（なんでも吸い込むピンク色のための） [5KEYS AERY ★★3]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "76.59%",
+        "groove_ratio": "76.59%",
+        "easy_ratio": "80.85%",
+        "level": "LEVEL 18",
+        "title": "3.14 ~TT mix~ [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "71.87%",
+        "groove_ratio": "71.87%",
+        "easy_ratio": "71.87%",
+        "level": "LEVEL 18",
+        "title": "ピアノ狂詩曲第壱番”天嵐戒” [5KEYS AERY 暴]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "75%",
+        "groove_ratio": "75%",
+        "easy_ratio": "75%",
+        "level": "LEVEL 18",
+        "title": "Gimme All The Cocaine [5KEYS AERY LEGAL]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "71.87%",
+        "groove_ratio": "75%",
+        "easy_ratio": "75%",
+        "level": "LEVEL 18",
+        "title": "Symphonie des violons hantes [5KEYS AERY]"
+      }
+    ],
+    "F": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "81.81%",
+        "groove_ratio": "81.81%",
+        "easy_ratio": "85.45%",
+        "level": "LEVEL 18",
+        "title": "RAY [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "1.88%",
+        "hard_ratio": "83.01%",
+        "groove_ratio": "83.01%",
+        "easy_ratio": "84.9%",
+        "level": "LEVEL 18",
+        "title": "プナイプナイせんそう [5KEYS AERY プナイ]"
+      },
+      {
+        "fc_ratio": "4.87%",
+        "hard_ratio": "87.8%",
+        "groove_ratio": "87.8%",
+        "easy_ratio": "90.24%",
+        "level": "LEVEL 18",
+        "title": "Icicle Stinger [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "85.18%",
+        "groove_ratio": "85.18%",
+        "easy_ratio": "85.18%",
+        "level": "LEVEL 18",
+        "title": "Three Muffin. Please. [5KEYS AERY]"
+      },
+      {
+        "fc_ratio": "3.7%",
+        "hard_ratio": "88.88%",
+        "groove_ratio": "88.88%",
+        "easy_ratio": "88.88%",
+        "level": "LEVEL 18",
+        "title": "ラケシスと永遠の祈祷者 [5KEYS AERY]"
+      }
+    ]
+  },
+  "LEVEL 19": {
+    "S+": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "25%",
+        "groove_ratio": "26.13%",
+        "easy_ratio": "28.4%",
+        "level": "LEVEL 19",
+        "title": "Doppelganger [5Key Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "20.43%",
+        "groove_ratio": "21.5%",
+        "easy_ratio": "24.73%",
+        "level": "LEVEL 19",
+        "title": "FREEDOM DiVE no sc [5key Aery]"
+      },
+      {
+        "fc_ratio": "3.96%",
+        "hard_ratio": "28.57%",
+        "groove_ratio": "28.57%",
+        "easy_ratio": "30.95%",
+        "level": "LEVEL 19",
+        "title": "tinnitus [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "29.03%",
+        "groove_ratio": "32.25%",
+        "easy_ratio": "35.48%",
+        "level": "LEVEL 19",
+        "title": "ピアノ観賞曲欠番「神姫」  [5KEYS AERY (^^)]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "27.58%",
+        "groove_ratio": "27.58%",
+        "easy_ratio": "27.58%",
+        "level": "LEVEL 19",
+        "title": "neo tinnitus [5KEYS AERY EX]"
+      }
+    ],
+    "S": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "32.2%",
+        "groove_ratio": "32.2%",
+        "easy_ratio": "35.59%",
+        "level": "LEVEL 19",
+        "title": "Aleph-0 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "38.29%",
+        "groove_ratio": "38.29%",
+        "easy_ratio": "38.29%",
+        "level": "LEVEL 19",
+        "title": "Cynic [THE AERY ANOTHER]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "35.18%",
+        "groove_ratio": "37.03%",
+        "easy_ratio": "40.74%",
+        "level": "LEVEL 19",
+        "title": "Cynical [ 5 K E Y A E R Y ]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "39.08%",
+        "groove_ratio": "39.08%",
+        "easy_ratio": "41.37%",
+        "level": "LEVEL 19",
+        "title": "Finixe [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "35%",
+        "groove_ratio": "36.25%",
+        "easy_ratio": "37.5%",
+        "level": "LEVEL 19",
+        "title": "Imperishable Night 2006 [5K Aery Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "36.66%",
+        "groove_ratio": "36.66%",
+        "easy_ratio": "40%",
+        "level": "LEVEL 19",
+        "title": "Kaiden Aura [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "37.09%",
+        "groove_ratio": "37.09%",
+        "easy_ratio": "38.7%",
+        "level": "LEVEL 19",
+        "title": "NO NIGHT MORE SOUL! [5K Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "38.46%",
+        "groove_ratio": "38.46%",
+        "easy_ratio": "42.3%",
+        "level": "LEVEL 19",
+        "title": "ReviXy [5K Aery Delta]"
+      },
+      {
+        "fc_ratio": "5.26%",
+        "hard_ratio": "36.84%",
+        "groove_ratio": "38.94%",
+        "easy_ratio": "40%",
+        "level": "LEVEL 19",
+        "title": "the lost dedicated [Aery Memory]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "35.29%",
+        "groove_ratio": "36.76%",
+        "easy_ratio": "38.23%",
+        "level": "LEVEL 19",
+        "title": "Unleashed World [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "34.24%",
+        "groove_ratio": "34.24%",
+        "easy_ratio": "36.98%",
+        "level": "LEVEL 19",
+        "title": "キ?と?クへの葬送歌 [5KEYS AERY HARD]"
+      },
+      {
+        "fc_ratio": "1.56%",
+        "hard_ratio": "40.62%",
+        "groove_ratio": "40.62%",
+        "easy_ratio": "40.62%",
+        "level": "LEVEL 19",
+        "title": "炎花 - flameflower - [Life is Piano]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "38.88%",
+        "groove_ratio": "38.88%",
+        "easy_ratio": "38.88%",
+        "level": "LEVEL 19",
+        "title": "FORBIDDEN [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "38.88%",
+        "groove_ratio": "38.88%",
+        "easy_ratio": "50%",
+        "level": "LEVEL 19",
+        "title": "八大地獄邪魂転生狂葬散火歌 [5KEYS AERY 炎]"
+      }
+    ],
+    "A+": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "43.9%",
+        "groove_ratio": "43.9%",
+        "easy_ratio": "46.34%",
+        "level": "LEVEL 19",
+        "title": "キユビック [5KEYS AERY 忍]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50.48%",
+        "groove_ratio": "50.48%",
+        "easy_ratio": "55.33%",
+        "level": "LEVEL 19",
+        "title": "Angel dust [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "46.34%",
+        "groove_ratio": "48.78%",
+        "easy_ratio": "60.97%",
+        "level": "LEVEL 19",
+        "title": "Apocalypse Nemesis [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "44.87%",
+        "groove_ratio": "44.87%",
+        "easy_ratio": "55.12%",
+        "level": "LEVEL 19",
+        "title": "blue traces [5key Aery iMPoSSiBLE]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "47.05%",
+        "groove_ratio": "47.05%",
+        "easy_ratio": "47.05%",
+        "level": "LEVEL 19",
+        "title": "Celestial Axes [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50.9%",
+        "groove_ratio": "52.72%",
+        "easy_ratio": "60%",
+        "level": "LEVEL 19",
+        "title": "Disorder [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "43.75%",
+        "groove_ratio": "43.75%",
+        "easy_ratio": "47.91%",
+        "level": "LEVEL 19",
+        "title": "ＤＱⅢ?Battle [5K Aery Beta]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50.37%",
+        "groove_ratio": "51.11%",
+        "easy_ratio": "54.07%",
+        "level": "LEVEL 19",
+        "title": "G e n g a o z o - [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "47.72%",
+        "groove_ratio": "47.72%",
+        "easy_ratio": "47.72%",
+        "level": "LEVEL 19",
+        "title": "Hypertext Transfer Protocol [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "48.64%",
+        "groove_ratio": "48.64%",
+        "easy_ratio": "54.05%",
+        "level": "LEVEL 19",
+        "title": "I [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "44.44%",
+        "groove_ratio": "46.66%",
+        "easy_ratio": "51.11%",
+        "level": "LEVEL 19",
+        "title": "lest [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "41.81%",
+        "groove_ratio": "41.81%",
+        "easy_ratio": "43.63%",
+        "level": "LEVEL 19",
+        "title": "Lucifuge Rofocale [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50.74%",
+        "groove_ratio": "50.74%",
+        "easy_ratio": "55.22%",
+        "level": "LEVEL 19",
+        "title": "MANIERA [5KEY AERY FOOLISH]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "45.45%",
+        "groove_ratio": "48.48%",
+        "easy_ratio": "51.51%",
+        "level": "LEVEL 19",
+        "title": "SERIOUS ERROR [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "41.93%",
+        "groove_ratio": "41.93%",
+        "easy_ratio": "51.61%",
+        "level": "LEVEL 19",
+        "title": "Vis10ns [5KEYS AERY DELAY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "49.33%",
+        "groove_ratio": "49.33%",
+        "easy_ratio": "53.33%",
+        "level": "LEVEL 19",
+        "title": "少女幻葬?? Necro-Fantasy [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50%",
+        "groove_ratio": "50%",
+        "easy_ratio": "50%",
+        "level": "LEVEL 19",
+        "title": "Demystify Feast [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "48.48%",
+        "groove_ratio": "48.48%",
+        "easy_ratio": "54.54%",
+        "level": "LEVEL 19",
+        "title": "Nidhogg [5KEYS AERY X]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "46.87%",
+        "groove_ratio": "46.87%",
+        "easy_ratio": "50%",
+        "level": "LEVEL 19",
+        "title": "The Lamia 170 [5KEYS AERY HD]"
+      },
+      {
+        "fc_ratio": "6.06%",
+        "hard_ratio": "48.48%",
+        "groove_ratio": "48.48%",
+        "easy_ratio": "48.48%",
+        "level": "LEVEL 19",
+        "title": "撃墜~HELL AIR FORCE~ [5KEYS AERY Hartmann]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "42.3%",
+        "groove_ratio": "42.3%",
+        "easy_ratio": "42.3%",
+        "level": "LEVEL 19",
+        "title": "ephemera [5KEYS AERY FIN]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "44.44%",
+        "groove_ratio": "44.44%",
+        "easy_ratio": "44.44%",
+        "level": "LEVEL 19",
+        "title": "LWVIIX [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "43.75%",
+        "groove_ratio": "43.75%",
+        "easy_ratio": "43.75%",
+        "level": "LEVEL 19",
+        "title": "テウメッサ [5KEYS AERY FIRST]"
+      }
+    ],
+    "A": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.22%",
+        "groove_ratio": "53.22%",
+        "easy_ratio": "58.06%",
+        "level": "LEVEL 19",
+        "title": "antilife [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "2.98%",
+        "hard_ratio": "52.23%",
+        "groove_ratio": "52.23%",
+        "easy_ratio": "53.73%",
+        "level": "LEVEL 19",
+        "title": "Babel [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "9.09%",
+        "hard_ratio": "56.36%",
+        "groove_ratio": "56.36%",
+        "easy_ratio": "61.81%",
+        "level": "LEVEL 19",
+        "title": "bEyond [5KEY AERY FUCK]"
+      },
+      {
+        "fc_ratio": "1.56%",
+        "hard_ratio": "51.56%",
+        "groove_ratio": "51.56%",
+        "easy_ratio": "56.25%",
+        "level": "LEVEL 19",
+        "title": "Forceful Beat [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "3.57%",
+        "hard_ratio": "60.71%",
+        "groove_ratio": "60.71%",
+        "easy_ratio": "60.71%",
+        "level": "LEVEL 19",
+        "title": "NS18 [5KEY AERY]"
+      },
+      {
+        "fc_ratio": "7.4%",
+        "hard_ratio": "57.4%",
+        "groove_ratio": "61.11%",
+        "easy_ratio": "66.66%",
+        "level": "LEVEL 19",
+        "title": "Stellaria [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "54.71%",
+        "groove_ratio": "54.71%",
+        "easy_ratio": "56.6%",
+        "level": "LEVEL 19",
+        "title": "フロンティア↑↑エクスプロ?ラ? [5KEY AERY FRONTIER]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "51.85%",
+        "groove_ratio": "51.85%",
+        "easy_ratio": "55.55%",
+        "level": "LEVEL 19",
+        "title": "ブレークガーデン [5?ey AΞ\"? 02]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.57%",
+        "groove_ratio": "53.57%",
+        "easy_ratio": "60.71%",
+        "level": "LEVEL 19",
+        "title": "Icicle Stinger [5KEYS AERY LASTBOSS]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "58.82%",
+        "groove_ratio": "58.82%",
+        "easy_ratio": "58.82%",
+        "level": "LEVEL 19",
+        "title": "Pumpkin ◇ Magic [5KEYS AERY HOLLOW]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "60%",
+        "groove_ratio": "60%",
+        "easy_ratio": "60%",
+        "level": "LEVEL 19",
+        "title": "超度 ~ Go Beyond ~ [5KEY AERY BeyonD]"
+      }
+    ],
+    "B": [
+      {
+        "fc_ratio": "6.02%",
+        "hard_ratio": "66.26%",
+        "groove_ratio": "66.26%",
+        "easy_ratio": "67.46%",
+        "level": "LEVEL 19",
+        "title": "Blue-White Crazybits [5key Aery hard]"
+      },
+      {
+        "fc_ratio": "7.57%",
+        "hard_ratio": "66.66%",
+        "groove_ratio": "66.66%",
+        "easy_ratio": "74.24%",
+        "level": "LEVEL 19",
+        "title": "CODE-F -soar to the Frontier- [5key Aery]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "68.42%",
+        "groove_ratio": "73.68%",
+        "easy_ratio": "78.94%",
+        "level": "LEVEL 19",
+        "title": "horizon [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "61.53%",
+        "groove_ratio": "61.53%",
+        "easy_ratio": "61.53%",
+        "level": "LEVEL 19",
+        "title": "We are the xxxx [5K Aery Delta]"
+      },
+      {
+        "fc_ratio": "3.84%",
+        "hard_ratio": "65.38%",
+        "groove_ratio": "69.23%",
+        "easy_ratio": "69.23%",
+        "level": "LEVEL 19",
+        "title": "Anosognosia [5Key Aery Collapse]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "67.85%",
+        "groove_ratio": "67.85%",
+        "easy_ratio": "71.42%",
+        "level": "LEVEL 19",
+        "title": "Ascension to Heaven [5KEYS AERY EX]"
+      },
+      {
+        "fc_ratio": "3.44%",
+        "hard_ratio": "68.96%",
+        "groove_ratio": "72.41%",
+        "easy_ratio": "72.41%",
+        "level": "LEVEL 19",
+        "title": "Stargaze Station [5KEYS AERY STARLIGHT]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "68%",
+        "groove_ratio": "68%",
+        "easy_ratio": "68%",
+        "level": "LEVEL 19",
+        "title": "κανων [5KEYS AERY HD]"
+      }
+    ],
+    "C": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "77.77%",
+        "groove_ratio": "77.77%",
+        "easy_ratio": "83.33%",
+        "level": "LEVEL 19",
+        "title": "人形楽団 ~ Puppet Ensemble ・∀・ ~ [5KEYS AERY EX]"
+      }
+    ],
+    "F": []
+  },
+  "LEVEL 20": {
+    "S+": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "1.88%",
+        "groove_ratio": "1.88%",
+        "easy_ratio": "5.66%",
+        "level": "LEVEL 20",
+        "title": "Unleashed World [5Key Aery EX]"
+      }
+    ],
+    "S": [
+      {
+        "fc_ratio": "0.86%",
+        "hard_ratio": "18.26%",
+        "groove_ratio": "18.26%",
+        "easy_ratio": "20%",
+        "level": "LEVEL 20",
+        "title": "Angelic layer [5key Aery Super Hard]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "11.76%",
+        "groove_ratio": "17.64%",
+        "easy_ratio": "38.23%",
+        "level": "LEVEL 20",
+        "title": "DENGEKI Tube [AERY 345,000V]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "7.05%",
+        "groove_ratio": "11.76%",
+        "easy_ratio": "27.05%",
+        "level": "LEVEL 20",
+        "title": "fatalism [5Key Aery EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "12.76%",
+        "groove_ratio": "14.89%",
+        "easy_ratio": "29.78%",
+        "level": "LEVEL 20",
+        "title": "MANIERA [5KEY AERY KOOKY]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "17.14%",
+        "groove_ratio": "18.57%",
+        "easy_ratio": "24.28%",
+        "level": "LEVEL 20",
+        "title": "Messier 333 no sc (5k Aery)"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "13.33%",
+        "groove_ratio": "13.33%",
+        "easy_ratio": "23.33%",
+        "level": "LEVEL 20",
+        "title": "Schwerkraft [5KEY AERY GOD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "20%",
+        "groove_ratio": "20%",
+        "easy_ratio": "36.66%",
+        "level": "LEVEL 20",
+        "title": "The Lady Is A Trump [5KEY AERY HD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "18.33%",
+        "groove_ratio": "20%",
+        "easy_ratio": "26.66%",
+        "level": "LEVEL 20",
+        "title": "the lost dedicated [Aery Life]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "9.09%",
+        "groove_ratio": "9.09%",
+        "easy_ratio": "22.72%",
+        "level": "LEVEL 20",
+        "title": "Wizdomiot [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "17.14%",
+        "groove_ratio": "17.14%",
+        "easy_ratio": "28.57%",
+        "level": "LEVEL 20",
+        "title": "リジットXXパラダイス [5KEYS AERY ★★5]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "16%",
+        "groove_ratio": "20%",
+        "easy_ratio": "32%",
+        "level": "LEVEL 20",
+        "title": "星屑アポトーシス"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "12.5%",
+        "groove_ratio": "12.5%",
+        "easy_ratio": "16.66%",
+        "level": "LEVEL 20",
+        "title": "ピアノ協奏曲第１番\"蠍火\"（なんでも詰め込む神域譜面のための） [5KEYS AERY ★★7]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "13.63%",
+        "groove_ratio": "22.72%",
+        "easy_ratio": "27.27%",
+        "level": "LEVEL 20",
+        "title": "４２２ [5KEYS AERY LASTBOSS]"
+      }
+    ],
+    "A+": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "26.02%",
+        "groove_ratio": "26.02%",
+        "easy_ratio": "36.98%",
+        "level": "LEVEL 20",
+        "title": "Armageddon [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "29.62%",
+        "groove_ratio": "33.33%",
+        "easy_ratio": "40.74%",
+        "level": "LEVEL 20",
+        "title": "Happy Century MIX [5KEY AERY DELAYMASTER]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "26%",
+        "groove_ratio": "28%",
+        "easy_ratio": "40%",
+        "level": "LEVEL 20",
+        "title": "キ?と?クへの葬送歌 [AERY LAST BOSS]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "30.76%",
+        "groove_ratio": "33.33%",
+        "easy_ratio": "35.89%",
+        "level": "LEVEL 20",
+        "title": "ひつぎとふたご [5KEY AERY EX]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "23.07%",
+        "groove_ratio": "26.92%",
+        "easy_ratio": "34.61%",
+        "level": "LEVEL 20",
+        "title": "PEACE BREAKER [AERY RULE-BREAKED]"
+      }
+    ],
+    "A": [
+      {
+        "fc_ratio": "2.85%",
+        "hard_ratio": "34.28%",
+        "groove_ratio": "34.28%",
+        "easy_ratio": "37.14%",
+        "level": "LEVEL 20",
+        "title": "AIWS [5KEYS AERY GOD]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "37.83%",
+        "groove_ratio": "40.54%",
+        "easy_ratio": "43.24%",
+        "level": "LEVEL 20",
+        "title": "天空の城ヴェリエル [5KEYS AERY LAST BOSS]"
+      },
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "35.29%",
+        "groove_ratio": "41.17%",
+        "easy_ratio": "47.05%",
+        "level": "LEVEL 20",
+        "title": "Fireball [5KEY AERY SABOTHER]"
+      }
+    ],
+    "B": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "50%",
+        "groove_ratio": "50%",
+        "easy_ratio": "60%",
+        "level": "LEVEL 20",
+        "title": "フエネック [5KEYS AERY FINALE]"
+      }
+    ],
+    "C": [
+      {
+        "fc_ratio": "0%",
+        "hard_ratio": "53.84%",
+        "groove_ratio": "53.84%",
+        "easy_ratio": "53.84%",
+        "level": "LEVEL 20",
+        "title": "虹のわすれもの [AERY's Cookie Factory]"
+      }
+    ],
+    "F": []
+  }
+}

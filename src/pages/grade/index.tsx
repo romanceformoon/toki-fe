@@ -13,7 +13,7 @@ import Table from "@mui/material/Table";
 import { NextSeo } from "next-seo";
 import { useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
-import aeryDataJSON from "./aery/data.json";
+import aeryDataJSON from "./aery/gradeData.json";
 
 const Grade = () => {
   const [level, setLevel] = useState<string>("LEVEL 16");
