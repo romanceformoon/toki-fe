@@ -92,7 +92,7 @@ export const getRating = (input: number) => {
     }
   }
 
-  if (input > ratingTable[nearIndex]) return "21.000";
+  if (input > ratingTable[20]) return "21.000";
 
   return (nearIndex + input / ratingTable[nearIndex]).toFixed(3);
 };
