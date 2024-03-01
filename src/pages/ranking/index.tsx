@@ -411,7 +411,7 @@ const Ranking = () => {
                                   letterSpacing: "1.2px",
                                 }}
                               >
-                                <RatingText rating={getRating(data.rating)} />
+                                <RatingText rating={getRating(data.rating, category)} />
                               </Box>
                             </TableCell>
                           </TableRow>

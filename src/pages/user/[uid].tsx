@@ -335,7 +335,7 @@ const UserPage = ({
                 </Typography>
               </Box>
               <Typography fontSize="14px" fontWeight={500}>
-                Rating: {getRating(userData.rating)}
+                Rating: {getRating(userData.rating, category)}
               </Typography>
             </Box>
           </Box>
