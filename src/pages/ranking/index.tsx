@@ -1,3 +1,4 @@
+import InfoIcon from "@mui/icons-material/Info";
 import { TabList } from "@mui/lab";
 import TabContext from "@mui/lab/TabContext";
 import TabPanel from "@mui/lab/TabPanel";
@@ -13,6 +14,7 @@ import {
   TableHead,
   TableRow,
   Tabs,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { NextSeo } from "next-seo";
@@ -336,13 +338,28 @@ const Ranking = () => {
                         </Typography>
                       </TableCell>
                       <TableCell sx={{ width: "25%" }}>
-                        <Typography
-                          fontSize="24px"
-                          fontWeight="900"
-                          fontStyle={{ color: "primary.main" }}
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                          }}
                         >
-                          레이팅
-                        </Typography>
+                          <Typography
+                            fontSize="24px"
+                            fontWeight="900"
+                            fontStyle={{ color: "primary.main" }}
+                          >
+                            레이팅
+                          </Typography>
+                          {category === "aery" ? (
+                            <Tooltip
+                              title="N 레벨까지의 모든 곡을 FULL COMBO 없이 HARD CLEAR 했을 때의 레이팅을 N.000으로 정의한다."
+                              arrow
+                            >
+                              <InfoIcon sx={{ ml: "0.2rem" }} />
+                            </Tooltip>
+                          ) : null}
+                        </Box>
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -411,7 +428,9 @@ const Ranking = () => {
                                   letterSpacing: "1.2px",
                                 }}
                               >
-                                <RatingText rating={getRating(data.rating, category)} />
+                                <RatingText
+                                  rating={getRating(data.rating, category)}
+                                />
                               </Box>
                             </TableCell>
                           </TableRow>
