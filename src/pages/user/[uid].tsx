@@ -36,6 +36,7 @@ import useHistoryQuery from "~/query/useHistoryQuery";
 import useUserInfoQuery from "~/query/useUserInfoQuery";
 import axiosInstance from "~/utils/axiosInstance";
 import { getExpTable, getLevel } from "~/utils/exp";
+import { getRating } from "~/utils/rating";
 
 const UserPage = ({
   _uid,
@@ -334,7 +335,7 @@ const UserPage = ({
                 </Typography>
               </Box>
               <Typography fontSize="14px" fontWeight={500}>
-                Rating: {(userData.rating / 10000).toFixed(3)}
+                Rating: {getRating(userData.rating)}
               </Typography>
             </Box>
           </Box>

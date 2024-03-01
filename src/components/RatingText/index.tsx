@@ -1,9 +1,8 @@
 import { Typography } from "@mui/material";
 
-export const RatingText = ({ rating }: { rating: number }) => {
-  const convertedRating = (rating / 10000).toFixed(3);
-  const main = convertedRating.split(".")[0];
-  const sub = convertedRating.split(".")[1];
+export const RatingText = ({ rating }: { rating: string }) => {
+  const main = rating.split(".")[0];
+  const sub = rating.split(".")[1];
 
   return (
     <>

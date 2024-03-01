@@ -24,6 +24,7 @@ import { UserNickname } from "~/components/UserNickname";
 import useEXPRankingQuery from "~/query/useEXPRankingQuery";
 import useRatingRankingQuery from "~/query/useRatingRankingQuery";
 import { getLevel } from "~/utils/exp";
+import { getRating } from "~/utils/rating";
 
 const Ranking = () => {
   const router = useRouter();
@@ -410,7 +411,7 @@ const Ranking = () => {
                                   letterSpacing: "1.2px",
                                 }}
                               >
-                                <RatingText rating={data.rating} />
+                                <RatingText rating={getRating(data.rating)} />
                               </Box>
                             </TableCell>
                           </TableRow>
