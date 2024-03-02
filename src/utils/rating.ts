@@ -80,24 +80,26 @@ const ratingTable = [
 
   // ALL FULL COMBO
   5065.09377964278 * 23 + 7485.84 * 27,
-  5065.09377964278 * 23 + 7485.84 * 27,
 ];
 
 export const getRating = (input: number, category: string) => {
   if (category !== "aery") return (input / 10000).toFixed(3);
 
-  let min = Number.MAX_SAFE_INTEGER;
   let nearIndex = 0;
 
   for (let i = 0; i < ratingTable.length; i++) {
-    let abs = Math.abs(ratingTable[i] - input);
-    if (abs < min) {
-      min = abs;
-      nearIndex = i;
+    if (ratingTable[i] > input) {
+      nearIndex = i - 1;
+      break;
     }
   }
 
-  if (input > ratingTable[21]) return "21.000";
+  if (input >= ratingTable[ratingTable.length]) return "21.000";
 
-  return (nearIndex + input / ratingTable[nearIndex + 1]).toFixed(3);
+  const sub =
+    1 -
+    (ratingTable[nearIndex + 1] - input) /
+      (ratingTable[nearIndex + 1] - ratingTable[nearIndex]);
+
+  return (nearIndex + sub).toFixed(3);
 };
