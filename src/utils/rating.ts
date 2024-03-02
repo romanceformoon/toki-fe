@@ -1,4 +1,6 @@
 const ratingTable = [
+  0,
+
   195.49794980203805,
 
   195.49794980203805 + 196.81391758270502,
@@ -78,6 +80,7 @@ const ratingTable = [
 
   // ALL FULL COMBO
   5065.09377964278 * 23 + 7485.84 * 27,
+  5065.09377964278 * 23 + 7485.84 * 27,
 ];
 
 export const getRating = (input: number, category: string) => {
@@ -94,7 +97,7 @@ export const getRating = (input: number, category: string) => {
     }
   }
 
-  if (input > ratingTable[20]) return "21.000";
+  if (input > ratingTable[21]) return "21.000";
 
-  return (nearIndex + input / ratingTable[nearIndex]).toFixed(3);
+  return (nearIndex + input / ratingTable[nearIndex + 1]).toFixed(3);
 };
