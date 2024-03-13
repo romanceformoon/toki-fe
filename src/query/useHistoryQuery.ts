@@ -8,21 +8,13 @@ const useHistoryQuery = ({
   uid: string | string[] | undefined;
   category: string;
 }) => {
-  const query = useQuery(
-    ["get-history-info", uid, category],
-    async () => {
-      const response = await axiosInstance.get<IHistory>(
-        `/toki-api/user/history/${category}/${uid}`
-      );
+  const query = useQuery(["get-history-info", uid, category], async () => {
+    const response = await axiosInstance.get<IHistory>(
+      `/toki-api/user/history/${category}/${uid}`
+    );
 
-      return response.data;
-    },
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-    }
-  );
+    return response.data;
+  });
 
   return query;
 };

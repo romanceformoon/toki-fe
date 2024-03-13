@@ -8,21 +8,13 @@ const useGraphQuery = ({
   uid: string | string[] | undefined;
   category: string;
 }) => {
-  const query = useQuery(
-    ["get-graph-info", uid, category],
-    async () => {
-      const response = await axiosInstance.get<IGraph>(
-        `/toki-api/user/graph/${category}/${uid}`
-      );
+  const query = useQuery(["get-graph-info", uid, category], async () => {
+    const response = await axiosInstance.get<IGraph>(
+      `/toki-api/user/graph/${category}/${uid}`
+    );
 
-      return response.data;
-    },
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-    }
-  );
+    return response.data;
+  });
 
   return query;
 };

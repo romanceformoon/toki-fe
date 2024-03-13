@@ -8,21 +8,13 @@ const useUserInfoQuery = ({
   uid: string | string[] | undefined;
   category: string;
 }) => {
-  const query = useQuery(
-    ["get-user-info", uid, category],
-    async () => {
-      const response = await axiosInstance.get<IUserGameInfo>(
-        `/toki-api/user/${category}/${uid}`
-      );
+  const query = useQuery(["get-user-info", uid, category], async () => {
+    const response = await axiosInstance.get<IUserGameInfo>(
+      `/toki-api/user/${category}/${uid}`
+    );
 
-      return response.data;
-    },
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-    }
-  );
+    return response.data;
+  });
 
   return query;
 };
