@@ -51,6 +51,15 @@ function MyApp({
         palette: {
           mode,
         },
+        components: {
+          MuiCssBaseline: {
+            styleOverrides: {
+              body: {
+                transition: "all 0.25s ease-in-out",
+              },
+            },
+          },
+        },
       }),
     [mode]
   );

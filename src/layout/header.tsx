@@ -24,7 +24,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
   const { isLogined } = useLoginUser();
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" style={{ transition: "all 0.25s ease-in-out" }}>
       <Toolbar disableGutters sx={{ ml: "7%", mr: "7%" }}>
         <Logo />
         <MobileMenu />

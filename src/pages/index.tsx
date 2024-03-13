@@ -59,6 +59,7 @@ const Main = () => {
         }}
       />
       <Box
+        style={{ transition: "all 0.25s ease-in-out" }}
         sx={{
           bgcolor: "background.paper",
           pt: 4,
