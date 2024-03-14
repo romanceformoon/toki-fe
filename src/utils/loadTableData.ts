@@ -23,6 +23,7 @@ export const loadTableData = async () => {
     "LEVEL 19": [],
     "LEVEL 20": [],
     "LEVEL DUMMY": [],
+    "OLD CHARTS": [],
   };
 
   for (let i = 0; i < tableData.length; i++) {
