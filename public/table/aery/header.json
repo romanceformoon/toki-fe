@@ -4,7 +4,7 @@
   "course": [
     [
       {
-        "name": "[5KEYS AERY] 1_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 1_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -27,11 +27,11 @@
           "092d4c4597d78fde5bde5e79583e2a21",
           "285b4d42a2feb17a8de615c5732f75cc",
           "586eecf05016b61b3a737087da4b53f7",
-          "72a3bfe9bf6a2fd20b1b7db7affc55ff"
+          "4c35df45e9853650bb11139089db0241"
         ]
       },
       {
-        "name": "[5KEYS AERY] 2_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 2_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -58,7 +58,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 3_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 3_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -85,7 +85,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 4_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 4_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -112,7 +112,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 5_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 5_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -139,7 +139,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 6_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 6_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 7_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 7_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -193,7 +193,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] 8_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 8_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -215,12 +215,12 @@
         "md5": [
           "ea4c20ea8770bf106f3e619339a7d29f",
           "011b5b10874d806991feb0c477942c9c",
-          "a08272dc4fffda4f3a7bcee3c02c0f8a",
-          "ce11fa9eb9b41ac1b7f6aef7167f5b39"
+          "a340ad6acd84023d22eb5576d5816384",
+          "a08272dc4fffda4f3a7bcee3c02c0f8a"
         ]
       },
       {
-        "name": "[5KEYS AERY] 9_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 9_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -240,14 +240,14 @@
           }
         ],
         "md5": [
-          "4a308297ed92ef5b84a2d364e887d476",
+          "d954040a6a94a78d82309e037aa6a4fd",
           "92e87e37dc27498a746ee5b95e5bee2e",
-          "68d70074bd6ab2d921df9c0afcbc1b0b",
-          "204e522a8a1450d28baa489fb1738409"
+          "204e522a8a1450d28baa489fb1738409",
+          "68d70074bd6ab2d921df9c0afcbc1b0b"
         ]
       },
       {
-        "name": "[5KEYS AERY] 10_DAN / season.23",
+        "name": "[5KEYS AERY] 段位認定 10_DAN / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -268,13 +268,13 @@
         ],
         "md5": [
           "ded28f8d4dda2947ea4638f374bee967",
-          "54e7a4815bebbac3b69d48c1bce163de",
-          "a4c4a98f13c2ef9da08c61e8c46697a4",
+          "4180f8fab3ad583a31b24b8d6cad2cab",
+          "41d5a80fb2d73df1dedeff4f20d63e41",
           "5571fdd440253f1ab63ce9f0941f15b3"
         ]
       },
       {
-        "name": "[5KEYS AERY] 皆伝 / season.23",
+        "name": "[5KEYS AERY] 段位認定 皆伝 / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -301,7 +301,7 @@
         ]
       },
       {
-        "name": "[5KEYS AERY] OVERJOY / season.23",
+        "name": "[5KEYS AERY] 段位認定 GORILLA / ver.24",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
           {
@@ -321,10 +321,37 @@
           }
         ],
         "md5": [
-          "7108a3a73795a5da5fb9df03d0c2b09d",
-          "5bc01c009d2d092ab29a42ddafd66f1c",
           "e66a509dcbb4ae2e0aa28e5b713291d4",
+          "7108a3a73795a5da5fb9df03d0c2b09d",
+          "2868c70113edd0c8f0f6d138924bcd27",
           "20aad85c9812c6e3b7bc3633fc72b1c9"
+        ]
+      },
+      {
+        "name": "[5KEYS AERY] 段位認定 OVERJOY / ver.24",
+        "constraint": ["grade_mirror", "gauge_lr2", "ln"],
+        "trophy": [
+          {
+            "name": "bronzemedal",
+            "missrate": 7.5,
+            "scorerate": 0.0
+          },
+          {
+            "name": "silvermedal",
+            "missrate": 5.0,
+            "scorerate": 70.0
+          },
+          {
+            "name": "goldmedal",
+            "missrate": 2.5,
+            "scorerate": 85.0
+          }
+        ],
+        "md5": [
+          "fc24589ee1d0b183e1505fc3118ad482",
+          "753069bd564a0c9d671642bd6902c17a",
+          "94f9b80ee6758dd3091557cd7e2d1746",
+          "4dc9f4fc359de07faf5e6f1b0e5c68f4"
         ]
       }
     ]
