@@ -20065,22 +20065,6 @@
     "adddate": "2024-01-12"
   },
   {
-    "md5": "bb5becf3cb847d989ec7a7551f4c492f",
-    "org_level": -1,
-    "title": "Aery Surviving Magic [5KEYS AERY TEST]",
-    "artist": "Speed Magician obj:Rv with Aery Makers",
-    "folder": "LEVEL DUMMY",
-    "level": "LEVEL DUMMY",
-    "lr2_bmsid": null,
-    "url": "",
-    "url_diff": "",
-    "name_diff": null,
-    "org_md5s": ["bb5becf3cb847d989ec7a7551f4c492f"],
-    "org_md5": "bb5becf3cb847d989ec7a7551f4c492f",
-    "comment": "",
-    "adddate": "2024-01-12"
-  },
-  {
     "md5": "9e3bd74b200644c5472f34b520bb10d1",
     "org_level": 15,
     "title": "cross † dagger -5 L A s E R Y-",
@@ -22120,11 +22104,11 @@
   },
   {
     "md5": "52799240c5ccc3cde3834361c71f797f",
-    "org_level": 15,
+    "org_level": 16,
     "title": "* Crow Solace * [5KEYS AERY NM+]",
     "artist": "m108 BGA : 砂糖天?羅 / シキイ?ル /obj.D",
-    "folder": "LEVEL 15",
-    "level": "LEVEL 15",
+    "folder": "LEVEL 16",
+    "level": "LEVEL 16",
     "lr2_bmsid": null,
     "url": "",
     "url_diff": "",
@@ -22324,7 +22308,7 @@
     "adddate": "2024-05-04"
   },
   {
-    "md5": "0f16c21a05b653d85c3ed5459ae6c3bc",
+    "md5": "d3cfead9a8e36c2fb243305c7df630ab",
     "org_level": 16,
     "title": "Maximum Risk [5KEYS AERY X U_E]",
     "artist": "genesik obj: sadboy / reobj.COOKI",
@@ -22334,8 +22318,8 @@
     "url": "",
     "url_diff": "",
     "name_diff": null,
-    "org_md5s": ["0f16c21a05b653d85c3ed5459ae6c3bc"],
-    "org_md5": "0f16c21a05b653d85c3ed5459ae6c3bc",
+    "org_md5s": ["d3cfead9a8e36c2fb243305c7df630ab"],
+    "org_md5": "d3cfead9a8e36c2fb243305c7df630ab",
     "comment": "",
     "adddate": "2024-05-04"
   },
@@ -22737,11 +22721,11 @@
   },
   {
     "md5": "f30c06521089fcf96b07e8ac6d22786a",
-    "org_level": 18,
+    "org_level": 19,
     "title": "エヴァネセント [5KEYS AERY EX]",
     "artist": "stuv + qfeileadh bms:stuv | mov:kazari | obj:3cchobo",
-    "folder": "LEVEL 18",
-    "level": "LEVEL 18",
+    "folder": "LEVEL 19",
+    "level": "LEVEL 19",
     "lr2_bmsid": null,
     "url": "",
     "url_diff": "",
@@ -22807,7 +22791,7 @@
     "adddate": "2024-05-04"
   },
   {
-    "md5": "9ca89278ecf2013d8530715fe12f8901",
+    "md5": "7da4ded2de23fa877a60075bf1fba031",
     "org_level": 19,
     "title": "Gingeeer Aaale ! [5KEYS AERY X U_E]",
     "artist": "0-n obj:James Eugene Raynor / reobj.COOKI",
@@ -22817,8 +22801,8 @@
     "url": "",
     "url_diff": "",
     "name_diff": null,
-    "org_md5s": ["9ca89278ecf2013d8530715fe12f8901"],
-    "org_md5": "9ca89278ecf2013d8530715fe12f8901",
+    "org_md5s": ["7da4ded2de23fa877a60075bf1fba031"],
+    "org_md5": "7da4ded2de23fa877a60075bf1fba031",
     "comment": "",
     "adddate": "2024-05-04"
   },
@@ -22939,5 +22923,37 @@
     "org_md5": "c05879f56a7c74515675f3880dc8bd93",
     "comment": "",
     "adddate": "2024-05-04"
+  },
+  {
+    "md5": "2b541cd7ea04ddf9ac4a91f08cf4b3fc",
+    "org_level": 10,
+    "title": "Dove [5KEYS AERY RV]",
+    "artist": "Sound piercer & Puru feat.Emma J. obj:Rv In Peace",
+    "folder": "LEVEL 10",
+    "level": "LEVEL 10",
+    "lr2_bmsid": null,
+    "url": "",
+    "url_diff": "",
+    "name_diff": null,
+    "org_md5s": ["2b541cd7ea04ddf9ac4a91f08cf4b3fc"],
+    "org_md5": "2b541cd7ea04ddf9ac4a91f08cf4b3fc",
+    "comment": "",
+    "adddate": "2024-05-05"
+  },
+  {
+    "md5": "df6a59b4fa44d5e83ec3b1959b0d7b46",
+    "org_level": -1,
+    "title": "Aery Surviving Magic [5KEYS AERY TEST v1.1]",
+    "artist": "Speed Magician obj:Rv with Aery Makers",
+    "folder": "LEVEL DUMMY",
+    "level": "LEVEL DUMMY",
+    "lr2_bmsid": null,
+    "url": "",
+    "url_diff": "",
+    "name_diff": null,
+    "org_md5s": ["df6a59b4fa44d5e83ec3b1959b0d7b46"],
+    "org_md5": "df6a59b4fa44d5e83ec3b1959b0d7b46",
+    "comment": "",
+    "adddate": "2024-05-05"
   }
 ]
