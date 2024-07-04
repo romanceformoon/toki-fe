@@ -22,17 +22,18 @@ export const loadTableData = async () => {
     "LEVEL 18": [],
     "LEVEL 19": [],
     "LEVEL 20": [],
+    "LEVEL 20+": [],
     "LEVEL DUMMY": [],
     "OLD CHARTS": [],
   };
 
   for (let i = 0; i < tableData.length; i++) {
-    const level = tableData[i].level;
+    const level: AeryLevel = tableData[i].level as AeryLevel;
     const title = tableData[i].title;
     const artist = tableData[i].artist;
     const md5 = tableData[i].md5;
     const org_level = tableData[i].org_level;
-    const folder = tableData[i].folder;
+    const folder: AeryLevel = tableData[i].folder as AeryLevel;
     const url = tableData[i].url;
     const url_diff = tableData[i].url_diff;
     const org_md5s = tableData[i].org_md5s;
@@ -56,8 +57,8 @@ export const loadTableData = async () => {
     });
   }
 
-  for (const folder of Object.keys(levelList)) {
-    levelList[folder].sort((a, b) => {
+  for (const folder of Object.keys(levelList) as Array<AeryLevel>) {
+    levelList[folder].sort((a: ISongData, b: ISongData) => {
       return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
     });
   }

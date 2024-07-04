@@ -18,11 +18,38 @@ import { SelectLevel } from "~/components/SelectLevel";
 import { loadTableData } from "~/utils/loadTableData";
 
 const DifficultyTable = () => {
-  const [tableData, setTableData] = useState<ILevelList>({});
-  const [selectedLevel, setSelectedLevel] = useState<string>("모두 보기");
+  const [tableData, setTableData] = useState<ILevelList>({
+    "LEVEL 1": [],
+    "LEVEL 2": [],
+    "LEVEL 3": [],
+    "LEVEL 4": [],
+    "LEVEL 5": [],
+    "LEVEL 6": [],
+    "LEVEL 7": [],
+    "LEVEL 8": [],
+    "LEVEL 9": [],
+    "LEVEL 10": [],
+    "LEVEL 11": [],
+    "LEVEL 12": [],
+    "LEVEL 13": [],
+    "LEVEL 14": [],
+    "LEVEL 15": [],
+    "LEVEL 16": [],
+    "LEVEL 17": [],
+    "LEVEL 18": [],
+    "LEVEL 19": [],
+    "LEVEL 20": [],
+    "LEVEL 20+": [],
+    "LEVEL DUMMY": [],
+    "OLD CHARTS": [],
+  });
+
+  const [selectedLevel, setSelectedLevel] = useState<"모두 보기" | AeryLevel>(
+    "모두 보기"
+  );
 
   const handleChange = (event: SelectChangeEvent) => {
-    setSelectedLevel(event.target.value as string);
+    setSelectedLevel(event.target.value as "모두 보기" | AeryLevel);
   };
 
   useEffect(() => {
@@ -151,7 +178,7 @@ const DifficultyTable = () => {
                       </>
                     );
                   })
-              : tableData[selectedLevel]?.map((song) => {
+              : tableData[selectedLevel]?.map((song: ISongData) => {
                   return (
                     <>
                       <TableRow>
