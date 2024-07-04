@@ -30,6 +30,7 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       "⑤ 18",
       "⑤ 19",
       "⑤ 20",
+      "⑤ 20+",
     ];
   } else if (category === "insane") {
     yLabels = [
