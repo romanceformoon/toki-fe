@@ -27371,9 +27371,9 @@
 		"adddate": "2024-12-11"
 	},
 	{
-		"md5": "f452abf8feae27dd807cc0c6d4e5d679",
+		"md5": "65b23eeff1f6f19684acef72d9b3c057",
 		"org_level": 12,
-		"title": "Dandelion Sparkle!! [NEWBGA]",
+		"title": "Dandelion Sparkle!! [5KEYS AERY NM]",
 		"artist": "p_d Artwork : \u3075\u308a\u3063\u3068\u2605, obj.shLEE",
 		"folder": "LEVEL 12",
 		"level": "LEVEL 12",
@@ -27748,7 +27748,7 @@
 		"adddate": "2024-12-11"
 	},
 	{
-		"md5": "f9f0f25fa280ed05982b90252bda979b",
+		"md5": "d3c057e98cec46a8bc950a8634aaace1",
 		"org_level": 14,
 		"title": "LaT [5KEYS AERY NM]",
 		"artist": "suna obj.shLEE",
@@ -28059,7 +28059,7 @@
 		"adddate": "2024-12-11"
 	},
 	{
-		"md5": "58f91cab7ec858973c18900fa260ff51",
+		"md5": "f59d894bed00f73592655d5c6a73a0b1",
 		"org_level": 16,
 		"title": "FIRST PROMIZE [5K AERY Delight]",
 		"artist": "\u3042\u3068\u3045\u3059 feat.\u3064\u3086\u308a\u82b1\u9234 BGI : \u308a\u30fc\u3075\u3071\u3044\u30b6\u30a6\u30eb\u30b9 / obj : PRTZ12",
@@ -28070,9 +28070,9 @@
 		"url_diff": "",
 		"name_diff": null,
 		"org_md5s": [
-			"58f91cab7ec858973c18900fa260ff51"
+			"f59d894bed00f73592655d5c6a73a0b1"
 		],
-		"org_md5": "58f91cab7ec858973c18900fa260ff51",
+		"org_md5": "f59d894bed00f73592655d5c6a73a0b1",
 		"comment": "",
 		"adddate": "2024-12-11"
 	},
@@ -28522,7 +28522,7 @@
 		"adddate": "2024-12-11"
 	},
 	{
-		"md5": "48f17764e89bfcf972230dfdff229fd6",
+		"md5": "520466b8d7722a9bd9f1ea0f10a61b0f",
 		"org_level": 17,
 		"title": "\u03a7\u03b1\u03c1\u03c9\u03bd [5K AERY Pluto]",
 		"artist": "Daily\u5929\u5229 vs Reku Mochizuki obj : PRTZ12",
@@ -28533,9 +28533,9 @@
 		"url_diff": "",
 		"name_diff": null,
 		"org_md5s": [
-			"48f17764e89bfcf972230dfdff229fd6"
+			"520466b8d7722a9bd9f1ea0f10a61b0f"
 		],
-		"org_md5": "48f17764e89bfcf972230dfdff229fd6",
+		"org_md5": "520466b8d7722a9bd9f1ea0f10a61b0f",
 		"comment": "",
 		"adddate": "2024-12-11"
 	},
@@ -29006,5 +29006,23 @@
 		"org_md5": "5fc64e070f3ff960eecbb5abf13c1f4b",
 		"comment": "",
 		"adddate": "2024-12-11"
+	},
+	{
+		"md5": "58501beab4fc183f44a2955428c89f5b",
+		"org_level": 15,
+		"title": "Wit's biz [5K AERY Shuffle]",
+		"artist": "Sobrem mov : Espitz / obj : PRTZ12",
+		"folder": "LEVEL 15",
+		"level": "LEVEL 15",
+		"lr2_bmsid": null,
+		"url": "",
+		"url_diff": "",
+		"name_diff": null,
+		"org_md5s": [
+			"58501beab4fc183f44a2955428c89f5b"
+		],
+		"org_md5": "58501beab4fc183f44a2955428c89f5b",
+		"comment": "",
+		"adddate": "2024-12-15"
 	}
 ]
