@@ -1,18 +1,21 @@
-import { ReactNode, useMemo } from "react";
+import { ReactNode, useMemo, useState } from "react";
+import useCheckUser from "~/auth/query/useCheckUser";
 import useSilentRefresh from "~/auth/query/useSilentRefresh";
 import { CurrentUserContext } from "~/context";
 
 interface IAppWrapperProps {
   children: ReactNode;
-  user: IUser;
 }
 
-const AppWrapper = ({ user, children }: IAppWrapperProps) => {
-  useSilentRefresh();
+const AppWrapper = ({ children }: IAppWrapperProps) => {
+  const [isRefreshed, setIsRefreshed] = useState<boolean>(false);
+
+  useSilentRefresh({ setIsRefreshed });
+  const { data: userData } = useCheckUser({ isRefreshed, setIsRefreshed });
 
   const currentUser = useMemo(() => {
-    return user;
-  }, [user]);
+    return userData && userData.data ? userData.data.user : null;
+  }, [userData]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

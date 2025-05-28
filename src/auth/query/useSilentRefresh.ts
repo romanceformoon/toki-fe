@@ -3,11 +3,15 @@ import { useQuery } from "react-query";
 import authToken from "~/auth";
 import axiosInstance from "~/utils/axiosInstance";
 
-const refresh = async () => {
-  return await axiosInstance.get("/toki-api/auth/user/refresh");
+const refresh = () => {
+  return axiosInstance.get("/toki-api/auth/user/refresh");
 };
 
-const useSilentRefresh = () => {
+const useSilentRefresh = ({
+  setIsRefreshed,
+}: {
+  setIsRefreshed: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [refreshStop, setRefreshStop] = useState(false);
 
   useQuery(["silentRefresh"], refresh, {
@@ -15,16 +19,18 @@ const useSilentRefresh = () => {
     refetchOnMount: false,
     refetchOnReconnect: false,
     retry: 0,
-    refetchInterval: refreshStop ? false : 58 * 60 * 1000, // 1시간 인 상황
+    refetchInterval: refreshStop ? false : 58 * 60 * 1000,
     refetchIntervalInBackground: true,
-    onError: async () => {
+    onError: () => {
       setRefreshStop(true);
       authToken.setToken("");
     },
     onSuccess: (data) => {
-      console.log("refresh check");
       const token = data?.data?.accessToken;
       if (token) authToken.setToken(token);
+    },
+    onSettled: () => {
+      setIsRefreshed(true);
     },
   });
 

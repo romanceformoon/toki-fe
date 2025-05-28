@@ -1,6 +1,5 @@
 import { Box, CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import axios from "axios";
 import type { AppContext, AppProps } from "next/app";
 import App from "next/app";
 import localFont from "next/font/local";
@@ -66,7 +65,7 @@ function MyApp({
           <meta name="robots" content="index, follow" />
         </Head>
         <CssBaseline />
-        <AppWrapper user={pageProps.user}>
+        <AppWrapper>
           <Header
             mode={mode}
             setMode={() => {
@@ -87,8 +86,6 @@ function MyApp({
 }
 
 MyApp.getInitialProps = async (context: AppContext) => {
-  const isDevelopmentEnv = process.env.NODE_ENV === "development";
-
   let pageProps = {};
   pageProps = await App.getInitialProps(context);
 
@@ -102,55 +99,6 @@ MyApp.getInitialProps = async (context: AppContext) => {
       mr: { xs: "8vw", md: "15vw" },
       mb: "5.5vh",
     };
-  }
-
-  if (context.ctx.req) {
-    try {
-      const requestURI = isDevelopmentEnv
-        ? process.env.NEXT_PUBLIC_DEV
-        : process.env.NEXT_PUBLIC_PROD;
-
-      const result = await axios.get(
-        `${requestURI}/toki-api/auth/user/refresh`,
-        {
-          headers: context.ctx.req.headers.cookie
-            ? { cookie: context.ctx.req.headers.cookie }
-            : undefined,
-          withCredentials: true,
-        }
-      );
-
-      const accessToken = result.data?.accessToken;
-
-      if (accessToken) {
-        try {
-          const result = await axios.get(
-            `${requestURI}/toki-api/auth/user/check-user`,
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          );
-
-          console.log(result.data.user);
-
-          return {
-            pageProps: {
-              layout,
-              ...pageProps,
-              user: {
-                ...result.data.user,
-              },
-            },
-          };
-        } catch (error) {
-          console.error("Error on checkUser");
-        }
-      }
-    } catch (err) {
-      console.error("No Access Token");
-    }
   }
 
   return {
