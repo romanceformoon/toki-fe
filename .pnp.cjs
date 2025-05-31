@@ -34,15 +34,18 @@ const RAW_RUNTIME_STATE =
           ["@mui/system", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/utils", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/x-charts", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.18.1"],\
+          ["@types/crypto-js", "npm:4.2.2"],\
           ["@types/eslint-plugin-jsx-a11y", "npm:6.10.0"],\
           ["@types/node", "npm:20.9.0"],\
           ["@types/prop-types", "npm:15.7.10"],\
           ["@types/react", "npm:18.2.37"],\
           ["@types/react-dom", "npm:18.2.15"],\
+          ["@types/text-encoding", "npm:0.0.40"],\
           ["@typescript-eslint/eslint-plugin", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:8.33.0"],\
           ["@typescript-eslint/parser", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:8.33.0"],\
           ["axios", "npm:1.6.1"],\
           ["chardet", "npm:2.0.0"],\
+          ["crypto-js", "npm:4.2.0"],\
           ["data-structure", "npm:1.2.0"],\
           ["eslint", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:9.28.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:15.3.3"],\
@@ -60,7 +63,9 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:18.2.0"],\
           ["react-query", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:3.39.3"],\
-          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+          ["text-encoding", "npm:0.7.0"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["zustand", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.0.5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1416,6 +1421,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/crypto-js", [\
+      ["npm:4.2.2", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-crypto-js-npm-4.2.2-21357d525e-10c0.zip/node_modules/@types/crypto-js/",\
+        "packageDependencies": [\
+          ["@types/crypto-js", "npm:4.2.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/eslint", [\
       ["npm:9.6.1", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-eslint-npm-9.6.1-31a8cf74e4-10c0.zip/node_modules/@types/eslint/",\
@@ -1529,6 +1543,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-scheduler-npm-0.16.6-73b5b0836b-10c0.zip/node_modules/@types/scheduler/",\
         "packageDependencies": [\
           ["@types/scheduler", "npm:0.16.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/text-encoding", [\
+      ["npm:0.0.40", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/@types-text-encoding-npm-0.0.40-bdc93ec809-10c0.zip/node_modules/@types/text-encoding/",\
+        "packageDependencies": [\
+          ["@types/text-encoding", "npm:0.0.40"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2358,6 +2381,15 @@ const RAW_RUNTIME_STATE =
           ["path-key", "npm:3.1.1"],\
           ["shebang-command", "npm:2.0.0"],\
           ["which", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["crypto-js", [\
+      ["npm:4.2.0", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/crypto-js-npm-4.2.0-d6f7744e63-10c0.zip/node_modules/crypto-js/",\
+        "packageDependencies": [\
+          ["crypto-js", "npm:4.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5954,6 +5986,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["text-encoding", [\
+      ["npm:0.7.0", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/text-encoding-npm-0.7.0-ff0c4af052-10c0.zip/node_modules/text-encoding/",\
+        "packageDependencies": [\
+          ["text-encoding", "npm:0.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["to-fast-properties", [\
       ["npm:2.0.0", {\
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/to-fast-properties-npm-2.0.0-0dc60cc481-10c0.zip/node_modules/to-fast-properties/",\
@@ -5986,15 +6027,18 @@ const RAW_RUNTIME_STATE =
           ["@mui/system", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/utils", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.14.17"],\
           ["@mui/x-charts", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:6.18.1"],\
+          ["@types/crypto-js", "npm:4.2.2"],\
           ["@types/eslint-plugin-jsx-a11y", "npm:6.10.0"],\
           ["@types/node", "npm:20.9.0"],\
           ["@types/prop-types", "npm:15.7.10"],\
           ["@types/react", "npm:18.2.37"],\
           ["@types/react-dom", "npm:18.2.15"],\
+          ["@types/text-encoding", "npm:0.0.40"],\
           ["@typescript-eslint/eslint-plugin", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:8.33.0"],\
           ["@typescript-eslint/parser", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:8.33.0"],\
           ["axios", "npm:1.6.1"],\
           ["chardet", "npm:2.0.0"],\
+          ["crypto-js", "npm:4.2.0"],\
           ["data-structure", "npm:1.2.0"],\
           ["eslint", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:9.28.0"],\
           ["eslint-config-next", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:15.3.3"],\
@@ -6012,7 +6056,9 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:18.2.0"],\
           ["react-query", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:3.39.3"],\
-          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+          ["text-encoding", "npm:0.7.0"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["zustand", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.0.5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -6367,6 +6413,36 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/yocto-queue-npm-0.1.0-c6c9a7db29-10c0.zip/node_modules/yocto-queue/",\
         "packageDependencies": [\
           ["yocto-queue", "npm:0.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zustand", [\
+      ["npm:5.0.5", {\
+        "packageLocation": "../../../../C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/zustand-npm-5.0.5-d08c9c8d7f-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "npm:5.0.5"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.0.5", {\
+        "packageLocation": "./.yarn/__virtual__/zustand-virtual-283595b39d/5/C:/Users/lmwlj/AppData/Local/Yarn/Berry/cache/zustand-npm-5.0.5-d08c9c8d7f-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "virtual:8f4f7fce974bcc43dac5da4425f9855ec5b1d5746fbe889b5053239094866ef42c67f879283c3a2036a303a1477142ed864fd3108667cdddd7d939b13102da2c#npm:5.0.5"],\
+          ["@types/immer", null],\
+          ["@types/react", "npm:18.2.37"],\
+          ["@types/use-sync-external-store", null],\
+          ["immer", null],\
+          ["react", "npm:18.2.0"],\
+          ["use-sync-external-store", null]\
+        ],\
+        "packagePeers": [\
+          "@types/immer",\
+          "@types/react",\
+          "@types/use-sync-external-store",\
+          "immer",\
+          "react",\
+          "use-sync-external-store"\
         ],\
         "linkType": "HARD"\
       }]\
