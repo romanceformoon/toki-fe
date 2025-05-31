@@ -1,4 +1,4 @@
-import LinkIcon from '@mui/icons-material/Link'
+import LinkIcon from '@mui/icons-material/Link';
 import {
   IconButton,
   Paper,
@@ -9,43 +9,43 @@ import {
   TableHead,
   TableRow,
   Typography
-} from '@mui/material'
-import Link from 'next/link'
-import { useCallback, useEffect, useState } from 'react'
+} from '@mui/material';
+import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
 
 const colorPick = (clear: string) => {
   switch (clear) {
     case 'FULL COMBO':
-      return '#fde1f5d8'
+      return '#fde1f5d8';
     case 'HARD CLEAR':
-      return '#dd395ada'
+      return '#dd395ada';
     case 'GROOVE CLEAR':
-      return '#5e99ff'
+      return '#5e99ff';
     case 'EASY CLEAR':
-      return '#79e158'
+      return '#79e158';
     case 'FAILED':
-      return '#3333337a'
+      return '#3333337a';
     case 'NO PLAY':
-      return '#00000000'
+      return '#00000000';
   }
-}
+};
 
 interface IHistoryProps {
-  historyData: IHistory
-  category: string
+  historyData: IHistory;
+  category: string;
 }
 
 export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
-  const [songList, setSongList] = useState<IHistorySelectedLevel[]>([])
+  const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const descExp = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.exp > b.exp ? -1 : 1
-      })
-      return [...newArray]
-    })
-  }, [])
+        return a.exp > b.exp ? -1 : 1;
+      });
+      return [...newArray];
+    });
+  }, []);
 
   useEffect(() => {
     if (category === 'aery')
@@ -70,7 +70,7 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
         ...historyData['LEVEL 18'],
         ...historyData['LEVEL 19'],
         ...historyData['LEVEL 20']
-      ])
+      ]);
     else if (category === 'insane')
       setSongList([
         ...historyData['LEVEL 1'],
@@ -98,7 +98,7 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
         ...historyData['LEVEL 23'],
         ...historyData['LEVEL 24'],
         ...historyData['LEVEL 25']
-      ])
+      ]);
     else if (category === 'sl' || category === 'st')
       setSongList([
         ...historyData['LEVEL 0'],
@@ -114,12 +114,12 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
         ...historyData['LEVEL 10'],
         ...historyData['LEVEL 11'],
         ...historyData['LEVEL 12']
-      ])
-    descExp()
-  }, [descExp, historyData, category])
+      ]);
+    descExp();
+  }, [descExp, historyData, category]);
 
-  if (!historyData) return <></>
-  if (!songList) return <></>
+  if (!historyData) return <></>;
+  if (!songList) return <></>;
 
   return (
     <>
@@ -238,11 +238,11 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
                     </TableCell>
                   </TableRow>
                 </>
-              )
+              );
             })}
           </TableBody>
         </Table>
       </TableContainer>
     </>
-  )
-}
+  );
+};

@@ -1,8 +1,8 @@
-import { Avatar, Button, Typography } from '@mui/material'
-import { useRouter } from 'next/router'
+import { Avatar, Button, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 
 export const Logo = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Button
@@ -11,7 +11,7 @@ export const Logo = () => {
         display: { xs: 'none', md: 'flex' }
       }}
       onClick={() => {
-        router.push('/')
+        router.push('/');
       }}
     >
       <Avatar
@@ -42,5 +42,5 @@ export const Logo = () => {
         TOKI
       </Typography>
     </Button>
-  )
-}
+  );
+};

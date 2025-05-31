@@ -1,8 +1,8 @@
-import { Typography } from '@mui/material'
+import { Typography } from '@mui/material';
 
 export const RatingText = ({ rating }: { rating: string }) => {
-  const main = rating.split('.')[0]
-  const sub = rating.split('.')[1]
+  const main = rating.split('.')[0];
+  const sub = rating.split('.')[1];
 
   return (
     <>
@@ -13,5 +13,5 @@ export const RatingText = ({ rating }: { rating: string }) => {
         .{sub}
       </Typography>
     </>
-  )
-}
+  );
+};

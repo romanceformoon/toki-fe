@@ -1,53 +1,53 @@
-import AddIcon from '@mui/icons-material/Add'
-import { Box, Button, Typography } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add';
+import { Box, Button, Typography } from '@mui/material';
 // import chardet from "chardet";
-import iconv from 'iconv-lite'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { Seo } from '~/components/Seo'
-import bmsjs from '~/utils/bmsjs'
-import BMSChart from '~/utils/bmsjs/bms/chart'
-import { renderBms } from '~/utils/bmsjs/render'
+import iconv from 'iconv-lite';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { Seo } from '~/components/Seo';
+import bmsjs from '~/utils/bmsjs';
+import BMSChart from '~/utils/bmsjs/bms/chart';
+import { renderBms } from '~/utils/bmsjs/render';
 
 const isValidLine = (input: string) => {
-  const regex = /^(?!.*(.).*\1)[1-7]{7}$/
+  const regex = /^(?!.*(.).*\1)[1-7]{7}$/;
 
-  return regex.test(input)
-}
+  return regex.test(input);
+};
 
 const Viewer = () => {
-  const [line, setLine] = useState<string>('1234567')
-  const [SC2P, setSC2P] = useState<boolean>(false)
+  const [line, setLine] = useState<string>('1234567');
+  const [SC2P, setSC2P] = useState<boolean>(false);
 
-  const [chartState, setChartState] = useState<BMSChart>()
+  const [chartState, setChartState] = useState<BMSChart>();
 
   const onChangeFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (e.target.files) {
-      const bmsFile = e.target.files[0]
+      const bmsFile = e.target.files[0];
 
-      const bmsArrayBuffer = await bmsFile.arrayBuffer()
+      const bmsArrayBuffer = await bmsFile.arrayBuffer();
 
-      const bmsUintArray = new Uint8Array(bmsArrayBuffer)
+      const bmsUintArray = new Uint8Array(bmsArrayBuffer);
 
-      const bmsBuffer = Buffer.from(bmsUintArray)
+      const bmsBuffer = Buffer.from(bmsUintArray);
 
       // const encoding = chardet.detect(bmsBuffer);
       // if (!encoding) return;
 
-      const bmsContent = iconv.decode(bmsBuffer, 'SHIFT-JIS')
+      const bmsContent = iconv.decode(bmsBuffer, 'SHIFT-JIS');
 
-      const chart = bmsjs.Compiler.compile(bmsContent)
-      setChartState(chart.chart)
+      const chart = bmsjs.Compiler.compile(bmsContent);
+      setChartState(chart.chart);
     }
-  }
+  };
 
   useEffect(() => {
-    if (!chartState || !line || !isValidLine(line)) return
+    if (!chartState || !line || !isValidLine(line)) return;
 
-    renderBms(chartState, line, SC2P)
-  }, [line, chartState, SC2P])
+    renderBms(chartState, line, SC2P);
+  }, [line, chartState, SC2P]);
 
   return (
     <>
@@ -150,7 +150,7 @@ const Viewer = () => {
             onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
               // number 타입에서 7글자 제한
               if (e.target.value.length > e.target.maxLength)
-                e.target.value = e.target.value.slice(0, e.target.maxLength)
+                e.target.value = e.target.value.slice(0, e.target.maxLength);
             }}
           />
         </Box>
@@ -173,13 +173,13 @@ const Viewer = () => {
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default Viewer
+export default Viewer;

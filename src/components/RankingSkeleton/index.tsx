@@ -9,7 +9,7 @@ import {
   TableHead,
   TableRow,
   Typography
-} from '@mui/material'
+} from '@mui/material';
 
 export const RankingSkeleton = () => {
   return (
@@ -91,11 +91,11 @@ export const RankingSkeleton = () => {
                     <TableCell></TableCell>
                   </TableRow>
                 </>
-              )
+              );
             })}
           </TableBody>
         </Table>
       </TableContainer>
     </>
-  )
-}
+  );
+};

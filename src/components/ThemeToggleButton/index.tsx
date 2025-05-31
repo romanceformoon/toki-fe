@@ -1,10 +1,10 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import { PaletteMode, ToggleButton, Tooltip } from '@mui/material'
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { PaletteMode, ToggleButton, Tooltip } from '@mui/material';
 
 interface IToggleProps {
-  mode: PaletteMode
-  setMode: () => void
+  mode: PaletteMode;
+  setMode: () => void;
 }
 
 export const ThemeToggleButton = ({ mode, setMode }: IToggleProps) => {
@@ -24,5 +24,5 @@ export const ThemeToggleButton = ({ mode, setMode }: IToggleProps) => {
         </>
       )}
     </ToggleButton>
-  )
-}
+  );
+};

@@ -1,23 +1,23 @@
-import axios from 'axios'
-import { useEffect } from 'react'
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Login = () => {
   useEffect(() => {
     const discordAuth = async () => {
       try {
-        const code = new URL(window.location.href).searchParams.get('code')
+        const code = new URL(window.location.href).searchParams.get('code');
 
-        const response = await axios.get(`/toki-api/auth/discord/login/${code}`)
+        const response = await axios.get(`/toki-api/auth/discord/login/${code}`);
 
         if (response.data.accessToken) {
-          window.location.replace(window.location.origin)
+          window.location.replace(window.location.origin);
         }
       } catch (err) {}
-    }
-    discordAuth()
-  }, [])
+    };
+    discordAuth();
+  }, []);
 
-  return <></>
-}
+  return <></>;
+};
 
-export default Login
+export default Login;

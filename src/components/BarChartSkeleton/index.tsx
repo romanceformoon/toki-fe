@@ -1,4 +1,4 @@
-import { BarChart } from '@mui/x-charts'
+import { BarChart } from '@mui/x-charts';
 
 export const BarChartSkeleton = () => {
   return (
@@ -79,5 +79,5 @@ export const BarChartSkeleton = () => {
       ]}
       bottomAxis={null}
     ></BarChart>
-  )
-}
+  );
+};

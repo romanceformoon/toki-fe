@@ -1,5 +1,5 @@
-import ImportExportIcon from '@mui/icons-material/ImportExport'
-import LinkIcon from '@mui/icons-material/Link'
+import ImportExportIcon from '@mui/icons-material/ImportExport';
+import LinkIcon from '@mui/icons-material/Link';
 import {
   IconButton,
   Paper,
@@ -11,38 +11,38 @@ import {
   TableHead,
   TableRow,
   Typography
-} from '@mui/material'
-import Link from 'next/link'
-import { useCallback, useEffect, useState } from 'react'
-import { convertClearToNumber } from '~/utils/convertClearToNumber'
-import { ClickableText } from '../ClickableText'
-import { SelectLevel } from '../SelectLevel'
+} from '@mui/material';
+import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
+import { convertClearToNumber } from '~/utils/convertClearToNumber';
+import { ClickableText } from '../ClickableText';
+import { SelectLevel } from '../SelectLevel';
 
 const colorPick = (clear: string) => {
   switch (clear) {
     case 'FULL COMBO':
-      return '#fde1f5d8'
+      return '#fde1f5d8';
     case 'HARD CLEAR':
-      return '#dd395ada'
+      return '#dd395ada';
     case 'GROOVE CLEAR':
-      return '#5e99ff'
+      return '#5e99ff';
     case 'EASY CLEAR':
-      return '#79e158'
+      return '#79e158';
     case 'FAILED':
-      return '#3333337a'
+      return '#3333337a';
     case 'NO PLAY':
-      return '#00000000'
+      return '#00000000';
   }
-}
+};
 
 interface IHistoryProps {
-  selectedLevel: string
-  handleLevelChange: (event: SelectChangeEvent) => void
-  historyData: IHistory
+  selectedLevel: string;
+  handleLevelChange: (event: SelectChangeEvent) => void;
+  historyData: IHistory;
 }
 
 export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: IHistoryProps) => {
-  const [songList, setSongList] = useState<IHistorySelectedLevel[]>([])
+  const [songList, setSongList] = useState<IHistorySelectedLevel[]>([]);
 
   const [isDesc, setIsDesc] = useState<IHistorySortedDesc>({
     title: false,
@@ -51,145 +51,145 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
     bp: false,
     rate: false,
     md5: false
-  })
+  });
 
   const ascTitle = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1
-      })
-      return [...newArray]
-    })
+        return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.title = false
-      return { ...prevState }
-    })
-  }, [])
+      prevState.title = false;
+      return { ...prevState };
+    });
+  }, []);
 
   const descTitle = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1
-      })
-      return [...newArray]
-    })
+        return a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.title = true
-      return { ...prevState }
-    })
-  }, [])
+      prevState.title = true;
+      return { ...prevState };
+    });
+  }, []);
 
   const ascClear = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return convertClearToNumber(a.clear) > convertClearToNumber(b.clear) ? 1 : -1
-      })
-      return [...newArray]
-    })
+        return convertClearToNumber(a.clear) > convertClearToNumber(b.clear) ? 1 : -1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.clear = false
-      return { ...prevState }
-    })
-  }, [])
+      prevState.clear = false;
+      return { ...prevState };
+    });
+  }, []);
 
   const descClear = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return convertClearToNumber(a.clear) > convertClearToNumber(b.clear) ? -1 : 1
-      })
-      return [...newArray]
-    })
+        return convertClearToNumber(a.clear) > convertClearToNumber(b.clear) ? -1 : 1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.clear = true
-      return { ...prevState }
-    })
-  }, [])
+      prevState.clear = true;
+      return { ...prevState };
+    });
+  }, []);
 
   const ascBP = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.bp > b.bp ? 1 : -1
-      })
-      return [...newArray]
-    })
+        return a.bp > b.bp ? 1 : -1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.bp = false
-      return { ...prevState }
-    })
-  }, [])
+      prevState.bp = false;
+      return { ...prevState };
+    });
+  }, []);
 
   const descBP = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.bp > b.bp ? -1 : 1
-      })
-      return [...newArray]
-    })
+        return a.bp > b.bp ? -1 : 1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.bp = true
-      return { ...prevState }
-    })
-  }, [])
+      prevState.bp = true;
+      return { ...prevState };
+    });
+  }, []);
 
   const ascRate = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.rate > b.rate ? 1 : -1
-      })
-      return [...newArray]
-    })
+        return a.rate > b.rate ? 1 : -1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.rate = false
-      return { ...prevState }
-    })
-  }, [])
+      prevState.rate = false;
+      return { ...prevState };
+    });
+  }, []);
 
   const descRate = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.rate > b.rate ? -1 : 1
-      })
-      return [...newArray]
-    })
+        return a.rate > b.rate ? -1 : 1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.rate = true
-      return { ...prevState }
-    })
-  }, [])
+      prevState.rate = true;
+      return { ...prevState };
+    });
+  }, []);
 
   const ascExp = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.exp > b.exp ? 1 : -1
-      })
-      return [...newArray]
-    })
+        return a.exp > b.exp ? 1 : -1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.exp = false
-      return { ...prevState }
-    })
-  }, [])
+      prevState.exp = false;
+      return { ...prevState };
+    });
+  }, []);
 
   const descExp = useCallback(() => {
     setSongList((prevState: IHistorySelectedLevel[]) => {
       const newArray = prevState.sort((a: IHistorySelectedLevel, b: IHistorySelectedLevel) => {
-        return a.exp > b.exp ? -1 : 1
-      })
-      return [...newArray]
-    })
+        return a.exp > b.exp ? -1 : 1;
+      });
+      return [...newArray];
+    });
     setIsDesc((prevState: IHistorySortedDesc) => {
-      prevState.exp = true
-      return { ...prevState }
-    })
-  }, [])
+      prevState.exp = true;
+      return { ...prevState };
+    });
+  }, []);
 
   useEffect(() => {
-    setSongList(historyData[selectedLevel])
-    ascTitle()
-  }, [ascTitle, historyData, selectedLevel])
+    setSongList(historyData[selectedLevel]);
+    ascTitle();
+  }, [ascTitle, historyData, selectedLevel]);
 
-  if (!historyData) return <></>
-  if (!songList) return <></>
+  if (!historyData) return <></>;
+  if (!songList) return <></>;
 
   return (
     <>
@@ -222,8 +222,8 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
               <TableCell sx={{ width: '30%' }}>
                 <ClickableText
                   onClick={() => {
-                    if (isDesc.title) ascTitle()
-                    else descTitle()
+                    if (isDesc.title) ascTitle();
+                    else descTitle();
                   }}
                 >
                   <Typography
@@ -239,8 +239,8 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
               <TableCell sx={{ width: '20%' }}>
                 <ClickableText
                   onClick={() => {
-                    if (isDesc.clear) ascClear()
-                    else descClear()
+                    if (isDesc.clear) ascClear();
+                    else descClear();
                   }}
                 >
                   <Typography
@@ -256,8 +256,8 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
               <TableCell sx={{ width: '10%' }}>
                 <ClickableText
                   onClick={() => {
-                    if (isDesc.bp) ascBP()
-                    else descBP()
+                    if (isDesc.bp) ascBP();
+                    else descBP();
                   }}
                 >
                   <Typography
@@ -273,8 +273,8 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
               <TableCell sx={{ width: '10%' }}>
                 <ClickableText
                   onClick={() => {
-                    if (isDesc.rate) ascRate()
-                    else descRate()
+                    if (isDesc.rate) ascRate();
+                    else descRate();
                   }}
                 >
                   <Typography
@@ -290,8 +290,8 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
               <TableCell sx={{ width: '10%' }}>
                 <ClickableText
                   onClick={() => {
-                    if (isDesc.exp) ascExp()
-                    else descExp()
+                    if (isDesc.exp) ascExp();
+                    else descExp();
                   }}
                 >
                   <Typography
@@ -367,11 +367,11 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     </TableCell>
                   </TableRow>
                 </>
-              )
+              );
             })}
           </TableBody>
         </Table>
       </TableContainer>
     </>
-  )
-}
+  );
+};

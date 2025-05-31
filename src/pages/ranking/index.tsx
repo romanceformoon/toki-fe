@@ -1,7 +1,7 @@
-import InfoIcon from '@mui/icons-material/Info'
-import { TabList } from '@mui/lab'
-import TabContext from '@mui/lab/TabContext'
-import TabPanel from '@mui/lab/TabPanel'
+import InfoIcon from '@mui/icons-material/Info';
+import { TabList } from '@mui/lab';
+import TabContext from '@mui/lab/TabContext';
+import TabPanel from '@mui/lab/TabPanel';
 import {
   Avatar,
   Box,
@@ -16,42 +16,43 @@ import {
   Tabs,
   Tooltip,
   Typography
-} from '@mui/material'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { RankingSkeleton } from '~/components/RankingSkeleton'
-import { RatingText } from '~/components/RatingText'
-import { Seo } from '~/components/Seo'
-import { UserNickname } from '~/components/UserNickname'
-import useEXPRankingQuery from '~/query/useEXPRankingQuery'
-import useRatingRankingQuery from '~/query/useRatingRankingQuery'
-import { getLevel } from '~/utils/exp'
-import { getRating } from '~/utils/rating'
+} from '@mui/material';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { RankingSkeleton } from '~/components/RankingSkeleton';
+import { RatingText } from '~/components/RatingText';
+import { Seo } from '~/components/Seo';
+import { UserNickname } from '~/components/UserNickname';
+import useEXPRankingQuery from '~/query/useEXPRankingQuery';
+import useRatingRankingQuery from '~/query/useRatingRankingQuery';
+import { getLevel } from '~/utils/exp';
+import { getRating } from '~/utils/rating';
 
-const Ranking = () => {
-  const router = useRouter()
+const Ranking = ({ tableData }: { tableData: ISongData[] }) => {
+  const router = useRouter();
 
-  const [category, setCategory] = useState<string>('aery')
+  const [category, setCategory] = useState<string>('aery');
   const handleCategoryChange = (event: React.SyntheticEvent, newValue: string) => {
-    setCategory(newValue)
-  }
+    setCategory(newValue);
+  };
 
-  const [tab, setTab] = useState<string>('EXP')
+  const [tab, setTab] = useState<string>('EXP');
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
-    setTab(newValue)
-  }
+    setTab(newValue);
+  };
 
   const {
     data: ranking,
     isLoading: isExpRankingLoading,
     isError: isExpError
-  } = useEXPRankingQuery({ category })
+  } = useEXPRankingQuery({ category });
 
   const {
     data: ratingRanking,
     isLoading: isRatingRankingLoading,
     isError: isRatingError
-  } = useRatingRankingQuery({ category })
+  } = useRatingRankingQuery({ category });
 
   if (
     !ranking ||
@@ -94,7 +95,7 @@ const Ranking = () => {
           </Box>
         </TabContext>
       </>
-    )
+    );
 
   if (ranking || ratingRanking)
     return (
@@ -231,7 +232,7 @@ const Ranking = () => {
                             </TableCell>
                           </TableRow>
                         </>
-                      )
+                      );
                     })}
                   </TableBody>
                 </Table>
@@ -362,12 +363,12 @@ const Ranking = () => {
                                   letterSpacing: '1.2px'
                                 }}
                               >
-                                <RatingText rating={getRating(data.rating, category)} />
+                                <RatingText rating={getRating(data.rating, tableData)} />
                               </Box>
                             </TableCell>
                           </TableRow>
                         </>
-                      )
+                      );
                     })}
                   </TableBody>
                 </Table>
@@ -376,13 +377,23 @@ const Ranking = () => {
           </Box>
         </TabContext>
       </>
-    )
-}
+    );
+};
 
 export async function getServerSideProps() {
+  const isDevelopmentEnv = process.env.NODE_ENV === 'development';
+  const requestURI = isDevelopmentEnv ? process.env.NEXT_PUBLIC_DEV : process.env.NEXT_PUBLIC_PROD;
+
+  const tableDataResponse = await axios.get<ISongData[]>(
+    `${requestURI}/toki-api/table/aery/data.json`
+  );
+  const tableData = tableDataResponse.data;
+
   return {
-    props: {}
-  }
+    props: {
+      tableData
+    }
+  };
 }
 
-export default Ranking
+export default Ranking;

@@ -1,11 +1,11 @@
-import { NextSeo } from 'next-seo'
-import React from 'react'
+import { NextSeo } from 'next-seo';
+import React from 'react';
 
 interface SeoProps {
-  type: 'main' | 'viewer' | 'ranking' | 'user' | 'analyze' | 'grade' | 'skill' | 'table'
-  uid?: string
-  avatar?: string
-  nickname?: string
+  type: 'main' | 'viewer' | 'ranking' | 'user' | 'analyze' | 'grade' | 'skill' | 'table';
+  uid?: string;
+  avatar?: string;
+  nickname?: string;
 }
 
 export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
@@ -30,7 +30,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'analyze') {
@@ -54,7 +54,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'grade') {
@@ -78,7 +78,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'ranking') {
@@ -102,7 +102,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'skill') {
@@ -126,7 +126,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'table') {
@@ -150,7 +150,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'viewer') {
@@ -174,7 +174,7 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
 
   if (type === 'user') {
@@ -199,6 +199,6 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
           ]
         }}
       />
-    )
+    );
   }
-}
+};

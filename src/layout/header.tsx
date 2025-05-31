@@ -1,21 +1,21 @@
-import GitHubIcon from '@mui/icons-material/GitHub'
-import { AppBar, IconButton, PaletteMode, Toolbar, Tooltip } from '@mui/material'
-import Link from 'next/link'
-import { DesktopRoute } from '~/components/DesktopRoute'
-import { LoginButton } from '~/components/LoginButton'
-import { Logo } from '~/components/Logo'
-import { MobileMenu } from '~/components/MobileMenu'
-import { ThemeToggleButton } from '~/components/ThemeToggleButton'
-import { UserMenu } from '~/components/UserMenu'
-import useLoginUser from '~/hooks/useLoginUser'
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { AppBar, IconButton, PaletteMode, Toolbar, Tooltip } from '@mui/material';
+import Link from 'next/link';
+import { DesktopRoute } from '~/components/DesktopRoute';
+import { LoginButton } from '~/components/LoginButton';
+import { Logo } from '~/components/Logo';
+import { MobileMenu } from '~/components/MobileMenu';
+import { ThemeToggleButton } from '~/components/ThemeToggleButton';
+import { UserMenu } from '~/components/UserMenu';
+import useLoginUser from '~/hooks/useLoginUser';
 
 interface IHeaderProps {
-  mode: PaletteMode
-  setMode: () => void
+  mode: PaletteMode;
+  setMode: () => void;
 }
 
 const Header = ({ mode, setMode }: IHeaderProps) => {
-  const { isLogined } = useLoginUser()
+  const { isLogined } = useLoginUser();
 
   return (
     <AppBar position='fixed'>
@@ -36,7 +36,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
         {!isLogined ? <LoginButton /> : <UserMenu />}
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,12 +1,12 @@
-import { Tooltip, Typography } from '@mui/material'
-import { ReactNode } from 'react'
-import { aerySkillSimulators } from '~/const/skillSimulator'
-import { ClickableText } from '../ClickableText'
+import { Tooltip, Typography } from '@mui/material';
+import { ReactNode } from 'react';
+import { aerySkillSimulators } from '~/const/skillSimulator';
+import { ClickableText } from '../ClickableText';
 
 interface IUserNicknameProps {
-  clearDan: IDan
-  children: ReactNode
-  onClick?: () => void
+  clearDan: IDan;
+  children: ReactNode;
+  onClick?: () => void;
 }
 
 export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps) => {
@@ -26,7 +26,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '2 DAN')
     return (
@@ -44,7 +44,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '3 DAN')
     return (
@@ -62,7 +62,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '4 DAN')
     return (
@@ -80,7 +80,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '5 DAN')
     return (
@@ -98,7 +98,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '6 DAN')
     return (
@@ -117,7 +117,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '7 DAN')
     return (
@@ -136,7 +136,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '8 DAN')
     return (
@@ -155,7 +155,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '9 DAN')
     return (
@@ -174,7 +174,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === '10 DAN')
     return (
@@ -193,7 +193,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
 
   if (clearDan === 'KAIDEN DAN') {
     return (
@@ -223,7 +223,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
   }
 
   if (clearDan === 'GORILLA DAN') {
@@ -254,7 +254,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
   }
 
   if (clearDan === 'OVERJOY DAN') {
@@ -285,7 +285,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
           </Typography>
         </Tooltip>
       </ClickableText>
-    )
+    );
   }
 
   return (
@@ -302,5 +302,5 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
         </Typography>
       </Tooltip>
     </ClickableText>
-  )
-}
+  );
+};

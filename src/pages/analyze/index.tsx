@@ -1,109 +1,109 @@
-import PersonIcon from '@mui/icons-material/Person'
-import UploadFileIcon from '@mui/icons-material/UploadFile'
-import { Backdrop, Box, Button, CircularProgress, Typography } from '@mui/material'
-import axios from 'axios'
-import { useRouter } from 'next/router'
-import { useCallback, useRef, useState } from 'react'
-import { Seo } from '~/components/Seo'
-import useLoginUser from '~/hooks/useLoginUser'
-import axiosInstance from '~/utils/axiosInstance'
+import PersonIcon from '@mui/icons-material/Person';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { Backdrop, Box, Button, CircularProgress, Typography } from '@mui/material';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useCallback, useRef, useState } from 'react';
+import { Seo } from '~/components/Seo';
+import useLoginUser from '~/hooks/useLoginUser';
+import axiosInstance from '~/utils/axiosInstance';
 
 const LampGraph = () => {
-  const router = useRouter()
-  const { isLogined, uid } = useLoginUser()
-  const [uploadFile, setUploadFile] = useState<File>()
-  const [isUploading, setIsUploading] = useState<boolean>(false)
-  const [isDragging, setIsDragging] = useState<boolean>(false)
-  const fileInputRef = useRef<HTMLInputElement>(null)
+  const router = useRouter();
+  const { isLogined, uid } = useLoginUser();
+  const [uploadFile, setUploadFile] = useState<File>();
+  const [isUploading, setIsUploading] = useState<boolean>(false);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFile = async (file: File) => {
-    if (file === uploadFile) return
+    if (file === uploadFile) return;
 
-    const maxSize = 1024 ** 2 * 5 // 5MB
+    const maxSize = 1024 ** 2 * 5; // 5MB
 
     if (maxSize < file.size) {
-      alert('해당 파일은 제한된 용량을 초과하였습니다.')
-      return
+      alert('해당 파일은 제한된 용량을 초과하였습니다.');
+      return;
     }
 
     if (!file.name.endsWith('.db')) {
-      alert('.db 확장자 파일만 업로드 가능합니다.')
-      return
+      alert('.db 확장자 파일만 업로드 가능합니다.');
+      return;
     }
 
-    const formData = new FormData()
-    formData.append('db', file)
+    const formData = new FormData();
+    formData.append('db', file);
 
     try {
-      setIsUploading(true)
+      setIsUploading(true);
       const response = await axiosInstance.post(`/toki-api/data/analyze`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
-      })
-      setUploadFile(file)
-      router.push(`/user/${uid}`)
+      });
+      setUploadFile(file);
+      router.push(`/user/${uid}`);
     } catch (err) {
-      alert('서버 에러 발생')
-      setIsUploading(false)
+      alert('서버 에러 발생');
+      setIsUploading(false);
     }
-  }
+  };
 
   const onChangeFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (e.target.files && e.target.files[0]) {
-      await handleFile(e.target.files[0])
+      await handleFile(e.target.files[0]);
     }
-  }
+  };
 
   const handleDragEnter = useCallback(
     (e: React.DragEvent<HTMLDivElement>) => {
-      e.preventDefault()
-      e.stopPropagation()
+      e.preventDefault();
+      e.stopPropagation();
       if (isLogined) {
-        setIsDragging(true)
+        setIsDragging(true);
       }
     },
     [isLogined]
-  )
+  );
 
   const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setIsDragging(false)
-  }, [])
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  }, []);
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
+    e.preventDefault();
+    e.stopPropagation();
     if (e.dataTransfer.files) {
-      e.dataTransfer.dropEffect = 'copy'
+      e.dataTransfer.dropEffect = 'copy';
     }
-  }, [])
+  }, []);
 
   const handleDrop = useCallback(
     async (e: React.DragEvent<HTMLDivElement>) => {
-      e.preventDefault()
-      e.stopPropagation()
-      setIsDragging(false)
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
 
       if (isLogined && e.dataTransfer.files && e.dataTransfer.files[0]) {
-        await handleFile(e.dataTransfer.files[0])
+        await handleFile(e.dataTransfer.files[0]);
       }
     },
     [isLogined]
-  )
+  );
 
   const handleButtonClick = () => {
     if (fileInputRef.current) {
-      fileInputRef.current.click()
+      fileInputRef.current.click();
     }
-  }
+  };
 
   const handleLoginClick = async () => {
-    const response = await axios.get('/toki-api/auth/discord/oauth-url')
-    router.push(response.data.oauth_url)
-  }
+    const response = await axios.get('/toki-api/auth/discord/oauth-url');
+    router.push(response.data.oauth_url);
+  };
 
   return (
     <>
@@ -200,13 +200,13 @@ const LampGraph = () => {
         )}
       </Box>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default LampGraph
+export default LampGraph;

@@ -1,33 +1,33 @@
-import { Download, Pageview } from '@mui/icons-material'
-import BarChartIcon from '@mui/icons-material/BarChart'
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
-import PersonIcon from '@mui/icons-material/Person'
-import { Avatar, Box, Button, Snackbar, Stack, TextField, Typography } from '@mui/material'
-import axios from 'axios'
-import { useRouter } from 'next/router'
-import Aery from 'public/update/aery.json'
-import { useState } from 'react'
-import { Seo } from '~/components/Seo'
-import useLoginUser from '~/hooks/useLoginUser'
-import { openInNewTab } from '~/utils/openInNewTab'
+import { Download, Pageview } from '@mui/icons-material';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import PersonIcon from '@mui/icons-material/Person';
+import { Avatar, Box, Button, Snackbar, Stack, TextField, Typography } from '@mui/material';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import Aery from 'public/update/aery.json';
+import { useState } from 'react';
+import { Seo } from '~/components/Seo';
+import useLoginUser from '~/hooks/useLoginUser';
+import { openInNewTab } from '~/utils/openInNewTab';
 
 const Main = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const { uid, isLogined } = useLoginUser()
+  const { uid, isLogined } = useLoginUser();
 
-  const [logo, setLogo] = useState('logo.png')
+  const [logo, setLogo] = useState('logo.png');
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const handleCopyClipBoard = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(text)
-      setOpen(true)
+      await navigator.clipboard.writeText(text);
+      setOpen(true);
     } catch (e) {
-      alert('복사에 실패하였습니다')
+      alert('복사에 실패하였습니다');
     }
-  }
+  };
 
   return (
     <>
@@ -50,8 +50,8 @@ const Main = () => {
               color: 'white'
             }}
             onClick={() => {
-              if (logo === 'logo.png') setLogo('logo2.png')
-              else setLogo('logo.png')
+              if (logo === 'logo.png') setLogo('logo2.png');
+              else setLogo('logo.png');
             }}
           >
             <Avatar
@@ -91,10 +91,10 @@ const Main = () => {
                 ':hover': { borderColor: '#5783db' }
               }}
               onClick={async () => {
-                if (isLogined) router.push(`/user/${uid}`)
+                if (isLogined) router.push(`/user/${uid}`);
                 else {
-                  const response = await axios.get('/toki-api/auth/discord/oauth-url')
-                  router.push(response.data.oauth_url)
+                  const response = await axios.get('/toki-api/auth/discord/oauth-url');
+                  router.push(response.data.oauth_url);
                 }
               }}
             >
@@ -113,7 +113,7 @@ const Main = () => {
                 ':hover': { borderColor: '#a881af' }
               }}
               onClick={async () => {
-                router.push(`/tools/viewer`)
+                router.push(`/tools/viewer`);
               }}
             >
               <Pageview />
@@ -134,7 +134,7 @@ const Main = () => {
                 ':hover': { borderColor: '#80669d' }
               }}
               onClick={async () => {
-                router.push(`/analyze`)
+                router.push(`/analyze`);
               }}
             >
               <BarChartIcon />
@@ -153,7 +153,7 @@ const Main = () => {
                 ':hover': { borderColor: '#dd7973' }
               }}
               onClick={async () => {
-                router.push(`/ranking`)
+                router.push(`/ranking`);
               }}
             >
               <EmojiEventsIcon />
@@ -174,7 +174,7 @@ const Main = () => {
                 ':hover': { borderColor: '#a13aa5' }
               }}
               onClick={() => {
-                openInNewTab(Aery[0].full_download_url)
+                openInNewTab(Aery[0].full_download_url);
               }}
             >
               <Download />
@@ -199,7 +199,7 @@ const Main = () => {
                 ':hover': { borderColor: '#a13aa5' }
               }}
               onClick={() => {
-                openInNewTab(Aery[0].patch_download_url)
+                openInNewTab(Aery[0].patch_download_url);
               }}
             >
               <Download />
@@ -270,7 +270,7 @@ const Main = () => {
                 width: '23.5rem'
               }}
               onClick={() => {
-                handleCopyClipBoard('https://asumatoki.kr/table/aery/header.json')
+                handleCopyClipBoard('https://asumatoki.kr/table/aery/header.json');
               }}
             />
           </Box>
@@ -301,7 +301,7 @@ const Main = () => {
               borderRadius: 10
             }}
             onClick={async () => {
-              router.push(`https://discord.gg/VhQahFaXHd`)
+              router.push(`https://discord.gg/VhQahFaXHd`);
             }}
           >
             <Avatar
@@ -322,13 +322,13 @@ const Main = () => {
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default Main
+export default Main;

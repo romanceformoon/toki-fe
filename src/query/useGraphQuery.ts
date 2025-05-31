@@ -1,17 +1,15 @@
-import { useQuery } from "react-query";
-import axiosInstance from "~/utils/axiosInstance";
+import { useQuery } from 'react-query';
+import axiosInstance from '~/utils/axiosInstance';
 
 const useGraphQuery = ({
   uid,
-  category,
+  category
 }: {
   uid: string | string[] | undefined;
   category: string;
 }) => {
-  const query = useQuery(["get-graph-info", uid, category], async () => {
-    const response = await axiosInstance.get<IGraph>(
-      `/toki-api/user/graph/${category}/${uid}`
-    );
+  const query = useQuery(['get-graph-info', uid, category], async () => {
+    const response = await axiosInstance.get<IGraph>(`/toki-api/user/graph/${category}/${uid}`);
 
     return response.data;
   });

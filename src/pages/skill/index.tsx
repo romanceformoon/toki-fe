@@ -1,11 +1,11 @@
-import { Box, Card, CardContent, Typography } from '@mui/material'
-import Link from 'next/link'
-import { ClickableText } from '~/components/ClickableText'
-import { Seo } from '~/components/Seo'
-import { aerySkillSimulators } from '~/const/skillSimulator'
+import { Box, Card, CardContent, Typography } from '@mui/material';
+import Link from 'next/link';
+import { ClickableText } from '~/components/ClickableText';
+import { Seo } from '~/components/Seo';
+import { aerySkillSimulators } from '~/const/skillSimulator';
 
 const Skill = () => {
-  const danData: IAeryDan = aerySkillSimulators
+  const danData: IAeryDan = aerySkillSimulators;
 
   return (
     <>
@@ -66,13 +66,13 @@ const Skill = () => {
         ))}
       </Box>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default Skill
+export default Skill;

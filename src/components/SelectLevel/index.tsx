@@ -1,10 +1,10 @@
-import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
 interface ISelectLevelProps {
-  selectedLevel: string
-  handleChange: (event: SelectChangeEvent) => void
-  tableData: ILevelList | IHistory | IGrade
-  showAll?: boolean
+  selectedLevel: string;
+  handleChange: (event: SelectChangeEvent) => void;
+  tableData: ILevelList | IHistory | IGrade;
+  showAll?: boolean;
 }
 
 export const SelectLevel = ({
@@ -36,10 +36,10 @@ export const SelectLevel = ({
               <MenuItem key={index} value={level}>
                 {level}
               </MenuItem>
-            )
+            );
           })}
         </Select>
       </FormControl>
     </Box>
-  )
-}
+  );
+};

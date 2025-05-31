@@ -1,4 +1,4 @@
-import LinkIcon from '@mui/icons-material/Link'
+import LinkIcon from '@mui/icons-material/Link';
 import {
   IconButton,
   Paper,
@@ -9,13 +9,13 @@ import {
   TableHead,
   TableRow,
   Typography
-} from '@mui/material'
-import Table from '@mui/material/Table'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { SelectLevel } from '~/components/SelectLevel'
-import { Seo } from '~/components/Seo'
-import { loadTableData } from '~/utils/loadTableData'
+} from '@mui/material';
+import Table from '@mui/material/Table';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { SelectLevel } from '~/components/SelectLevel';
+import { Seo } from '~/components/Seo';
+import { loadTableData } from '~/utils/loadTableData';
 
 const DifficultyTable = () => {
   const [tableData, setTableData] = useState<ILevelList>({
@@ -42,23 +42,23 @@ const DifficultyTable = () => {
     'LEVEL 20+': [],
     'LEVEL DUMMY': [],
     'OLD CHARTS': []
-  })
+  });
 
-  const [selectedLevel, setSelectedLevel] = useState<'모두 보기' | AeryLevel>('모두 보기')
+  const [selectedLevel, setSelectedLevel] = useState<'모두 보기' | AeryLevel>('모두 보기');
 
   const handleChange = (event: SelectChangeEvent) => {
-    setSelectedLevel(event.target.value as '모두 보기' | AeryLevel)
-  }
+    setSelectedLevel(event.target.value as '모두 보기' | AeryLevel);
+  };
 
   useEffect(() => {
     const load = async () => {
-      const _ = await loadTableData()
-      setTableData(_)
-    }
-    load()
-  }, [])
+      const _ = await loadTableData();
+      setTableData(_);
+    };
+    load();
+  }, []);
 
-  if (!tableData) return <></>
+  if (!tableData) return <></>;
 
   return (
     <>
@@ -148,7 +148,7 @@ const DifficultyTable = () => {
                           </TableCell>
                         </TableRow>
                       </>
-                    )
+                    );
                   })
               : tableData[selectedLevel]?.map((song: ISongData) => {
                   return (
@@ -181,19 +181,19 @@ const DifficultyTable = () => {
                         </TableCell>
                       </TableRow>
                     </>
-                  )
+                  );
                 })}
           </TableBody>
         </Table>
       </TableContainer>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default DifficultyTable
+export default DifficultyTable;

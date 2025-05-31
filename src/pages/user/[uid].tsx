@@ -1,9 +1,9 @@
-import CheckIcon from '@mui/icons-material/Check'
-import CloseIcon from '@mui/icons-material/Close'
-import EditIcon from '@mui/icons-material/Edit'
-import { TabList } from '@mui/lab'
-import TabContext from '@mui/lab/TabContext'
-import TabPanel from '@mui/lab/TabPanel'
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+import EditIcon from '@mui/icons-material/Edit';
+import { TabList } from '@mui/lab';
+import TabContext from '@mui/lab/TabContext';
+import TabPanel from '@mui/lab/TabPanel';
 import {
   Avatar,
   Box,
@@ -14,25 +14,25 @@ import {
   Tabs,
   TextField,
   Typography
-} from '@mui/material'
-import axios from 'axios'
-import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
-import { useQueryClient } from 'react-query'
-import { ClearGraph } from '~/components/ClearGraph'
-import { Seo } from '~/components/Seo'
-import { TableHistory } from '~/components/TableHistory'
-import { TableTop50 } from '~/components/TableTop50'
-import { UserNickname } from '~/components/UserNickname'
-import useLoginUser from '~/hooks/useLoginUser'
-import useGraphQuery from '~/query/useGraphQuery'
-import useHistoryQuery from '~/query/useHistoryQuery'
-import useUserInfoQuery from '~/query/useUserInfoQuery'
-import axiosInstance from '~/utils/axiosInstance'
-import { getExpTable, getLevel } from '~/utils/exp'
-import { getRating } from '~/utils/rating'
+} from '@mui/material';
+import axios from 'axios';
+import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { useQueryClient } from 'react-query';
+import { ClearGraph } from '~/components/ClearGraph';
+import { Seo } from '~/components/Seo';
+import { TableHistory } from '~/components/TableHistory';
+import { TableTop50 } from '~/components/TableTop50';
+import { UserNickname } from '~/components/UserNickname';
+import useLoginUser from '~/hooks/useLoginUser';
+import useGraphQuery from '~/query/useGraphQuery';
+import useHistoryQuery from '~/query/useHistoryQuery';
+import useUserInfoQuery from '~/query/useUserInfoQuery';
+import axiosInstance from '~/utils/axiosInstance';
+import { getExpTable, getLevel } from '~/utils/exp';
+import { getRating } from '~/utils/rating';
 
 const UserPage = ({
   _uid,
@@ -40,40 +40,41 @@ const UserPage = ({
   nickname,
   clearDan,
   exp,
-  lr2Id
+  lr2Id,
+  rating
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
-  const router = useRouter()
-  const queryClient = useQueryClient()
+  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const uid = router.query.uid
+  const uid = router.query.uid;
 
-  const { isLogined, uid: loginUid } = useLoginUser()
+  const { isLogined, uid: loginUid } = useLoginUser();
 
-  const [category, setCategory] = useState<string>('aery')
+  const [category, setCategory] = useState<string>('aery');
   const handleCategoryChange = (event: React.SyntheticEvent, newValue: string) => {
-    setCategory(newValue)
-    if (newValue === 'sl' || newValue === 'st') setSelectedLevel('LEVEL 0')
-    else setSelectedLevel('LEVEL 1')
-  }
+    setCategory(newValue);
+    if (newValue === 'sl' || newValue === 'st') setSelectedLevel('LEVEL 0');
+    else setSelectedLevel('LEVEL 1');
+  };
 
-  const [tab, setTab] = useState<string>('Graph')
+  const [tab, setTab] = useState<string>('Graph');
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
-    setTab(newValue)
-  }
+    setTab(newValue);
+  };
 
-  const expTable = getExpTable()
+  const expTable = getExpTable();
 
-  const [selectedLevel, setSelectedLevel] = useState<string>('LEVEL 1')
+  const [selectedLevel, setSelectedLevel] = useState<string>('LEVEL 1');
   const handleLevelChange = (event: SelectChangeEvent) => {
-    setSelectedLevel(event.target.value as string)
-  }
+    setSelectedLevel(event.target.value as string);
+  };
 
-  const [changeNickname, setChangeNickname] = useState<boolean>(false)
-  const [inputNickname, setInputNickname] = useState<string>('')
+  const [changeNickname, setChangeNickname] = useState<boolean>(false);
+  const [inputNickname, setInputNickname] = useState<string>('');
 
   const handleChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputNickname(e.target.value)
-  }
+    setInputNickname(e.target.value);
+  };
 
   const {
     data: userData,
@@ -82,7 +83,7 @@ const UserPage = ({
   } = useUserInfoQuery({
     uid,
     category
-  })
+  });
 
   const {
     data: graphData,
@@ -91,7 +92,7 @@ const UserPage = ({
   } = useGraphQuery({
     uid,
     category
-  })
+  });
 
   const {
     data: historyData,
@@ -100,7 +101,7 @@ const UserPage = ({
   } = useHistoryQuery({
     uid,
     category
-  })
+  });
 
   if (
     !userData ||
@@ -175,7 +176,7 @@ const UserPage = ({
           </TabPanel>
         </TabContext>
       </>
-    )
+    );
 
   if (userData && (graphData || historyData))
     return (
@@ -210,8 +211,8 @@ const UserPage = ({
                   {isLogined && loginUid === userData.uid ? (
                     <IconButton
                       onClick={() => {
-                        setInputNickname(userData.nickname)
-                        setChangeNickname(true)
+                        setInputNickname(userData.nickname);
+                        setChangeNickname(true);
                       }}
                     >
                       <EditIcon />
@@ -238,14 +239,14 @@ const UserPage = ({
                       try {
                         const response = await axiosInstance.post(
                           `/toki-api/auth/user/change-nickname/${inputNickname}`
-                        )
+                        );
                         queryClient.invalidateQueries({
                           queryKey: ['get-user-info']
-                        })
+                        });
                       } catch (err) {
-                        alert('에러 발생')
+                        alert('에러 발생');
                       }
-                      setChangeNickname(false)
+                      setChangeNickname(false);
                     }}
                   >
                     <CheckIcon />
@@ -272,7 +273,7 @@ const UserPage = ({
                 </Typography>
               </Box>
               <Typography fontSize='14px' fontWeight={500}>
-                Rating: {getRating(userData.rating, category)}
+                {`Rating: ${category === 'aery' ? rating : '-'}`}
               </Typography>
             </Box>
           </Box>
@@ -314,17 +315,22 @@ const UserPage = ({
           </TabPanel>
         </TabContext>
       </>
-    )
-}
+    );
+};
 
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-  const { uid } = query
+  const { uid } = query;
 
-  const isDevelopmentEnv = process.env.NODE_ENV === 'development'
+  const isDevelopmentEnv = process.env.NODE_ENV === 'development';
+  const requestURI = isDevelopmentEnv ? process.env.NEXT_PUBLIC_DEV : process.env.NEXT_PUBLIC_PROD;
 
-  const requestURI = isDevelopmentEnv ? process.env.NEXT_PUBLIC_DEV : process.env.NEXT_PUBLIC_PROD
+  const result = await axios.get(`${requestURI}/toki-api/user/aery/${uid}`);
 
-  const result = await axios.get(`${requestURI}/toki-api/user/aery/${uid}`)
+  const tableDataResponse = await axios.get<ISongData[]>(
+    `${requestURI}/toki-api/table/aery/data.json`
+  );
+  const tableData = tableDataResponse.data;
+  const rating = getRating(result.data.rating, tableData);
 
   return {
     props: {
@@ -334,9 +340,9 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       clearDan: result.data.clearDan,
       exp: result.data.exp,
       lr2Id: result.data.lr2Id,
-      rating: result.data.rating
+      rating
     }
-  }
+  };
 }
 
-export default UserPage
+export default UserPage;

@@ -1,7 +1,16 @@
-import MenuIcon from '@mui/icons-material/Menu'
-import { Avatar, Box, Button, Divider, IconButton, Menu, MenuItem, Typography } from '@mui/material'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+  Typography
+} from '@mui/material';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export const MobileMenu = () => {
   const pages = [
@@ -13,18 +22,18 @@ export const MobileMenu = () => {
     // { name: '서열표', link: 'grade' },
     { name: 'TOOLS' },
     { name: 'BMS 채보 뷰어', link: 'tools/viewer' }
-  ]
+  ];
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget)
-  }
+    setAnchorElNav(event.currentTarget);
+  };
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
+    setAnchorElNav(null);
+  };
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -71,13 +80,13 @@ export const MobileMenu = () => {
               <MenuItem
                 key={page.name}
                 onClick={() => {
-                  handleCloseNavMenu()
-                  router.push(`/${page.link}`)
+                  handleCloseNavMenu();
+                  router.push(`/${page.link}`);
                 }}
               >
                 {page.name}
               </MenuItem>
-            )
+            );
           } else {
             return (
               <Divider key={page.name} sx={{ my: 0.5 }}>
@@ -91,7 +100,7 @@ export const MobileMenu = () => {
                   {page.name}
                 </Typography>
               </Divider>
-            )
+            );
           }
         })}
       </Menu>
@@ -101,7 +110,7 @@ export const MobileMenu = () => {
           display: { xs: 'flex' }
         }}
         onClick={() => {
-          router.push('/')
+          router.push('/');
         }}
       >
         <Avatar
@@ -117,5 +126,5 @@ export const MobileMenu = () => {
         />
       </Button>
     </Box>
-  )
-}
+  );
+};

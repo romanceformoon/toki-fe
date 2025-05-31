@@ -1,7 +1,7 @@
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Box, Button, Menu, MenuItem, Typography } from '@mui/material'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Box, Button, Menu, MenuItem, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export const DesktopRoute = () => {
   const pages = [
@@ -9,41 +9,41 @@ export const DesktopRoute = () => {
     { name: 'ranking', link: 'ranking' },
     { name: '5KEYS AERY' },
     { name: 'TOOLS' }
-  ]
+  ];
 
   const subPages = {
     aery: [
       { name: '난이도표', link: 'table' },
-      { name: '단위인정', link: 'skill' },
+      { name: '단위인정', link: 'skill' }
       // { name: '서열표', link: 'grade' }
     ],
     tools: [{ name: 'BMS 채보 뷰어', link: 'tools/viewer' }]
-  }
+  };
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const [anchorElAery, setAnchorElAery] = useState<null | HTMLElement>(null)
-  const [anchorElTools, setAnchorElTools] = useState<null | HTMLElement>(null)
+  const [anchorElAery, setAnchorElAery] = useState<null | HTMLElement>(null);
+  const [anchorElTools, setAnchorElTools] = useState<null | HTMLElement>(null);
 
   const handleOpenMenu = (event: React.MouseEvent<HTMLElement>, menu: string) => {
     switch (menu) {
       case '5KEYS AERY':
-        setAnchorElAery(event.currentTarget)
-        break
+        setAnchorElAery(event.currentTarget);
+        break;
 
       case 'TOOLS':
-        setAnchorElTools(event.currentTarget)
-        break
+        setAnchorElTools(event.currentTarget);
+        break;
     }
-  }
+  };
 
   const handleCloseAeryMenu = () => {
-    setAnchorElAery(null)
-  }
+    setAnchorElAery(null);
+  };
 
   const handleCloseToolsMenu = () => {
-    setAnchorElTools(null)
-  }
+    setAnchorElTools(null);
+  };
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -53,13 +53,13 @@ export const DesktopRoute = () => {
             <Button
               key={page.name}
               onClick={() => {
-                router.push(`/${page.link}`)
+                router.push(`/${page.link}`);
               }}
               sx={{ my: 2, color: 'white' }}
             >
               {page.name}
             </Button>
-          )
+          );
         } else {
           return (
             <Button
@@ -70,7 +70,7 @@ export const DesktopRoute = () => {
             >
               {page.name}
             </Button>
-          )
+          );
         }
       })}
 
@@ -94,7 +94,7 @@ export const DesktopRoute = () => {
           <MenuItem key={page.name} onClick={handleCloseAeryMenu}>
             <Typography
               onClick={async () => {
-                router.push(`/${page.link}`)
+                router.push(`/${page.link}`);
               }}
             >
               {page.name}
@@ -124,7 +124,7 @@ export const DesktopRoute = () => {
             <Typography
               textAlign='center'
               onClick={async () => {
-                router.push(`/${page.link}`)
+                router.push(`/${page.link}`);
               }}
             >
               {page.name}
@@ -133,5 +133,5 @@ export const DesktopRoute = () => {
         ))}
       </Menu>
     </Box>
-  )
-}
+  );
+};

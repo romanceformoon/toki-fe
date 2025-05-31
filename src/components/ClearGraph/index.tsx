@@ -1,12 +1,12 @@
-import { BarChart } from '@mui/x-charts'
+import { BarChart } from '@mui/x-charts';
 
 interface IGraphProps {
-  graphData: IGraph
-  category: string
+  graphData: IGraph;
+  category: string;
 }
 
 export const ClearGraph = ({ graphData, category }: IGraphProps) => {
-  let yLabels: string[] = []
+  let yLabels: string[] = [];
 
   if (category === 'aery') {
     yLabels = [
@@ -31,7 +31,7 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       '⑤ 19',
       '⑤ 20',
       '⑤ 20+'
-    ]
+    ];
   } else if (category === 'insane') {
     yLabels = [
       '★1',
@@ -59,7 +59,7 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       '★23',
       '★24',
       '★25'
-    ]
+    ];
   } else if (category === 'sl') {
     yLabels = [
       'sl0',
@@ -75,7 +75,7 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       'sl10',
       'sl11',
       'sl12'
-    ]
+    ];
   } else if (category === 'st') {
     yLabels = [
       'st0',
@@ -91,7 +91,7 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       'st10',
       'st11',
       'st12'
-    ]
+    ];
   }
 
   return (
@@ -162,5 +162,5 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       ]}
       bottomAxis={null}
     />
-  )
-}
+  );
+};

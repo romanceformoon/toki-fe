@@ -8,19 +8,19 @@ import {
   TableHead,
   TableRow,
   Typography
-} from '@mui/material'
-import Table from '@mui/material/Table'
-import { useState } from 'react'
-import { SelectLevel } from '~/components/SelectLevel'
-import { Seo } from '~/components/Seo'
-import aeryDataJSON from './aery/gradeData.json'
+} from '@mui/material';
+import Table from '@mui/material/Table';
+import { useState } from 'react';
+import { SelectLevel } from '~/components/SelectLevel';
+import { Seo } from '~/components/Seo';
+import aeryDataJSON from './aery/gradeData.json';
 
 const Grade = () => {
-  const [level, setLevel] = useState<string>('LEVEL 16')
+  const [level, setLevel] = useState<string>('LEVEL 16');
 
-  const aeryData: IGrade = aeryDataJSON
+  const aeryData: IGrade = aeryDataJSON;
 
-  if (!aeryData[level]) return <></>
+  if (!aeryData[level]) return <></>;
 
   return (
     <>
@@ -53,7 +53,7 @@ const Grade = () => {
       <SelectLevel
         selectedLevel={level}
         handleChange={(event: SelectChangeEvent) => {
-          setLevel(event.target.value as string)
+          setLevel(event.target.value as string);
         }}
         tableData={aeryData}
         showAll={false}
@@ -115,24 +115,24 @@ const Grade = () => {
                               {song.title}
                             </Typography>
                           </>
-                        )
+                        );
                       })}
                     </TableCell>
                   </TableRow>
                 </>
-              )
+              );
             })}
           </TableBody>
         </Table>
       </TableContainer>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps() {
   return {
     props: {}
-  }
+  };
 }
 
-export default Grade
+export default Grade;
