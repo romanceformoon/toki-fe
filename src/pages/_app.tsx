@@ -13,6 +13,29 @@ import '~/pages/tools/viewer/styles/bmsViewer.css';
 
 const mainFont = localFont({ src: '../layout/fonts/Title_Light.woff' });
 
+// 다크 모드 깜빡임 방지를 위한 스크립트
+const ThemeInitScript = () => {
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          (function() {
+            try {
+              const savedTheme = localStorage.getItem('theme');
+              if (savedTheme) {
+                document.documentElement.setAttribute('data-mui-color-scheme', savedTheme);
+                document.documentElement.style.colorScheme = savedTheme;
+              }
+            } catch (e) {
+              console.warn('다크 모드 설정 로드 실패:', e);
+            }
+          })();
+        `
+      }}
+    />
+  );
+};
+
 function MyApp({
   Component,
   pageProps
@@ -34,11 +57,17 @@ function MyApp({
       })
   );
 
+  // 초기 렌더링 상태 관리
   const [mode, setMode] = useState<PaletteMode>('light');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem('theme') as PaletteMode)
-      setMode(localStorage.getItem('theme') as PaletteMode);
+    // 클라이언트 사이드에서만 실행
+    const savedTheme = localStorage.getItem('theme') as PaletteMode;
+    if (savedTheme) {
+      setMode(savedTheme);
+    }
+    setMounted(true);
   }, []);
 
   const theme = useMemo(
@@ -56,24 +85,31 @@ function MyApp({
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Head>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='robots' content='index, follow' />
+        <ThemeInitScript />
+      </Head>
       <ThemeProvider theme={theme}>
-        <Head>
-          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-          <meta name='robots' content='index, follow' />
-        </Head>
         <CssBaseline />
-        <AppWrapper>
-          <Header
-            mode={mode}
-            setMode={() => {
-              setMode(mode === 'light' ? 'dark' : 'light');
-              localStorage.setItem('theme', mode === 'light' ? 'dark' : 'light');
-            }}
-          />
-          <Box sx={pageProps.layout}>
-            <Component {...pageProps} />
-          </Box>
-        </AppWrapper>
+        {/* 컴포넌트가 마운트되기 전까지는 내용을 렌더링하지 않음 */}
+        {mounted && (
+          <AppWrapper>
+            <Header
+              mode={mode}
+              setMode={() => {
+                const newMode = mode === 'light' ? 'dark' : 'light';
+                setMode(newMode);
+                localStorage.setItem('theme', newMode);
+                document.documentElement.setAttribute('data-mui-color-scheme', newMode);
+                document.documentElement.style.colorScheme = newMode;
+              }}
+            />
+            <Box sx={pageProps.layout}>
+              <Component {...pageProps} />
+            </Box>
+          </AppWrapper>
+        )}
       </ThemeProvider>
     </QueryClientProvider>
   );
