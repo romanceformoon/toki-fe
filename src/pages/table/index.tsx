@@ -1,4 +1,4 @@
-import LinkIcon from "@mui/icons-material/Link";
+import LinkIcon from '@mui/icons-material/Link';
 import {
   IconButton,
   Paper,
@@ -8,48 +8,46 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
-} from "@mui/material";
-import Table from "@mui/material/Table";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { SelectLevel } from "~/components/SelectLevel";
-import { Seo } from "~/components/Seo";
-import { loadTableData } from "~/utils/loadTableData";
+  Typography
+} from '@mui/material';
+import Table from '@mui/material/Table';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { SelectLevel } from '~/components/SelectLevel';
+import { Seo } from '~/components/Seo';
+import { loadTableData } from '~/utils/loadTableData';
 
 const DifficultyTable = () => {
   const [tableData, setTableData] = useState<ILevelList>({
-    "LEVEL 1": [],
-    "LEVEL 2": [],
-    "LEVEL 3": [],
-    "LEVEL 4": [],
-    "LEVEL 5": [],
-    "LEVEL 6": [],
-    "LEVEL 7": [],
-    "LEVEL 8": [],
-    "LEVEL 9": [],
-    "LEVEL 10": [],
-    "LEVEL 11": [],
-    "LEVEL 12": [],
-    "LEVEL 13": [],
-    "LEVEL 14": [],
-    "LEVEL 15": [],
-    "LEVEL 16": [],
-    "LEVEL 17": [],
-    "LEVEL 18": [],
-    "LEVEL 19": [],
-    "LEVEL 20": [],
-    "LEVEL 20+": [],
-    "LEVEL DUMMY": [],
-    "OLD CHARTS": [],
+    'LEVEL 1': [],
+    'LEVEL 2': [],
+    'LEVEL 3': [],
+    'LEVEL 4': [],
+    'LEVEL 5': [],
+    'LEVEL 6': [],
+    'LEVEL 7': [],
+    'LEVEL 8': [],
+    'LEVEL 9': [],
+    'LEVEL 10': [],
+    'LEVEL 11': [],
+    'LEVEL 12': [],
+    'LEVEL 13': [],
+    'LEVEL 14': [],
+    'LEVEL 15': [],
+    'LEVEL 16': [],
+    'LEVEL 17': [],
+    'LEVEL 18': [],
+    'LEVEL 19': [],
+    'LEVEL 20': [],
+    'LEVEL 20+': [],
+    'LEVEL DUMMY': [],
+    'OLD CHARTS': []
   });
 
-  const [selectedLevel, setSelectedLevel] = useState<"모두 보기" | AeryLevel>(
-    "모두 보기"
-  );
+  const [selectedLevel, setSelectedLevel] = useState<'모두 보기' | AeryLevel>('모두 보기');
 
   const handleChange = (event: SelectChangeEvent) => {
-    setSelectedLevel(event.target.value as "모두 보기" | AeryLevel);
+    setSelectedLevel(event.target.value as '모두 보기' | AeryLevel);
   };
 
   useEffect(() => {
@@ -64,7 +62,7 @@ const DifficultyTable = () => {
 
   return (
     <>
-      <Seo type="table" />
+      <Seo type='table' />
 
       <SelectLevel
         selectedLevel={selectedLevel}
@@ -75,48 +73,40 @@ const DifficultyTable = () => {
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: "13px",
-          borderColor: "primary.main",
+          borderRadius: '13px',
+          borderColor: 'primary.main'
         }}
         component={Paper}
       >
-        <Table sx={{ minWidth: "100%" }}>
+        <Table sx={{ minWidth: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: "10%" }}>
+              <TableCell sx={{ width: '10%' }}>
                 <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
+                  fontSize='24px'
+                  fontWeight='900'
+                  fontStyle={{ color: 'primary.main' }}
+                  textAlign='center'
                 >
                   Level
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: "40%" }}>
-                <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                >
+              <TableCell sx={{ width: '40%' }}>
+                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
                   Title
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: "40%" }}>
-                <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                >
+              <TableCell sx={{ width: '40%' }}>
+                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
                   Artist
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: "10%" }}>
+              <TableCell sx={{ width: '10%' }}>
                 <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
+                  fontSize='24px'
+                  fontWeight='900'
+                  fontStyle={{ color: 'primary.main' }}
+                  textAlign='center'
                 >
                   LR2IR
                 </Typography>
@@ -124,32 +114,32 @@ const DifficultyTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {selectedLevel === "모두 보기"
+            {selectedLevel === '모두 보기'
               ? Object.values(tableData)
                   .flat()
-                  ?.map((song) => {
+                  ?.map(song => {
                     return (
                       <>
                         <TableRow>
-                          <TableCell key={song.level} align="center">
-                            <Typography fontSize="16px" fontWeight="500">
+                          <TableCell key={song.level} align='center'>
+                            <Typography fontSize='16px' fontWeight='500'>
                               {song.level}
                             </Typography>
                           </TableCell>
                           <TableCell key={song.title}>
-                            <Typography fontSize="16px" fontWeight="500">
+                            <Typography fontSize='16px' fontWeight='500'>
                               {song.title}
                             </Typography>
                           </TableCell>
                           <TableCell key={song.artist}>
-                            <Typography fontSize="16px" fontWeight="500">
+                            <Typography fontSize='16px' fontWeight='500'>
                               {song.artist}
                             </Typography>
                           </TableCell>
-                          <TableCell key={song.md5} align="center">
+                          <TableCell key={song.md5} align='center'>
                             <Link
                               href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`}
-                              target="_blank"
+                              target='_blank'
                             >
                               <IconButton>
                                 <LinkIcon />
@@ -164,25 +154,25 @@ const DifficultyTable = () => {
                   return (
                     <>
                       <TableRow>
-                        <TableCell key={song.level} align="center">
-                          <Typography fontSize="16px" fontWeight="500">
+                        <TableCell key={song.level} align='center'>
+                          <Typography fontSize='16px' fontWeight='500'>
                             {song.level}
                           </Typography>
                         </TableCell>
                         <TableCell key={song.title}>
-                          <Typography fontSize="16px" fontWeight="500">
+                          <Typography fontSize='16px' fontWeight='500'>
                             {song.title}
                           </Typography>
                         </TableCell>
                         <TableCell key={song.artist}>
-                          <Typography fontSize="16px" fontWeight="500">
+                          <Typography fontSize='16px' fontWeight='500'>
                             {song.artist}
                           </Typography>
                         </TableCell>
-                        <TableCell key={song.md5} align="center">
+                        <TableCell key={song.md5} align='center'>
                           <Link
                             href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${song.md5}`}
-                            target="_blank"
+                            target='_blank'
                           >
                             <IconButton>
                               <LinkIcon />
@@ -202,7 +192,7 @@ const DifficultyTable = () => {
 
 export async function getServerSideProps() {
   return {
-    props: {},
+    props: {}
   };
 }
 

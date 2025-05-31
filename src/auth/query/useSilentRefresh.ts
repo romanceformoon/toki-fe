@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { useQuery } from "react-query";
-import authToken from "~/auth";
-import axiosInstance from "~/utils/axiosInstance";
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import authToken from '~/auth';
+import axiosInstance from '~/utils/axiosInstance';
 
 const refresh = () => {
-  return axiosInstance.get("/toki-api/auth/user/refresh");
+  return axiosInstance.get('/toki-api/auth/user/refresh');
 };
 
 const useSilentRefresh = ({
-  setIsRefreshed,
+  setIsRefreshed
 }: {
   setIsRefreshed: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [refreshStop, setRefreshStop] = useState(false);
 
-  useQuery(["silentRefresh"], refresh, {
+  useQuery(['silentRefresh'], refresh, {
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     refetchOnReconnect: false,
@@ -23,15 +23,15 @@ const useSilentRefresh = ({
     refetchIntervalInBackground: true,
     onError: () => {
       setRefreshStop(true);
-      authToken.setToken("");
+      authToken.setToken('');
     },
-    onSuccess: (data) => {
+    onSuccess: data => {
       const token = data?.data?.accessToken;
       if (token) authToken.setToken(token);
     },
     onSettled: () => {
       setIsRefreshed(true);
-    },
+    }
   });
 
   return;

@@ -1,9 +1,9 @@
-import CheckIcon from "@mui/icons-material/Check";
-import CloseIcon from "@mui/icons-material/Close";
-import EditIcon from "@mui/icons-material/Edit";
-import { TabList } from "@mui/lab";
-import TabContext from "@mui/lab/TabContext";
-import TabPanel from "@mui/lab/TabPanel";
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+import EditIcon from '@mui/icons-material/Edit';
+import { TabList } from '@mui/lab';
+import TabContext from '@mui/lab/TabContext';
+import TabPanel from '@mui/lab/TabPanel';
 import {
   Avatar,
   Box,
@@ -13,30 +13,26 @@ import {
   Tab,
   Tabs,
   TextField,
-  Typography,
-} from "@mui/material";
-import axios from "axios";
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-} from "next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { useQueryClient } from "react-query";
-import { ClearGraph } from "~/components/ClearGraph";
-import { Seo } from "~/components/Seo";
-import { TableHistory } from "~/components/TableHistory";
-import { TableTop50 } from "~/components/TableTop50";
-import { UserNickname } from "~/components/UserNickname";
-import useLoginUser from "~/hooks/useLoginUser";
-import useGraphQuery from "~/query/useGraphQuery";
-import useHistoryQuery from "~/query/useHistoryQuery";
-import useUserInfoQuery from "~/query/useUserInfoQuery";
-import axiosInstance from "~/utils/axiosInstance";
-import { getExpTable, getLevel } from "~/utils/exp";
-import { getRating } from "~/utils/rating";
+  Typography
+} from '@mui/material';
+import axios from 'axios';
+import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { useQueryClient } from 'react-query';
+import { ClearGraph } from '~/components/ClearGraph';
+import { Seo } from '~/components/Seo';
+import { TableHistory } from '~/components/TableHistory';
+import { TableTop50 } from '~/components/TableTop50';
+import { UserNickname } from '~/components/UserNickname';
+import useLoginUser from '~/hooks/useLoginUser';
+import useGraphQuery from '~/query/useGraphQuery';
+import useHistoryQuery from '~/query/useHistoryQuery';
+import useUserInfoQuery from '~/query/useUserInfoQuery';
+import axiosInstance from '~/utils/axiosInstance';
+import { getExpTable, getLevel } from '~/utils/exp';
+import { getRating } from '~/utils/rating';
 
 const UserPage = ({
   _uid,
@@ -45,6 +41,7 @@ const UserPage = ({
   clearDan,
   exp,
   lr2Id,
+  rating
 }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
   const queryClient = useQueryClient();
@@ -53,30 +50,27 @@ const UserPage = ({
 
   const { isLogined, uid: loginUid } = useLoginUser();
 
-  const [category, setCategory] = useState<string>("aery");
-  const handleCategoryChange = (
-    event: React.SyntheticEvent,
-    newValue: string
-  ) => {
+  const [category, setCategory] = useState<string>('aery');
+  const handleCategoryChange = (event: React.SyntheticEvent, newValue: string) => {
     setCategory(newValue);
-    if (newValue === "sl" || newValue === "st") setSelectedLevel("LEVEL 0");
-    else setSelectedLevel("LEVEL 1");
+    if (newValue === 'sl' || newValue === 'st') setSelectedLevel('LEVEL 0');
+    else setSelectedLevel('LEVEL 1');
   };
 
-  const [tab, setTab] = useState<string>("Graph");
+  const [tab, setTab] = useState<string>('Graph');
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
   };
 
   const expTable = getExpTable();
 
-  const [selectedLevel, setSelectedLevel] = useState<string>("LEVEL 1");
+  const [selectedLevel, setSelectedLevel] = useState<string>('LEVEL 1');
   const handleLevelChange = (event: SelectChangeEvent) => {
     setSelectedLevel(event.target.value as string);
   };
 
   const [changeNickname, setChangeNickname] = useState<boolean>(false);
-  const [inputNickname, setInputNickname] = useState<string>("");
+  const [inputNickname, setInputNickname] = useState<string>('');
 
   const handleChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputNickname(e.target.value);
@@ -85,28 +79,28 @@ const UserPage = ({
   const {
     data: userData,
     isLoading: isUserLoading,
-    isError: isUserError,
+    isError: isUserError
   } = useUserInfoQuery({
     uid,
-    category,
+    category
   });
 
   const {
     data: graphData,
     isLoading: isGraphLoading,
-    isError: isGraphError,
+    isError: isGraphError
   } = useGraphQuery({
     uid,
-    category,
+    category
   });
 
   const {
     data: historyData,
     isLoading: isHistoryLoading,
-    isError: isHistoryError,
+    isError: isHistoryError
   } = useHistoryQuery({
     uid,
-    category,
+    category
   });
 
   if (
@@ -122,23 +116,19 @@ const UserPage = ({
   )
     return (
       <>
-        <Seo type="user" uid={_uid} avatar={avatar} nickname={nickname} />
+        <Seo type='user' uid={_uid} avatar={avatar} nickname={nickname} />
 
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: 'center' }}>
           <Box sx={{ mb: 1 }}>
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
               <Avatar
-                alt="Profile Image"
-                sx={{ height: "70px", width: "70px" }}
-                src={
-                  avatar
-                    ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}`
-                    : undefined
-                }
+                alt='Profile Image'
+                sx={{ height: '70px', width: '70px' }}
+                src={avatar ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}` : undefined}
               />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
-              <Typography fontSize="24px" fontWeight={700}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+              <Typography fontSize='24px' fontWeight={700}>
                 {nickname}
               </Typography>
             </Box>
@@ -148,51 +138,39 @@ const UserPage = ({
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
           <Tabs
-            variant="scrollable"
-            scrollButtons="auto"
+            variant='scrollable'
+            scrollButtons='auto'
             allowScrollButtonsMobile
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
-            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
-            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
+            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
 
         <TabContext value={tab}>
-          <TabList onChange={handleTabChange} variant="fullWidth" centered>
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="Graph"
-              value="Graph"
-            />
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="TOP 50"
-              value="TOP 50"
-            />
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="History"
-              value="History"
-            />
+          <TabList onChange={handleTabChange} variant='fullWidth' centered>
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='Graph' value='Graph' />
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='TOP 50' value='TOP 50' />
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='History' value='History' />
           </TabList>
-          <TabPanel value="Graph">
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+          <TabPanel value='Graph'>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
               <CircularProgress />
             </Box>
           </TabPanel>
-          <TabPanel value="TOP 50">
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+          <TabPanel value='TOP 50'>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
               <CircularProgress />
             </Box>
           </TabPanel>
-          <TabPanel value="History">
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+          <TabPanel value='History'>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
               <CircularProgress />
             </Box>
           </TabPanel>
@@ -203,14 +181,14 @@ const UserPage = ({
   if (userData && (graphData || historyData))
     return (
       <>
-        <Seo type="user" uid={_uid} avatar={avatar} nickname={nickname} />
+        <Seo type='user' uid={_uid} avatar={avatar} nickname={nickname} />
 
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: 'center' }}>
           <Box sx={{ mb: 1 }}>
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
               <Avatar
-                alt="Profile Image"
-                sx={{ height: "70px", width: "70px" }}
+                alt='Profile Image'
+                sx={{ height: '70px', width: '70px' }}
                 src={
                   userData.avatar
                     ? `https://cdn.discordapp.com/avatars/${userData.uid}/${userData.avatar}`
@@ -219,17 +197,15 @@ const UserPage = ({
               />
             </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
               {!changeNickname ? (
                 <>
                   <Link
                     href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userData.lr2Id}`}
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
+                    style={{ textDecoration: 'none' }}
+                    target='_blank'
                   >
-                    <UserNickname clearDan={userData.clearDan}>
-                      {userData.nickname}
-                    </UserNickname>
+                    <UserNickname clearDan={userData.clearDan}>{userData.nickname}</UserNickname>
                   </Link>
 
                   {isLogined && loginUid === userData.uid ? (
@@ -249,12 +225,12 @@ const UserPage = ({
                 <>
                   <TextField
                     value={inputNickname}
-                    id="change-nickname"
-                    label=""
-                    variant="standard"
-                    size="small"
+                    id='change-nickname'
+                    label=''
+                    variant='standard'
+                    size='small'
                     inputProps={{
-                      maxLength: 16,
+                      maxLength: 16
                     }}
                     onChange={handleChangeNickname}
                   />
@@ -265,10 +241,10 @@ const UserPage = ({
                           `/toki-api/auth/user/change-nickname/${inputNickname}`
                         );
                         queryClient.invalidateQueries({
-                          queryKey: ["get-user-info"],
+                          queryKey: ['get-user-info']
                         });
                       } catch (err) {
-                        alert("에러 발생");
+                        alert('에러 발생');
                       }
                       setChangeNickname(false);
                     }}
@@ -284,65 +260,53 @@ const UserPage = ({
 
             <Box sx={{ mb: 1 }}>
               <Box>
-                <Typography fontSize="18px" fontWeight={700}>
+                <Typography fontSize='18px' fontWeight={700}>
                   Level: {getLevel(userData.exp)}
                 </Typography>
               </Box>
               <Box>
-                <Typography fontSize="14px" fontWeight={500}>
-                  Exp: {userData.exp.toLocaleString()} /{" "}
+                <Typography fontSize='14px' fontWeight={500}>
+                  Exp: {userData.exp.toLocaleString()} /{' '}
                   {getLevel(userData.exp) < 99
                     ? expTable[getLevel(userData.exp)].toLocaleString()
-                    : "-"}
+                    : '-'}
                 </Typography>
               </Box>
-              <Typography fontSize="14px" fontWeight={500}>
-                Rating: {getRating(userData.rating, category)}
+              <Typography fontSize='14px' fontWeight={500}>
+                {`Rating: ${category === 'aery' ? rating : '-'}`}
               </Typography>
             </Box>
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
           <Tabs
-            variant="scrollable"
-            scrollButtons="auto"
+            variant='scrollable'
+            scrollButtons='auto'
             allowScrollButtonsMobile
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label="5KEYS AERY" value="aery" />
-            <Tab sx={{ fontWeight: 700 }} label="発狂BMS" value="insane" />
-            <Tab sx={{ fontWeight: 700 }} label="Satellite" value="sl" />
-            <Tab sx={{ fontWeight: 700 }} label="Stella" value="st" />
+            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
 
         <TabContext value={tab}>
-          <TabList onChange={handleTabChange} variant="fullWidth" centered>
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="Graph"
-              value="Graph"
-            />
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="TOP 50"
-              value="TOP 50"
-            />
-            <Tab
-              sx={{ fontWeight: 700, fontSize: 20 }}
-              label="History"
-              value="History"
-            />
+          <TabList onChange={handleTabChange} variant='fullWidth' centered>
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='Graph' value='Graph' />
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='TOP 50' value='TOP 50' />
+            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='History' value='History' />
           </TabList>
-          <TabPanel value="Graph">
+          <TabPanel value='Graph'>
             <ClearGraph graphData={graphData} category={category} />
           </TabPanel>
-          <TabPanel value="TOP 50">
+          <TabPanel value='TOP 50'>
             <TableTop50 historyData={historyData} category={category} />
           </TabPanel>
-          <TabPanel value="History">
+          <TabPanel value='History'>
             <TableHistory
               selectedLevel={selectedLevel}
               handleLevelChange={handleLevelChange}
@@ -357,13 +321,16 @@ const UserPage = ({
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const { uid } = query;
 
-  const isDevelopmentEnv = process.env.NODE_ENV === "development";
-
-  const requestURI = isDevelopmentEnv
-    ? process.env.NEXT_PUBLIC_DEV
-    : process.env.NEXT_PUBLIC_PROD;
+  const isDevelopmentEnv = process.env.NODE_ENV === 'development';
+  const requestURI = isDevelopmentEnv ? process.env.NEXT_PUBLIC_DEV : process.env.NEXT_PUBLIC_PROD;
 
   const result = await axios.get(`${requestURI}/toki-api/user/aery/${uid}`);
+
+  const tableDataResponse = await axios.get<ISongData[]>(
+    `${requestURI}/toki-api/table/aery/data.json`
+  );
+  const tableData = tableDataResponse.data;
+  const rating = getRating(result.data.rating, tableData);
 
   return {
     props: {
@@ -373,8 +340,8 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       clearDan: result.data.clearDan,
       exp: result.data.exp,
       lr2Id: result.data.lr2Id,
-      rating: result.data.rating,
-    },
+      rating
+    }
   };
 }
 

@@ -1,5 +1,5 @@
-import { useContext, useMemo } from "react";
-import { CurrentUserContext } from "~/context";
+import { useContext, useMemo } from 'react';
+import { CurrentUserContext } from '~/context';
 
 const useLoginUser = () => {
   const user = useContext(CurrentUserContext);
@@ -12,7 +12,7 @@ const useLoginUser = () => {
     uid,
     nickname,
     avatar,
-    isLogined,
+    isLogined
   };
 };
 

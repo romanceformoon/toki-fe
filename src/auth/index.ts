@@ -1,7 +1,7 @@
 class AuthToken {
   private _token: string;
   constructor() {
-    this._token = "";
+    this._token = '';
   }
 
   getToken() {

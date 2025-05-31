@@ -1,198 +1,190 @@
-import { NextSeo } from "next-seo";
-import React from "react";
+import { NextSeo } from 'next-seo';
+import React from 'react';
 
 interface SeoProps {
-  type:
-    | "main"
-    | "viewer"
-    | "ranking"
-    | "user"
-    | "analyze"
-    | "grade"
-    | "skill"
-    | "table";
+  type: 'main' | 'viewer' | 'ranking' | 'user' | 'analyze' | 'grade' | 'skill' | 'table';
   uid?: string;
   avatar?: string;
   nickname?: string;
 }
 
 export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
-  if (type === "main") {
+  if (type === 'main') {
     return (
       <NextSeo
-        title="Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr",
-          title: "Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr',
+          title: 'Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "analyze") {
+  if (type === 'analyze') {
     return (
       <NextSeo
-        title="Analyze | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='Analyze | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/analyze",
-          title: "Analyze | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/analyze',
+          title: 'Analyze | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "grade") {
+  if (type === 'grade') {
     return (
       <NextSeo
-        title="Grade | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='Grade | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/grade",
-          title: "Grade | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/grade',
+          title: 'Grade | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "ranking") {
+  if (type === 'ranking') {
     return (
       <NextSeo
-        title="Ranking | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='Ranking | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/ranking",
-          title: "Ranking | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/ranking',
+          title: 'Ranking | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "skill") {
+  if (type === 'skill') {
     return (
       <NextSeo
-        title="段位認定 | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='段位認定 | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/skill",
-          title: "段位認定 | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/skill',
+          title: '段位認定 | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "table") {
+  if (type === 'table') {
     return (
       <NextSeo
-        title="Table | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='Table | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/table",
-          title: "Table | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/table',
+          title: 'Table | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "viewer") {
+  if (type === 'viewer') {
     return (
       <NextSeo
-        title="BMS Viewer | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
+        title='BMS Viewer | Asuma Toki'
+        description='BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS'
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/tools/viewer",
-          title: "BMS Viewer | Asuma Toki",
+          type: 'website',
+          locale: 'ko_KR',
+          url: 'https://asumatoki.kr/tools/viewer',
+          title: 'BMS Viewer | Asuma Toki',
           description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
+            'BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS',
           images: [
             {
-              url: "/assets/images/logo.png",
+              url: '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );
   }
 
-  if (type === "user") {
+  if (type === 'user') {
     return (
       <NextSeo
         title={`${nickname} | Asuma Toki`}
         description={`${nickname} BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS`}
         openGraph={{
-          type: "website",
-          locale: "ko_KR",
+          type: 'website',
+          locale: 'ko_KR',
           url: `https://asumatoki.kr/user/${uid}`,
           title: `${nickname} | Asuma Toki`,
           description: `${nickname} BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS`,
@@ -200,11 +192,11 @@ export const Seo = ({ type, uid, avatar, nickname }: SeoProps) => {
             {
               url: avatar
                 ? `https://cdn.discordapp.com/avatars/${uid}/${avatar}`
-                : "/assets/images/logo.png",
+                : '/assets/images/logo.png',
               width: 400,
-              height: 400,
-            },
-          ],
+              height: 400
+            }
+          ]
         }}
       />
     );

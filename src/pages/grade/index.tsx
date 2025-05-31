@@ -7,16 +7,16 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
-} from "@mui/material";
-import Table from "@mui/material/Table";
-import { useState } from "react";
-import { SelectLevel } from "~/components/SelectLevel";
-import { Seo } from "~/components/Seo";
-import aeryDataJSON from "./aery/gradeData.json";
+  Typography
+} from '@mui/material';
+import Table from '@mui/material/Table';
+import { useState } from 'react';
+import { SelectLevel } from '~/components/SelectLevel';
+import { Seo } from '~/components/Seo';
+import aeryDataJSON from './aery/gradeData.json';
 
 const Grade = () => {
-  const [level, setLevel] = useState<string>("LEVEL 16");
+  const [level, setLevel] = useState<string>('LEVEL 16');
 
   const aeryData: IGrade = aeryDataJSON;
 
@@ -24,27 +24,26 @@ const Grade = () => {
 
   return (
     <>
-      <Seo type="grade" />
+      <Seo type='grade' />
 
-      <Box sx={{ mb: "1rem", textAlign: "center" }}>
-        <Typography fontSize="24px" fontWeight={700}>
+      <Box sx={{ mb: '1rem', textAlign: 'center' }}>
+        <Typography fontSize='24px' fontWeight={700}>
           [5KEYS AERY] 서열표 (beta)
         </Typography>
         <Typography
-          fontSize="14px"
+          fontSize='14px'
           fontWeight={500}
           sx={{
-            color: "grey",
+            color: 'grey'
           }}
         >
-          LR2IR 클리어 통계 기반으로 측정되어 실제 체감과는 많이 다를 수
-          있습니다.
+          LR2IR 클리어 통계 기반으로 측정되어 실제 체감과는 많이 다를 수 있습니다.
         </Typography>
         <Typography
-          fontSize="14px"
+          fontSize='14px'
           fontWeight={500}
           sx={{
-            color: "grey",
+            color: 'grey'
           }}
         >
           재미로만 봐주세요.
@@ -63,30 +62,30 @@ const Grade = () => {
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: "13px",
-          borderColor: "primary.main",
+          borderRadius: '13px',
+          borderColor: 'primary.main'
         }}
         component={Paper}
       >
-        <Table sx={{ minWidth: "100%" }}>
+        <Table sx={{ minWidth: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: "40%" }}>
+              <TableCell sx={{ width: '40%' }}>
                 <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
+                  fontSize='24px'
+                  fontWeight='900'
+                  fontStyle={{ color: 'primary.main' }}
+                  textAlign='center'
                 >
                   Tier
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: "60%" }}>
+              <TableCell sx={{ width: '60%' }}>
                 <Typography
-                  fontSize="24px"
-                  fontWeight="900"
-                  fontStyle={{ color: "primary.main" }}
-                  textAlign="center"
+                  fontSize='24px'
+                  fontWeight='900'
+                  fontStyle={{ color: 'primary.main' }}
+                  textAlign='center'
                 >
                   Title
                 </Typography>
@@ -94,24 +93,24 @@ const Grade = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {Object.keys(aeryData[level]).map((tier) => {
+            {Object.keys(aeryData[level]).map(tier => {
               return (
                 <>
                   <TableRow>
-                    <TableCell align="center">
-                      <Typography fontSize="64px" fontWeight="700">
+                    <TableCell align='center'>
+                      <Typography fontSize='64px' fontWeight='700'>
                         {tier}
                       </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       {aeryData[level][tier]?.map((song: { title: string }) => {
                         return (
                           <>
                             <Typography
-                              fontSize="16px"
-                              fontWeight="500"
+                              fontSize='16px'
+                              fontWeight='500'
                               key={song.title}
-                              sx={{ padding: "0.2rem" }}
+                              sx={{ padding: '0.2rem' }}
                             >
                               {song.title}
                             </Typography>
@@ -132,7 +131,7 @@ const Grade = () => {
 
 export async function getServerSideProps() {
   return {
-    props: {},
+    props: {}
   };
 }
 

@@ -1,8 +1,8 @@
-import { useQuery } from "react-query";
-import axiosInstance from "~/utils/axiosInstance";
+import { useQuery } from 'react-query';
+import axiosInstance from '~/utils/axiosInstance';
 
 const useRatingRankingQuery = ({ category }: { category: string }) => {
-  const query = useQuery(["get-rating-ranking", category], async () => {
+  const query = useQuery(['get-rating-ranking', category], async () => {
     const response = await axiosInstance.get<
       {
         uid: number;

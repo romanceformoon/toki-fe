@@ -1,31 +1,34 @@
-import tableData from "public/table/aery/data.json";
+import axios from 'axios';
 
 export const loadTableData = async () => {
   const levelList: ILevelList = {
-    "LEVEL 1": [],
-    "LEVEL 2": [],
-    "LEVEL 3": [],
-    "LEVEL 4": [],
-    "LEVEL 5": [],
-    "LEVEL 6": [],
-    "LEVEL 7": [],
-    "LEVEL 8": [],
-    "LEVEL 9": [],
-    "LEVEL 10": [],
-    "LEVEL 11": [],
-    "LEVEL 12": [],
-    "LEVEL 13": [],
-    "LEVEL 14": [],
-    "LEVEL 15": [],
-    "LEVEL 16": [],
-    "LEVEL 17": [],
-    "LEVEL 18": [],
-    "LEVEL 19": [],
-    "LEVEL 20": [],
-    "LEVEL 20+": [],
-    "LEVEL DUMMY": [],
-    "OLD CHARTS": [],
+    'LEVEL 1': [],
+    'LEVEL 2': [],
+    'LEVEL 3': [],
+    'LEVEL 4': [],
+    'LEVEL 5': [],
+    'LEVEL 6': [],
+    'LEVEL 7': [],
+    'LEVEL 8': [],
+    'LEVEL 9': [],
+    'LEVEL 10': [],
+    'LEVEL 11': [],
+    'LEVEL 12': [],
+    'LEVEL 13': [],
+    'LEVEL 14': [],
+    'LEVEL 15': [],
+    'LEVEL 16': [],
+    'LEVEL 17': [],
+    'LEVEL 18': [],
+    'LEVEL 19': [],
+    'LEVEL 20': [],
+    'LEVEL 20+': [],
+    'LEVEL DUMMY': [],
+    'OLD CHARTS': []
   };
+
+  const tableDataResponse = await axios.get<ISongData[]>(`/table/aery/data.json`);
+  const tableData = tableDataResponse.data;
 
   for (let i = 0; i < tableData.length; i++) {
     const level: AeryLevel = tableData[i].level as AeryLevel;
@@ -53,7 +56,7 @@ export const loadTableData = async () => {
       org_md5s,
       org_md5,
       comment,
-      adddate,
+      adddate
     });
   }
 
