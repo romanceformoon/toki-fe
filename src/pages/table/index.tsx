@@ -11,10 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
+import { Seo } from "~/components/Seo";
 import { loadTableData } from "~/utils/loadTableData";
 
 const DifficultyTable = () => {
@@ -64,25 +64,7 @@ const DifficultyTable = () => {
 
   return (
     <>
-      <NextSeo
-        title="Table | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/table",
-          title: "Table | Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="table" />
 
       <SelectLevel
         selectedLevel={selectedLevel}

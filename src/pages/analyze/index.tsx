@@ -8,10 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import useLoginUser from "~/auth/hooks/useLoginUser";
+import { Seo } from "~/components/Seo";
+import useLoginUser from "~/hooks/useLoginUser";
 import axiosInstance from "~/utils/axiosInstance";
 
 const LampGraph = () => {
@@ -64,25 +64,7 @@ const LampGraph = () => {
 
   return (
     <>
-      <NextSeo
-        title="Analyze | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/analyze",
-          title: "Analyze | Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="analyze" />
 
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}

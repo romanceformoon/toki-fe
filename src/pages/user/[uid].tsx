@@ -21,16 +21,16 @@ import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from "next";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useQueryClient } from "react-query";
-import useLoginUser from "~/auth/hooks/useLoginUser";
 import { ClearGraph } from "~/components/ClearGraph";
+import { Seo } from "~/components/Seo";
 import { TableHistory } from "~/components/TableHistory";
 import { TableTop50 } from "~/components/TableTop50";
 import { UserNickname } from "~/components/UserNickname";
+import useLoginUser from "~/hooks/useLoginUser";
 import useGraphQuery from "~/query/useGraphQuery";
 import useHistoryQuery from "~/query/useHistoryQuery";
 import useUserInfoQuery from "~/query/useUserInfoQuery";
@@ -122,26 +122,7 @@ const UserPage = ({
   )
     return (
       <>
-        <NextSeo
-          title={`${nickname} | Asuma Toki`}
-          description={`${nickname} BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS`}
-          openGraph={{
-            type: "website",
-            locale: "ko_KR",
-            url: `https://asumatoki.kr/user/${_uid}`,
-            title: `${nickname} | Asuma Toki`,
-            description: `${nickname} BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS`,
-            images: [
-              {
-                url: avatar
-                  ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}`
-                  : "/assets/images/logo.png",
-                width: 400,
-                height: 400,
-              },
-            ],
-          }}
-        />
+        <Seo type="user" uid={_uid} avatar={avatar} nickname={nickname} />
 
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: 1 }}>
@@ -222,26 +203,7 @@ const UserPage = ({
   if (userData && (graphData || historyData))
     return (
       <>
-        <NextSeo
-          title={`${userData.nickname} | Asuma Toki`}
-          description={`${userData.nickname} Profile`}
-          openGraph={{
-            type: "website",
-            locale: "ko_KR",
-            url: `https://asumatoki.kr/user/${userData.uid}`,
-            title: `${userData.nickname} | Asuma Toki`,
-            description: `${userData.nickname} Profile`,
-            images: [
-              {
-                url: userData.avatar
-                  ? `https://cdn.discordapp.com/avatars/${userData.uid}/${userData.avatar}`
-                  : "/assets/images/logo.png",
-                width: 400,
-                height: 400,
-              },
-            ],
-          }}
-        />
+        <Seo type="user" uid={_uid} avatar={avatar} nickname={nickname} />
 
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: 1 }}>

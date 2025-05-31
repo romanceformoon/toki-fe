@@ -2,9 +2,9 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, Typography } from "@mui/material";
 // import chardet from "chardet";
 import iconv from "iconv-lite";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Seo } from "~/components/Seo";
 import bmsjs from "~/utils/bmsjs";
 import BMSChart from "~/utils/bmsjs/bms/chart";
 import { renderBms } from "~/utils/bmsjs/render";
@@ -51,25 +51,8 @@ const Viewer = () => {
 
   return (
     <>
-      <NextSeo
-        title="BMS Viewer | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/tools/viewer",
-          title: "BMS Viewer | Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="viewer" />
+
       <Box>
         <Box sx={{ textAlign: "center" }}>
           <Typography fontSize="24px" fontWeight={700}>

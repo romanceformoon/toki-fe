@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { ClickableText } from "~/components/ClickableText";
+import { Seo } from "~/components/Seo";
 import { aerySkillSimulators } from "~/const/skillSimulator";
 
 const Skill = () => {
@@ -9,25 +9,7 @@ const Skill = () => {
 
   return (
     <>
-      <NextSeo
-        title="段位認定 | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/skill",
-          title: "段位認定 | Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="skill" />
 
       <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
         <Typography fontSize={24} fontWeight={700}>

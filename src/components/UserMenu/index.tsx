@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import useLoginUser from "~/auth/hooks/useLoginUser";
+import useLoginUser from "~/hooks/useLoginUser";
 import axiosInstance from "~/utils/axiosInstance";
 
 export const UserMenu = () => {

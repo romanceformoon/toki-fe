@@ -17,11 +17,11 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { RankingSkeleton } from "~/components/RankingSkeleton";
 import { RatingText } from "~/components/RatingText";
+import { Seo } from "~/components/Seo";
 import { UserNickname } from "~/components/UserNickname";
 import useEXPRankingQuery from "~/query/useEXPRankingQuery";
 import useRatingRankingQuery from "~/query/useRatingRankingQuery";
@@ -66,25 +66,8 @@ const Ranking = () => {
   )
     return (
       <>
-        <NextSeo
-          title="Ranking | Asuma Toki"
-          description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-          openGraph={{
-            type: "website",
-            locale: "ko_KR",
-            url: "https://asumatoki.kr/ranking",
-            title: "Ranking | Asuma Toki",
-            description:
-              "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-            images: [
-              {
-                url: "/assets/images/logo.png",
-                width: 400,
-                height: 400,
-              },
-            ],
-          }}
-        />
+        <Seo type="ranking" />
+
         <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
           <Tabs
             variant="scrollable"
@@ -127,25 +110,7 @@ const Ranking = () => {
   if (ranking || ratingRanking)
     return (
       <>
-        <NextSeo
-          title="Ranking | Asuma Toki"
-          description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-          openGraph={{
-            type: "website",
-            locale: "ko_KR",
-            url: "https://asumatoki.kr/ranking",
-            title: "Ranking | Asuma Toki",
-            description:
-              "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-            images: [
-              {
-                url: "/assets/images/logo.png",
-                width: 400,
-                height: 400,
-              },
-            ],
-          }}
-        />
+        <Seo type="ranking" />
 
         <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
           <Tabs

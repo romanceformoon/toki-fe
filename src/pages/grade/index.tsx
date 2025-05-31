@@ -10,9 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import Table from "@mui/material/Table";
-import { NextSeo } from "next-seo";
 import { useState } from "react";
 import { SelectLevel } from "~/components/SelectLevel";
+import { Seo } from "~/components/Seo";
 import aeryDataJSON from "./aery/gradeData.json";
 
 const Grade = () => {
@@ -24,25 +24,7 @@ const Grade = () => {
 
   return (
     <>
-      <NextSeo
-        title="Grade | Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr/grade",
-          title: "Grade | Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="grade" />
 
       <Box sx={{ mb: "1rem", textAlign: "center" }}>
         <Typography fontSize="24px" fontWeight={700}>

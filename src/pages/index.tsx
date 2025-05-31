@@ -12,11 +12,11 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import Aery from "public/update/aery.json";
 import { useState } from "react";
-import useLoginUser from "~/auth/hooks/useLoginUser";
+import { Seo } from "~/components/Seo";
+import useLoginUser from "~/hooks/useLoginUser";
 import { openInNewTab } from "~/utils/openInNewTab";
 
 const Main = () => {
@@ -39,25 +39,7 @@ const Main = () => {
 
   return (
     <>
-      <NextSeo
-        title="Asuma Toki"
-        description="BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS"
-        openGraph={{
-          type: "website",
-          locale: "ko_KR",
-          url: "https://asumatoki.kr",
-          title: "Asuma Toki",
-          description:
-            "BMS 난이도표, 발광BMS, 새틀라이트, 스텔라, 에리팩, 5key BMS, 5key Aery, Satelite, Stella, Insane BMS",
-          images: [
-            {
-              url: "/assets/images/logo.png",
-              width: 400,
-              height: 400,
-            },
-          ],
-        }}
-      />
+      <Seo type="main" />
       <Box
         sx={{
           bgcolor: "background.paper",
