@@ -19,7 +19,7 @@ import axios from 'axios';
 import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQueryClient } from 'react-query';
 import { ClearGraph } from '~/components/ClearGraph';
 import { Seo } from '~/components/Seo';
@@ -27,6 +27,7 @@ import { TableHistory } from '~/components/TableHistory';
 import { TableTop50 } from '~/components/TableTop50';
 import { UserNickname } from '~/components/UserNickname';
 import useLoginUser from '~/hooks/useLoginUser';
+import useAeryTableDataQuery from '~/query/useAeryTableDataQuery';
 import useGraphQuery from '~/query/useGraphQuery';
 import useHistoryQuery from '~/query/useHistoryQuery';
 import useUserInfoQuery from '~/query/useUserInfoQuery';
@@ -34,15 +35,7 @@ import axiosInstance from '~/utils/axiosInstance';
 import { getExpTable, getLevel } from '~/utils/exp';
 import { getRating } from '~/utils/rating';
 
-const UserPage = ({
-  _uid,
-  avatar,
-  nickname,
-  clearDan,
-  exp,
-  lr2Id,
-  rating
-}: InferGetServerSidePropsType<GetServerSideProps>) => {
+const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
   const queryClient = useQueryClient();
 
@@ -102,6 +95,23 @@ const UserPage = ({
     uid,
     category
   });
+
+  const [rating, setRating] = useState<string>('-');
+
+  const {
+    data: tableData,
+    isLoading: isTableDataLoading,
+    isError: isTableDataError
+  } = useAeryTableDataQuery();
+
+  useEffect(() => {
+    if (category === 'aery' && tableData && userData) {
+      const calculatedRating = getRating(userData.rating, tableData);
+      setRating(calculatedRating);
+    } else if (category !== 'aery') {
+      setRating('-');
+    }
+  }, [category, userData, tableData]);
 
   if (
     !userData ||
@@ -273,7 +283,7 @@ const UserPage = ({
                 </Typography>
               </Box>
               <Typography fontSize='14px' fontWeight={500}>
-                {`Rating: ${category === 'aery' ? rating : '-'}`}
+                {`Rating: ${rating}`}
               </Typography>
             </Box>
           </Box>
@@ -326,12 +336,6 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 
   const result = await axios.get(`${requestURI}/toki-api/user/aery/${uid}`);
 
-  const tableDataResponse = await axios.get<ISongData[]>(
-    `${requestURI}/toki-api/table/aery/data.json`
-  );
-  const tableData = tableDataResponse.data;
-  const rating = getRating(result.data.rating, tableData);
-
   return {
     props: {
       _uid: uid,
@@ -339,8 +343,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       nickname: result.data.nickname,
       clearDan: result.data.clearDan,
       exp: result.data.exp,
-      lr2Id: result.data.lr2Id,
-      rating
+      lr2Id: result.data.lr2Id
     }
   };
 }

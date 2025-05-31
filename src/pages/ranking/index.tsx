@@ -17,19 +17,19 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { RankingSkeleton } from '~/components/RankingSkeleton';
 import { RatingText } from '~/components/RatingText';
 import { Seo } from '~/components/Seo';
 import { UserNickname } from '~/components/UserNickname';
+import useAeryTableDataQuery from '~/query/useAeryTableDataQuery';
 import useEXPRankingQuery from '~/query/useEXPRankingQuery';
 import useRatingRankingQuery from '~/query/useRatingRankingQuery';
 import { getLevel } from '~/utils/exp';
 import { getRating } from '~/utils/rating';
 
-const Ranking = ({ tableData }: { tableData: ISongData[] }) => {
+const Ranking = () => {
   const router = useRouter();
 
   const [category, setCategory] = useState<string>('aery');
@@ -54,13 +54,20 @@ const Ranking = ({ tableData }: { tableData: ISongData[] }) => {
     isError: isRatingError
   } = useRatingRankingQuery({ category });
 
+  const {
+    data: tableData,
+    isLoading: isTableDataLoading,
+    isError: isTableDataError
+  } = useAeryTableDataQuery();
+
   if (
     !ranking ||
     !ratingRanking ||
     isExpRankingLoading ||
     isExpError ||
     isRatingRankingLoading ||
-    isRatingError
+    isRatingError ||
+    (category === 'aery' && (isTableDataLoading || !tableData))
   )
     return (
       <>
@@ -363,7 +370,13 @@ const Ranking = ({ tableData }: { tableData: ISongData[] }) => {
                                   letterSpacing: '1.2px'
                                 }}
                               >
-                                <RatingText rating={getRating(data.rating, tableData)} />
+                                <RatingText
+                                  rating={
+                                    category === 'aery' && tableData
+                                      ? getRating(data.rating, tableData)
+                                      : '-'
+                                  }
+                                />
                               </Box>
                             </TableCell>
                           </TableRow>
@@ -381,18 +394,8 @@ const Ranking = ({ tableData }: { tableData: ISongData[] }) => {
 };
 
 export async function getServerSideProps() {
-  const isDevelopmentEnv = process.env.NODE_ENV === 'development';
-  const requestURI = isDevelopmentEnv ? process.env.NEXT_PUBLIC_DEV : process.env.NEXT_PUBLIC_PROD;
-
-  const tableDataResponse = await axios.get<ISongData[]>(
-    `${requestURI}/toki-api/table/aery/data.json`
-  );
-  const tableData = tableDataResponse.data;
-
   return {
-    props: {
-      tableData
-    }
+    props: {}
   };
 }
 

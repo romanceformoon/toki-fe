@@ -1,4 +1,4 @@
-import axios from 'axios';
+import AeryAPI from '~/api/aery';
 
 export const loadTableData = async () => {
   const levelList: ILevelList = {
@@ -27,8 +27,7 @@ export const loadTableData = async () => {
     'OLD CHARTS': []
   };
 
-  const tableDataResponse = await axios.get<ISongData[]>(`/table/aery/data.json`);
-  const tableData = tableDataResponse.data;
+  const tableData = await AeryAPI.fetchTableData();
 
   for (let i = 0; i < tableData.length; i++) {
     const level: AeryLevel = tableData[i].level as AeryLevel;

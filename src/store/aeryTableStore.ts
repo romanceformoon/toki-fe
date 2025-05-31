@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { fetchTableData, updateTableData } from '~/api/aery';
+import AeryAPI from '~/api/aery';
 
 interface AeryTableState {
   // 상태
@@ -30,7 +30,7 @@ const useAeryTableStore = create<AeryTableState>()(
     fetchSongs: async () => {
       set({ isLoading: true, error: null });
       try {
-        const data = await fetchTableData();
+        const data = await AeryAPI.fetchTableData();
         set({ songs: data, isLoading: false });
       } catch (error) {
         set({
@@ -44,7 +44,7 @@ const useAeryTableStore = create<AeryTableState>()(
     updateSongs: async (songs: ISongData[]) => {
       set({ isLoading: true, error: null });
       try {
-        const success = await updateTableData(songs);
+        const success = await AeryAPI.updateTableData(songs);
         if (success) {
           set({ songs, isLoading: false });
         }
