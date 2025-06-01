@@ -74,7 +74,8 @@ const DifficultyTable = () => {
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: '1.4rem'
+          borderRadius: '1.4rem',
+          borderColor: 'primary.main'
         }}
         component={Paper}
       >
