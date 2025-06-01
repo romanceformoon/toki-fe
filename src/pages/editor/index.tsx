@@ -5,7 +5,6 @@ import {
   CircularProgress,
   Fade,
   FormControl,
-  Grid,
   InputLabel,
   MenuItem,
   Paper,
@@ -332,54 +331,46 @@ const LevelEditor = () => {
         </CenteredToast>
       </Fade>
 
-      <Paper sx={{ p: 2, mb: 2 }}>
-        <Grid container spacing={2} alignItems='center'>
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              variant='outlined'
-              label='제목 또는 아티스트로 검색'
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              InputProps={{
-                startAdornment: <SearchIcon sx={{ mr: 1, color: 'action.active' }} />
-              }}
-            />
-          </Grid>
+      <Paper sx={{ p: 2, mb: 2, display: 'flex', gap: 2 }}>
+        <TextField
+          sx={{ width: '60%' }}
+          variant='outlined'
+          label='제목 또는 아티스트로 검색'
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          slotProps={{
+            input: {
+              startAdornment: <SearchIcon sx={{ mr: 1, color: 'action.active' }} />
+            }
+          }}
+        />
 
-          <Grid item xs={12} md={4}>
-            <FormControl fullWidth variant='outlined'>
-              <InputLabel>레벨 선택</InputLabel>
-              <Select
-                value={selectedLevel}
-                onChange={e => setSelectedLevel(e.target.value as AeryLevel)}
-                label='레벨 선택'
-                disabled={isFiltering}
-              >
-                {levels.map(level => (
-                  <MenuItem key={level} value={level}>
-                    {level}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
+        <FormControl sx={{ width: '30%' }} variant='outlined'>
+          <InputLabel>레벨 선택</InputLabel>
+          <Select
+            value={selectedLevel}
+            onChange={e => setSelectedLevel(e.target.value as AeryLevel)}
+            label='레벨 선택'
+            disabled={isFiltering}
+          >
+            {levels.map(level => (
+              <MenuItem key={level} value={level}>
+                {level}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
 
-          <Grid item xs={12} md={2}>
-            <Button
-              fullWidth
-              variant='contained'
-              color='primary'
-              startIcon={
-                isSubmitting ? <CircularProgress size={24} color='inherit' /> : <SaveIcon />
-              }
-              onClick={handleSave}
-              disabled={isSubmitting || editCount === 0}
-            >
-              저장 ({editCount})
-            </Button>
-          </Grid>
-        </Grid>
+        <Button
+          sx={{ width: '10%' }}
+          variant='contained'
+          color='primary'
+          startIcon={isSubmitting ? <CircularProgress size={24} color='inherit' /> : <SaveIcon />}
+          onClick={handleSave}
+          disabled={isSubmitting || editCount === 0}
+        >
+          저장 ({editCount})
+        </Button>
       </Paper>
 
       <StyledTableContainer>

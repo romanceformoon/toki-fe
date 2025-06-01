@@ -1,6 +1,7 @@
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import LinkIcon from '@mui/icons-material/Link';
 import {
+  Box,
   IconButton,
   Paper,
   SelectChangeEvent,
@@ -198,10 +199,11 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
         handleChange={handleLevelChange}
         tableData={historyData}
       />
+
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: '13px',
+          borderRadius: '1.4rem',
           borderColor: 'primary.main'
         }}
         component={Paper}
@@ -210,15 +212,11 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
           <TableHead>
             <TableRow>
               <TableCell sx={{ width: '10%' }}>
-                <Typography
-                  fontSize='24px'
-                  fontWeight='900'
-                  fontStyle={{ color: 'primary.main' }}
-                  textAlign='center'
-                >
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Level
                 </Typography>
               </TableCell>
+
               <TableCell sx={{ width: '30%' }}>
                 <ClickableText
                   onClick={() => {
@@ -226,16 +224,15 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     else descTitle();
                   }}
                 >
-                  <Typography
-                    fontSize='24px'
-                    fontWeight='900'
-                    fontStyle={{ color: 'primary.main' }}
-                  >
-                    Title
-                    <ImportExportIcon />
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography variant='h2' fontWeight={700}>
+                      Title
+                    </Typography>
+                    <ImportExportIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
+                  </Box>
                 </ClickableText>
               </TableCell>
+
               <TableCell sx={{ width: '20%' }}>
                 <ClickableText
                   onClick={() => {
@@ -243,14 +240,12 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     else descClear();
                   }}
                 >
-                  <Typography
-                    fontSize='24px'
-                    fontWeight='900'
-                    fontStyle={{ color: 'primary.main' }}
-                  >
-                    Clear
-                    <ImportExportIcon />
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography variant='h2' fontWeight={700}>
+                      Clear
+                    </Typography>
+                    <ImportExportIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
+                  </Box>
                 </ClickableText>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
@@ -260,16 +255,15 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     else descBP();
                   }}
                 >
-                  <Typography
-                    fontSize='24px'
-                    fontWeight='900'
-                    fontStyle={{ color: 'primary.main' }}
-                  >
-                    BP
-                    <ImportExportIcon />
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography variant='h2' fontWeight={700}>
+                      BP
+                    </Typography>
+                    <ImportExportIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
+                  </Box>
                 </ClickableText>
               </TableCell>
+
               <TableCell sx={{ width: '10%' }}>
                 <ClickableText
                   onClick={() => {
@@ -277,16 +271,15 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     else descRate();
                   }}
                 >
-                  <Typography
-                    fontSize='24px'
-                    fontWeight='900'
-                    fontStyle={{ color: 'primary.main' }}
-                  >
-                    Rate
-                    <ImportExportIcon />
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography variant='h2' fontWeight={700}>
+                      Rate
+                    </Typography>
+                    <ImportExportIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
+                  </Box>
                 </ClickableText>
               </TableCell>
+
               <TableCell sx={{ width: '10%' }}>
                 <ClickableText
                   onClick={() => {
@@ -294,66 +287,49 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                     else descExp();
                   }}
                 >
-                  <Typography
-                    fontSize='24px'
-                    fontWeight='900'
-                    fontStyle={{ color: 'primary.main' }}
-                  >
-                    EXP
-                    <ImportExportIcon />
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography variant='h2' fontWeight={700}>
+                      EXP
+                    </Typography>
+                    <ImportExportIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
+                  </Box>
                 </ClickableText>
               </TableCell>
+
               <TableCell sx={{ width: '10%' }}>
-                <Typography
-                  fontSize='24px'
-                  fontWeight='900'
-                  fontStyle={{ color: 'primary.main' }}
-                  textAlign='center'
-                >
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   LR2IR
                 </Typography>
               </TableCell>
             </TableRow>
           </TableHead>
+
           <TableBody>
             {songList.map((data, idx) => {
               return (
                 <>
                   <TableRow sx={{ backgroundColor: colorPick(data.clear) }}>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500' align='center'>
+                      <Typography variant='h3' align='center'>
                         {selectedLevel}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography
-                        fontSize='16px'
-                        fontWeight='500'
-                        sx={{ maxWidth: 500, wordWrap: 'break-word' }}
-                      >
+                      <Typography variant='h3' sx={{ maxWidth: 500, wordWrap: 'break-word' }}>
                         {data.title}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
-                        {data.clear}
-                      </Typography>
+                      <Typography variant='h3'>{data.clear}</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
-                        {data.bp}
-                      </Typography>
+                      <Typography variant='h3'>{data.bp}</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
-                        {data.rate}%
-                      </Typography>
+                      <Typography variant='h3'>{data.rate}%</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
-                        {data.exp.toFixed(2)}
-                      </Typography>
+                      <Typography variant='h3'>{data.exp.toFixed(2)}</Typography>
                     </TableCell>
                     <TableCell key={data.md5} align='center'>
                       <Link
@@ -361,7 +337,7 @@ export const TableHistory = ({ selectedLevel, handleLevelChange, historyData }: 
                         target='_blank'
                       >
                         <IconButton>
-                          <LinkIcon />
+                          <LinkIcon sx={{ width: '2.0rem', height: '2.0rem' }} />
                         </IconButton>
                       </Link>
                     </TableCell>
