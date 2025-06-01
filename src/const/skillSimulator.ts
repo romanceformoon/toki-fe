@@ -1,4 +1,4 @@
-export const aerySkillSimulators = {
+export const aerySkillSimulators: IAeryDan = {
   '1 DAN': {
     list: [
       '[Lv.12] sola [5KEYS AERY NM]',

@@ -1,37 +1,17 @@
-import InfoIcon from '@mui/icons-material/Info';
 import { TabList } from '@mui/lab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
-import {
-  Avatar,
-  Box,
-  Paper,
-  Tab,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Tabs,
-  Tooltip,
-  Typography
-} from '@mui/material';
-import { useRouter } from 'next/router';
+import { Box, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
+import { ExpRanking } from '~/components/ExpRanking';
 import { RankingSkeleton, RatingRankingSkeleton } from '~/components/RankingSkeleton';
-import { RatingText } from '~/components/RatingText';
+import { RatingRanking } from '~/components/RatingRanking';
 import { Seo } from '~/components/Seo';
-import { UserNickname } from '~/components/UserNickname';
 import useAeryTableDataQuery from '~/query/useAeryTableDataQuery';
 import useEXPRankingQuery from '~/query/useEXPRankingQuery';
 import useRatingRankingQuery from '~/query/useRatingRankingQuery';
-import { getLevel } from '~/utils/exp';
-import { getRating } from '~/utils/rating';
 
 const Ranking = () => {
-  const router = useRouter();
-
   const [category, setCategory] = useState<string>('aery');
   const handleCategoryChange = (event: React.SyntheticEvent, newValue: string) => {
     setCategory(newValue);
@@ -137,248 +117,14 @@ const Ranking = () => {
           </TabList>
           <Box sx={{ display: 'flex' }}>
             <TabPanel value='EXP' sx={{ width: '100%' }}>
-              <TableContainer
-                sx={{
-                  border: 1,
-                  borderRadius: '1.4rem',
-                  borderColor: 'primary.main'
-                }}
-                component={Paper}
-              >
-                <Table sx={{ minWidth: '100%' }}>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell sx={{ width: '15%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                          textAlign='center'
-                        >
-                          순위
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '35%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                        >
-                          닉네임
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '25%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                        >
-                          레벨
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '25%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                        >
-                          경험치
-                        </Typography>
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-
-                  <TableBody>
-                    {ranking?.map((data, idx) => {
-                      return (
-                        <>
-                          <TableRow key={data.uid}>
-                            <TableCell>
-                              <Typography variant='h2' fontWeight={500} align='center'>
-                                {idx + 1}
-                              </Typography>
-                            </TableCell>
-                            <TableCell>
-                              <Box
-                                sx={{
-                                  width: '10%',
-                                  display: 'flex'
-                                }}
-                              >
-                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                  <Avatar
-                                    alt='Profile Image'
-                                    sx={{
-                                      height: '3.6rem',
-                                      width: '3.6rem',
-                                      mr: 2
-                                    }}
-                                    src={
-                                      data.avatar
-                                        ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
-                                        : undefined
-                                    }
-                                  />
-
-                                  <UserNickname
-                                    clearDan={data.clearDan}
-                                    onClick={() => router.push(`/user/${data.uid}`)}
-                                  >
-                                    {data.nickname}
-                                  </UserNickname>
-                                </Box>
-                              </Box>
-                            </TableCell>
-                            <TableCell>
-                              <Typography variant='h2'>{getLevel(data.exp).toFixed(0)}</Typography>
-                            </TableCell>
-                            <TableCell>
-                              <Typography variant='h2'>{data.exp.toLocaleString()}</Typography>
-                            </TableCell>
-                          </TableRow>
-                        </>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <ExpRanking ranking={ranking} />
             </TabPanel>
-
             <TabPanel value='Rating' sx={{ width: '100%' }}>
-              <TableContainer
-                sx={{
-                  border: 1,
-                  borderRadius: '1.4rem',
-                  borderColor: 'primary.main'
-                }}
-                component={Paper}
-              >
-                <Table sx={{ minWidth: '100%' }}>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell sx={{ width: '15%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                          textAlign='center'
-                        >
-                          순위
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '35%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                        >
-                          닉네임
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '25%' }}>
-                        <Typography
-                          variant='h2'
-                          fontWeight={700}
-                          fontStyle={{ color: 'primary.main' }}
-                        >
-                          레벨
-                        </Typography>
-                      </TableCell>
-                      <TableCell sx={{ width: '25%' }}>
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            alignItems: 'center'
-                          }}
-                        >
-                          <Typography
-                            variant='h2'
-                            fontWeight={700}
-                            fontStyle={{ color: 'primary.main' }}
-                          >
-                            레이팅
-                          </Typography>
-                          {category === 'aery' ? (
-                            <Tooltip
-                              title='N 레벨까지의 모든 곡을 FULL COMBO 없이 HARD CLEAR 했을 때의 레이팅을 N.000으로 정의한다.'
-                              arrow
-                            >
-                              <InfoIcon sx={{ ml: '0.75rem' }} />
-                            </Tooltip>
-                          ) : null}
-                        </Box>
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-
-                  <TableBody>
-                    {ratingRanking?.map((data, idx) => {
-                      return (
-                        <>
-                          <TableRow key={data.uid}>
-                            <TableCell>
-                              <Typography variant='h2' align='center'>
-                                {idx + 1}
-                              </Typography>
-                            </TableCell>
-                            <TableCell>
-                              <Box
-                                sx={{
-                                  width: '10%',
-                                  display: 'flex'
-                                }}
-                              >
-                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                  <Avatar
-                                    alt='Profile Image'
-                                    sx={{
-                                      height: '3.6rem',
-                                      width: '3.6rem',
-                                      mr: 2
-                                    }}
-                                    src={
-                                      data.avatar
-                                        ? `https://cdn.discordapp.com/avatars/${data.uid}/${data.avatar}`
-                                        : undefined
-                                    }
-                                  />
-
-                                  <UserNickname
-                                    clearDan={data.clearDan}
-                                    onClick={() => router.push(`/user/${data.uid}`)}
-                                  >
-                                    {data.nickname}
-                                  </UserNickname>
-                                </Box>
-                              </Box>
-                            </TableCell>
-                            <TableCell>
-                              <Typography variant='h2'>{getLevel(data.exp).toFixed(0)}</Typography>
-                            </TableCell>
-                            <TableCell>
-                              <Box
-                                sx={{
-                                  display: 'flex',
-                                  position: 'relative',
-                                  letterSpacing: '1.2px'
-                                }}
-                              >
-                                <RatingText
-                                  rating={
-                                    category === 'aery' && tableData
-                                      ? getRating(data.rating, tableData)
-                                      : '-'
-                                  }
-                                />
-                              </Box>
-                            </TableCell>
-                          </TableRow>
-                        </>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <RatingRanking
+                ratingRanking={ratingRanking}
+                category={category}
+                tableData={tableData}
+              />
             </TabPanel>
           </Box>
         </TabContext>
