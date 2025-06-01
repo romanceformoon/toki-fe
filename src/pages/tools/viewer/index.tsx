@@ -54,13 +54,12 @@ const Viewer = () => {
       <Seo type='viewer' />
 
       <Box>
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography fontSize='24px' fontWeight={700}>
+        <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Typography variant='h1' fontWeight={700}>
             BMS Chart Viewer
           </Typography>
           <Typography
-            fontSize='12px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
@@ -74,8 +73,7 @@ const Viewer = () => {
               target='_blank'
             >
               <Typography
-                fontSize='12px'
-                fontWeight={500}
+                variant='h5'
                 sx={{
                   color: '#476ce4'
                 }}
@@ -85,25 +83,37 @@ const Viewer = () => {
             </Link>
           </Box>
         </Box>
+
         <Box
           sx={{
             mt: '2vh',
             mb: '2vh',
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
         >
-          <Button variant='contained' component='label' sx={{ borderRadius: 10 }}>
+          <Button variant='contained' sx={{ borderRadius: 10 }}>
             <input type='file' accept='.bms,.bme' onChange={onChangeFile} hidden />
-            <AddIcon sx={{ mr: 1 }} />
-            BMS 파일 업로드
+
+            <AddIcon sx={{ mr: 1, width: '1.6rem', height: '1.6rem' }} />
+
+            <Typography variant='h4'>BMS 파일 업로드</Typography>
           </Button>
         </Box>
-        <Box sx={{ textAlign: 'center', mb: '1vh' }}>
-          <Typography>노트 배치 조절</Typography>
+
+        <Box
+          sx={{
+            textAlign: 'center',
+            mb: '1vh',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 0.75
+          }}
+        >
+          <Typography variant='h3'>노트 배치 조절</Typography>
           <Typography
-            fontSize='12px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
@@ -111,8 +121,7 @@ const Viewer = () => {
             ※ 입력 예시
           </Typography>
           <Typography
-            fontSize='12px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
@@ -121,8 +130,7 @@ const Viewer = () => {
           </Typography>
 
           <Typography
-            fontSize='12px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
@@ -130,8 +138,7 @@ const Viewer = () => {
             7키 정분할: 2461357
           </Typography>
           <Typography
-            fontSize='12px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
@@ -139,6 +146,7 @@ const Viewer = () => {
             (5키의 경우는 뒤에 67을 붙여야함)
           </Typography>
         </Box>
+
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: '1vh' }}>
           <input
             className='no-spinner'
@@ -154,10 +162,10 @@ const Viewer = () => {
             }}
           />
         </Box>
+
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: '2.5vh' }}>
           <Typography
-            fontSize='14px'
-            fontWeight={500}
+            variant='h5'
             sx={{
               color: 'grey'
             }}
