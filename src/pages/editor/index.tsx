@@ -213,48 +213,60 @@ const LevelEditor = () => {
           sx={isEdited ? { backgroundColor: 'rgba(25, 118, 210, 0.08)' } : {}}
         >
           <TableCell
-            variant='body'
             sx={{
-              width: '40%',
-              height: '52px',
-              padding: '6px 16px',
-              fontWeight: 'medium',
+              width: '45%',
+              height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            {song.title}
+            <Typography
+              variant='h3'
+              sx={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {song.title}
+            </Typography>
           </TableCell>
+
           <TableCell
-            variant='body'
             sx={{
-              width: '30%',
-              height: '52px',
-              padding: '6px 16px',
+              width: '25%',
+              height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            {song.artist}
+            <Typography
+              variant='h3'
+              sx={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {song.artist}
+            </Typography>
           </TableCell>
+
           <TableCell
-            variant='body'
             sx={{
               width: '15%',
-              height: '52px',
-              padding: '6px 16px',
+              height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            {song.level}
+            <Typography variant='h3'>{song.level}</Typography>
           </TableCell>
+
           <TableCell
-            variant='body'
             sx={{
               width: '15%',
-              height: '52px',
-              padding: '6px 16px',
+              height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
@@ -267,7 +279,7 @@ const LevelEditor = () => {
               >
                 {levels.map(level => (
                   <MenuItem key={level} value={level}>
-                    {level}
+                    <Typography variant='h3'>{level}</Typography>
                   </MenuItem>
                 ))}
               </Select>
@@ -281,11 +293,9 @@ const LevelEditor = () => {
 
   if (isLoading) {
     return (
-      <Box
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
-      >
-        <CircularProgress />
-        <Typography variant='h6' sx={{ ml: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '65vh' }}>
+        <CircularProgress size={20} />
+        <Typography variant='h4' sx={{ ml: 2 }}>
           데이터를 불러오는 중...
         </Typography>
       </Box>
@@ -294,18 +304,16 @@ const LevelEditor = () => {
 
   if (error) {
     return (
-      <Box
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
-      >
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '65vh' }}>
         <Box sx={{ textAlign: 'center' }}>
           <Typography variant='h4' color='error' gutterBottom>
             오류 발생
           </Typography>
-          <Typography variant='body1' gutterBottom>
+          <Typography variant='h4' gutterBottom>
             {error}
           </Typography>
           <Button variant='contained' onClick={() => fetchSongs()} sx={{ mt: 2 }}>
-            다시 시도
+            <Typography variant='h4'>다시 시도</Typography>
           </Button>
         </Box>
       </Box>
@@ -314,7 +322,7 @@ const LevelEditor = () => {
 
   return (
     <>
-      <Typography variant='h4' component='h4' gutterBottom>
+      <Typography variant='h1' component='h1' fontWeight={700} gutterBottom>
         Aery 레벨 편집기
       </Typography>
 
@@ -324,14 +332,18 @@ const LevelEditor = () => {
             onClose={() => setToastOpen(false)}
             severity={saveSuccess ? 'success' : 'error'}
             variant='filled'
-            sx={{ minWidth: '30rem', textAlign: 'center' }}
+            sx={{ minWidth: '30rem', textAlign: 'center', display: 'flex', alignItems: 'center' }}
           >
-            {saveSuccess ? '변경사항이 성공적으로 저장되었습니다.' : '저장 중 오류가 발생했습니다.'}
+            <Typography variant='h4'>
+              {saveSuccess
+                ? '변경사항이 성공적으로 저장되었습니다.'
+                : '저장 중 오류가 발생했습니다.'}
+            </Typography>
           </MuiAlert>
         </CenteredToast>
       </Fade>
 
-      <Paper sx={{ p: 2, mb: 2, display: 'flex', gap: 2 }}>
+      <Paper sx={{ p: 2, mb: 2, display: 'flex', gap: 2, borderRadius: '1.4rem' }}>
         <TextField
           sx={{ width: '60%' }}
           variant='outlined'
@@ -340,13 +352,26 @@ const LevelEditor = () => {
           onChange={e => setSearch(e.target.value)}
           slotProps={{
             input: {
-              startAdornment: <SearchIcon sx={{ mr: 1, color: 'action.active' }} />
+              startAdornment: (
+                <SearchIcon sx={{ mr: 1, color: 'action.active', width: '2rem', height: '2rem' }} />
+              ),
+              sx: {
+                fontSize: '1.6rem'
+              }
+            },
+            inputLabel: {
+              sx: {
+                fontSize: '1.4rem'
+              }
             }
           }}
         />
 
         <FormControl sx={{ width: '30%' }} variant='outlined'>
-          <InputLabel>레벨 선택</InputLabel>
+          <InputLabel>
+            <Typography variant='h4'>레벨 선택</Typography>
+          </InputLabel>
+
           <Select
             value={selectedLevel}
             onChange={e => setSelectedLevel(e.target.value as AeryLevel)}
@@ -355,7 +380,7 @@ const LevelEditor = () => {
           >
             {levels.map(level => (
               <MenuItem key={level} value={level}>
-                {level}
+                <Typography variant='h3'>{level}</Typography>
               </MenuItem>
             ))}
           </Select>
@@ -365,11 +390,11 @@ const LevelEditor = () => {
           sx={{ width: '10%' }}
           variant='contained'
           color='primary'
-          startIcon={isSubmitting ? <CircularProgress size={24} color='inherit' /> : <SaveIcon />}
+          startIcon={isSubmitting ? <CircularProgress size={20} color='inherit' /> : <SaveIcon />}
           onClick={handleSave}
           disabled={isSubmitting || editCount === 0}
         >
-          저장 ({editCount})
+          <Typography variant='h4'>저장 ({editCount})</Typography>
         </Button>
       </Paper>
 
@@ -377,18 +402,34 @@ const LevelEditor = () => {
         <Table stickyHeader>
           <TableHead>
             <TableRow style={{ display: 'flex' }}>
-              <TableCell sx={{ width: '40%', display: 'block' }}>제목</TableCell>
-              <TableCell sx={{ width: '30%', display: 'block' }}>아티스트</TableCell>
-              <TableCell sx={{ width: '15%', display: 'block' }}>현재 레벨</TableCell>
-              <TableCell sx={{ width: '15%', display: 'block' }}>변경할 레벨</TableCell>
+              <TableCell sx={{ width: '45%' }}>
+                <Typography variant='h2' fontWeight={700}>
+                  제목
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '25%' }}>
+                <Typography variant='h2' fontWeight={700}>
+                  아티스트
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '15%' }}>
+                <Typography variant='h2' fontWeight={700}>
+                  현재 레벨
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '15%' }}>
+                <Typography variant='h2' fontWeight={700}>
+                  변경할 레벨
+                </Typography>
+              </TableCell>
             </TableRow>
           </TableHead>
 
-          <TableBody sx={{ display: 'block' }}>
+          <TableBody sx={{}}>
             {isFiltering ? (
-              <Box sx={{ display: 'flex', justifyContent: 'center', py: 3 }}>
-                <CircularProgress size={24} />
-                <Typography variant='body2' sx={{ ml: 1 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 3 }}>
+                <CircularProgress size={20} />
+                <Typography variant='h4' sx={{ ml: 1 }}>
                   데이터 필터링 중...
                 </Typography>
               </Box>
@@ -406,7 +447,7 @@ const LevelEditor = () => {
             ) : (
               <TableRow>
                 <TableCell colSpan={4} align='center' sx={{ py: 3 }}>
-                  <Typography variant='body1'>검색 결과가 없습니다.</Typography>
+                  <Typography variant='h4'>검색 결과가 없습니다.</Typography>
                 </TableCell>
               </TableRow>
             )}
