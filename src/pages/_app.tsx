@@ -1,5 +1,5 @@
 import { Box, CssBaseline, PaletteMode } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import type { AppContext, AppProps } from 'next/app';
 import App from 'next/app';
 import localFont from 'next/font/local';
@@ -10,6 +10,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import AppWrapper from '~/layout/AppWrapper';
 import Header from '~/layout/header';
 import '~/pages/tools/viewer/styles/bmsViewer.css';
+import '~/styles/globals.css';
+import { createAppTheme } from '~/theme';
 
 const mainFont = localFont({ src: '../layout/fonts/Title_Light.woff' });
 
@@ -70,18 +72,7 @@ function MyApp({
     setMounted(true);
   }, []);
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        typography: {
-          fontFamily: mainFont.style.fontFamily
-        },
-        palette: {
-          mode
-        }
-      }),
-    [mode]
-  );
+  const theme = useMemo(() => createAppTheme(mode, mainFont.style.fontFamily), [mode]);
 
   // 단순화된 테마 변경 함수
   const handleThemeChange = () => {

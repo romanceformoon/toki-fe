@@ -16,7 +16,7 @@ export const Logo = () => {
     >
       <Avatar
         sx={{
-          mr: '0.6rem',
+          mr: '1rem',
           '&:hover': {
             cursor: 'pointer'
           }
@@ -26,12 +26,12 @@ export const Logo = () => {
       />
 
       <Typography
-        variant='h6'
+        variant='h1'
         noWrap
         sx={{
           mr: 2,
           fontWeight: 700,
-          letterSpacing: '.3rem',
+          letterSpacing: '0.5rem',
           color: 'inherit',
           textDecoration: 'none',
           '&:hover': {

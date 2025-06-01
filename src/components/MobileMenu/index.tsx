@@ -46,7 +46,7 @@ export const MobileMenu = () => {
         onClick={handleOpenNavMenu}
         color='inherit'
       >
-        <MenuIcon />
+        <MenuIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
       </IconButton>
 
       {/* 모바일 링크 */}
@@ -84,15 +84,14 @@ export const MobileMenu = () => {
                   router.push(`/${page.link}`);
                 }}
               >
-                {page.name}
+                <Typography variant='h4'>{page.name}</Typography>
               </MenuItem>
             );
           } else {
             return (
               <Divider key={page.name} sx={{ my: 0.5 }}>
                 <Typography
-                  fontSize='12px'
-                  fontWeight={500}
+                  variant='h5'
                   sx={{
                     color: 'grey'
                   }}
@@ -104,6 +103,7 @@ export const MobileMenu = () => {
           }
         })}
       </Menu>
+
       <Button
         sx={{
           color: 'white',
@@ -115,8 +115,6 @@ export const MobileMenu = () => {
       >
         <Avatar
           sx={{
-            mr: '0.6rem',
-            justifyContent: 'center',
             '&:hover': {
               cursor: 'pointer'
             }

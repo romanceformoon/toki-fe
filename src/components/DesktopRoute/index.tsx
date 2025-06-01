@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 export const DesktopRoute = () => {
   const pages = [
-    { name: 'analyze', link: 'analyze' },
-    { name: 'ranking', link: 'ranking' },
+    { name: 'ANALYZE', link: 'analyze' },
+    { name: 'RANKING', link: 'ranking' },
     { name: '5KEYS AERY' },
     { name: 'TOOLS' }
   ];
@@ -57,7 +57,7 @@ export const DesktopRoute = () => {
               }}
               sx={{ my: 2, color: 'white' }}
             >
-              {page.name}
+              <Typography variant='h4'>{page.name}</Typography>
             </Button>
           );
         } else {
@@ -68,14 +68,14 @@ export const DesktopRoute = () => {
               sx={{ my: 2, color: 'white' }}
               endIcon={<KeyboardArrowDownIcon />}
             >
-              {page.name}
+              <Typography variant='h4'>{page.name}</Typography>
             </Button>
           );
         }
       })}
 
       <Menu
-        sx={{ mt: '45px' }}
+        sx={{ mt: '4.5rem' }}
         id='menu-appbar'
         anchorEl={anchorElAery}
         anchorOrigin={{
@@ -93,6 +93,7 @@ export const DesktopRoute = () => {
         {subPages.aery.map(page => (
           <MenuItem key={page.name} onClick={handleCloseAeryMenu}>
             <Typography
+              variant='h4'
               onClick={async () => {
                 router.push(`/${page.link}`);
               }}
@@ -104,7 +105,7 @@ export const DesktopRoute = () => {
       </Menu>
 
       <Menu
-        sx={{ mt: '45px' }}
+        sx={{ mt: '4.5rem' }}
         id='menu-appbar'
         anchorEl={anchorElTools}
         anchorOrigin={{
@@ -122,6 +123,7 @@ export const DesktopRoute = () => {
         {subPages.tools.map(page => (
           <MenuItem key={page.name} onClick={handleCloseToolsMenu}>
             <Typography
+              variant='h4'
               textAlign='center'
               onClick={async () => {
                 router.push(`/${page.link}`);

@@ -27,7 +27,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
         <Link href={'https://github.com/romanceformoon/toki-fe'} target='_blank'>
           <IconButton>
             <Tooltip title='Github'>
-              <GitHubIcon />
+              <GitHubIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
             </Tooltip>
           </IconButton>
         </Link>
