@@ -1,4 +1,4 @@
-import axios from 'axios';
+import AeryAPI from '~/api/aery';
 
 export const loadTableData = async () => {
   const levelList: ILevelList = {
@@ -17,18 +17,25 @@ export const loadTableData = async () => {
     'LEVEL 13': [],
     'LEVEL 14': [],
     'LEVEL 15': [],
+    'LEVEL 15+': [],
     'LEVEL 16': [],
+    'LEVEL 16+': [],
     'LEVEL 17': [],
+    'LEVEL 17+': [],
     'LEVEL 18': [],
+    'LEVEL 18+': [],
     'LEVEL 19': [],
+    'LEVEL 19+': [],
     'LEVEL 20': [],
     'LEVEL 20+': [],
+    'LEVEL 99': [],
+    'LEVEL GIMMICK': [],
+    'LEVEL SPECIAL': [],
     'LEVEL DUMMY': [],
     'OLD CHARTS': []
   };
 
-  const tableDataResponse = await axios.get<ISongData[]>(`/table/aery/data.json`);
-  const tableData = tableDataResponse.data;
+  const tableData = await AeryAPI.fetchTableData();
 
   for (let i = 0; i < tableData.length; i++) {
     const level: AeryLevel = tableData[i].level as AeryLevel;

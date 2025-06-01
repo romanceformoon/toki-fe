@@ -126,7 +126,7 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: '13px',
+          borderRadius: '1.4rem',
           borderColor: 'primary.main'
         }}
         component={Paper}
@@ -135,52 +135,42 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
           <TableHead>
             <TableRow>
               <TableCell sx={{ width: '5%' }}>
-                <Typography
-                  fontSize='24px'
-                  fontWeight='900'
-                  fontStyle={{ color: 'primary.main' }}
-                  textAlign='center'
-                >
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Rank
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Level
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '30%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Title
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '15%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Clear
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   BP
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Rate
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   EXP
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '10%' }}>
-                <Typography
-                  fontSize='24px'
-                  fontWeight='900'
-                  fontStyle={{ color: 'primary.main' }}
-                  textAlign='center'
-                >
+                <Typography variant='h2' fontWeight={700} textAlign='center'>
                   LR2IR
                 </Typography>
               </TableCell>
@@ -192,37 +182,37 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
                 <>
                   <TableRow sx={{ backgroundColor: colorPick(data.clear) }}>
                     <TableCell>
-                      <Typography fontSize='24px' fontWeight='500' align='center'>
+                      <Typography variant='h3' align='center'>
                         #{idx + 1}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.level}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.title}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.clear}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.bp}
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.rate}%
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography fontSize='16px' fontWeight='500'>
+                      <Typography variant='h3' align='center'>
                         {data.exp.toFixed(2)}
                       </Typography>
                     </TableCell>
@@ -232,7 +222,7 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
                         target='_blank'
                       >
                         <IconButton>
-                          <LinkIcon />
+                          <LinkIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
                         </IconButton>
                       </Link>
                     </TableCell>

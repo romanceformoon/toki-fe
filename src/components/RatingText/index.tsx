@@ -1,17 +1,22 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 export const RatingText = ({ rating }: { rating: string }) => {
   const main = rating.split('.')[0];
   const sub = rating.split('.')[1];
 
   return (
-    <>
-      <Typography fontSize='24px' fontWeight='500'>
-        {main}
-      </Typography>
-      <Typography sx={{ mt: '0.56rem' }} fontSize='15px' fontWeight='500'>
-        .{sub}
-      </Typography>
-    </>
+    <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+      <Typography variant='h3'>{main}</Typography>
+      {sub && (
+        <Typography
+          variant='h5'
+          sx={{
+            mb: '0.20rem'
+          }}
+        >
+          .{sub}
+        </Typography>
+      )}
+    </Box>
   );
 };

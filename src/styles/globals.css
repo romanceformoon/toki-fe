@@ -1,0 +1,23 @@
+:root {
+  /* 1rem = 10px로 설정 (기본 16px의 62.5%) */
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-size: 1.6rem; /* 16px */
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.no-color-change {
+  color: inherit;
+}
+
+.no-color-change:visited {
+  color: inherit;
+}

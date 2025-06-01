@@ -16,7 +16,7 @@ export const LoginButton = () => {
       }}
     >
       <Tooltip title='로그인'>
-        <PersonIcon />
+        <PersonIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
       </Tooltip>
     </Button>
   );

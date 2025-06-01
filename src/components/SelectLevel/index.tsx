@@ -1,4 +1,4 @@
-import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 
 interface ISelectLevelProps {
   selectedLevel: string;
@@ -18,14 +18,16 @@ export const SelectLevel = ({
       <FormControl fullWidth>
         <Select
           sx={{
-            borderRadius: '13px'
+            borderRadius: '1.4rem'
           }}
           value={selectedLevel}
           onChange={handleChange}
         >
           {showAll ? (
             <MenuItem key={'All'} value={'모두 보기'}>
-              모두 보기
+              <Typography variant='h3' fontWeight={600}>
+                모두 보기
+              </Typography>
             </MenuItem>
           ) : (
             <></>
@@ -34,7 +36,9 @@ export const SelectLevel = ({
           {Object.keys(tableData).map((level, index) => {
             return (
               <MenuItem key={index} value={level}>
-                {level}
+                <Typography variant='h3' fontWeight={600}>
+                  {level}
+                </Typography>
               </MenuItem>
             );
           })}

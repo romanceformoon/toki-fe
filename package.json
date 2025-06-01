@@ -9,16 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.14.16",
     "@mui/lab": "^5.0.0-alpha.153",
-    "@mui/material": "^5.14.17",
-    "@mui/system": "^5.14.17",
+    "@mui/material": "^7.1.0",
+    "@mui/system": "^7.1.0",
     "@mui/utils": "^5.14.17",
-    "@mui/x-charts": "^6.18.1",
+    "@mui/x-charts": "^8.5.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/react-window": "^1.8.8",
+    "@types/text-encoding": "^0.0.40",
     "axios": "^1.6.1",
     "chardet": "^2.0.0",
+    "crypto-js": "^4.2.0",
     "data-structure": "^1.2.0",
     "iconv-lite": "^0.6.3",
     "next": "^14.0.2",
@@ -26,7 +30,10 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.3"
+    "react-query": "^3.39.3",
+    "react-window": "^1.8.11",
+    "text-encoding": "^0.7.0",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@types/eslint-plugin-jsx-a11y": "^6",

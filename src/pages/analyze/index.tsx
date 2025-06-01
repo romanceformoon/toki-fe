@@ -8,7 +8,7 @@ import { Seo } from '~/components/Seo';
 import useLoginUser from '~/hooks/useLoginUser';
 import axiosInstance from '~/utils/axiosInstance';
 
-const LampGraph = () => {
+const Analyze = () => {
   const router = useRouter();
   const { isLogined, uid } = useLoginUser();
   const [uploadFile, setUploadFile] = useState<File>();
@@ -116,21 +116,21 @@ const LampGraph = () => {
       <Box
         sx={{
           bgcolor: 'background.paper',
-          pt: 8,
-          pb: 6,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center'
         }}
       >
-        <Box sx={{ mb: 3 }}>
-          <Typography fontWeight={500}>LR2files/Database/Score 경로에 있는</Typography>
+        <Box sx={{ mb: 3, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <Typography variant='h4'>LR2files/Database/Score 경로에 있는</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography fontWeight={700}>.db 확장자 파일</Typography>
-            <Typography fontWeight={500}>을 업로드 해주세요.</Typography>
+            <Typography variant='h4' fontWeight={700}>
+              .db 확장자 파일
+            </Typography>
+            <Typography variant='h4'>을 업로드 해주세요.</Typography>
           </Box>
-          <Typography fontWeight={500}>
+          <Typography variant='h4'>
             일반적으로 용량이 제일 큰 파일이 현재 사용 중인 파일입니다.
           </Typography>
         </Box>
@@ -140,8 +140,7 @@ const LampGraph = () => {
             sx={{
               position: 'relative',
               p: 5,
-              mb: 3,
-              width: '30rem',
+              width: '50rem',
               border: isDragging ? '2px dashed #5783db' : '2px dashed #ccc',
               bgcolor: isDragging ? 'rgba(87, 131, 219, 0.05)' : 'transparent',
               transition: 'all 0.2s ease',
@@ -173,17 +172,18 @@ const LampGraph = () => {
 
             <UploadFileIcon
               sx={{
-                fontSize: 60,
+                width: '6rem',
+                height: '6rem',
                 color: isDragging ? '#5783db' : 'gray',
                 mb: 2
               }}
             />
-            <Typography fontWeight={500} color={isDragging ? '#5783db' : 'gray'}>
+            <Typography variant='h5' color={isDragging ? '#5783db' : 'gray'}>
               {isDragging
                 ? '파일을 여기에 놓으세요'
                 : '파일을 이곳에 드래그하거나 클릭하여 선택하세요'}
             </Typography>
-            <Typography fontSize='12px' color='text.secondary' mt={1}>
+            <Typography variant='h5' color='text.secondary' mt={1}>
               최대 5MB, .db 파일만 가능
             </Typography>
           </Box>
@@ -194,8 +194,8 @@ const LampGraph = () => {
             sx={{ borderRadius: 10 }}
             onClick={handleLoginClick}
           >
-            <PersonIcon sx={{ mr: 1 }} />
-            로그인이 필요합니다.
+            <PersonIcon sx={{ width: '2.4rem', height: '2.4rem', mr: 1 }} />
+            <Typography variant='h4'>로그인이 필요합니다.</Typography>
           </Button>
         )}
       </Box>
@@ -209,4 +209,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default LampGraph;
+export default Analyze;

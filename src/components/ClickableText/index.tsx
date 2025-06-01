@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material';
+import { Box } from '@mui/material';
 import { ReactNode } from 'react';
 
 interface IClickableTextProps {
@@ -8,8 +8,7 @@ interface IClickableTextProps {
 
 export const ClickableText = ({ onClick, children }: IClickableTextProps) => {
   return (
-    <Paper
-      elevation={0}
+    <Box
       component='label'
       sx={{
         '&:hover': {
@@ -19,6 +18,6 @@ export const ClickableText = ({ onClick, children }: IClickableTextProps) => {
       onClick={onClick}
     >
       {children}
-    </Paper>
+    </Box>
   );
 };

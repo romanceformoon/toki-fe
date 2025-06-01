@@ -26,12 +26,13 @@ export const UserMenu = () => {
           <Avatar
             alt='Profile Image'
             src={avatar ? `https://cdn.discordapp.com/avatars/${uid}/${avatar}` : undefined}
+            sx={{ width: '3.6rem', height: '3.6rem' }}
           />
         </Tooltip>
       </IconButton>
 
       <Menu
-        sx={{ mt: '45px' }}
+        sx={{ mt: '4.5rem' }}
         id='menu-appbar'
         anchorEl={anchorElUser}
         anchorOrigin={{
@@ -48,6 +49,7 @@ export const UserMenu = () => {
       >
         <MenuItem key={'profile'} onClick={handleCloseUserMenu}>
           <Typography
+            variant='h4'
             textAlign='center'
             onClick={async () => {
               router.push(`/user/${uid}`);
@@ -58,6 +60,7 @@ export const UserMenu = () => {
         </MenuItem>
         <MenuItem key={'logout'} onClick={handleCloseUserMenu}>
           <Typography
+            variant='h4'
             textAlign='center'
             onClick={async () => {
               await axiosInstance.get('/toki-api/auth/user/logout');

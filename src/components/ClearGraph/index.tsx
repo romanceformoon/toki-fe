@@ -1,4 +1,4 @@
-import { BarChart } from '@mui/x-charts';
+import { BarChart, chartsTooltipClasses } from '@mui/x-charts';
 
 interface IGraphProps {
   graphData: IGraph;
@@ -99,9 +99,22 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
       sx={{
         minWidth: '100%',
         border: 1,
-        borderRadius: 5
+        borderRadius: 5,
+        p: 1,
+        '& .MuiChartsAxis-tickLabel tspan': {
+          fontSize: '1.4rem',
+          fontWeight: 500
+        },
+        '& .MuiCharts-legend text': {
+          fontSize: '1.4rem',
+          fontWeight: 500
+        },
+        '& .MuiChartsTooltip-tooltip': {
+          fontSize: '1.4rem', // ✅ 툴팁 폰트 크기 조정
+          fontWeight: 500
+        }
       }}
-      margin={{ top: 100 }}
+      margin={{ top: 50 }}
       layout='horizontal'
       height={700}
       series={[
@@ -160,7 +173,31 @@ export const ClearGraph = ({ graphData, category }: IGraphProps) => {
           scaleType: 'band'
         }
       ]}
-      bottomAxis={null}
+      xAxis={[{ position: 'none' }]}
+      slotProps={{
+        legend: {
+          sx: {
+            fontSize: '1.4rem',
+            fontWeight: 500
+          }
+        },
+        tooltip: {
+          sx: {
+            [`&.${chartsTooltipClasses.root} caption`]: {
+              fontSize: '1.4rem',
+              fontWeight: 500
+            },
+            [`&.${chartsTooltipClasses.root} .${chartsTooltipClasses.labelCell}`]: {
+              fontSize: '1.4rem',
+              fontWeight: 500
+            },
+            [`&.${chartsTooltipClasses.root} .${chartsTooltipClasses.valueCell}`]: {
+              fontSize: '1.4rem',
+              fontWeight: 500
+            }
+          }
+        }
+      }}
     />
   );
 };
