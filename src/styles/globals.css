@@ -13,3 +13,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.no-color-change {
+  color: inherit;
+}
+
+.no-color-change:visited {
+  color: inherit;
+}

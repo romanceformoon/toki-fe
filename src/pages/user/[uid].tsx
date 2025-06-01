@@ -35,7 +35,12 @@ import axiosInstance from '~/utils/axiosInstance';
 import { getExpTable, getLevel } from '~/utils/exp';
 import { getRating } from '~/utils/rating';
 
-const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetServerSideProps>) => {
+const UserPage = ({
+  _uid,
+  avatar,
+  nickname,
+  clearDan
+}: InferGetServerSidePropsType<GetServerSideProps>) => {
   const router = useRouter();
   const queryClient = useQueryClient();
 
@@ -133,15 +138,25 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
               <Avatar
                 alt='Profile Image'
-                sx={{ height: '70px', width: '70px' }}
+                sx={{ height: '7rem', width: '7rem' }}
                 src={avatar ? `https://cdn.discordapp.com/avatars/${_uid}/${avatar}` : undefined}
               />
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
-              <Typography fontSize='24px' fontWeight={700}>
-                {nickname}
-              </Typography>
+
+            <Box
+              sx={{
+                height: '3.2rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                mb: 1,
+                gap: 1
+              }}
+            >
+              <UserNickname clearDan={clearDan}>{nickname}</UserNickname>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <CircularProgress />
             </Box>
@@ -156,18 +171,18 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
-            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
-            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
-            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
 
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant='fullWidth' centered>
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='Graph' value='Graph' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='TOP 50' value='TOP 50' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='History' value='History' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='Graph' value='Graph' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='TOP 50' value='TOP 50' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='History' value='History' />
           </TabList>
           <TabPanel value='Graph'>
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
@@ -198,7 +213,7 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
               <Avatar
                 alt='Profile Image'
-                sx={{ height: '70px', width: '70px' }}
+                sx={{ height: '7rem', width: '7rem' }}
                 src={
                   userData.avatar
                     ? `https://cdn.discordapp.com/avatars/${userData.uid}/${userData.avatar}`
@@ -207,12 +222,23 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
               />
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+            <Box
+              sx={{
+                height: '3.2rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                mb: 1,
+                gap: 1
+              }}
+            >
               {!changeNickname ? (
                 <>
                   <Link
                     href={`http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=mypage&playerid=${userData.lr2Id}`}
                     style={{ textDecoration: 'none' }}
+                    className='no-color-change'
                     target='_blank'
                   >
                     <UserNickname clearDan={userData.clearDan}>{userData.nickname}</UserNickname>
@@ -224,15 +250,16 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
                         setInputNickname(userData.nickname);
                         setChangeNickname(true);
                       }}
+                      sx={{ width: '2rem', height: '2rem' }}
                     >
-                      <EditIcon />
+                      <EditIcon sx={{ width: '2rem', height: '2rem' }} />
                     </IconButton>
                   ) : (
                     <></>
                   )}
                 </>
               ) : (
-                <>
+                <Box sx={{ height: '3.2rem', display: 'flex', alignItems: 'center', gap: 1 }}>
                   <TextField
                     value={inputNickname}
                     id='change-nickname'
@@ -240,7 +267,10 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
                     variant='standard'
                     size='small'
                     inputProps={{
-                      maxLength: 16
+                      maxLength: 16,
+                      sx: {
+                        fontSize: '1.4rem'
+                      }
                     }}
                     onChange={handleChangeNickname}
                   />
@@ -259,30 +289,35 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
                       setChangeNickname(false);
                     }}
                   >
-                    <CheckIcon />
+                    <CheckIcon sx={{ width: '1.6rem', height: '1.6rem' }} />
                   </IconButton>
                   <IconButton onClick={() => setChangeNickname(false)}>
-                    <CloseIcon />
+                    <CloseIcon sx={{ width: '1.6rem', height: '1.6rem' }} />
                   </IconButton>
-                </>
+                </Box>
               )}
             </Box>
 
-            <Box sx={{ mb: 1 }}>
-              <Box>
-                <Typography fontSize='18px' fontWeight={700}>
-                  Level: {getLevel(userData.exp)}
-                </Typography>
-              </Box>
-              <Box>
-                <Typography fontSize='14px' fontWeight={500}>
-                  Exp: {userData.exp.toLocaleString()} /{' '}
-                  {getLevel(userData.exp) < 99
-                    ? expTable[getLevel(userData.exp)].toLocaleString()
-                    : '-'}
-                </Typography>
-              </Box>
-              <Typography fontSize='14px' fontWeight={500}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                gap: 1
+              }}
+            >
+              <Typography variant='h3' fontWeight={700}>
+                Level: {getLevel(userData.exp)}
+              </Typography>
+
+              <Typography variant='h4' fontWeight={500}>
+                Exp: {userData.exp.toLocaleString()} /{' '}
+                {getLevel(userData.exp) < 99
+                  ? expTable[getLevel(userData.exp)].toLocaleString()
+                  : '-'}
+              </Typography>
+
+              <Typography variant='h4' fontWeight={500}>
                 {`Rating: ${rating}`}
               </Typography>
             </Box>
@@ -297,18 +332,18 @@ const UserPage = ({ _uid, avatar, nickname }: InferGetServerSidePropsType<GetSer
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
-            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
-            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
-            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
 
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant='fullWidth' centered>
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='Graph' value='Graph' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='TOP 50' value='TOP 50' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='History' value='History' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='Graph' value='Graph' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='TOP 50' value='TOP 50' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='History' value='History' />
           </TabList>
           <TabPanel value='Graph'>
             <ClearGraph graphData={graphData} category={category} />
