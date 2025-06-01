@@ -118,7 +118,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   {isLogined ? '내 프로필' : '로그인'}
                 </Typography>
               </Button>
@@ -142,7 +142,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   BMS 채보 뷰어
                 </Typography>
               </Button>
@@ -168,7 +168,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   점수 분석
                 </Typography>
               </Button>
@@ -192,7 +192,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   랭킹
                 </Typography>
               </Button>
@@ -218,7 +218,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   5KEYS AERY FULL PACKAGE 다운로드
                 </Typography>
               </Button>
@@ -244,7 +244,7 @@ const Main = () => {
                     height: '2.4rem'
                   }}
                 />
-                <Typography variant='h2' sx={buttonTextStyle}>
+                <Typography variant='h3' sx={buttonTextStyle}>
                   5KEYS AERY 최신패치 다운로드
                 </Typography>
               </Button>
@@ -332,16 +332,15 @@ const Main = () => {
                   '&:hover': {
                     cursor: 'pointer'
                   },
-                  width: '2.4rem',
-                  height: 'auto',
-                  mr: '0.8rem'
+                  width: '2.0rem',
+                  height: 'auto'
                 }}
                 variant='square'
                 alt='discord'
                 src={'/assets/images/discord-mark-blue.png'}
               />
 
-              <Typography variant='h2' sx={buttonTextStyle}>
+              <Typography variant='h3' sx={buttonTextStyle}>
                 디스코드
               </Typography>
             </Button>
