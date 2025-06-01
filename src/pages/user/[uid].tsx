@@ -157,7 +157,7 @@ const UserPage = ({
               <UserNickname clearDan={clearDan}>{nickname}</UserNickname>
             </Box>
 
-            <Box sx={{ mb: 1 }}>
+            <Box sx={{ height: '7rem', mb: 1 }}>
               <CircularProgress />
             </Box>
           </Box>
@@ -345,12 +345,15 @@ const UserPage = ({
             <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='TOP 50' value='TOP 50' />
             <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='History' value='History' />
           </TabList>
+
           <TabPanel value='Graph'>
             <ClearGraph graphData={graphData} category={category} />
           </TabPanel>
+
           <TabPanel value='TOP 50'>
             <TableTop50 historyData={historyData} category={category} />
           </TabPanel>
+
           <TabPanel value='History'>
             <TableHistory
               selectedLevel={selectedLevel}
