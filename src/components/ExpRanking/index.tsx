@@ -34,27 +34,22 @@ export const ExpRanking = ({ ranking }: ExpRankingProps) => {
         <TableHead>
           <TableRow>
             <TableCell sx={{ width: '15%' }}>
-              <Typography
-                variant='h2'
-                fontWeight={700}
-                fontStyle={{ color: 'primary.main' }}
-                textAlign='center'
-              >
+              <Typography variant='h2' fontWeight={700} textAlign='center'>
                 순위
               </Typography>
             </TableCell>
             <TableCell sx={{ width: '35%' }}>
-              <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+              <Typography variant='h2' fontWeight={700}>
                 닉네임
               </Typography>
             </TableCell>
             <TableCell sx={{ width: '25%' }}>
-              <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+              <Typography variant='h2' fontWeight={700}>
                 레벨
               </Typography>
             </TableCell>
             <TableCell sx={{ width: '25%' }}>
-              <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+              <Typography variant='h2' fontWeight={700}>
                 경험치
               </Typography>
             </TableCell>
@@ -65,10 +60,11 @@ export const ExpRanking = ({ ranking }: ExpRankingProps) => {
           {ranking.map((data, idx) => (
             <TableRow key={data.uid}>
               <TableCell>
-                <Typography variant='h2' fontWeight={500} align='center'>
+                <Typography variant='h3' align='center'>
                   {idx + 1}
                 </Typography>
               </TableCell>
+
               <TableCell>
                 <Box
                   sx={{
@@ -100,11 +96,13 @@ export const ExpRanking = ({ ranking }: ExpRankingProps) => {
                   </Box>
                 </Box>
               </TableCell>
+
               <TableCell>
-                <Typography variant='h2'>{getLevel(data.exp).toFixed(0)}</Typography>
+                <Typography variant='h3'>{getLevel(data.exp).toFixed(0)}</Typography>
               </TableCell>
+
               <TableCell>
-                <Typography variant='h2'>{data.exp.toLocaleString()}</Typography>
+                <Typography variant='h3'>{data.exp.toLocaleString()}</Typography>
               </TableCell>
             </TableRow>
           ))}

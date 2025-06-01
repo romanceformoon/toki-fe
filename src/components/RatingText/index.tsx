@@ -6,12 +6,12 @@ export const RatingText = ({ rating }: { rating: string }) => {
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-      <Typography variant='h2'>{main}</Typography>
+      <Typography variant='h3'>{main}</Typography>
       {sub && (
         <Typography
           variant='h5'
           sx={{
-            mb: '0.25rem'
+            mb: '0.20rem'
           }}
         >
           .{sub}

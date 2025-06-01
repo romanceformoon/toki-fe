@@ -75,7 +75,7 @@ const UserNickname = memo(({ clearDan, children, onClick }: IUserNicknameProps) 
   return (
     <ClickableText onClick={onClick}>
       <Tooltip title={clearDan}>
-        <Typography variant='h2' fontWeight={700} sx={textStyle}>
+        <Typography variant='h3' fontWeight={700} sx={textStyle}>
           {children}
         </Typography>
       </Tooltip>
