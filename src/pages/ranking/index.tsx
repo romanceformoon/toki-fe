@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { RankingSkeleton } from '~/components/RankingSkeleton';
+import { RankingSkeleton, RatingRankingSkeleton } from '~/components/RankingSkeleton';
 import { RatingText } from '~/components/RatingText';
 import { Seo } from '~/components/Seo';
 import { UserNickname } from '~/components/UserNickname';
@@ -85,23 +85,24 @@ const Ranking = () => {
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
-            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
-            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
-            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
+
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant='fullWidth' centered>
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='경험치 랭킹' value='EXP' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='레이팅 랭킹' value='Rating' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='경험치 랭킹' value='EXP' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='레이팅 랭킹' value='Rating' />
           </TabList>
           <Box sx={{ display: 'flex' }}>
             <TabPanel value='EXP' sx={{ width: '100%' }}>
               <RankingSkeleton />
             </TabPanel>
             <TabPanel value='Rating' sx={{ width: '100%' }}>
-              <RankingSkeleton />
+              <RatingRankingSkeleton />
             </TabPanel>
           </Box>
         </TabContext>
@@ -122,24 +123,24 @@ const Ranking = () => {
             value={category}
             onChange={handleCategoryChange}
           >
-            <Tab sx={{ fontWeight: 700 }} label='5KEYS AERY' value='aery' />
-            <Tab sx={{ fontWeight: 700 }} label='発狂BMS' value='insane' />
-            <Tab sx={{ fontWeight: 700 }} label='Satellite' value='sl' />
-            <Tab sx={{ fontWeight: 700 }} label='Stella' value='st' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='5KEYS AERY' value='aery' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='発狂BMS' value='insane' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Satellite' value='sl' />
+            <Tab sx={{ fontSize: '1.4rem', fontWeight: 700 }} label='Stella' value='st' />
           </Tabs>
         </Box>
 
         <TabContext value={tab}>
           <TabList onChange={handleTabChange} variant='fullWidth' centered>
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='경험치 랭킹' value='EXP' />
-            <Tab sx={{ fontWeight: 700, fontSize: 20 }} label='레이팅 랭킹' value='Rating' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='경험치 랭킹' value='EXP' />
+            <Tab sx={{ fontSize: '1.8rem', fontWeight: 700 }} label='레이팅 랭킹' value='Rating' />
           </TabList>
           <Box sx={{ display: 'flex' }}>
             <TabPanel value='EXP' sx={{ width: '100%' }}>
               <TableContainer
                 sx={{
                   border: 1,
-                  borderRadius: '13px',
+                  borderRadius: '1.4rem',
                   borderColor: 'primary.main'
                 }}
                 component={Paper}
@@ -149,8 +150,8 @@ const Ranking = () => {
                     <TableRow>
                       <TableCell sx={{ width: '15%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                           textAlign='center'
                         >
@@ -159,8 +160,8 @@ const Ranking = () => {
                       </TableCell>
                       <TableCell sx={{ width: '35%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                         >
                           닉네임
@@ -168,8 +169,8 @@ const Ranking = () => {
                       </TableCell>
                       <TableCell sx={{ width: '25%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                         >
                           레벨
@@ -177,8 +178,8 @@ const Ranking = () => {
                       </TableCell>
                       <TableCell sx={{ width: '25%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                         >
                           경험치
@@ -186,13 +187,14 @@ const Ranking = () => {
                       </TableCell>
                     </TableRow>
                   </TableHead>
+
                   <TableBody>
                     {ranking?.map((data, idx) => {
                       return (
                         <>
                           <TableRow key={data.uid}>
                             <TableCell>
-                              <Typography fontSize='24px' fontWeight='500' align='center'>
+                              <Typography variant='h2' fontWeight={500} align='center'>
                                 {idx + 1}
                               </Typography>
                             </TableCell>
@@ -203,12 +205,12 @@ const Ranking = () => {
                                   display: 'flex'
                                 }}
                               >
-                                <Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                   <Avatar
                                     alt='Profile Image'
                                     sx={{
-                                      height: '50px',
-                                      width: '50px',
+                                      height: '3.6rem',
+                                      width: '3.6rem',
                                       mr: 2
                                     }}
                                     src={
@@ -217,12 +219,7 @@ const Ranking = () => {
                                         : undefined
                                     }
                                   />
-                                </Box>
-                                <Box
-                                  sx={{
-                                    padding: '4px 0'
-                                  }}
-                                >
+
                                   <UserNickname
                                     clearDan={data.clearDan}
                                     onClick={() => router.push(`/user/${data.uid}`)}
@@ -233,14 +230,10 @@ const Ranking = () => {
                               </Box>
                             </TableCell>
                             <TableCell>
-                              <Typography fontSize='24px' fontWeight='500'>
-                                {getLevel(data.exp).toFixed(0)}
-                              </Typography>
+                              <Typography variant='h2'>{getLevel(data.exp).toFixed(0)}</Typography>
                             </TableCell>
                             <TableCell>
-                              <Typography fontSize='24px' fontWeight='500'>
-                                {data.exp.toLocaleString()}
-                              </Typography>
+                              <Typography variant='h2'>{data.exp.toLocaleString()}</Typography>
                             </TableCell>
                           </TableRow>
                         </>
@@ -250,11 +243,12 @@ const Ranking = () => {
                 </Table>
               </TableContainer>
             </TabPanel>
+
             <TabPanel value='Rating' sx={{ width: '100%' }}>
               <TableContainer
                 sx={{
                   border: 1,
-                  borderRadius: '13px',
+                  borderRadius: '1.4rem',
                   borderColor: 'primary.main'
                 }}
                 component={Paper}
@@ -264,8 +258,8 @@ const Ranking = () => {
                     <TableRow>
                       <TableCell sx={{ width: '15%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                           textAlign='center'
                         >
@@ -274,8 +268,8 @@ const Ranking = () => {
                       </TableCell>
                       <TableCell sx={{ width: '35%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                         >
                           닉네임
@@ -283,8 +277,8 @@ const Ranking = () => {
                       </TableCell>
                       <TableCell sx={{ width: '25%' }}>
                         <Typography
-                          fontSize='24px'
-                          fontWeight='900'
+                          variant='h2'
+                          fontWeight={700}
                           fontStyle={{ color: 'primary.main' }}
                         >
                           레벨
@@ -298,8 +292,8 @@ const Ranking = () => {
                           }}
                         >
                           <Typography
-                            fontSize='24px'
-                            fontWeight='900'
+                            variant='h2'
+                            fontWeight={700}
                             fontStyle={{ color: 'primary.main' }}
                           >
                             레이팅
@@ -309,20 +303,21 @@ const Ranking = () => {
                               title='N 레벨까지의 모든 곡을 FULL COMBO 없이 HARD CLEAR 했을 때의 레이팅을 N.000으로 정의한다.'
                               arrow
                             >
-                              <InfoIcon sx={{ ml: '0.2rem' }} />
+                              <InfoIcon sx={{ ml: '0.75rem' }} />
                             </Tooltip>
                           ) : null}
                         </Box>
                       </TableCell>
                     </TableRow>
                   </TableHead>
+
                   <TableBody>
                     {ratingRanking?.map((data, idx) => {
                       return (
                         <>
                           <TableRow key={data.uid}>
                             <TableCell>
-                              <Typography fontSize='24px' fontWeight='500' align='center'>
+                              <Typography variant='h2' align='center'>
                                 {idx + 1}
                               </Typography>
                             </TableCell>
@@ -333,12 +328,12 @@ const Ranking = () => {
                                   display: 'flex'
                                 }}
                               >
-                                <Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                   <Avatar
                                     alt='Profile Image'
                                     sx={{
-                                      height: '50px',
-                                      width: '50px',
+                                      height: '3.6rem',
+                                      width: '3.6rem',
                                       mr: 2
                                     }}
                                     src={
@@ -347,12 +342,7 @@ const Ranking = () => {
                                         : undefined
                                     }
                                   />
-                                </Box>
-                                <Box
-                                  sx={{
-                                    padding: '4px 0'
-                                  }}
-                                >
+
                                   <UserNickname
                                     clearDan={data.clearDan}
                                     onClick={() => router.push(`/user/${data.uid}`)}
@@ -363,9 +353,7 @@ const Ranking = () => {
                               </Box>
                             </TableCell>
                             <TableCell>
-                              <Typography fontSize='24px' fontWeight='500'>
-                                {getLevel(data.exp).toFixed(0)}
-                              </Typography>
+                              <Typography variant='h2'>{getLevel(data.exp).toFixed(0)}</Typography>
                             </TableCell>
                             <TableCell>
                               <Box

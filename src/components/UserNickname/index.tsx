@@ -15,7 +15,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
-            fontSize='24px'
+            variant='h2'
             fontWeight={700}
             sx={{
               color: aerySkillSimulators[clearDan].color,
@@ -33,7 +33,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
-            fontSize='24px'
+            variant='h2'
             fontWeight={700}
             sx={{
               color: aerySkillSimulators[clearDan].color,
@@ -51,7 +51,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
-            fontSize='24px'
+            variant='h2'
             fontWeight={700}
             sx={{
               color: aerySkillSimulators[clearDan].color,
@@ -69,7 +69,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
-            fontSize='24px'
+            variant='h2'
             fontWeight={700}
             sx={{
               color: aerySkillSimulators[clearDan].color,
@@ -87,7 +87,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
-            fontSize='24px'
+            variant='h2'
             fontWeight={700}
             sx={{
               color: aerySkillSimulators[clearDan].color,
@@ -105,13 +105,13 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               color: '#fff',
               textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -124,13 +124,13 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               color: '#fff',
               textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -143,13 +143,13 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               color: '#fff',
               textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -162,13 +162,13 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               color: '#fff',
               textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -181,13 +181,13 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               color: '#fff',
               textShadow: `${aerySkillSimulators[clearDan].color} 0px 0px 5px, ${aerySkillSimulators[clearDan].color} 0px 0px 10px, ${aerySkillSimulators[clearDan].color} 0px 0px 15px, ${aerySkillSimulators[clearDan].color} 0px 0px 20px, ${aerySkillSimulators[clearDan].color} 0px 0px 30px, 2px 2px 2px rgba(206,89,55,0)`,
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -200,6 +200,8 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               '@keyframes kaiden': {
                 from: {
@@ -216,8 +218,6 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
               color: '#fff',
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -231,6 +231,8 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               '@keyframes gorilla': {
                 from: {
@@ -247,8 +249,6 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
               color: '#fff',
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -262,6 +262,8 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
       <ClickableText onClick={onClick}>
         <Tooltip title={clearDan}>
           <Typography
+            variant='h2'
+            fontWeight={700}
             sx={{
               '@keyframes overjoy': {
                 from: {
@@ -278,8 +280,6 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
               color: '#fff',
               whiteSpace: 'nowrap'
             }}
-            fontSize='24px'
-            fontWeight={700}
           >
             {children}
           </Typography>
@@ -292,7 +292,7 @@ export const UserNickname = ({ clearDan, children, onClick }: IUserNicknameProps
     <ClickableText onClick={onClick}>
       <Tooltip title={clearDan}>
         <Typography
-          fontSize='24px'
+          variant='h2'
           fontWeight={700}
           sx={{
             whiteSpace: 'nowrap'

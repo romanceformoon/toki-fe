@@ -2,6 +2,7 @@ import {
   Avatar,
   Box,
   Paper,
+  Skeleton,
   Table,
   TableBody,
   TableCell,
@@ -17,7 +18,7 @@ export const RankingSkeleton = () => {
       <TableContainer
         sx={{
           border: 1,
-          borderRadius: '13px',
+          borderRadius: '1.4rem',
           borderColor: 'primary.main'
         }}
         component={Paper}
@@ -27,8 +28,8 @@ export const RankingSkeleton = () => {
             <TableRow>
               <TableCell sx={{ width: '15%' }}>
                 <Typography
-                  fontSize='24px'
-                  fontWeight='900'
+                  variant='h2'
+                  fontWeight={700}
                   fontStyle={{ color: 'primary.main' }}
                   textAlign='center'
                 >
@@ -36,63 +37,130 @@ export const RankingSkeleton = () => {
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '35%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
                   닉네임
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '25%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
                   레벨
                 </Typography>
               </TableCell>
               <TableCell sx={{ width: '25%' }}>
-                <Typography fontSize='24px' fontWeight='900' fontStyle={{ color: 'primary.main' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
                   경험치
                 </Typography>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((data, idx) => {
-              return (
-                <>
-                  <TableRow key={idx}>
-                    <TableCell>
-                      <Typography fontSize='24px' fontWeight='500' align='center'>
-                        {idx + 1}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Box
-                        sx={{
-                          width: '10%',
-                          display: 'flex'
-                        }}
-                      >
-                        <Box>
-                          <Avatar
-                            alt='Profile Image'
-                            sx={{
-                              height: '50px',
-                              width: '50px',
-                              mr: 2
-                            }}
-                            src={undefined}
-                          />
-                        </Box>
-                        <Box
-                          sx={{
-                            padding: '4px 0'
-                          }}
-                        ></Box>
-                      </Box>
-                    </TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                </>
-              );
-            })}
+            {Array.from({ length: 10 }, (_, index) => (
+              <TableRow key={index}>
+                <TableCell>
+                  <Typography variant='h2' fontWeight={500} align='center'>
+                    {index + 1}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Avatar
+                      alt='Profile Image'
+                      sx={{
+                        height: '3.6rem',
+                        width: '3.6rem',
+                        mr: 2
+                      }}
+                    />
+                    <Skeleton width={120} height={32} />
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Skeleton width={50} height={32} />
+                </TableCell>
+                <TableCell>
+                  <Skeleton width={100} height={32} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
+  );
+};
+
+export const RatingRankingSkeleton = () => {
+  return (
+    <>
+      <TableContainer
+        sx={{
+          border: 1,
+          borderRadius: '1.4rem',
+          borderColor: 'primary.main'
+        }}
+        component={Paper}
+      >
+        <Table sx={{ minWidth: '100%' }}>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ width: '15%' }}>
+                <Typography
+                  variant='h2'
+                  fontWeight={700}
+                  fontStyle={{ color: 'primary.main' }}
+                  textAlign='center'
+                >
+                  순위
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '35%' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+                  닉네임
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '25%' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+                  레벨
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ width: '25%' }}>
+                <Typography variant='h2' fontWeight={700} fontStyle={{ color: 'primary.main' }}>
+                  레이팅
+                </Typography>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {Array.from({ length: 10 }, (_, index) => (
+              <TableRow key={index}>
+                <TableCell>
+                  <Typography variant='h2' align='center'>
+                    {index + 1}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Avatar
+                      alt='Profile Image'
+                      sx={{
+                        height: '3.6rem',
+                        width: '3.6rem',
+                        mr: 2
+                      }}
+                    />
+                    <Skeleton width={120} height={32} />
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Skeleton width={50} height={32} />
+                </TableCell>
+                <TableCell>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <Skeleton width={70} height={32} />
+                  </Box>
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

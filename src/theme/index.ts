@@ -175,6 +175,13 @@ export const createAppTheme = (
             }
           }
         }
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            fontSize: '1.2rem'
+          }
+        }
       }
     }
   });
