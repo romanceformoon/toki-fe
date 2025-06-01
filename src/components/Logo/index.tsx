@@ -29,7 +29,6 @@ export const Logo = () => {
         variant='h1'
         noWrap
         sx={{
-          mr: 2,
           fontWeight: 700,
           letterSpacing: '0.5rem',
           color: 'inherit',

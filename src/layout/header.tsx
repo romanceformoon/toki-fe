@@ -22,6 +22,7 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
       <Toolbar disableGutters sx={{ ml: '7%', mr: '7%' }}>
         <Logo />
         <MobileMenu />
+
         <DesktopRoute />
 
         <Link href={'https://github.com/romanceformoon/toki-fe'} target='_blank'>

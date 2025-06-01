@@ -46,7 +46,7 @@ export const DesktopRoute = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: '1.5rem' }}>
       {pages.map(page => {
         if (page.link) {
           return (
