@@ -22,6 +22,7 @@ import MuiAlert from '@mui/material/Alert';
 import { styled } from '@mui/system';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FixedSizeList as VirtualList } from 'react-window';
+import useLoginUser from '~/hooks/useLoginUser';
 import useAeryTableStore from '~/store/aeryTableStore';
 
 const StyledTableContainer = styled(TableContainer)({
@@ -46,6 +47,8 @@ const LevelEditor = () => {
   const [saveSuccess, setSaveSuccess] = useState<boolean | null>(null);
   const [toastOpen, setToastOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+
+  const { admin } = useLoginUser();
 
   // 레벨 목록
   const levels: AeryLevel[] = useMemo(
@@ -298,6 +301,10 @@ const LevelEditor = () => {
     },
     [filteredSongs, editedSongs, handleLevelChange, levels]
   );
+
+  if (!admin) {
+    return <></>;
+  }
 
   if (isLoading) {
     return (

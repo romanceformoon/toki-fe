@@ -4,7 +4,7 @@ import { CurrentUserContext } from '~/context';
 const useLoginUser = () => {
   const user = useContext(CurrentUserContext);
 
-  const { uid, nickname, avatar } = user || {};
+  const { uid, nickname, avatar, admin } = user || {};
 
   const isLogined = useMemo(() => (uid ? true : false), [uid]);
 
@@ -12,7 +12,8 @@ const useLoginUser = () => {
     uid,
     nickname,
     avatar,
-    isLogined
+    isLogined,
+    admin
   };
 };
 
