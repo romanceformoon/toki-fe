@@ -8,7 +8,7 @@ import { Seo } from '~/components/Seo';
 import useLoginUser from '~/hooks/useLoginUser';
 import axiosInstance from '~/utils/axiosInstance';
 
-const LampGraph = () => {
+const Analyze = () => {
   const router = useRouter();
   const { isLogined, uid } = useLoginUser();
   const [uploadFile, setUploadFile] = useState<File>();
@@ -209,4 +209,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default LampGraph;
+export default Analyze;
