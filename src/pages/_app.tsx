@@ -36,40 +36,6 @@ const ThemeInitScript = () => {
   );
 };
 
-// 성능 최적화된 전체 요소 테마 전환 스타일
-const ThemeAnimationStyles = () => {
-  return (
-    <style jsx global>{`
-      /* 최적화된 전체 요소 트랜지션 */
-      html {
-        /* html에 트랜지션 적용하여 모든 상속 요소에 영향 */
-        color-scheme: light dark;
-        transition:
-          color 0.4s ease,
-          background-color 0.4s ease;
-      }
-
-      /* 최소한의 속성만 트랜지션 적용 */
-      * {
-        transition:
-          color 0.4s ease,
-          background-color 0.4s ease,
-          border-color 0.4s ease,
-          box-shadow 0.4s ease;
-      }
-
-      /* 중요하지 않은 요소는 트랜지션에서 제외 */
-      .no-transition,
-      svg *,
-      img,
-      video,
-      .MuiTouchRipple-root {
-        transition: none !important;
-      }
-    `}</style>
-  );
-};
-
 function MyApp({
   Component,
   pageProps
@@ -135,7 +101,6 @@ function MyApp({
         <meta name='robots' content='index, follow' />
         <ThemeInitScript />
       </Head>
-      <ThemeAnimationStyles />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {/* 컴포넌트가 마운트되기 전까지는 내용을 렌더링하지 않음 */}
