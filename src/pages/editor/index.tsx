@@ -146,7 +146,7 @@ const LevelEditor = () => {
     (md5: string, newLevel: AeryLevel) => {
       const song = songs.find(s => s.md5 === md5);
       if (song) {
-        const updatedSong = { ...song, level: newLevel };
+        const updatedSong = { ...song, level: newLevel, folder: newLevel };
         // 변경 내역 저장
         setEditedSongs(prev => new Map(prev.set(md5, updatedSong)));
       }

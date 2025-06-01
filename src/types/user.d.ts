@@ -2,6 +2,7 @@ interface IUser {
   uid: string;
   nickname: string;
   avatar: string;
+  admin: boolean;
 }
 
 interface IUserGameInfo {

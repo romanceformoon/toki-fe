@@ -2,6 +2,7 @@
  * Aery 테이블 관련 API 함수
  */
 import axios from 'axios';
+import axiosInstance from '~/utils/axiosInstance';
 
 // aery 네임스페이스 객체 생성
 const AeryAPI = {
@@ -10,7 +11,7 @@ const AeryAPI = {
    */
   fetchTableData: async (): Promise<ISongData[]> => {
     try {
-      const response = await axios.get('/table/aery/data.json');
+      const response = await axios.get('/table/aery/data_test.json');
       return response.data;
     } catch (error) {
       console.error('Failed to fetch Aery table data:', error);
@@ -24,25 +25,16 @@ const AeryAPI = {
    */
   updateTableData: async (data: ISongData[]): Promise<boolean> => {
     try {
-      // 실제 구현에서는 여기에 서버 엔드포인트로 POST 요청을 보내야 합니다.
-      // 현재는 예시로만 작성되었습니다.
-      console.log('데이터 업데이트 요청:', data);
+      const formData = new FormData();
 
-      // 서버 엔드포인트 예시:
-      // const response = await axios.post('/update-aery-table', data, {
-      //   headers: {
-      //     'Authorization': 'Bearer YOUR_TOKEN'
-      //   }
-      // })
-      //
-      // if (response.status !== 200) {
-      //   throw new Error(`Error updating table data: ${response.status}`)
-      // }
-      //
-      // return true
+      formData.append(
+        'jsonFile',
+        new Blob([JSON.stringify(data, null, '\t')], { type: 'application/json' })
+      );
 
-      // 임시로 성공 응답 반환
-      return true;
+      const response = await axiosInstance.put('/table/aery/data_test.json', formData);
+
+      return response.status === 200;
     } catch (error) {
       console.error('Failed to update Aery table data:', error);
       throw error;
