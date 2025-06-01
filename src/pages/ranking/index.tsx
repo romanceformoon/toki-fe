@@ -60,6 +60,10 @@ const Ranking = () => {
     isError: isTableDataError
   } = useAeryTableDataQuery();
 
+  if (isTableDataError) {
+    return <>Error</>;
+  }
+
   if (
     !ranking ||
     !ratingRanking ||
@@ -68,7 +72,7 @@ const Ranking = () => {
     isRatingRankingLoading ||
     isRatingError ||
     (category === 'aery' && (isTableDataLoading || !tableData))
-  )
+  ) {
     return (
       <>
         <Seo type='ranking' />
@@ -103,8 +107,9 @@ const Ranking = () => {
         </TabContext>
       </>
     );
+  }
 
-  if (ranking || ratingRanking)
+  if (ranking || ratingRanking) {
     return (
       <>
         <Seo type='ranking' />
@@ -391,6 +396,7 @@ const Ranking = () => {
         </TabContext>
       </>
     );
+  }
 };
 
 export async function getServerSideProps() {
