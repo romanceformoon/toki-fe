@@ -1,6 +1,6 @@
 import { PaletteMode } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
+import { TypographyVariantsOptions } from '@mui/material/styles/createTypography';
 
 // 기본 폰트 사이즈 설정 (1rem = 10px 기준)
 const defaultFontSizes = {
@@ -17,7 +17,7 @@ export const customizeFontSizes = (customSizes: Partial<typeof defaultFontSizes>
 };
 
 // Typography 설정 정의
-const createTypography = (fontSizes = defaultFontSizes): TypographyOptions => ({
+const createTypography = (fontSizes = defaultFontSizes): TypographyVariantsOptions => ({
   fontFamily: 'inherit', // _app.tsx에서 설정한 폰트를 상속
   h1: {
     fontSize: fontSizes.h1,
