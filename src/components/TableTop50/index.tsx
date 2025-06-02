@@ -65,11 +65,17 @@ export const TableTop50 = ({ historyData, category }: IHistoryProps) => {
         ...historyData['LEVEL 13'],
         ...historyData['LEVEL 14'],
         ...historyData['LEVEL 15'],
+        ...historyData['LEVEL 15+'],
         ...historyData['LEVEL 16'],
+        ...historyData['LEVEL 16+'],
         ...historyData['LEVEL 17'],
+        ...historyData['LEVEL 17+'],
         ...historyData['LEVEL 18'],
+        ...historyData['LEVEL 18+'],
         ...historyData['LEVEL 19'],
-        ...historyData['LEVEL 20']
+        ...historyData['LEVEL 19+'],
+        ...historyData['LEVEL 20'],
+        ...historyData['LEVEL 20+']
       ]);
     else if (category === 'insane')
       setSongList([
