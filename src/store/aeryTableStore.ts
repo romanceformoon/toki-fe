@@ -30,9 +30,8 @@ const useAeryTableStore = create<AeryTableState>()(
     fetchSongs: async () => {
       set({ isLoading: true, error: null });
       try {
-        // const data = await AeryAPI.fetchTableData();
-
-        const data = await AeryAPI.fetchTestTableData();
+        const data = await AeryAPI.fetchTableData();
+        // const data = await AeryAPI.fetchTestTableData();
 
         set({ songs: data, isLoading: false });
       } catch (error) {
@@ -47,9 +46,8 @@ const useAeryTableStore = create<AeryTableState>()(
     updateSongs: async (songs: ISongData[]) => {
       set({ isLoading: true, error: null });
       try {
-        // const success = await AeryAPI.updateTableData(songs);
-
-        const success = await AeryAPI.updateTestTableData(songs);
+        const success = await AeryAPI.updateTableData(songs);
+        // const success = await AeryAPI.updateTestTableData(songs);
 
         if (success) {
           set({ songs, isLoading: false });
