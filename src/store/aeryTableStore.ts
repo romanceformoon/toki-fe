@@ -16,6 +16,7 @@ interface AeryTableState {
   updateSong: (updatedSong: ISongData) => void;
   addSong: (newSong: ISongData) => void;
   deleteSong: (md5: string) => void;
+  importSongs: (newSongs: ISongData[]) => { added: number; skipped: number };
 }
 
 const useAeryTableStore = create<AeryTableState>()(
@@ -91,6 +92,14 @@ const useAeryTableStore = create<AeryTableState>()(
       const { songs } = get();
       const filteredSongs = songs.filter(song => song.md5 !== md5);
       set({ songs: filteredSongs });
+    },
+
+    importSongs: (newSongs: ISongData[]) => {
+      const { songs } = get();
+      const existingMd5s = new Set(songs.map(song => song.md5));
+      const songsToAdd = newSongs.filter(song => !existingMd5s.has(song.md5));
+      set({ songs: [...songs, ...songsToAdd] });
+      return { added: songsToAdd.length, skipped: newSongs.length - songsToAdd.length };
     }
   }))
 );
