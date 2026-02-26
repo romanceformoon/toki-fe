@@ -1,10 +1,16 @@
-import { Save as SaveIcon, Search as SearchIcon } from '@mui/icons-material';
+import {
+  Delete as DeleteIcon,
+  Save as SaveIcon,
+  Search as SearchIcon,
+  Upload as UploadIcon
+} from '@mui/icons-material';
 import {
   Box,
   Button,
   CircularProgress,
   Fade,
   FormControl,
+  IconButton,
   InputLabel,
   MenuItem,
   Paper,
@@ -16,11 +22,12 @@ import {
   TableHead,
   TableRow,
   TextField,
+  Tooltip,
   Typography
 } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import { styled } from '@mui/system';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList as VirtualList } from 'react-window';
 import useLoginUser from '~/hooks/useLoginUser';
 import useAeryTableStore from '~/store/aeryTableStore';
@@ -38,7 +45,7 @@ const CenteredToast = styled(Box)({
 });
 
 const LevelEditor = () => {
-  const { songs, isLoading, error, fetchSongs, updateSongs } = useAeryTableStore();
+  const { songs, isLoading, error, fetchSongs, updateSongs, importSongs } = useAeryTableStore();
   const [search, setSearch] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<AeryLevel>('LEVEL 1');
   const [filteredSongs, setFilteredSongs] = useState<ISongData[]>([]);
@@ -49,6 +56,11 @@ const LevelEditor = () => {
   const [isFiltering, setIsFiltering] = useState(false);
 
   const { admin } = useLoginUser();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [importResult, setImportResult] = useState<{ added: number; skipped: number } | null>(null);
+  const [importToastOpen, setImportToastOpen] = useState(false);
+  const [pendingImportCount, setPendingImportCount] = useState(0);
+  const [deletedMd5s, setDeletedMd5s] = useState<Set<string>>(new Set());
 
   // 레벨 목록
   const levels: AeryLevel[] = useMemo(
@@ -144,6 +156,19 @@ const LevelEditor = () => {
     }
   }, [songs, selectedLevel, search, songsByLevel]);
 
+  // 삭제 토글 처리
+  const handleDeleteToggle = useCallback((md5: string) => {
+    setDeletedMd5s(prev => {
+      const next = new Set(prev);
+      if (next.has(md5)) {
+        next.delete(md5);
+      } else {
+        next.add(md5);
+      }
+      return next;
+    });
+  }, []);
+
   // 레벨 변경 처리
   const handleLevelChange = useCallback(
     (md5: string, newLevel: AeryLevel) => {
@@ -170,9 +195,56 @@ const LevelEditor = () => {
     };
   }, [toastOpen]);
 
+  // 임포트 토스트 타이머
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (importToastOpen) {
+      timer = setTimeout(() => {
+        setImportToastOpen(false);
+      }, 3000);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [importToastOpen]);
+
+  // JSON 파일 업로드 처리
+  const handleJsonUpload = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = event => {
+        try {
+          const parsed = JSON.parse(event.target?.result as string) as ISongData[];
+          if (!Array.isArray(parsed)) {
+            throw new Error('JSON 파일은 배열 형식이어야 합니다.');
+          }
+          const result = importSongs(parsed);
+          setImportResult(result);
+          setImportToastOpen(true);
+          if (result.added > 0) {
+            setPendingImportCount(prev => prev + result.added);
+          }
+        } catch (err) {
+          setImportResult(null);
+          setImportToastOpen(true);
+          console.error(err);
+        } finally {
+          if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+          }
+        }
+      };
+      reader.readAsText(file);
+    },
+    [importSongs]
+  );
+
   // 변경사항 저장
   const handleSave = async () => {
-    if (editedSongs.size === 0) {
+    if (editedSongs.size === 0 && pendingImportCount === 0 && deletedMd5s.size === 0) {
       return;
     }
 
@@ -180,11 +252,13 @@ const LevelEditor = () => {
     setSaveSuccess(null);
 
     try {
-      // 변경된 곡 정보를 적용
-      const updatedSongs = songs.map(song => {
-        const editedSong = editedSongs.get(song.md5);
-        return editedSong || song;
-      });
+      // 삭제 대상 제외 후 변경된 곡 정보 적용 (임포트된 곡은 이미 songs에 포함됨)
+      const updatedSongs = songs
+        .filter(song => !deletedMd5s.has(song.md5))
+        .map(song => {
+          const editedSong = editedSongs.get(song.md5);
+          return editedSong || song;
+        });
 
       // API 호출하여 저장
       const success = await updateSongs(updatedSongs);
@@ -192,6 +266,8 @@ const LevelEditor = () => {
       if (success) {
         setSaveSuccess(true);
         setEditedSongs(new Map());
+        setPendingImportCount(0);
+        setDeletedMd5s(new Set());
       } else {
         setSaveSuccess(false);
       }
@@ -205,8 +281,11 @@ const LevelEditor = () => {
     }
   };
 
-  // 편집된 곡 개수 계산
-  const editCount = useMemo(() => editedSongs.size, [editedSongs]);
+  // 편집된 곡 개수 계산 (임포트 대기 + 삭제 대기 포함)
+  const editCount = useMemo(
+    () => editedSongs.size + pendingImportCount + deletedMd5s.size,
+    [editedSongs, pendingImportCount, deletedMd5s]
+  );
 
   // 가상 테이블 행 렌더러
   const RowRenderer = useCallback(
@@ -216,16 +295,23 @@ const LevelEditor = () => {
       const song = filteredSongs[index];
       const editedSong = editedSongs.get(song.md5);
       const isEdited = !!editedSong && editedSong.level !== song.level;
+      const isDeleted = deletedMd5s.has(song.md5);
 
       return (
         <TableRow
           key={song.md5}
           style={{ ...style, display: 'flex' }}
-          sx={isEdited ? { backgroundColor: 'rgba(25, 118, 210, 0.08)' } : {}}
+          sx={
+            isDeleted
+              ? { backgroundColor: 'rgba(211, 47, 47, 0.08)', opacity: 0.6 }
+              : isEdited
+                ? { backgroundColor: 'rgba(25, 118, 210, 0.08)' }
+                : {}
+          }
         >
           <TableCell
             sx={{
-              width: '45%',
+              width: '40%',
               height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
@@ -236,7 +322,9 @@ const LevelEditor = () => {
               sx={{
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                textDecoration: isDeleted ? 'line-through' : 'none',
+                color: isDeleted ? 'text.disabled' : 'inherit'
               }}
             >
               {song.title}
@@ -245,7 +333,7 @@ const LevelEditor = () => {
 
           <TableCell
             sx={{
-              width: '25%',
+              width: '22%',
               height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
@@ -256,7 +344,9 @@ const LevelEditor = () => {
               sx={{
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                textDecoration: isDeleted ? 'line-through' : 'none',
+                color: isDeleted ? 'text.disabled' : 'inherit'
               }}
             >
               {song.artist}
@@ -265,24 +355,32 @@ const LevelEditor = () => {
 
           <TableCell
             sx={{
-              width: '15%',
+              width: '13%',
               height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            <Typography variant='h3'>{song.level}</Typography>
+            <Typography
+              variant='h3'
+              sx={{
+                textDecoration: isDeleted ? 'line-through' : 'none',
+                color: isDeleted ? 'text.disabled' : 'inherit'
+              }}
+            >
+              {song.level}
+            </Typography>
           </TableCell>
 
           <TableCell
             sx={{
-              width: '15%',
+              width: '18%',
               height: '5.2rem',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            <FormControl fullWidth size='small'>
+            <FormControl fullWidth size='small' disabled={isDeleted}>
               <Select
                 value={editedSong?.level || song.level}
                 onChange={e => handleLevelChange(song.md5, e.target.value as AeryLevel)}
@@ -296,10 +394,30 @@ const LevelEditor = () => {
               </Select>
             </FormControl>
           </TableCell>
+
+          <TableCell
+            sx={{
+              width: '7%',
+              height: '5.2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <Tooltip title={isDeleted ? '삭제 취소' : '삭제'}>
+              <IconButton
+                size='small'
+                onClick={() => handleDeleteToggle(song.md5)}
+                color={isDeleted ? 'default' : 'error'}
+              >
+                <DeleteIcon sx={{ width: '1.8rem', height: '1.8rem' }} />
+              </IconButton>
+            </Tooltip>
+          </TableCell>
         </TableRow>
       );
     },
-    [filteredSongs, editedSongs, handleLevelChange, levels]
+    [filteredSongs, editedSongs, deletedMd5s, handleLevelChange, handleDeleteToggle, levels]
   );
 
   if (!admin) {
@@ -341,6 +459,31 @@ const LevelEditor = () => {
         Aery 레벨 편집기
       </Typography>
 
+      <input
+        ref={fileInputRef}
+        type='file'
+        accept='.json'
+        style={{ display: 'none' }}
+        onChange={handleJsonUpload}
+      />
+
+      <Fade in={importToastOpen} timeout={{ enter: 300, exit: 500 }}>
+        <CenteredToast>
+          <MuiAlert
+            onClose={() => setImportToastOpen(false)}
+            severity={importResult ? 'success' : 'error'}
+            variant='filled'
+            sx={{ minWidth: '30rem', textAlign: 'center', display: 'flex', alignItems: 'center' }}
+          >
+            <Typography variant='h4'>
+              {importResult
+                ? `${importResult.added}곡 추가됨 (중복 ${importResult.skipped}곡 제외)`
+                : 'JSON 파일을 파싱하는 중 오류가 발생했습니다.'}
+            </Typography>
+          </MuiAlert>
+        </CenteredToast>
+      </Fade>
+
       <Fade in={toastOpen && saveSuccess !== null} timeout={{ enter: 300, exit: 500 }}>
         <CenteredToast>
           <MuiAlert
@@ -360,7 +503,7 @@ const LevelEditor = () => {
 
       <Paper sx={{ p: 2, mb: 2, display: 'flex', gap: 2, borderRadius: '1.4rem' }}>
         <TextField
-          sx={{ width: '60%' }}
+          sx={{ width: '50%' }}
           variant='outlined'
           label='제목 또는 아티스트로 검색'
           value={search}
@@ -382,7 +525,7 @@ const LevelEditor = () => {
           }}
         />
 
-        <FormControl sx={{ width: '30%' }} variant='outlined'>
+        <FormControl sx={{ width: '25%' }} variant='outlined'>
           <InputLabel>
             <Typography variant='h4'>레벨 선택</Typography>
           </InputLabel>
@@ -403,6 +546,16 @@ const LevelEditor = () => {
 
         <Button
           sx={{ width: '10%' }}
+          variant='outlined'
+          color='secondary'
+          startIcon={<UploadIcon />}
+          onClick={() => fileInputRef.current?.click()}
+        >
+          <Typography variant='h4'>JSON 추가</Typography>
+        </Button>
+
+        <Button
+          sx={{ width: '10%' }}
           variant='contained'
           color='primary'
           startIcon={isSubmitting ? <CircularProgress size={20} color='inherit' /> : <SaveIcon />}
@@ -417,26 +570,27 @@ const LevelEditor = () => {
         <Table stickyHeader>
           <TableHead>
             <TableRow style={{ display: 'flex' }}>
-              <TableCell sx={{ width: '45%' }}>
+              <TableCell sx={{ width: '40%' }}>
                 <Typography variant='h2' fontWeight={700}>
                   제목
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: '25%' }}>
+              <TableCell sx={{ width: '22%' }}>
                 <Typography variant='h2' fontWeight={700}>
                   아티스트
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: '15%' }}>
+              <TableCell sx={{ width: '13%' }}>
                 <Typography variant='h2' fontWeight={700}>
                   현재 레벨
                 </Typography>
               </TableCell>
-              <TableCell sx={{ width: '15%' }}>
+              <TableCell sx={{ width: '18%' }}>
                 <Typography variant='h2' fontWeight={700}>
                   변경할 레벨
                 </Typography>
               </TableCell>
+              <TableCell sx={{ width: '7%' }} />
             </TableRow>
           </TableHead>
 
