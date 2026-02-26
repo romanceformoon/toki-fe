@@ -16,6 +16,7 @@ interface AeryTableState {
   updateSong: (updatedSong: ISongData) => void;
   addSong: (newSong: ISongData) => void;
   deleteSong: (md5: string) => void;
+  importSongs: (newSongs: ISongData[]) => { added: number; skipped: number };
 }
 
 const useAeryTableStore = create<AeryTableState>()(
@@ -30,10 +31,13 @@ const useAeryTableStore = create<AeryTableState>()(
     fetchSongs: async () => {
       set({ isLoading: true, error: null });
       try {
-        const data = await AeryAPI.fetchTableData();
-        // const data = await AeryAPI.fetchTestTableData();
-
-        set({ songs: data, isLoading: false });
+        if (process.env.NODE_ENV === 'development') {
+          const data = await AeryAPI.fetchTestTableData();
+          set({ songs: data, isLoading: false });
+        } else {
+          const data = await AeryAPI.fetchTableData();
+          set({ songs: data, isLoading: false });
+        }
       } catch (error) {
         set({
           error:
@@ -46,13 +50,19 @@ const useAeryTableStore = create<AeryTableState>()(
     updateSongs: async (songs: ISongData[]) => {
       set({ isLoading: true, error: null });
       try {
-        const success = await AeryAPI.updateTableData(songs);
-        // const success = await AeryAPI.updateTestTableData(songs);
-
-        if (success) {
-          set({ songs, isLoading: false });
+        if (process.env.NODE_ENV === 'development') {
+          const success = await AeryAPI.updateTestTableData(songs);
+          if (success) {
+            set({ songs, isLoading: false });
+          }
+          return success;
+        } else {
+          const success = await AeryAPI.updateTableData(songs);
+          if (success) {
+            set({ songs, isLoading: false });
+          }
+          return success;
         }
-        return success;
       } catch (error) {
         set({
           error:
@@ -82,6 +92,14 @@ const useAeryTableStore = create<AeryTableState>()(
       const { songs } = get();
       const filteredSongs = songs.filter(song => song.md5 !== md5);
       set({ songs: filteredSongs });
+    },
+
+    importSongs: (newSongs: ISongData[]) => {
+      const { songs } = get();
+      const existingMd5s = new Set(songs.map(song => song.md5));
+      const songsToAdd = newSongs.filter(song => !existingMd5s.has(song.md5));
+      set({ songs: [...songs, ...songsToAdd] });
+      return { added: songsToAdd.length, skipped: newSongs.length - songsToAdd.length };
     }
   }))
 );
