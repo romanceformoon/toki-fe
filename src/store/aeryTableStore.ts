@@ -30,10 +30,13 @@ const useAeryTableStore = create<AeryTableState>()(
     fetchSongs: async () => {
       set({ isLoading: true, error: null });
       try {
-        const data = await AeryAPI.fetchTableData();
-        // const data = await AeryAPI.fetchTestTableData();
-
-        set({ songs: data, isLoading: false });
+        if (process.env.NODE_ENV === 'development') {
+          const data = await AeryAPI.fetchTestTableData();
+          set({ songs: data, isLoading: false });
+        } else {
+          const data = await AeryAPI.fetchTableData();
+          set({ songs: data, isLoading: false });
+        }
       } catch (error) {
         set({
           error:
@@ -46,13 +49,19 @@ const useAeryTableStore = create<AeryTableState>()(
     updateSongs: async (songs: ISongData[]) => {
       set({ isLoading: true, error: null });
       try {
-        const success = await AeryAPI.updateTableData(songs);
-        // const success = await AeryAPI.updateTestTableData(songs);
-
-        if (success) {
-          set({ songs, isLoading: false });
+        if (process.env.NODE_ENV === 'development') {
+          const success = await AeryAPI.updateTestTableData(songs);
+          if (success) {
+            set({ songs, isLoading: false });
+          }
+          return success;
+        } else {
+          const success = await AeryAPI.updateTableData(songs);
+          if (success) {
+            set({ songs, isLoading: false });
+          }
+          return success;
         }
-        return success;
       } catch (error) {
         set({
           error:
