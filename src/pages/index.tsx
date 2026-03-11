@@ -234,15 +234,15 @@ const Main = () => {
                   sx={{
                     width: '100%',
                     height: '4.8rem',
-color: '#2dd4bf',
-                  borderColor: '#2dd4bf',
-                  ':hover': {
+                    color: '#2dd4bf',
                     borderColor: '#2dd4bf',
-                    bgcolor: 'rgba(45, 212, 191, 0.08)'
-                  }
-                }}
-                onClick={() => {
-                  if (Aery[0].without_bga_download_url) {
+                    ':hover': {
+                      borderColor: '#2dd4bf',
+                      bgcolor: 'rgba(45, 212, 191, 0.08)'
+                    }
+                  }}
+                  onClick={() => {
+                    if (Aery[0].without_bga_download_url) {
                       openInNewTab(Aery[0].without_bga_download_url);
                     }
                   }}
@@ -254,7 +254,7 @@ color: '#2dd4bf',
                     }}
                   />
                   <Typography variant='h3' sx={buttonTextStyle}>
-                    5KEYS AERY BGA 제외 풀 패키지 다운로드
+                    5KEYS AERY FULL PACKAGE (BGA 제외) 다운로드
                   </Typography>
                 </Button>
               </Box>
