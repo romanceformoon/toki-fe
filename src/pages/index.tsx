@@ -234,11 +234,11 @@ const Main = () => {
                   sx={{
                     width: '100%',
                     height: '4.8rem',
-                    color: '#2dd4bf',
-                    borderColor: '#2dd4bf',
+                    color: '#0d9488',
+                    borderColor: '#0d9488',
                     ':hover': {
-                      borderColor: '#2dd4bf',
-                      bgcolor: 'rgba(45, 212, 191, 0.08)'
+                      borderColor: '#0d9488',
+                      bgcolor: 'rgba(13, 148, 136, 0.08)'
                     }
                   }}
                   onClick={() => {
