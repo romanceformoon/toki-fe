@@ -100,9 +100,9 @@ const Main = () => {
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#5783db',
-                  borderColor: '#5783db',
-                  ':hover': { borderColor: '#5783db' }
+                  color: '#7ba3e8',
+                  borderColor: '#7ba3e8',
+                  ':hover': { borderColor: '#7ba3e8', bgcolor: 'rgba(123, 163, 232, 0.08)' }
                 }}
                 onClick={async () => {
                   if (isLogined) router.push(`/user/${uid}`);
@@ -128,9 +128,9 @@ const Main = () => {
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#a881af',
-                  borderColor: '#a881af',
-                  ':hover': { borderColor: '#a881af' }
+                  color: '#b998c0',
+                  borderColor: '#b998c0',
+                  ':hover': { borderColor: '#b998c0', bgcolor: 'rgba(185, 152, 192, 0.08)' }
                 }}
                 onClick={async () => {
                   router.push(`/tools/viewer`);
@@ -154,9 +154,9 @@ const Main = () => {
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#80669d',
-                  borderColor: '#80669d',
-                  ':hover': { borderColor: '#80669d' }
+                  color: '#9d8ab0',
+                  borderColor: '#9d8ab0',
+                  ':hover': { borderColor: '#9d8ab0', bgcolor: 'rgba(157, 138, 176, 0.08)' }
                 }}
                 onClick={async () => {
                   router.push(`/analyze`);
@@ -178,9 +178,9 @@ const Main = () => {
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#dd7973',
-                  borderColor: '#dd7973',
-                  ':hover': { borderColor: '#dd7973' }
+                  color: '#e8a39f',
+                  borderColor: '#e8a39f',
+                  ':hover': { borderColor: '#e8a39f', bgcolor: 'rgba(232, 163, 159, 0.08)' }
                 }}
                 onClick={async () => {
                   router.push(`/ranking`);
@@ -204,9 +204,12 @@ const Main = () => {
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#a13aa5',
-                  borderColor: '#a13aa5',
-                  ':hover': { borderColor: '#a13aa5' }
+                  color: '#818cf8',
+                  borderColor: '#818cf8',
+                  ':hover': {
+                    borderColor: '#818cf8',
+                    bgcolor: 'rgba(129, 140, 248, 0.08)'
+                  }
                 }}
                 onClick={() => {
                   openInNewTab(Aery[0].full_download_url);
@@ -224,15 +227,51 @@ const Main = () => {
               </Button>
             </Box>
 
+            {Aery[0]?.without_bga_download_url && (
+              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Button
+                  variant='outlined'
+                  sx={{
+                    width: '100%',
+                    height: '4.8rem',
+color: '#2dd4bf',
+                  borderColor: '#2dd4bf',
+                  ':hover': {
+                    borderColor: '#2dd4bf',
+                    bgcolor: 'rgba(45, 212, 191, 0.08)'
+                  }
+                }}
+                onClick={() => {
+                  if (Aery[0].without_bga_download_url) {
+                      openInNewTab(Aery[0].without_bga_download_url);
+                    }
+                  }}
+                >
+                  <Download
+                    sx={{
+                      width: '2.4rem',
+                      height: '2.4rem'
+                    }}
+                  />
+                  <Typography variant='h3' sx={buttonTextStyle}>
+                    5KEYS AERY BGA 제외 풀 패키지 다운로드
+                  </Typography>
+                </Button>
+              </Box>
+            )}
+
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <Button
                 variant='outlined'
                 sx={{
                   width: '100%',
                   height: '4.8rem',
-                  color: '#a13aa5',
-                  borderColor: '#a13aa5',
-                  ':hover': { borderColor: '#a13aa5' }
+                  color: '#fb923c',
+                  borderColor: '#fb923c',
+                  ':hover': {
+                    borderColor: '#fb923c',
+                    bgcolor: 'rgba(251, 146, 60, 0.08)'
+                  }
                 }}
                 onClick={() => {
                   openInNewTab(Aery[0].patch_download_url);
