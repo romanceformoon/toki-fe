@@ -16,7 +16,7 @@ export const MobileMenu = () => {
   const pages = [
     { name: 'Analyze', link: 'analyze' },
     { name: 'Ranking', link: 'ranking' },
-    { name: '5KEYS AERY' },
+    { name: 'AERY' },
     { name: '난이도표', link: 'table' },
     { name: '단위인정', link: 'skill' },
     // { name: '서열표', link: 'grade' },
@@ -74,11 +74,11 @@ export const MobileMenu = () => {
           }
         }}
       >
-        {pages.map(page => {
+        {pages.map((page, index) => {
           if (page.link) {
             return (
               <MenuItem
-                key={page.name}
+                key={`${page.name}-${index}`}
                 onClick={() => {
                   handleCloseNavMenu();
                   router.push(`/${page.link}`);
@@ -89,7 +89,7 @@ export const MobileMenu = () => {
             );
           } else {
             return (
-              <Divider key={page.name} sx={{ my: 0.5 }}>
+              <Divider key={`${page.name}-${index}`} sx={{ my: 0.5 }}>
                 <Typography
                   variant='h5'
                   sx={{

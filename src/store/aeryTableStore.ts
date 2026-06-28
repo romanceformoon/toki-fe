@@ -1,15 +1,25 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import AeryAPI from '~/api/aery';
+import AeryAPI, { AeryTableAPI } from '~/api/aery';
+import Aery7API from '~/api/aery7';
+
+export type AeryTableType = 'aery' | 'aery7';
+
+const tableApiMap: Record<AeryTableType, AeryTableAPI> = {
+  aery: AeryAPI,
+  aery7: Aery7API
+};
 
 interface AeryTableState {
   // 상태
+  tableType: AeryTableType;
   songs: ISongData[];
   isLoading: boolean;
   error: string | null;
   selectedSong: ISongData | null;
 
   // 액션
+  setTableType: (tableType: AeryTableType) => Promise<void>;
   fetchSongs: () => Promise<void>;
   updateSongs: (songs: ISongData[]) => Promise<boolean>;
   selectSong: (song: ISongData | null) => void;
@@ -22,20 +32,28 @@ interface AeryTableState {
 const useAeryTableStore = create<AeryTableState>()(
   devtools((set, get) => ({
     // 초기 상태
+    tableType: 'aery',
     songs: [],
     isLoading: false,
     error: null,
     selectedSong: null,
 
     // 액션
+    setTableType: async (tableType: AeryTableType) => {
+      if (get().tableType === tableType) return;
+      set({ tableType, songs: [], selectedSong: null, error: null });
+      await get().fetchSongs();
+    },
+
     fetchSongs: async () => {
       set({ isLoading: true, error: null });
       try {
+        const api = tableApiMap[get().tableType];
         if (process.env.NODE_ENV === 'development') {
-          const data = await AeryAPI.fetchTestTableData();
+          const data = await api.fetchTestTableData();
           set({ songs: data, isLoading: false });
         } else {
-          const data = await AeryAPI.fetchTableData();
+          const data = await api.fetchTableData();
           set({ songs: data, isLoading: false });
         }
       } catch (error) {
@@ -50,14 +68,15 @@ const useAeryTableStore = create<AeryTableState>()(
     updateSongs: async (songs: ISongData[]) => {
       set({ isLoading: true, error: null });
       try {
+        const api = tableApiMap[get().tableType];
         if (process.env.NODE_ENV === 'development') {
-          const success = await AeryAPI.updateTestTableData(songs);
+          const success = await api.updateTestTableData(songs);
           if (success) {
             set({ songs, isLoading: false });
           }
           return success;
         } else {
-          const success = await AeryAPI.updateTableData(songs);
+          const success = await api.updateTableData(songs);
           if (success) {
             set({ songs, isLoading: false });
           }
