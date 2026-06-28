@@ -180,7 +180,7 @@ const DifficultyTable = () => {
       >
         <Table sx={{ minWidth: '100%' }}>
           <TableHead>
-            <TableRow style={{ display: 'flex' }}>
+            <TableRow style={{ display: 'flex', overflow: 'hidden', scrollbarGutter: 'stable' }}>
               <TableCell sx={{ width: '10%' }}>
                 <Typography variant='h2' fontWeight={700} textAlign='center'>
                   Level
@@ -212,6 +212,7 @@ const DifficultyTable = () => {
                 itemSize={ROW_HEIGHT}
                 overscanCount={10}
                 innerElementType='div'
+                style={{ scrollbarGutter: 'stable' }}
               >
                 {RowRenderer}
               </VirtualList>
