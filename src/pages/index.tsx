@@ -283,6 +283,49 @@ const Main = () => {
             />
           </Box>
 
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <Typography variant='h2' fontWeight={700}>
+                7KEYS AERY 난이도표 URL
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <TextField
+                value='https://asumatoki.kr/table/aery7/header.json'
+                label=''
+                id='aery7-table-beatoraja'
+                variant='outlined'
+                size='small'
+                focused={false}
+                sx={{
+                  width: '100%',
+                  input: {
+                    textAlign: 'center',
+                    '&:hover': {
+                      cursor: 'pointer'
+                    },
+                    fontSize: '1.6rem',
+                    height: '2rem'
+                  }
+                }}
+                onClick={() => {
+                  handleCopyClipBoard('https://asumatoki.kr/table/aery7/header.json');
+                }}
+              />
+            </Box>
+          </Box>
+
           <Box
             sx={{
               display: 'flex',
