@@ -5,7 +5,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import { Avatar, Box, Button, Snackbar, Stack, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import Aery from 'public/update/aery.json';
 import { useState } from 'react';
 import { Seo } from '~/components/Seo';
 import useLoginUser from '~/hooks/useLoginUser';
@@ -212,7 +211,7 @@ const Main = () => {
                   }
                 }}
                 onClick={() => {
-                  openInNewTab(Aery[0].full_download_url);
+                  openInNewTab('https://5aery.com');
                 }}
               >
                 <Download
@@ -222,69 +221,7 @@ const Main = () => {
                   }}
                 />
                 <Typography variant='h3' sx={buttonTextStyle}>
-                  5KEYS AERY FULL PACKAGE 다운로드
-                </Typography>
-              </Button>
-            </Box>
-
-            {Aery[0]?.without_bga_download_url && (
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Button
-                  variant='outlined'
-                  sx={{
-                    width: '100%',
-                    height: '4.8rem',
-                    color: '#0d9488',
-                    borderColor: '#0d9488',
-                    ':hover': {
-                      borderColor: '#0d9488',
-                      bgcolor: 'rgba(13, 148, 136, 0.08)'
-                    }
-                  }}
-                  onClick={() => {
-                    if (Aery[0].without_bga_download_url) {
-                      openInNewTab(Aery[0].without_bga_download_url);
-                    }
-                  }}
-                >
-                  <Download
-                    sx={{
-                      width: '2.4rem',
-                      height: '2.4rem'
-                    }}
-                  />
-                  <Typography variant='h3' sx={buttonTextStyle}>
-                    5KEYS AERY FULL PACKAGE (BGA 제외) 다운로드
-                  </Typography>
-                </Button>
-              </Box>
-            )}
-
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button
-                variant='outlined'
-                sx={{
-                  width: '100%',
-                  height: '4.8rem',
-                  color: '#fb923c',
-                  borderColor: '#fb923c',
-                  ':hover': {
-                    borderColor: '#fb923c',
-                    bgcolor: 'rgba(251, 146, 60, 0.08)'
-                  }
-                }}
-                onClick={() => {
-                  openInNewTab(Aery[0].patch_download_url);
-                }}
-              >
-                <Download
-                  sx={{
-                    width: '2.4rem',
-                    height: '2.4rem'
-                  }}
-                />
-                <Typography variant='h3' sx={buttonTextStyle}>
-                  5KEYS AERY 최신패치 다운로드
+                  에리팩 다운로드 ( BMS AERY DOWNLOAD )
                 </Typography>
               </Button>
             </Box>
@@ -344,6 +281,49 @@ const Main = () => {
                 }
               }}
             />
+          </Box>
+
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <Typography variant='h2' fontWeight={700}>
+                7KEYS AERY 난이도표 URL
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <TextField
+                value='https://asumatoki.kr/table/aery7/header.json'
+                label=''
+                id='aery7-table-beatoraja'
+                variant='outlined'
+                size='small'
+                focused={false}
+                sx={{
+                  width: '100%',
+                  input: {
+                    textAlign: 'center',
+                    '&:hover': {
+                      cursor: 'pointer'
+                    },
+                    fontSize: '1.6rem',
+                    height: '2rem'
+                  }
+                }}
+                onClick={() => {
+                  handleCopyClipBoard('https://asumatoki.kr/table/aery7/header.json');
+                }}
+              />
+            </Box>
           </Box>
 
           <Box

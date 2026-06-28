@@ -7,7 +7,7 @@ export const DesktopRoute = () => {
   const pages = [
     { name: 'ANALYZE', link: 'analyze' },
     { name: 'RANKING', link: 'ranking' },
-    { name: '5KEYS AERY' },
+    { name: 'AERY' },
     { name: 'TOOLS' }
   ];
 
@@ -27,7 +27,7 @@ export const DesktopRoute = () => {
 
   const handleOpenMenu = (event: React.MouseEvent<HTMLElement>, menu: string) => {
     switch (menu) {
-      case '5KEYS AERY':
+      case 'AERY':
         setAnchorElAery(event.currentTarget);
         break;
 

@@ -1,3 +1,5 @@
+export const aery7SkillSimulators: IAeryDan = {}
+
 export const aerySkillSimulators: IAeryDan = {
   '1 DAN': {
     list: [

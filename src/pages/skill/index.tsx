@@ -1,28 +1,67 @@
-import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import Link from 'next/link';
+import { useState } from 'react';
 import { ClickableText } from '~/components/ClickableText';
 import { Seo } from '~/components/Seo';
-import { aerySkillSimulators } from '~/const/skillSimulator';
+import { aery7SkillSimulators, aerySkillSimulators } from '~/const/skillSimulator';
+
+type KeyMode = 'aery' | 'aery7';
+
+const danDataMap: Record<KeyMode, IAeryDan> = {
+  aery: aerySkillSimulators,
+  aery7: aery7SkillSimulators
+};
 
 const Skill = () => {
-  const danData: IAeryDan = aerySkillSimulators;
+  const [keyMode, setKeyMode] = useState<KeyMode>('aery');
+
+  const danData: IAeryDan = danDataMap[keyMode];
+
+  const handleKeyModeChange = (_event: React.MouseEvent<HTMLElement>, newKeyMode: KeyMode | null) => {
+    if (!newKeyMode || newKeyMode === keyMode) return;
+    setKeyMode(newKeyMode);
+  };
+
+  const dans = Object.keys(danData);
 
   return (
     <>
       <Seo type='skill' />
 
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+        <ToggleButtonGroup value={keyMode} exclusive color='primary' onChange={handleKeyModeChange}>
+          <ToggleButton value='aery'>
+            <Typography variant='h4'>5KEYS</Typography>
+          </ToggleButton>
+          <ToggleButton value='aery7'>
+            <Typography variant='h4'>7KEYS</Typography>
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
       <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
         <Typography variant='h1' fontWeight={700}>
-          [5KEYS AERY] 段位認定
+          [{keyMode === 'aery' ? '5KEYS' : '7KEYS'} AERY] 段位認定
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
-        <Link href='https://naver.me/I5yHVLTA' target='_blank'>
-          <Typography variant='h3' fontWeight={700}>
-            다운로드
+      {keyMode === 'aery' && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+          <Link href='https://naver.me/I5yHVLTA' target='_blank'>
+            <Typography variant='h3' fontWeight={700}>
+              다운로드
+            </Typography>
+          </Link>
+        </Box>
+      )}
+
+      {dans.length === 0 && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Typography variant='h3' fontWeight={600} sx={{ color: 'text.secondary' }}>
+            아직 준비 중입니다.
           </Typography>
-        </Link>
-      </Box>
+        </Box>
+      )}
+
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {Object.keys(danData).map((dan, idx) => (
           <>

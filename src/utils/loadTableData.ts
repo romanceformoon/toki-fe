@@ -1,6 +1,6 @@
-import AeryAPI from '~/api/aery';
+import AeryAPI, { AeryTableAPI } from '~/api/aery';
 
-export const loadTableData = async () => {
+export const loadTableData = async (api: AeryTableAPI = AeryAPI) => {
   const levelList: ILevelList = {
     'LEVEL 1': [],
     'LEVEL 2': [],
@@ -35,7 +35,7 @@ export const loadTableData = async () => {
     'OLD CHARTS': []
   };
 
-  const tableData = await AeryAPI.fetchTableData();
+  const tableData = await api.fetchTableData();
 
   for (let i = 0; i < tableData.length; i++) {
     const level: AeryLevel = tableData[i].level as AeryLevel;

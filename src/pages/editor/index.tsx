@@ -22,6 +22,8 @@ import {
   TableHead,
   TableRow,
   TextField,
+  ToggleButton,
+  ToggleButtonGroup,
   Tooltip,
   Typography
 } from '@mui/material';
@@ -30,7 +32,7 @@ import { styled } from '@mui/system';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList as VirtualList } from 'react-window';
 import useLoginUser from '~/hooks/useLoginUser';
-import useAeryTableStore from '~/store/aeryTableStore';
+import useAeryTableStore, { AeryTableType } from '~/store/aeryTableStore';
 
 const StyledTableContainer = styled(TableContainer)({
   maxHeight: '65vh'
@@ -45,7 +47,8 @@ const CenteredToast = styled(Box)({
 });
 
 const LevelEditor = () => {
-  const { songs, isLoading, error, fetchSongs, updateSongs, importSongs } = useAeryTableStore();
+  const { tableType, setTableType, songs, isLoading, error, fetchSongs, updateSongs, importSongs } =
+    useAeryTableStore();
   const [search, setSearch] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<AeryLevel>('LEVEL 1');
   const [filteredSongs, setFilteredSongs] = useState<ISongData[]>([]);
@@ -155,6 +158,20 @@ const LevelEditor = () => {
       return () => clearTimeout(timer);
     }
   }, [songs, selectedLevel, search, songsByLevel]);
+
+  // 테이블 종류 변경 처리 (aery / aery7)
+  const handleTableTypeChange = useCallback(
+    (_event: React.MouseEvent<HTMLElement>, newType: AeryTableType | null) => {
+      if (!newType || newType === tableType) return;
+      // 다른 테이블로 전환 시 편집 중인 로컬 상태 초기화
+      setSearch('');
+      setEditedSongs(new Map());
+      setDeletedMd5s(new Set());
+      setPendingImportCount(0);
+      setTableType(newType);
+    },
+    [tableType, setTableType]
+  );
 
   // 삭제 토글 처리
   const handleDeleteToggle = useCallback((md5: string) => {
@@ -420,6 +437,28 @@ const LevelEditor = () => {
     [filteredSongs, editedSongs, deletedMd5s, handleLevelChange, handleDeleteToggle, levels]
   );
 
+  const tableHeader = (
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
+      <Typography variant='h1' component='h1' fontWeight={700} gutterBottom>
+        {tableType === 'aery7' ? 'Aery7' : 'Aery'} 레벨 편집기
+      </Typography>
+
+      <ToggleButtonGroup
+        value={tableType}
+        exclusive
+        color='primary'
+        onChange={handleTableTypeChange}
+      >
+        <ToggleButton value='aery'>
+          <Typography variant='h4'>Aery</Typography>
+        </ToggleButton>
+        <ToggleButton value='aery7'>
+          <Typography variant='h4'>Aery7</Typography>
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </Box>
+  );
+
   if (!admin) {
     return <></>;
   }
@@ -437,27 +476,30 @@ const LevelEditor = () => {
 
   if (error) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '65vh' }}>
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography variant='h4' color='error' gutterBottom>
-            오류 발생
-          </Typography>
-          <Typography variant='h4' gutterBottom>
-            {error}
-          </Typography>
-          <Button variant='contained' onClick={() => fetchSongs()} sx={{ mt: 2 }}>
-            <Typography variant='h4'>다시 시도</Typography>
-          </Button>
+      <>
+        {tableHeader}
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}
+        >
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant='h4' color='error' gutterBottom>
+              오류 발생
+            </Typography>
+            <Typography variant='h4' gutterBottom>
+              {error}
+            </Typography>
+            <Button variant='contained' onClick={() => fetchSongs()} sx={{ mt: 2 }}>
+              <Typography variant='h4'>다시 시도</Typography>
+            </Button>
+          </Box>
         </Box>
-      </Box>
+      </>
     );
   }
 
   return (
     <>
-      <Typography variant='h1' component='h1' fontWeight={700} gutterBottom>
-        Aery 레벨 편집기
-      </Typography>
+      {tableHeader}
 
       <input
         ref={fileInputRef}
