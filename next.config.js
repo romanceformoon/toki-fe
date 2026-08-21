@@ -14,9 +14,8 @@ const nextConfig = {
       },
       {
         source: '/table/:path*',
-        destination: isDevelopmentEnv
-          ? `${process.env.NEXT_PUBLIC_DEV}/toki-api/table/:path*`
-          : `${process.env.NEXT_PUBLIC_PROD}/toki-api/table/:path*`
+        destination:
+          'https://raw.githubusercontent.com/romanceformoon/toki-be/refs/heads/main/table/:path*'
       }
     ]
   }
