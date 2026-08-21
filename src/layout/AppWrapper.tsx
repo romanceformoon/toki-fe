@@ -1,6 +1,5 @@
-import { ReactNode, useMemo, useState } from 'react';
-import useCheckUser from '~/auth/query/useCheckUser';
-import useSilentRefresh from '~/auth/query/useSilentRefresh';
+import { ReactNode, useMemo } from 'react';
+import useAdminSession from '~/auth/query/useAdminSession';
 import { CurrentUserContext } from '~/context';
 
 interface IAppWrapperProps {
@@ -8,14 +7,12 @@ interface IAppWrapperProps {
 }
 
 const AppWrapper = ({ children }: IAppWrapperProps) => {
-  const [isRefreshed, setIsRefreshed] = useState<boolean>(false);
-
-  useSilentRefresh({ setIsRefreshed });
-  const { data: userData } = useCheckUser({ isRefreshed, setIsRefreshed });
+  const { data } = useAdminSession();
 
   const currentUser = useMemo(() => {
-    return userData && userData.data ? userData.data.user : null;
-  }, [userData]);
+    if (!data?.admin) return null;
+    return { uid: 'admin', nickname: 'admin', avatar: '', admin: true };
+  }, [data]);
 
   return <CurrentUserContext.Provider value={currentUser}>{children}</CurrentUserContext.Provider>;
 };

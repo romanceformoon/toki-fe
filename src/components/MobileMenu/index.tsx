@@ -1,46 +1,37 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import {
-  Avatar,
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Menu,
-  MenuItem,
-  Typography
-} from '@mui/material';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu'
+import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import useLoginUser from '~/hooks/useLoginUser'
+
+const PUBLIC_LINKS = [
+  { name: '난이도표', link: 'table' },
+  { name: '단위인정', link: 'skill' },
+  { name: 'BMS 채보 뷰어', link: 'tools/viewer' }
+]
 
 export const MobileMenu = () => {
-  const pages = [
-    { name: 'Analyze', link: 'analyze' },
-    { name: 'Ranking', link: 'ranking' },
-    { name: 'AERY' },
-    { name: '난이도표', link: 'table' },
-    { name: '단위인정', link: 'skill' },
-    // { name: '서열표', link: 'grade' },
-    { name: 'TOOLS' },
-    { name: 'BMS 채보 뷰어', link: 'tools/viewer' }
-  ];
+  const router = useRouter()
+  const { admin } = useLoginUser()
 
-  const router = useRouter();
-
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+    setAnchorElNav(event.currentTarget)
+  }
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    setAnchorElNav(null)
+  }
+
+  const links = admin
+    ? [...PUBLIC_LINKS, { name: 'EDITOR', link: 'editor' }]
+    : PUBLIC_LINKS
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-      {/* 모바일 메뉴 버튼 */}
       <IconButton
         size='large'
-        aria-label='account of current user'
+        aria-label='navigation menu'
         aria-controls='menu-appbar'
         aria-haspopup='true'
         onClick={handleOpenNavMenu}
@@ -49,80 +40,28 @@ export const MobileMenu = () => {
         <MenuIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
       </IconButton>
 
-      {/* 모바일 링크 */}
       <Menu
         id='menu-appbar'
         anchorEl={anchorElNav}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left'
-        }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left'
-        }}
+        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
-        sx={{
-          display: { xs: 'block', md: 'none' }
-        }}
-        MenuListProps={{
-          style: {
-            maxHeight: '15rem',
-            width: '20ch'
-          }
-        }}
+        sx={{ display: { xs: 'block', md: 'none' } }}
       >
-        {pages.map((page, index) => {
-          if (page.link) {
-            return (
-              <MenuItem
-                key={`${page.name}-${index}`}
-                onClick={() => {
-                  handleCloseNavMenu();
-                  router.push(`/${page.link}`);
-                }}
-              >
-                <Typography variant='h4'>{page.name}</Typography>
-              </MenuItem>
-            );
-          } else {
-            return (
-              <Divider key={`${page.name}-${index}`} sx={{ my: 0.5 }}>
-                <Typography
-                  variant='h5'
-                  sx={{
-                    color: 'grey'
-                  }}
-                >
-                  {page.name}
-                </Typography>
-              </Divider>
-            );
-          }
-        })}
+        {links.map(page => (
+          <MenuItem
+            key={page.link}
+            onClick={() => {
+              handleCloseNavMenu()
+              router.push(`/${page.link}`)
+            }}
+          >
+            <Typography variant='h4'>{page.name}</Typography>
+          </MenuItem>
+        ))}
       </Menu>
-
-      <Button
-        sx={{
-          color: 'white',
-          display: { xs: 'flex' }
-        }}
-        onClick={() => {
-          router.push('/');
-        }}
-      >
-        <Avatar
-          sx={{
-            '&:hover': {
-              cursor: 'pointer'
-            }
-          }}
-          alt='logo'
-          src='/assets/images/logo.png'
-        />
-      </Button>
     </Box>
-  );
-};
+  )
+}

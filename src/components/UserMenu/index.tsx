@@ -1,76 +1,38 @@
-import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import useLoginUser from '~/hooks/useLoginUser';
-import axiosInstance from '~/utils/axiosInstance';
+import LogoutIcon from '@mui/icons-material/Logout'
+import { Box, Button, Tooltip, Typography } from '@mui/material'
+import axios from 'axios'
+import { useState } from 'react'
+import { useQueryClient } from 'react-query'
 
 export const UserMenu = () => {
-  const router = useRouter();
+  const queryClient = useQueryClient()
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
 
-  const { uid, avatar } = useLoginUser();
-
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const handleLogout = async () => {
+    if (isLoggingOut) return
+    setIsLoggingOut(true)
+    try {
+      await axios.post('/api/admin/logout')
+      await queryClient.invalidateQueries(['adminSession'])
+    } catch (err) {
+      console.error('로그아웃 실패:', err)
+    } finally {
+      setIsLoggingOut(false)
+    }
+  }
 
   return (
     <Box sx={{ flexGrow: 0, ml: 2.5 }}>
-      <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-        <Tooltip title='프로필'>
-          <Avatar
-            alt='Profile Image'
-            src={avatar ? `https://cdn.discordapp.com/avatars/${uid}/${avatar}` : undefined}
-            sx={{ width: '3.6rem', height: '3.6rem' }}
-          />
-        </Tooltip>
-      </IconButton>
-
-      <Menu
-        sx={{ mt: '4.5rem' }}
-        id='menu-appbar'
-        anchorEl={anchorElUser}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        open={Boolean(anchorElUser)}
-        onClose={handleCloseUserMenu}
-      >
-        <MenuItem key={'profile'} onClick={handleCloseUserMenu}>
-          <Typography
-            variant='h4'
-            textAlign='center'
-            onClick={async () => {
-              router.push(`/user/${uid}`);
-            }}
-          >
-            프로필
-          </Typography>
-        </MenuItem>
-        <MenuItem key={'logout'} onClick={handleCloseUserMenu}>
-          <Typography
-            variant='h4'
-            textAlign='center'
-            onClick={async () => {
-              await axiosInstance.get('/toki-api/auth/user/logout');
-              router.reload();
-            }}
-          >
-            로그아웃
-          </Typography>
-        </MenuItem>
-      </Menu>
+      <Tooltip title='로그아웃'>
+        <Button
+          onClick={handleLogout}
+          disabled={isLoggingOut}
+          sx={{ color: 'white', minWidth: 'auto' }}
+          startIcon={<LogoutIcon sx={{ width: '2rem', height: '2rem' }} />}
+        >
+          <Typography variant='h4'>로그아웃</Typography>
+        </Button>
+      </Tooltip>
     </Box>
-  );
-};
+  )
+}

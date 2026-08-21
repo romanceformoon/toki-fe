@@ -1,8 +1,5 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { AppBar, IconButton, PaletteMode, Toolbar, Tooltip } from '@mui/material';
-import Link from 'next/link';
+import { AppBar, Box, PaletteMode, Toolbar } from '@mui/material';
 import { DesktopRoute } from '~/components/DesktopRoute';
-import { LoginButton } from '~/components/LoginButton';
 import { Logo } from '~/components/Logo';
 import { MobileMenu } from '~/components/MobileMenu';
 import { ThemeToggleButton } from '~/components/ThemeToggleButton';
@@ -15,7 +12,7 @@ interface IHeaderProps {
 }
 
 const Header = ({ mode, setMode }: IHeaderProps) => {
-  const { isLogined } = useLoginUser();
+  const { admin } = useLoginUser();
 
   return (
     <AppBar position='fixed'>
@@ -25,16 +22,10 @@ const Header = ({ mode, setMode }: IHeaderProps) => {
 
         <DesktopRoute />
 
-        <Link href={'https://github.com/romanceformoon/toki-fe'} target='_blank'>
-          <IconButton>
-            <Tooltip title='Github'>
-              <GitHubIcon sx={{ width: '2.4rem', height: '2.4rem' }} />
-            </Tooltip>
-          </IconButton>
-        </Link>
+        <Box sx={{ flexGrow: 1 }} />
 
         <ThemeToggleButton mode={mode} setMode={setMode} />
-        {!isLogined ? <LoginButton /> : <UserMenu />}
+        {admin ? <UserMenu /> : null}
       </Toolbar>
     </AppBar>
   );

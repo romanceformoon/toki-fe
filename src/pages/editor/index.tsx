@@ -31,6 +31,8 @@ import MuiAlert from '@mui/material/Alert';
 import { styled } from '@mui/system';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList as VirtualList } from 'react-window';
+import { AdminLogin } from '~/components/AdminLogin';
+import useAdminSession from '~/auth/query/useAdminSession';
 import useLoginUser from '~/hooks/useLoginUser';
 import useAeryTableStore, { AeryTableType } from '~/store/aeryTableStore';
 
@@ -59,6 +61,7 @@ const LevelEditor = () => {
   const [isFiltering, setIsFiltering] = useState(false);
 
   const { admin } = useLoginUser();
+  const { isLoading: isSessionLoading } = useAdminSession();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [importResult, setImportResult] = useState<{ added: number; skipped: number } | null>(null);
   const [importToastOpen, setImportToastOpen] = useState(false);
@@ -103,10 +106,12 @@ const LevelEditor = () => {
     []
   );
 
-  // 페이지 로딩 시 데이터 가져오기
+  // 관리자 인증 후 데이터 가져오기
   useEffect(() => {
-    fetchSongs();
-  }, [fetchSongs]);
+    if (admin) {
+      fetchSongs();
+    }
+  }, [admin, fetchSongs]);
 
   // 레벨별 노래 맵 메모이제이션
   const songsByLevel = useMemo(() => {
@@ -459,8 +464,16 @@ const LevelEditor = () => {
     </Box>
   );
 
+  if (isSessionLoading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '65vh' }}>
+        <CircularProgress size={20} />
+      </Box>
+    );
+  }
+
   if (!admin) {
-    return <></>;
+    return <AdminLogin />;
   }
 
   if (isLoading) {

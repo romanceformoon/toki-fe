@@ -49,13 +49,8 @@ const useAeryTableStore = create<AeryTableState>()(
       set({ isLoading: true, error: null });
       try {
         const api = tableApiMap[get().tableType];
-        if (process.env.NODE_ENV === 'development') {
-          const data = await api.fetchTestTableData();
-          set({ songs: data, isLoading: false });
-        } else {
-          const data = await api.fetchTableData();
-          set({ songs: data, isLoading: false });
-        }
+        const data = await api.fetchTableData();
+        set({ songs: data, isLoading: false });
       } catch (error) {
         set({
           error:
@@ -69,19 +64,11 @@ const useAeryTableStore = create<AeryTableState>()(
       set({ isLoading: true, error: null });
       try {
         const api = tableApiMap[get().tableType];
-        if (process.env.NODE_ENV === 'development') {
-          const success = await api.updateTestTableData(songs);
-          if (success) {
-            set({ songs, isLoading: false });
-          }
-          return success;
-        } else {
-          const success = await api.updateTableData(songs);
-          if (success) {
-            set({ songs, isLoading: false });
-          }
-          return success;
+        const success = await api.updateTableData(songs);
+        if (success) {
+          set({ songs, isLoading: false });
         }
+        return success;
       } catch (error) {
         set({
           error:

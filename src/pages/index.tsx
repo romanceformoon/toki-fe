@@ -96,11 +96,13 @@ const Main = () => {
             >
               <Button
                 variant='outlined'
+                disabled
                 sx={{
                   width: '100%',
                   height: '4.8rem',
                   color: '#7ba3e8',
                   borderColor: '#7ba3e8',
+                  opacity: 0.45,
                   ':hover': { borderColor: '#7ba3e8', bgcolor: 'rgba(123, 163, 232, 0.08)' }
                 }}
                 onClick={async () => {
@@ -150,11 +152,13 @@ const Main = () => {
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
               <Button
                 variant='outlined'
+                disabled
                 sx={{
                   width: '100%',
                   height: '4.8rem',
                   color: '#9d8ab0',
                   borderColor: '#9d8ab0',
+                  opacity: 0.45,
                   ':hover': { borderColor: '#9d8ab0', bgcolor: 'rgba(157, 138, 176, 0.08)' }
                 }}
                 onClick={async () => {
@@ -174,11 +178,13 @@ const Main = () => {
 
               <Button
                 variant='outlined'
+                disabled
                 sx={{
                   width: '100%',
                   height: '4.8rem',
                   color: '#e8a39f',
                   borderColor: '#e8a39f',
+                  opacity: 0.45,
                   ':hover': { borderColor: '#e8a39f', bgcolor: 'rgba(232, 163, 159, 0.08)' }
                 }}
                 onClick={async () => {
