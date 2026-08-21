@@ -4,20 +4,22 @@ const nextConfig = {
   transpilePackages: ['@mui/x-charts'],
   async rewrites() {
     return [
-      // 편집 대상 데이터(data.json)는 Vercel Blob 기반 API로 서빙
+      // data.json / header.json은 Vercel Blob 기반 API로 서빙 (없으면 GitHub 폴백)
       {
         source: '/table/aery/data.json',
-        destination: '/api/table/aery'
+        destination: '/api/table/aery/data.json'
+      },
+      {
+        source: '/table/aery/header.json',
+        destination: '/api/table/aery/header.json'
       },
       {
         source: '/table/aery7/data.json',
-        destination: '/api/table/aery7'
+        destination: '/api/table/aery7/data.json'
       },
-      // 그 외 테이블 정적 파일(header.json 등)은 기존 GitHub 원본 유지
       {
-        source: '/table/:path*',
-        destination:
-          'https://raw.githubusercontent.com/romanceformoon/toki-be/refs/heads/main/table/:path*'
+        source: '/table/aery7/header.json',
+        destination: '/api/table/aery7/header.json'
       }
     ]
   }

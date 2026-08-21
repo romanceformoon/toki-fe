@@ -14,7 +14,7 @@ export interface AeryTableAPI {
  * @param namespace 테이블 경로 네임스페이스 (예: 'aery', 'aery7')
  */
 export const createAeryTableAPI = (namespace: string): AeryTableAPI => {
-  const basePath = `/api/table/${namespace}`
+  const basePath = `/api/table/${namespace}/data.json`
 
   return {
     /**
