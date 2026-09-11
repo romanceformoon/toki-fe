@@ -17,22 +17,24 @@ const blobPath = (namespace: TableNamespace, file: TableFile) => `table/${namesp
 
 const getToken = () => process.env.BLOB_READ_WRITE_TOKEN
 
-// GitHub 원본에서 초기 데이터를 가져오는 시드 폴백
-const fetchSeedFile = async (namespace: TableNamespace, file: TableFile): Promise<unknown> => {
+// GitHub 원본에서 초기 데이터를 가져오는 시드 폴백 (원본 텍스트 그대로)
+const fetchSeedFile = async (namespace: TableNamespace, file: TableFile): Promise<string> => {
   const response = await fetch(`${GITHUB_SEED_BASE}/${namespace}/${file}`, {
     cache: 'no-store'
   })
   if (!response.ok) {
     throw new Error(`시드 데이터를 불러오지 못했습니다 (${file}, ${response.status})`)
   }
-  return response.json()
+  return response.text()
 }
 
-// Blob에서 파일을 읽고, 없으면 GitHub 시드로 폴백
+// Blob에서 파일을 읽고, 없으면 GitHub 시드로 폴백.
+// 재직렬화하지 않고 원본 JSON 텍스트를 그대로 반환한다
+// (0.0 → 0 같은 표현 변형 방지: beatoraja 단위인정 파서 호환).
 export const readTableFile = async (
   namespace: TableNamespace,
   file: TableFile
-): Promise<unknown> => {
+): Promise<string> => {
   const token = getToken()
   const pathname = blobPath(namespace, file)
 
@@ -43,7 +45,7 @@ export const readTableFile = async (
       if (target) {
         const response = await fetch(target.url, { cache: 'no-store' })
         if (response.ok) {
-          return response.json()
+          return response.text()
         }
       }
     } catch (err) {

@@ -23,9 +23,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === 'GET') {
     try {
-      const data = await readTableFile(namespace, file)
+      // 원본 JSON 텍스트를 그대로 통과시킨다 (재직렬화로 인한 표현 변형 방지)
+      const text = await readTableFile(namespace, file)
+      res.setHeader('Content-Type', 'application/json; charset=utf-8')
       res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=30, stale-while-revalidate=60')
-      return res.status(200).json(data)
+      return res.status(200).send(text)
     } catch (err) {
       console.error(`테이블 조회 실패 (${namespace}/${file}):`, err)
       return res.status(502).json({ error: '데이터를 불러오지 못했습니다.' })
