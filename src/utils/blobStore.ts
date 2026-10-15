@@ -1,4 +1,4 @@
-import { list, put } from '@vercel/blob'
+import { put } from '@vercel/blob'
 
 export type TableNamespace = 'aery' | 'aery7'
 export type TableFile = 'data.json' | 'header.json'
@@ -34,7 +34,7 @@ const writeCache = (pathname: string, text: string) => {
   memoryCache.set(pathname, { text, expiresAt: Date.now() + MEMORY_CACHE_TTL_MS })
 }
 
-// list()로 실제 URL을 확인했을 때 기억해 두는 베이스 URL (추론이 빗나간 경우 대비)
+// put() 응답으로 확인한 실제 베이스 URL (추론이 빗나간 경우 대비)
 let verifiedBaseUrl: string | null = null
 
 // 고정 경로(addRandomSuffix: false)로 저장하므로 공개 URL을 계산할 수 있다.
@@ -50,20 +50,6 @@ const getPublicBaseUrl = (token: string | undefined): string | null => {
   const storeId = token.split('_')[3]
   if (!storeId) return null
   return `https://${storeId.toLowerCase()}.public.blob.vercel-storage.com`
-}
-
-// 추론한 URL이 통하지 않을 때만 쓰는 폴백. 한 번 찾으면 베이스 URL을 기억해
-// 이후 읽기는 다시 직접 fetch로 처리한다.
-const lookupUrlViaList = async (pathname: string, token: string): Promise<string | null> => {
-  const { blobs } = await list({ prefix: pathname, token })
-  const target = blobs.find(blob => blob.pathname === pathname)
-  if (!target) return null
-
-  const suffix = `/${pathname}`
-  if (target.url.endsWith(suffix)) {
-    verifiedBaseUrl = target.url.slice(0, -suffix.length)
-  }
-  return target.url
 }
 
 // GitHub 원본에서 초기 데이터를 가져오는 시드 폴백 (원본 텍스트 그대로)
@@ -89,21 +75,19 @@ export const readTableFile = async (
   const cached = readCache(pathname)
   if (cached !== null) return cached
 
-  const token = getToken()
-  if (token) {
+  // Blob에 아직 없는 파일은 404가 정상이므로 list()로 재확인하지 않고 바로 시드로 넘긴다.
+  // 추론 URL이 틀린 환경이라면 BLOB_BASE_URL을 직접 설정해야 한다.
+  const baseUrl = getPublicBaseUrl(getToken())
+  if (baseUrl) {
     try {
-      const baseUrl = getPublicBaseUrl(token)
-      let response = baseUrl ? await fetch(`${baseUrl}/${pathname}`) : null
-
-      if (!response || !response.ok) {
-        const url = await lookupUrlViaList(pathname, token)
-        response = url ? await fetch(url) : null
-      }
-
-      if (response && response.ok) {
+      const response = await fetch(`${baseUrl}/${pathname}`)
+      if (response.ok) {
         const text = await response.text()
         writeCache(pathname, text)
         return text
+      }
+      if (response.status !== 404) {
+        console.error(`Blob 읽기 실패, 시드로 폴백합니다 (${pathname}, ${response.status})`)
       }
     } catch (err) {
       console.error(`Blob 읽기 실패, 시드로 폴백합니다 (${pathname}):`, err)
