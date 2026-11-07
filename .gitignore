@@ -47,3 +47,6 @@ next-env.d.ts
 
 .cursor/
 .env
+.vercel
+.env*
+!.env.example
