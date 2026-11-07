@@ -43,7 +43,10 @@ const getRedis = (): Redis | null => {
 
 // 무료 플랜은 월 대역폭 10GB 제한이라 큰 data.json을 매번 다시 받으면 금방 소진된다.
 // 1분마다 버전 키(수 바이트)만 한 번에 확인하고, 버전이 바뀐 파일만 본문을 다시 받는다.
-const memoryCache = new Map<string, { text: string; version: string | null }>()
+const memoryCache = new Map<string, { text: string; version: string }>()
+
+// Redis에 없는 파일(예: 관리자 화면에서 저장하지 않는 header.json)은 GitHub 시드를 짧게 캐시한다.
+const seedCache = new Map<string, { text: string; expiresAt: number }>()
 
 let versionSnapshot: { versions: Map<string, string | null>; checkedAt: number } | null = null
 let pendingVersionCheck: Promise<Map<string, string | null>> | null = null
@@ -124,11 +127,11 @@ export const readTableFile = async (
     }
   }
 
-  const cached = memoryCache.get(key)
-  if (cached && cached.version === null) return cached.text
+  const cachedSeed = seedCache.get(key)
+  if (cachedSeed && cachedSeed.expiresAt > Date.now()) return cachedSeed.text
 
   const seed = await fetchSeedFile(namespace, file)
-  memoryCache.set(key, { text: seed, version: null })
+  seedCache.set(key, { text: seed, expiresAt: Date.now() + VERSION_CHECK_INTERVAL_MS })
   return seed
 }
 
